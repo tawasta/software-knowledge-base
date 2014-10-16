@@ -7,7 +7,7 @@
 	        <field name="name">SW Knowledge Base - Modules tree</field>
 	        <field name="model">software_knowledge_base.module</field>
 	        <field name="arch" type="xml">
-	            <tree string="Modules" editable="top">
+	            <tree string="Modules">
 	                <field name="name"/>
 					<field name="module_type"/>
 					<field name="repository"/>

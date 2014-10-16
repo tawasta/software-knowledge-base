@@ -6,7 +6,7 @@
 	        <field name="name">SW Knowledge Base - Installations tree</field>
 	        <field name="model">software_knowledge_base.installation</field>
 	        <field name="arch" type="xml">
-	            <tree string="Modules" editable="top">
+	            <tree string="Modules">
 	                <field name="name"/>
 					<field name="partner_id"/>
 					<field name="project_id"/>
