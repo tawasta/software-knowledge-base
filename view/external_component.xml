@@ -2,7 +2,7 @@
 <openerp>
     <data>
 	    <!-- External Components Tree View -->
-	    <record model="ir.ui.view" id="server_tree_view">
+	    <record model="ir.ui.view" id="external_component_tree_view">
 	        <field name="name">SW Knowledge Base - External Components tree</field>
 	        <field name="model">software_knowledge_base.external_component</field>
 	        <field name="arch" type="xml">
@@ -15,7 +15,7 @@
 	    </record>
 
 	    <!-- External Components Form View -->
-	    <record model="ir.ui.view" id="server_form_view">
+	    <record model="ir.ui.view" id="external_component_form_view">
 	        <field name="name">SW Knowledge Base - External Components form</field>
 	        <field name="model">software_knowledge_base.external_component</field>
 	        <field name="arch" type="xml">
