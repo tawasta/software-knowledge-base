@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+	    <!-- Installations Tree View -->
+	    <record model="ir.ui.view" id="installation_tree_view">
+	        <field name="name">SW Knowledge Base - Installations tree</field>
+	        <field name="model">software_knowledge_base.installation</field>
+	        <field name="arch" type="xml">
+	            <tree string="Modules" editable="top">
+	                <field name="name"/>
+					<field name="partner_id"/>
+					<field name="project_id"/>
+					<field name="server_id"/>
+	            </tree>
+	        </field>
+	    </record>
+    </data>
+</openerp>

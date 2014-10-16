@@ -2,18 +2,24 @@
 <openerp>
     <data>
 
+		<!-- Actions -->
         <record id="modules_action" model="ir.actions.act_window">
             <field name="name">Modules</field>
             <field name="res_model">software_knowledge_base.module</field>
             <field name="view_mode">tree,form</field>
         </record>
+        
+        <record id="installations_action" model="ir.actions.act_window">
+            <field name="name">Installations</field>
+            <field name="res_model">software_knowledge_base.installation</field>
+            <field name="view_mode">tree,form</field>
+        </record>        
 
-
-		<!-- Define menu hierarchy -->
+		<!-- Menu hierarchy -->
         <menuitem id="root_menu" name="SW Development"/>
         <menuitem id="sw_development_menu" name="SW Development" parent="root_menu"/>
-        <menuitem id="modules_menu" parent="sw_development_menu"
-            action="modules_action"/>
+        <menuitem id="modules_menu" 		parent="sw_development_menu" action="modules_action"/>
+        <menuitem id="installations_menu"	parent="sw_development_menu" action="installations_action"/>            
 
     </data>
 </openerp>
