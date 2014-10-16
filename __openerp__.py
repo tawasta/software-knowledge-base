@@ -33,6 +33,7 @@ Features
 
 """,
     'data': [
+        'view/module.xml',
         'view/menus.xml',
     ],
 }
