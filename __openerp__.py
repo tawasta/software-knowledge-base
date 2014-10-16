@@ -36,6 +36,7 @@ Features
         'view/installation.xml',
         'view/module.xml',
         'view/server.xml',
+        'view/external_component.xml',
         'view/project_project.xml',
         'view/menus.xml',
     ],
