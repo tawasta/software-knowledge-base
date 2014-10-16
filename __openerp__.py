@@ -35,6 +35,7 @@ Features
     'data': [
         'view/installation.xml',
         'view/module.xml',
+        'view/server.xml',
         'view/project_project.xml',
         'view/menus.xml',
     ],

@@ -24,19 +24,6 @@
 	                <header>
 	                </header>
 	                <sheet string="Form">
-						<!--
-	                    <div class="oe_right oe_button_box">
-	                        <button class="oe_inline oe_stat_button" type="object" name="action_button_convert2opportunity" 
-	                            icon="fa-star" attrs="{'invisible':[('opportunity_id','!=',False)]}"
-	                            help="Convert To Opportunity">
-	                            <div>Convert To<br/>Opportunity</div>
-	                        </button>
-	
-	                        <button class="oe_inline oe_stat_button" name="action_make_meeting" type="object" icon="fa-calendar fa-fw">
-	                            <div>Schedule<br/>A Meeting</div>
-	                        </button>
-	                    </div>
-	                    -->
 	                    <div class="oe_title">
 	                        <div class="oe_edit_only">
 	                            <label for="name"/>

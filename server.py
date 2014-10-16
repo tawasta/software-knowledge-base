@@ -9,5 +9,11 @@ class server(osv.Model):
 
     _columns = {
         'name': fields.char('Name'),
+        
+        'ip_address': fields.char('IP Address'),
+        'operating_system': fields.char('Operating system'),
+        'installation_ids': fields.one2many('software_knowledge_base.installation', 'server_id', 'Installations'),
+        
+        'specification': fields.text('Technical specification'),
         'additional_info': fields.text('Additional info'),
     }
