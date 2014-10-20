@@ -39,5 +39,6 @@ Features
         'view/external_component.xml',
         'view/project_project.xml',
         'view/menus.xml',
+        'security/ir.model.access.csv',
     ],
 }
