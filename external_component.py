@@ -11,10 +11,10 @@ class external_component(osv.Model):
         'name': fields.char('Name'),
         'url': fields.char('Homepage'),
         'features': fields.text('Features'),
-        
+
         'installation_ids': fields.many2many('software_knowledge_base.installation', 'installation_ext_comp_rel', 'ext_comp_id', 'installation_id',
                                                  string='Installations',help='Installations using this component.'),
-                
+
         'installation_notes':   fields.text('Installation notes'),
         'additional_info':      fields.text('Additional info', help='Additional information'),               
     }

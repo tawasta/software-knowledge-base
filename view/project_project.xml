@@ -7,7 +7,7 @@
             <field name="inherit_id" ref="project.edit_project"/>
 			<field name="arch" type="xml">
                 <notebook position="inside">
-                    <page string="Installations">
+                    <page string="Installations" groups="software_knowledge_base.developer">
                         <field name="installation_ids"/>
                     </page>
                 </notebook>

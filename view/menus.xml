@@ -28,7 +28,7 @@
         </record>        
 
 		<!-- Menu hierarchy -->
-        <menuitem id="root_menu" name="SW Development"/>
+        <menuitem id="root_menu" name="SW Development" groups="software_knowledge_base.developer"/>
         <menuitem id="sw_development_menu" name="SW Development" parent="root_menu"/>
         <menuitem id="modules_menu" 		parent="sw_development_menu" action="modules_action"/>
         <menuitem id="ext_components_menu"	parent="sw_development_menu" action="ext_components_action"/>

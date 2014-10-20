@@ -28,8 +28,10 @@ you may find this it useful for other platforms as well.
 
 Features
 --------
- * Work in progress ...
-
+ * Adds the following models for storing and organizing development-related data: server, installation, platform, module, external component
+ * Links installations to projects
+ * Creates a new group called "Developer" - only users in that group see the menus and views provided by the module
+ * Developers have full create/write/unlink access to the new models
 
 """,
     'data': [
@@ -40,5 +42,7 @@ Features
         'view/project_project.xml',
         'view/menus.xml',
         'security/ir.model.access.csv',
+        'data/ir_module_category.xml',
+        'data/res_groups.xml',
     ],
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <record id="software_knowledge_base.developer" model="res.groups">
+            <field name="name">Developer</field>
+        	<field name="category_id" ref="software"/>            
+        </record>
+    </data>
+</openerp>
