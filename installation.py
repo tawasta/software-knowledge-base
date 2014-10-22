@@ -12,6 +12,8 @@ class installation(osv.Model):
     
     _columns = {
         'name':             fields.char('Name'),
+        'company_id': fields.many2one('res.company', 'Company'),
+        
         'state':            fields.selection(_INSTALLATION_STATE_VALUES, 'Status', help='Where the module has been developed'),
         'additional_info':  fields.text('Additional info'),
         

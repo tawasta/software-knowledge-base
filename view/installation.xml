@@ -6,13 +6,14 @@
 	        <field name="name">SW Knowledge Base - Installations tree</field>
 	        <field name="model">software_knowledge_base.installation</field>
 	        <field name="arch" type="xml">
-	            <tree string="Modules">
+	            <tree string="Installations">
 	                <field name="name"/>
 					<field name="partner_id"/>
 					<field name="project_id"/>
 					<field name="platform_id"/>
 					<field name="server_id"/>
 					<field name="state"/>
+					<field name="company_id"/>
 	            </tree>
 	        </field>
 	    </record>
@@ -35,6 +36,7 @@
 	                    </div>
 	
 	                    <group col="4">
+							<field name="company_id" widget="selection"/>
 							<field name="platform_id"/>	                        
 							<field name="server_id"/>
 							<field name="project_id"/>

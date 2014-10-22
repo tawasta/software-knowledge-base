@@ -9,6 +9,7 @@ class server(osv.Model):
 
     _columns = {
         'name': fields.char('Name'),
+        'company_id': fields.many2one('res.company', 'Company'),
         
         'ip_address': fields.char('IP Address'),
         'operating_system': fields.char('Operating system'),
