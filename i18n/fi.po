@@ -1,0 +1,447 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* software_knowledge_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-22 05:52+0000\n"
+"PO-Revision-Date: 2014-10-22 05:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
+#: field:software_knowledge_base.external_component,additional_info:0
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
+#: field:software_knowledge_base.installation,additional_info:0
+#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+#: field:software_knowledge_base.module,additional_info:0
+#: view:software_knowledge_base.server:software_knowledge_base.server_form_view
+#: field:software_knowledge_base.server,additional_info:0
+msgid "Additional info"
+msgstr "Lisätiedot"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.external_component,additional_info:0
+#: help:software_knowledge_base.module,additional_info:0
+msgid "Additional information"
+msgstr "Lisätiedot"
+
+#. module: software_knowledge_base
+#: selection:software_knowledge_base.module,module_type:0
+msgid "Community"
+msgstr "Yhteisö"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.installation,company_id:0
+#: field:software_knowledge_base.server,company_id:0
+msgid "Company"
+msgstr "Yritys"
+
+#. module: software_knowledge_base
+#: selection:software_knowledge_base.module,module_type:0
+msgid "Core"
+msgstr "Core"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,create_uid:0
+#: field:software_knowledge_base.installation,create_uid:0
+#: field:software_knowledge_base.module,create_uid:0
+#: field:software_knowledge_base.platform,create_uid:0
+#: field:software_knowledge_base.server,create_uid:0
+msgid "Created by"
+msgstr "Luonut"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,create_date:0
+#: field:software_knowledge_base.installation,create_date:0
+#: field:software_knowledge_base.module,create_date:0
+#: field:software_knowledge_base.platform,create_date:0
+#: field:software_knowledge_base.server,create_date:0
+msgid "Created on"
+msgstr "Luotu"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.installation,partner_id:0
+msgid "Customer"
+msgstr "Asiakas"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.external_component,message_last_post:0
+#: help:software_knowledge_base.installation,message_last_post:0
+#: help:software_knowledge_base.module,message_last_post:0
+#: help:software_knowledge_base.platform,message_last_post:0
+#: help:software_knowledge_base.server,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: software_knowledge_base
+#: model:res.groups,name:software_knowledge_base.developer
+msgid "Developer"
+msgstr "Kehittäjä"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.platform,name:0
+msgid "E.g. Odoo 8 or Drupal 7"
+msgstr "Esim. Odoo 8 tai Drupal 7"
+
+#. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_external_component
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_installation
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_module
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_platform
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_server
+msgid "Email Thread"
+msgstr "Sähköpostiviestit"
+
+#. module: software_knowledge_base
+#: model:ir.actions.act_window,name:software_knowledge_base.ext_components_action
+#: model:ir.ui.menu,name:software_knowledge_base.ext_components_menu
+#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_tree_view
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
+#: field:software_knowledge_base.installation,external_component_ids:0
+msgid "External components"
+msgstr "Ulkoiset komponentit"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
+#: field:software_knowledge_base.external_component,features:0
+#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+#: field:software_knowledge_base.module,features:0
+msgid "Features"
+msgstr "Ominaisuudet"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,message_follower_ids:0
+#: field:software_knowledge_base.installation,message_follower_ids:0
+#: field:software_knowledge_base.module,message_follower_ids:0
+#: field:software_knowledge_base.platform,message_follower_ids:0
+#: field:software_knowledge_base.server,message_follower_ids:0
+msgid "Followers"
+msgstr "Seuraajat"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
+#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+#: view:software_knowledge_base.server:software_knowledge_base.server_form_view
+msgid "Form"
+msgstr "Form"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.external_component,message_summary:0
+#: help:software_knowledge_base.installation,message_summary:0
+#: help:software_knowledge_base.module,message_summary:0
+#: help:software_knowledge_base.platform,message_summary:0
+#: help:software_knowledge_base.server,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,url:0
+msgid "Homepage"
+msgstr "WWW"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,id:0
+#: field:software_knowledge_base.installation,id:0
+#: field:software_knowledge_base.module,id:0
+#: field:software_knowledge_base.platform,id:0
+#: field:software_knowledge_base.server,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.server,ip_address:0
+msgid "IP Address"
+msgstr "IP-osoite"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.external_component,message_unread:0
+#: help:software_knowledge_base.installation,message_unread:0
+#: help:software_knowledge_base.module,message_unread:0
+#: help:software_knowledge_base.platform,message_unread:0
+#: help:software_knowledge_base.server,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: software_knowledge_base
+#: selection:software_knowledge_base.installation,state:0
+msgid "In setup"
+msgstr "Asennusvaiheessa"
+
+#. module: software_knowledge_base
+#: selection:software_knowledge_base.installation,state:0
+msgid "In use"
+msgstr "Käytössä"
+
+#. module: software_knowledge_base
+#: selection:software_knowledge_base.module,module_type:0
+msgid "In-house"
+msgstr "Itse kehitetty"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
+#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+msgid "Installation"
+msgstr "Asennus"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
+#: field:software_knowledge_base.external_component,installation_notes:0
+#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+#: field:software_knowledge_base.module,installation_notes:0
+msgid "Installation notes"
+msgstr "Asennushuomiot"
+
+#. module: software_knowledge_base
+#: model:ir.actions.act_window,name:software_knowledge_base.installations_action
+#: model:ir.ui.menu,name:software_knowledge_base.installations_menu
+#: view:project.project:software_knowledge_base.project_form_view
+#: field:project.project,installation_ids:0
+#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
+#: field:software_knowledge_base.external_component,installation_ids:0
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_tree_view
+#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+#: field:software_knowledge_base.module,installation_ids:0
+#: view:software_knowledge_base.server:software_knowledge_base.server_form_view
+#: field:software_knowledge_base.server,installation_ids:0
+msgid "Installations"
+msgstr "Asennukset"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.external_component,installation_ids:0
+msgid "Installations using this component."
+msgstr "Asennukset, jotka käyttävät tätä komponenttia."
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,message_is_follower:0
+#: field:software_knowledge_base.installation,message_is_follower:0
+#: field:software_knowledge_base.module,message_is_follower:0
+#: field:software_knowledge_base.platform,message_is_follower:0
+#: field:software_knowledge_base.server,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.module,issues:0
+msgid "Issues"
+msgstr "Ongelmat"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.module,issues:0
+msgid "Known bugs, limitations, incompatibilities with other modules etc."
+msgstr "Tiedossa olevat bugit, rajoitukset, yhteensopimattomuudet muihiin moduleihin ym."
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+msgid "Known issues"
+msgstr "Ongelmat"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,message_last_post:0
+#: field:software_knowledge_base.installation,message_last_post:0
+#: field:software_knowledge_base.module,message_last_post:0
+#: field:software_knowledge_base.platform,message_last_post:0
+#: field:software_knowledge_base.server,message_last_post:0
+msgid "Last Message Date"
+msgstr "Viimeisin viesti"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,write_uid:0
+#: field:software_knowledge_base.installation,write_uid:0
+#: field:software_knowledge_base.module,write_uid:0
+#: field:software_knowledge_base.platform,write_uid:0
+#: field:software_knowledge_base.server,write_uid:0
+msgid "Last Updated by"
+msgstr "Viimeisin päivittäjä"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,write_date:0
+#: field:software_knowledge_base.installation,write_date:0
+#: field:software_knowledge_base.module,write_date:0
+#: field:software_knowledge_base.platform,write_date:0
+#: field:software_knowledge_base.server,write_date:0
+msgid "Last Updated on"
+msgstr "Viimeksi päivitetty"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.installation,external_component_ids:0
+msgid "Libraries and other third party components used by this installation."
+msgstr "Asennuksen käyttämät kirjastot ja muut ulkoiset komponentit."
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,message_ids:0
+#: field:software_knowledge_base.installation,message_ids:0
+#: field:software_knowledge_base.module,message_ids:0
+#: field:software_knowledge_base.platform,message_ids:0
+#: field:software_knowledge_base.server,message_ids:0
+msgid "Messages"
+msgstr "Viestit"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.external_component,message_ids:0
+#: help:software_knowledge_base.installation,message_ids:0
+#: help:software_knowledge_base.module,message_ids:0
+#: help:software_knowledge_base.platform,message_ids:0
+#: help:software_knowledge_base.server,message_ids:0
+msgid "Messages and communication history"
+msgstr "Viestihistoria"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.module,module_type:0
+msgid "Module type"
+msgstr "Modulin alkuperä"
+
+#. module: software_knowledge_base
+#: model:ir.actions.act_window,name:software_knowledge_base.modules_action
+#: model:ir.ui.menu,name:software_knowledge_base.modules_menu
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
+#: field:software_knowledge_base.installation,module_ids:0
+#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+#: view:software_knowledge_base.module:software_knowledge_base.module_tree_view
+msgid "Modules"
+msgstr "Modulit"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.installation,module_ids:0
+msgid "Modules used by this installation."
+msgstr "Asennuksen käyttämät modulit."
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,name:0
+#: field:software_knowledge_base.installation,name:0
+#: field:software_knowledge_base.module,name:0
+#: field:software_knowledge_base.platform,name:0
+#: field:software_knowledge_base.server,name:0
+msgid "Name"
+msgstr "Nimi"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.server,operating_system:0
+msgid "Operating system"
+msgstr "Käyttöjärjestelmä"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.installation,platform_id:0
+msgid "Platform"
+msgstr "Alusta"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.module,platform_ids:0
+msgid "Platforms"
+msgstr "Alustat"
+
+#. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_project_project
+#: field:software_knowledge_base.installation,project_id:0
+msgid "Project"
+msgstr "Projekti"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.module,task_ids:0
+msgid "Related project management tasks"
+msgstr "Projektihallinnan tehtävät"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.module,repository:0
+msgid "Repository URL"
+msgstr "Repositorion osoite"
+
+#. module: software_knowledge_base
+#: model:ir.ui.menu,name:software_knowledge_base.root_menu
+#: model:ir.ui.menu,name:software_knowledge_base.sw_development_menu
+msgid "SW Development"
+msgstr "Tietämyskanta"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.installation,server_id:0
+msgid "Server"
+msgstr "Palvelin"
+
+#. module: software_knowledge_base
+#: model:ir.actions.act_window,name:software_knowledge_base.servers_action
+#: model:ir.ui.menu,name:software_knowledge_base.servers_menu
+#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
+#: view:software_knowledge_base.server:software_knowledge_base.server_form_view
+#: view:software_knowledge_base.server:software_knowledge_base.server_tree_view
+msgid "Servers"
+msgstr "Palvelimet"
+
+#. module: software_knowledge_base
+#: model:ir.module.category,name:software_knowledge_base.software
+msgid "Software knowledge base"
+msgstr "Tietämyskanta"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.installation,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,message_summary:0
+#: field:software_knowledge_base.installation,message_summary:0
+#: field:software_knowledge_base.module,message_summary:0
+#: field:software_knowledge_base.platform,message_summary:0
+#: field:software_knowledge_base.server,message_summary:0
+msgid "Summary"
+msgstr "Yhteenveto"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.module,platform_ids:0
+msgid "Supported platforms"
+msgstr "Tuetut alustat"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+#: field:software_knowledge_base.module,task_ids:0
+msgid "Tasks"
+msgstr "Tehtävät"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.server,specification:0
+msgid "Technical specification"
+msgstr "Speksit"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.server:software_knowledge_base.server_form_view
+msgid "Technical specifications"
+msgstr "Speksit"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+msgid "Tested platforms"
+msgstr "Testatut alustat"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,message_unread:0
+#: field:software_knowledge_base.installation,message_unread:0
+#: field:software_knowledge_base.module,message_unread:0
+#: field:software_knowledge_base.platform,message_unread:0
+#: field:software_knowledge_base.server,message_unread:0
+msgid "Unread Messages"
+msgstr "Lukemattomat viestit"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.module,repository:0
+msgid "Version control location"
+msgstr "Versionhallinta"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.installation,state:0
+#: help:software_knowledge_base.module,module_type:0
+msgid "Where the module has been developed"
+msgstr "Onko moduli peräisin coresta tai yhteisöstä, vai onko se itse kehitetty."
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.module,installation_ids:0
+msgid "Where this module has been deployed."
+msgstr "Mihin moduli on asennettu."
+
