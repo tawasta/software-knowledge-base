@@ -19,3 +19,4 @@ import module
 import platform
 import server
 import project_project
+import res_partner
