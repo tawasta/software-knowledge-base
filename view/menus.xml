@@ -35,12 +35,15 @@
 
 		<!-- Menu hierarchy -->
         <menuitem id="root_menu" name="SW Development" groups="software_knowledge_base.developer"/>
-        <menuitem id="sw_development_menu" name="SW Development" parent="root_menu"/>
-        <menuitem id="modules_menu" 		parent="sw_development_menu" action="modules_action"/>
-        <menuitem id="ext_components_menu"	parent="sw_development_menu" action="ext_components_action"/>
-        <menuitem id="installations_menu"	parent="sw_development_menu" action="installations_action"/> 
-        <menuitem id="servers_menu"			parent="sw_development_menu" action="servers_action"/>
-        <menuitem id="platforms_menu"		parent="sw_development_menu" action="platforms_action"/>
+        
+
+        <menuitem id="environment_menu" name="Environments" parent="root_menu"/>        
+        <menuitem id="code_menu" name="Software" parent="root_menu"/>
+        <menuitem id="servers_menu"			parent="environment_menu" action="servers_action"/>
+        <menuitem id="installations_menu"	parent="environment_menu" action="installations_action"/> 
+        <menuitem id="modules_menu" 		parent="code_menu" action="modules_action"/>
+        <menuitem id="ext_components_menu"	parent="code_menu" action="ext_components_action"/>        
+		<menuitem id="platforms_menu"		parent="code_menu" action="platforms_action"/>        
 
     </data>
 </openerp>
