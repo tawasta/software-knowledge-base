@@ -4,7 +4,8 @@ from openerp.tools.translate import _
 
 class platform(osv.Model):
     
-    _name = 'software_knowledge_base.platform'    
+    _name = 'software_knowledge_base.platform'
+    _description = 'Platform'
     _inherit = ['mail.thread']    
 
     _columns = {

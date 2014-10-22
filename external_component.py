@@ -4,7 +4,8 @@ from openerp.tools.translate import _
 
 class external_component(osv.Model):
     
-    _name = 'software_knowledge_base.external_component'    
+    _name = 'software_knowledge_base.external_component'
+    _description = 'External component'
     _inherit = ['mail.thread']    
 
     _columns = {

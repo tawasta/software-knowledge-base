@@ -45,9 +45,9 @@ Access rights
         'view/server.xml',
         'view/external_component.xml',
         'view/project_project.xml',
-        'view/menus.xml',
         'data/ir_module_category.xml',
         'data/res_groups.xml',
         'security/ir.model.access.csv',
+        'view/menus.xml',
     ],
 }

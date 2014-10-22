@@ -4,7 +4,8 @@ from openerp.tools.translate import _
 
 class module(osv.Model):
     
-    _name       = 'software_knowledge_base.module'    
+    _name       = 'software_knowledge_base.module'
+    _description = 'Module' 
     _inherit    = ['mail.thread']    
 
     _MODULE_TYPE_VALUES = [('core','Core'),

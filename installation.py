@@ -4,7 +4,8 @@ from openerp.tools.translate import _
 
 class installation(osv.Model):
     
-    _name = 'software_knowledge_base.installation'    
+    _name = 'software_knowledge_base.installation'
+    _description = 'Installation'  
     _inherit = ['mail.thread']    
 
     _INSTALLATION_STATE_VALUES = [('setup','In setup'),
