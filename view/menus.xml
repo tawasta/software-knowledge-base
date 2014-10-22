@@ -25,7 +25,13 @@
             <field name="name">Servers</field>
             <field name="res_model">software_knowledge_base.server</field>
             <field name="view_mode">tree,form</field>
-        </record>        
+        </record>
+        
+        <record id="platforms_action" model="ir.actions.act_window">
+            <field name="name">Platforms</field>
+            <field name="res_model">software_knowledge_base.platform</field>
+            <field name="view_mode">tree,form</field>
+        </record>               
 
 		<!-- Menu hierarchy -->
         <menuitem id="root_menu" name="SW Development" groups="software_knowledge_base.developer"/>
@@ -34,6 +40,7 @@
         <menuitem id="ext_components_menu"	parent="sw_development_menu" action="ext_components_action"/>
         <menuitem id="installations_menu"	parent="sw_development_menu" action="installations_action"/> 
         <menuitem id="servers_menu"			parent="sw_development_menu" action="servers_action"/>
+        <menuitem id="platforms_menu"		parent="sw_development_menu" action="platforms_action"/>
 
     </data>
 </openerp>
