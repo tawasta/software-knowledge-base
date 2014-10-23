@@ -20,7 +20,11 @@ class installation(osv.Model):
         
         'platform_id':      fields.many2one('software_knowledge_base.platform', string='Platform'),
         'server_id':        fields.many2one('software_knowledge_base.server', string='Server'),
-        'project_id':       fields.many2one('project.project', string='Project'),
+        #'project_id':       fields.many2one('project.project', string='Project'),
+        'project_ids':     fields.many2many('project.project', 'installation_project_rel', 'installation_id', 'project_id',
+                                                 string='Projects', help='Projects utilizing this installation.'),
+                        
+
         'partner_id':       fields.many2one('res.partner', string='Customer'),
         
         'module_ids':     fields.many2many('software_knowledge_base.module', 'module_installation_rel', 'installation_id', 'module_id',
