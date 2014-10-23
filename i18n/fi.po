@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 8.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-22 05:52+0000\n"
-"PO-Revision-Date: 2014-10-22 05:52+0000\n"
+"POT-Creation-Date: 2014-10-23 08:47+0000\n"
+"PO-Revision-Date: 2014-10-23 08:47+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,6 +32,11 @@ msgstr "Lisätiedot"
 #: help:software_knowledge_base.module,additional_info:0
 msgid "Additional information"
 msgstr "Lisätiedot"
+
+#. module: software_knowledge_base
+#: model:res.groups,name:software_knowledge_base.admin
+msgid "Admin"
+msgstr "Admin"
 
 #. module: software_knowledge_base
 #: selection:software_knowledge_base.module,module_type:0
@@ -79,7 +84,13 @@ msgstr "Asiakas"
 #: help:software_knowledge_base.platform,message_last_post:0
 #: help:software_knowledge_base.server,message_last_post:0
 msgid "Date of the last message posted on the record."
-msgstr "Date of the last message posted on the record."
+msgstr "Viimeisen viestin päivämäärä."
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.platform:software_knowledge_base.platform_form_view
+#: field:software_knowledge_base.platform,description:0
+msgid "Description"
+msgstr "Kuvaus"
 
 #. module: software_knowledge_base
 #: model:res.groups,name:software_knowledge_base.developer
@@ -92,13 +103,14 @@ msgid "E.g. Odoo 8 or Drupal 7"
 msgstr "Esim. Odoo 8 tai Drupal 7"
 
 #. module: software_knowledge_base
+#: model:ir.ui.menu,name:software_knowledge_base.environment_menu
+msgid "Environments"
+msgstr "Ympäristöt"
+
+#. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_external_component
-#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_installation
-#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_module
-#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_platform
-#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_server
-msgid "Email Thread"
-msgstr "Sähköpostiviestit"
+msgid "External component"
+msgstr "Ulkoinen komponentti"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.ext_components_action
@@ -130,9 +142,10 @@ msgstr "Seuraajat"
 #: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
 #: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
 #: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+#: view:software_knowledge_base.platform:software_knowledge_base.platform_form_view
 #: view:software_knowledge_base.server:software_knowledge_base.server_form_view
 msgid "Form"
-msgstr "Form"
+msgstr "Lomake"
 
 #. module: software_knowledge_base
 #: help:software_knowledge_base.external_component,message_summary:0
@@ -187,6 +200,7 @@ msgid "In-house"
 msgstr "Itse kehitetty"
 
 #. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_installation
 #: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
 #: view:software_knowledge_base.module:software_knowledge_base.module_form_view
 msgid "Installation"
@@ -205,6 +219,8 @@ msgstr "Asennushuomiot"
 #: model:ir.ui.menu,name:software_knowledge_base.installations_menu
 #: view:project.project:software_knowledge_base.project_form_view
 #: field:project.project,installation_ids:0
+#: view:res.partner:software_knowledge_base.partner_form_view
+#: field:res.partner,installation_ids:0
 #: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
 #: field:software_knowledge_base.external_component,installation_ids:0
 #: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
@@ -215,6 +231,11 @@ msgstr "Asennushuomiot"
 #: field:software_knowledge_base.server,installation_ids:0
 msgid "Installations"
 msgstr "Asennukset"
+
+#. module: software_knowledge_base
+#: help:project.project,installation_ids:0
+msgid "Installations related to this project."
+msgstr "Projektiin liittyvät asennukset"
 
 #. module: software_knowledge_base
 #: help:software_knowledge_base.external_component,installation_ids:0
@@ -228,7 +249,7 @@ msgstr "Asennukset, jotka käyttävät tätä komponenttia."
 #: field:software_knowledge_base.platform,message_is_follower:0
 #: field:software_knowledge_base.server,message_is_follower:0
 msgid "Is a Follower"
-msgstr "Is a Follower"
+msgstr "On seuraaja"
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.module,issues:0
@@ -296,6 +317,11 @@ msgid "Messages and communication history"
 msgstr "Viestihistoria"
 
 #. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_module
+msgid "Module"
+msgstr "Moduli"
+
+#. module: software_knowledge_base
 #: field:software_knowledge_base.module,module_type:0
 msgid "Module type"
 msgstr "Modulin alkuperä"
@@ -330,20 +356,40 @@ msgid "Operating system"
 msgstr "Käyttöjärjestelmä"
 
 #. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_res_partner
+msgid "Partner"
+msgstr "Kumppani"
+
+#. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_platform
 #: field:software_knowledge_base.installation,platform_id:0
 msgid "Platform"
 msgstr "Alusta"
 
 #. module: software_knowledge_base
+#: model:ir.actions.act_window,name:software_knowledge_base.platforms_action
+#: model:ir.ui.menu,name:software_knowledge_base.platforms_menu
 #: field:software_knowledge_base.module,platform_ids:0
+#: view:software_knowledge_base.platform:software_knowledge_base.platform_form_view
+#: view:software_knowledge_base.platform:software_knowledge_base.platform_tree_view
 msgid "Platforms"
 msgstr "Alustat"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_project_project
-#: field:software_knowledge_base.installation,project_id:0
 msgid "Project"
 msgstr "Projekti"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
+#: field:software_knowledge_base.installation,project_ids:0
+msgid "Projects"
+msgstr "Projektit"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.installation,project_ids:0
+msgid "Projects utilizing this installation."
+msgstr "Projektit, joihin tämä asennus liittyy"
 
 #. module: software_knowledge_base
 #: help:software_knowledge_base.module,task_ids:0
@@ -357,11 +403,11 @@ msgstr "Repositorion osoite"
 
 #. module: software_knowledge_base
 #: model:ir.ui.menu,name:software_knowledge_base.root_menu
-#: model:ir.ui.menu,name:software_knowledge_base.sw_development_menu
 msgid "SW Development"
 msgstr "Tietämyskanta"
 
 #. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_server
 #: field:software_knowledge_base.installation,server_id:0
 msgid "Server"
 msgstr "Palvelin"
@@ -374,6 +420,11 @@ msgstr "Palvelin"
 #: view:software_knowledge_base.server:software_knowledge_base.server_tree_view
 msgid "Servers"
 msgstr "Palvelimet"
+
+#. module: software_knowledge_base
+#: model:ir.ui.menu,name:software_knowledge_base.code_menu
+msgid "Software"
+msgstr "Ohjelmistot"
 
 #. module: software_knowledge_base
 #: model:ir.module.category,name:software_knowledge_base.software
