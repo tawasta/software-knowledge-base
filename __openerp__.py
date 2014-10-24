@@ -33,7 +33,7 @@ Features
 
 Access rights
 -------------
- * By default, all Odoo users have read access to knowledge base items. However, the top-level menu is hidden from them, so they only see the contents by navigating via projects, tasks or partners.
+ * By default, all Odoo users have read access to knowledge base items.
  * Creates two new groups: Developer and Administrator
  * Administrators have full create/write/unlink access to all knowledge base items
  * Developers have otherwise full access but they cannot create or unlink installations, servers or platforms.

@@ -34,7 +34,7 @@
         </record>               
 
 		<!-- Menu hierarchy -->
-        <menuitem id="root_menu" name="SW Development" groups="software_knowledge_base.developer"/>
+        <menuitem id="root_menu" name="SW Development"/>
         
 
         <menuitem id="environment_menu" name="Environments" parent="root_menu"/>        
