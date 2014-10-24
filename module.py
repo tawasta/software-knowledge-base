@@ -10,6 +10,7 @@ class module(osv.Model):
 
     _MODULE_TYPE_VALUES = [('core','Core'),
                     ('community','Community'),
+                    ('community_commercial','Community (commercial)'),                    
                     ('inhouse','In-house')]
 
     _columns = {
