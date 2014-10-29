@@ -15,6 +15,7 @@ class server(osv.Model):
         'ip_address': fields.char('IP Address'),
         'operating_system': fields.char('Operating system'),
         'installation_ids': fields.one2many('software_knowledge_base.installation', 'server_id', 'Installations'),
+        'action_ids': fields.one2many('software_knowledge_base.server_action', 'server_id', 'Actions'),
         
         'specification': fields.text('Technical specification'),
         'additional_info': fields.text('Additional info'),
