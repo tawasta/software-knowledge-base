@@ -2,13 +2,13 @@
 from openerp.osv import osv, fields
 from openerp.tools.translate import _
 
-class server_log(osv.Model):
+class server_note(osv.Model):
     
-    _name = 'software_knowledge_base.server_log'       
+    _name = 'software_knowledge_base.server_note'       
 
     _columns = {
         'name': fields.char('Name'),
-        'log_date': fields.date('Log date'),
+        'note_date': fields.date('Log date'),
         'description': fields.text('Longer description'),
         'extra': fields.text('Extra info (ex. commands used)'),
         
