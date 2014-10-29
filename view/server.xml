@@ -48,8 +48,8 @@
 							<page string="Additional info">
 								<field name="additional_info"/>
 							</page>
-	                         <page string="Actions">
-                                <field name="action_ids"/>
+	                         <page string="Logs">
+                                <field name="log_ids"/>
                             </page>
 
 						</notebook>

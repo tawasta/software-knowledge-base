@@ -18,6 +18,6 @@ import installation
 import module
 import platform
 import server
-import server_action
+import server_log
 import project_project
 import res_partner
