@@ -28,7 +28,7 @@ you may find this it useful for other platforms as well.
 
 Features
 --------
- * Adds the following models for storing and organizing development-related data: server, installation, platform, module, external component
+ * Adds the following models for storing and organizing development-related data: server, server note, installation, platform, module, external component
  * Links installations to projects and partners 
 
 Access rights
