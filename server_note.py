@@ -7,10 +7,14 @@ class server_note(osv.Model):
     _name = 'software_knowledge_base.server_note'       
 
     _columns = {
-        'name': fields.char('Name'),
-        'note_date': fields.date('Log date'),
-        'description': fields.text('Longer description'),
-        'extra': fields.text('Extra info (ex. commands used)'),
+        'name': fields.char('Short description', required=True),
+        'event_date': fields.date('Event date', help='The actual date when the operation was made'),
+        'description': fields.text('Full description'),
+        'extra': fields.text('Extra info'),
         
         'server_id': fields.many2one('software_knowledge_base.server', string='Server'),
+    }
+    
+    _defaults = {
+        'event_date': fields.datetime.now,
     }
