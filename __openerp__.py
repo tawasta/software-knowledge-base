@@ -43,6 +43,7 @@ Access rights
         'view/installation.xml',
         'view/module.xml',
         'view/server.xml',
+        'view/server_note.xml',
         'view/external_component.xml',
         'view/platform.xml',
         'view/project_project.xml',
