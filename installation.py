@@ -7,7 +7,8 @@ class installation(osv.Model):
     _name = 'software_knowledge_base.installation'
     _description = 'Installation'  
     _inherit = ['mail.thread']    
-
+    _order = 'name'
+    
     _INSTALLATION_STATE_VALUES = [('setup','In setup'),
                                   ('ready','In use')]
     
@@ -20,6 +21,9 @@ class installation(osv.Model):
         
         'platform_id':      fields.many2one('software_knowledge_base.platform', string='Platform'),
         'server_id':        fields.many2one('software_knowledge_base.server', string='Server'),
+        'port':             fields.integer('Port'),
+        'db_server_id':     fields.many2one('software_knowledge_base.server', string='Database server'),
+        
         #'project_id':       fields.many2one('project.project', string='Project'),
         'project_ids':     fields.many2many('project.project', 'installation_project_rel', 'installation_id', 'project_id',
                                                  string='Projects', help='Projects utilizing this installation.'),

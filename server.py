@@ -7,7 +7,8 @@ class server(osv.Model):
     _name = 'software_knowledge_base.server'
     _description = 'Server'    
     _inherit = ['mail.thread']    
-
+    _order = 'name'
+    
     _columns = {
         'name': fields.char('Name'),
         'company_id': fields.many2one('res.company', 'Company'),

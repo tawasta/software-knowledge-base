@@ -4,9 +4,10 @@ from openerp.tools.translate import _
 
 class module(osv.Model):
     
-    _name       = 'software_knowledge_base.module'
-    _description = 'Module' 
-    _inherit    = ['mail.thread']    
+    _name           = 'software_knowledge_base.module'
+    _description    = 'Module' 
+    _inherit        = ['mail.thread']
+    _order          = 'name'
 
     _MODULE_TYPE_VALUES = [('core','Core'),
                     ('community','Community'),
@@ -15,9 +16,10 @@ class module(osv.Model):
 
     _columns = {
         'name':                 fields.char('Name'),
+        'summary':              fields.char(size=128, string='Summary'),
         'module_type':          fields.selection(_MODULE_TYPE_VALUES, 'Module type', help='Where the module has been developed'),
         'repository':           fields.char('Repository URL', help='Version control location'),
-        
+        'user_id':              fields.many2one('res.users', 'Responsible'),
         'features':             fields.text('Features'),
         'installation_notes':   fields.text('Installation notes'),
         'issues':               fields.text('Issues', help='Known bugs, limitations, incompatibilities with other modules etc.'),
@@ -37,4 +39,6 @@ class module(osv.Model):
                                                  string='Tasks', help='Related project management tasks'),
         'platform_ids':         fields.many2many('software_knowledge_base.platform', 'module_platform_rel', 'module_id', 'platform_id',
                                                  string='Platforms',help='Supported platforms'),
+                
+        
     }

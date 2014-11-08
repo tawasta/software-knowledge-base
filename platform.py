@@ -7,7 +7,8 @@ class platform(osv.Model):
     _name = 'software_knowledge_base.platform'
     _description = 'Platform'
     _inherit = ['mail.thread']    
-
+    _order = 'name'
+    
     _columns = {
         'name': fields.char('Name', help='E.g. Odoo 8 or Drupal 7'),
         'description': fields.text('Description'),
