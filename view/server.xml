@@ -48,6 +48,9 @@
 							<page string="Additional info">
 								<field name="additional_info"/>
 							</page>
+	                         <page string="Notes">
+                                <field name="note_ids"/>
+                            </page>
 
 						</notebook>
 	                </sheet>

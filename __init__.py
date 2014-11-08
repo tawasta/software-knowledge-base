@@ -18,5 +18,6 @@ import installation
 import module
 import platform
 import server
+import server_note
 import project_project
 import res_partner
