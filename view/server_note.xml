@@ -16,7 +16,7 @@
         </record>
 
         <!-- Server notes Form View -->
-        <record model="ir.ui.view" id="installation_form_view">
+        <record model="ir.ui.view" id="server_note_form_view">
             <field name="name">SW Knowledge Base - Server notes form</field>
             <field name="model">software_knowledge_base.server_note</field>
             <field name="arch" type="xml">
