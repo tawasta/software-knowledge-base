@@ -10,7 +10,8 @@ class installation(osv.Model):
     _order = 'name'
     
     _INSTALLATION_STATE_VALUES = [('setup','In setup'),
-                                  ('ready','In use')]
+                                  ('ready','In use'),
+                                  ('terminated','Terminated')]
     
     _columns = {
         'name':             fields.char('Name'),
