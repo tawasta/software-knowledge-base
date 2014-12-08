@@ -1,24 +1,24 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* software_knowledge_base
+#	* software_knowledge_base
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 8.0rc1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-30 12:31+0000\n"
-"PO-Revision-Date: 2014-10-30 14:32+0200\n"
-"Last-Translator: Jarmo Kortetjärvi <jarmo@futurable.fi>\n"
+"POT-Creation-Date: 2014-12-08 05:15+0000\n"
+"PO-Revision-Date: 2014-12-08 05:15+0000\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"X-Generator: Poedit 1.5.4\n"
 
 #. module: software_knowledge_base
 #: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
 #: field:software_knowledge_base.external_component,additional_info:0
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
 #: field:software_knowledge_base.installation,additional_info:0
 #: view:software_knowledge_base.module:software_knowledge_base.module_form_view
 #: field:software_knowledge_base.module,additional_info:0
@@ -85,6 +85,11 @@ msgid "Customer"
 msgstr "Asiakas"
 
 #. module: software_knowledge_base
+#: field:software_knowledge_base.installation,db_server_id:0
+msgid "Database server"
+msgstr "Tietokantapalvelin"
+
+#. module: software_knowledge_base
 #: help:software_knowledge_base.external_component,message_last_post:0
 #: help:software_knowledge_base.installation,message_last_post:0
 #: help:software_knowledge_base.module,message_last_post:0
@@ -105,18 +110,14 @@ msgid "Developer"
 msgstr "Kehittäjä"
 
 #. module: software_knowledge_base
+#: field:software_knowledge_base.installation,disk_usage:0
+msgid "Disk Usage (MB)"
+msgstr "Levytilan käyttö (MB)"
+
+#. module: software_knowledge_base
 #: help:software_knowledge_base.platform,name:0
 msgid "E.g. Odoo 8 or Drupal 7"
 msgstr "Esim. Odoo 8 tai Drupal 7"
-
-#. module: software_knowledge_base
-#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_external_component
-#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_installation
-#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_module
-#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_platform
-#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_server
-msgid "Email Thread"
-msgstr "Sähköpostiviestit"
 
 #. module: software_knowledge_base
 #: model:ir.ui.menu,name:software_knowledge_base.environment_menu
@@ -129,9 +130,15 @@ msgid "Event date"
 msgstr "Tapahtumapäivä"
 
 #. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_external_component
+msgid "External component"
+msgstr "Ulkoinen komponentti"
+
+#. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.ext_components_action
 #: model:ir.ui.menu,name:software_knowledge_base.ext_components_menu
 #: view:software_knowledge_base.external_component:software_knowledge_base.external_component_tree_view
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
 #: field:software_knowledge_base.installation,external_component_ids:0
 msgid "External components"
 msgstr "Ulkoiset komponentit"
@@ -160,10 +167,11 @@ msgstr "Seuraajat"
 
 #. module: software_knowledge_base
 #: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
 #: view:software_knowledge_base.module:software_knowledge_base.module_form_view
 #: view:software_knowledge_base.platform:software_knowledge_base.platform_form_view
 #: view:software_knowledge_base.server:software_knowledge_base.server_form_view
-#: view:software_knowledge_base.server_note:software_knowledge_base.installation_form_view
+#: view:software_knowledge_base.server_note:software_knowledge_base.server_note_form_view
 msgid "Form"
 msgstr "Lomake"
 
@@ -178,12 +186,8 @@ msgstr "Pitkä kuvaus"
 #: help:software_knowledge_base.module,message_summary:0
 #: help:software_knowledge_base.platform,message_summary:0
 #: help:software_knowledge_base.server,message_summary:0
-msgid ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
-msgstr ""
-"Holds the Chatter summary (number of messages, ...). This summary is "
-"directly in html format in order to be inserted in kanban views."
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.external_component,url:0
@@ -230,6 +234,7 @@ msgid "In-house"
 msgstr "Itse kehitetty"
 
 #. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_installation
 #: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
 #: view:software_knowledge_base.module:software_knowledge_base.module_form_view
 msgid "Installation"
@@ -252,6 +257,7 @@ msgstr "Asennushuomiot"
 #: field:res.partner,installation_ids:0
 #: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
 #: field:software_knowledge_base.external_component,installation_ids:0
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
 #: view:software_knowledge_base.installation:software_knowledge_base.installation_tree_view
 #: view:software_knowledge_base.module:software_knowledge_base.module_form_view
 #: field:software_knowledge_base.module,installation_ids:0
@@ -287,9 +293,7 @@ msgstr "Ongelmat"
 #. module: software_knowledge_base
 #: help:software_knowledge_base.module,issues:0
 msgid "Known bugs, limitations, incompatibilities with other modules etc."
-msgstr ""
-"Tiedossa olevat bugit, rajoitukset, yhteensopimattomuudet muihiin moduleihin "
-"ym."
+msgstr "Tiedossa olevat bugit, rajoitukset, yhteensopimattomuudet muihiin moduleihin ym."
 
 #. module: software_knowledge_base
 #: view:software_knowledge_base.module:software_knowledge_base.module_form_view
@@ -331,6 +335,12 @@ msgid "Libraries and other third party components used by this installation."
 msgstr "Asennuksen käyttämät kirjastot ja muut ulkoiset komponentit."
 
 #. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_installation_log_item
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_log_item
+msgid "Log item"
+msgstr "Log item"
+
+#. module: software_knowledge_base
 #: field:software_knowledge_base.external_component,message_ids:0
 #: field:software_knowledge_base.installation,message_ids:0
 #: field:software_knowledge_base.module,message_ids:0
@@ -349,6 +359,11 @@ msgid "Messages and communication history"
 msgstr "Viestihistoria"
 
 #. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_module
+msgid "Module"
+msgstr "Moduli"
+
+#. module: software_knowledge_base
 #: field:software_knowledge_base.module,module_type:0
 msgid "Module type"
 msgstr "Modulin alkuperä"
@@ -356,6 +371,9 @@ msgstr "Modulin alkuperä"
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.modules_action
 #: model:ir.ui.menu,name:software_knowledge_base.modules_menu
+#: view:project.task:software_knowledge_base.project_task_view
+#: field:project.task,module_ids:0
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
 #: field:software_knowledge_base.installation,module_ids:0
 #: view:software_knowledge_base.module:software_knowledge_base.module_form_view
 #: view:software_knowledge_base.module:software_knowledge_base.module_tree_view
@@ -393,6 +411,7 @@ msgid "Partner"
 msgstr "Kumppani"
 
 #. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_platform
 #: field:software_knowledge_base.installation,platform_id:0
 msgid "Platform"
 msgstr "Alusta"
@@ -407,11 +426,17 @@ msgid "Platforms"
 msgstr "Alustat"
 
 #. module: software_knowledge_base
+#: field:software_knowledge_base.installation,port:0
+msgid "Port"
+msgstr "Portti"
+
+#. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_project_project
 msgid "Project"
 msgstr "Projekti"
 
 #. module: software_knowledge_base
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
 #: field:software_knowledge_base.installation,project_ids:0
 msgid "Projects"
 msgstr "Projektit"
@@ -420,6 +445,11 @@ msgstr "Projektit"
 #: help:software_knowledge_base.installation,project_ids:0
 msgid "Projects utilizing this installation."
 msgstr "Projektit, joihin tämä asennus liittyy"
+
+#. module: software_knowledge_base
+#: help:project.task,module_ids:0
+msgid "Related modules"
+msgstr "Modulit"
 
 #. module: software_knowledge_base
 #: help:software_knowledge_base.module,task_ids:0
@@ -432,11 +462,17 @@ msgid "Repository URL"
 msgstr "Repositorion osoite"
 
 #. module: software_knowledge_base
+#: field:software_knowledge_base.module,user_id:0
+msgid "Responsible"
+msgstr "Vastuuhenkilö"
+
+#. module: software_knowledge_base
 #: model:ir.ui.menu,name:software_knowledge_base.root_menu
 msgid "SW Development"
 msgstr "Tietämyskanta"
 
 #. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_server
 #: field:software_knowledge_base.installation,server_id:0
 #: field:software_knowledge_base.server_note,server_id:0
 msgid "Server"
@@ -448,7 +484,7 @@ msgid "Server note"
 msgstr "Palvelinmuistiinpano"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.server_note:software_knowledge_base.installation_form_view
+#: view:software_knowledge_base.server_note:software_knowledge_base.server_note_form_view
 msgid "Server notes"
 msgstr "Palvelinmuistiinpanot"
 
@@ -484,7 +520,9 @@ msgstr "Status"
 #. module: software_knowledge_base
 #: field:software_knowledge_base.external_component,message_summary:0
 #: field:software_knowledge_base.installation,message_summary:0
+#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
 #: field:software_knowledge_base.module,message_summary:0
+#: field:software_knowledge_base.module,summary:0
 #: field:software_knowledge_base.platform,message_summary:0
 #: field:software_knowledge_base.server,message_summary:0
 msgid "Summary"
@@ -494,6 +532,11 @@ msgstr "Yhteenveto"
 #: help:software_knowledge_base.module,platform_ids:0
 msgid "Supported platforms"
 msgstr "Tuetut alustat"
+
+#. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_project_task
+msgid "Task"
+msgstr "Tehtävä"
 
 #. module: software_knowledge_base
 #: view:software_knowledge_base.module:software_knowledge_base.module_form_view
@@ -510,6 +553,11 @@ msgstr "Speksit"
 #: view:software_knowledge_base.server:software_knowledge_base.server_form_view
 msgid "Technical specifications"
 msgstr "Speksit"
+
+#. module: software_knowledge_base
+#: selection:software_knowledge_base.installation,state:0
+msgid "Terminated"
+msgstr "Irtisanottu"
 
 #. module: software_knowledge_base
 #: view:software_knowledge_base.module:software_knowledge_base.module_form_view
@@ -539,8 +587,7 @@ msgstr "Versionhallinta"
 #: help:software_knowledge_base.installation,state:0
 #: help:software_knowledge_base.module,module_type:0
 msgid "Where the module has been developed"
-msgstr ""
-"Onko moduli peräisin coresta tai yhteisöstä, vai onko se itse kehitetty."
+msgstr "Onko moduli peräisin coresta tai yhteisöstä, vai onko se itse kehitetty."
 
 #. module: software_knowledge_base
 #: help:software_knowledge_base.module,installation_ids:0
@@ -548,16 +595,17 @@ msgid "Where this module has been deployed."
 msgstr "Mihin moduli on asennettu."
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.server_note:software_knowledge_base.installation_form_view
+#: view:software_knowledge_base.server_note:software_knowledge_base.server_note_form_view
 msgid "e.g. Installed git"
 msgstr "esim. git asennettu"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.server_note:software_knowledge_base.installation_form_view
+#: view:software_knowledge_base.server_note:software_knowledge_base.server_note_form_view
 msgid "e.g. Installed git for updating Odoo modules etc."
 msgstr "esim. git asennettu Odoon moduulien päivittämistä yms. varten"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.server_note:software_knowledge_base.installation_form_view
+#: view:software_knowledge_base.server_note:software_knowledge_base.server_note_form_view
 msgid "e.g. apt-get install git"
 msgstr "esim. apt-get install git"
+

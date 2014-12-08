@@ -24,6 +24,7 @@ class installation(osv.Model):
         'server_id':        fields.many2one('software_knowledge_base.server', string='Server'),
         'port':             fields.integer('Port'),
         'db_server_id':     fields.many2one('software_knowledge_base.server', string='Database server'),
+        'disk_usage':       fields.float('Disk Usage (MB)'),
         
         #'project_id':       fields.many2one('project.project', string='Project'),
         'project_ids':     fields.many2many('project.project', 'installation_project_rel', 'installation_id', 'project_id',

@@ -47,6 +47,7 @@ Access rights
         'view/external_component.xml',
         'view/platform.xml',
         'view/project_project.xml',
+        'view/project_task.xml',
         'view/res_partner.xml',
         'data/ir_module_category.xml',
         'data/res_groups.xml',
