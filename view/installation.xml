@@ -76,7 +76,7 @@
 	    </record>
 
 		<!-- Installations search view -->
-		<record model="ir.ui.view" id="helpitem_search_view">
+		<record model="ir.ui.view" id="installation_search_view">
 	        <field name="name">Installations search</field>
 	        <field name="model">software_knowledge_base.installation</field>
 			<field name="arch" type="xml">
