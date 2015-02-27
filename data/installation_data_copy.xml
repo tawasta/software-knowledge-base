@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<openerp>
+  <data noupdate="0">
+    <!-- 
+    This function is executed when module installs 
+    -It changes the installation data to fit with the 2/2015 
+     change where there is a m2m link between received installations and 
+     partners instead of an o2m link.  
+     -->
+    <function model="software_knowledge_base.installation" name="_copy_inst_data_to_m2m_field"/>
+  </data>
+</openerp>

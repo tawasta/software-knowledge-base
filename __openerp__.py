@@ -53,5 +53,6 @@ Access rights
         'data/res_groups.xml',
         'security/ir.model.access.csv',
         'view/menus.xml',
+        'data/installation_data_copy.xml',
     ],
 }
