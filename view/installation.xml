@@ -75,5 +75,23 @@
 	        </field>
 	    </record>
 
+		<!-- Installations search view -->
+		<record model="ir.ui.view" id="helpitem_search_view">
+	        <field name="name">Installations search</field>
+	        <field name="model">software_knowledge_base.installation</field>
+			<field name="arch" type="xml">
+				<search string="Search Installations">
+					<field name="name"/>
+					<field name="url"/>
+					<field name="platform_id"/>
+
+					<group expand="0" string="Group By...">
+						<filter string="Company" context="{'group_by':'company_id'}"/>
+						<filter string="Platform" context="{'group_by':'platform_id'}"/>					
+					</group>
+				</search>
+			</field>
+		</record>
+
     </data>
 </openerp>
