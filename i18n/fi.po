@@ -642,3 +642,7 @@ msgstr "esim. git asennettu Odoon moduulien päivittämistä yms. varten"
 msgid "e.g. apt-get install git"
 msgstr "esim. apt-get install git"
 
+#. module: software_knowledge_base
+#: field:software_knowledge_base.installation,identifier:0
+msgid "Identifier"
+msgstr "Tunniste"

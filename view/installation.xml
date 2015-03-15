@@ -44,6 +44,7 @@
 							<field name="db_server_id"/>
 							<field name="disk_usage"/>
 							<field name="url" widget="url"/>
+							<field name="identifier"/>
 							<field name="company_id" widget="selection"/>
 	                    </group>
 
