@@ -63,6 +63,7 @@ class installation(osv.Model):
                         
         'partner_id':       fields.many2one('res.partner', string='Customer'), # Legacy field from where there was just 1 partner linked to inst.
 
+        # Note the misnamed table module_partner_rel!
         'partner_ids':     fields.many2many('res.partner', 'module_partner_rel', 'installation_id', 'partner_id',
                                                  string='Customers', help='Customers of this installation.'),
 
