@@ -8,7 +8,6 @@
 	        <field name="arch" type="xml">
 	            <tree string="Repositories">
 	                <field name="name"/>
-					<field name="description"/>
 					<field name="url"/>
 	            </tree>
 	        </field>
@@ -28,12 +27,14 @@
 	                    </div>
 	
 						<group col='3'>
-							<field name="description" /><group/>
-							<field name="vcs" /><group/>
-							<field name="vcs_host" /><group/>
-							<field name="vcs_team" /><group/>
-							<field name="url" required="1"/><group/>
+							<field name="vcs" required="1" /><group/>
+							<field name="vcs_host" required="1" /><group/>
+							<field name="vcs_team" required="1" /><group/>
+							<field name="url" required="1" /><group/>
 						</group>
+						
+						<separator string="Description"/>
+						<field name="description" nolabel="1"/>
 
 	                </sheet>
 	                <div class="oe_chatter">
