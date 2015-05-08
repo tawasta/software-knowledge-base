@@ -6,6 +6,7 @@ class VcsHost(models.Model):
     
     _name = 'software_knowledge_base.vcs_host'
     _description = 'Version Control System Host'
+    _order = 'name'
     
     ''' Columns '''
     name = fields.Char('Name', help='E.g. github or bitbucket')
