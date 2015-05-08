@@ -29,10 +29,8 @@
 	                        <h1><field name="name" required="1"/></h1>
 	                    </div>
 	
-						<group col='3'>
-							<field name="address"/><group/>
-							<field name="description"/><group/>
-						</group>
+						<separator string="Description"/>
+						<field name="description" nolabel="1"/>
 
 	                </sheet>
 	            </form>
