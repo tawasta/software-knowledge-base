@@ -17,7 +17,7 @@ class module(models.Model):
     name =                 fields.Char('Name')
     summary =              fields.Char(size=128, string='Summary')
     module_type =          fields.Selection(_MODULE_TYPE_VALUES, 'Module type', help='Where the module has been developed')
-    repository =           fields.Char('Repository URL', help='Version control location')
+    repository =           fields.Many2one('software_knowledge_base.repository', string='Repository')
     user_id =              fields.Many2one('res.users', 'Responsible')
     features =             fields.Text('Features')
     installation_notes =   fields.Text('Installation notes')
