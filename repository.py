@@ -18,7 +18,7 @@ class Repository(models.Model):
     vcs_team = fields.Many2one('software_knowledge_base.vcs_team', string='Team')
         
     @api.one
-    @api.onchange('name', 'team', 'vcs', 'vcs_host')
+    @api.onchange('name', 'vcs', 'vcs_team', 'vcs_host')
     def generate_url(self):
         self.url = "%s/%s/%s" % (self.vcs_host.address or '', self.vcs_team.name or '' , self.name or '')
         
