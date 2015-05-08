@@ -37,6 +37,18 @@
             <field name="name">Repositories</field>
             <field name="res_model">software_knowledge_base.repository</field>
             <field name="view_mode">tree,form</field>
+        </record>
+                       
+        <record id="vcs_action" model="ir.actions.act_window">
+            <field name="name">VCS</field>
+            <field name="res_model">software_knowledge_base.vcs</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <record id="vcs_hosts_action" model="ir.actions.act_window">
+            <field name="name">VCS Hosts</field>
+            <field name="res_model">software_knowledge_base.vcs_host</field>
+            <field name="view_mode">tree,form</field>
         </record>               
 
 		<!-- Menu hierarchy -->
@@ -51,6 +63,8 @@
         <menuitem id="ext_components_menu"	parent="code_menu" action="ext_components_action"/>        
 		<menuitem id="platforms_menu"		parent="code_menu" action="platforms_action"/>        
 		<menuitem id="repositories_menu"	parent="code_menu" action="repositories_action"/>        
+		<menuitem id="vcs_menu"				parent="code_menu" action="vcs_action"/>        
+		<menuitem id="vcs_hosts_menu"		parent="code_menu" action="vcs_hosts_action"/>        
 
     </data>
 </openerp>
