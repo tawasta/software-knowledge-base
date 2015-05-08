@@ -11,8 +11,3 @@ class VcsTeam(models.Model):
     ''' Columns '''
     name = fields.Char('Name', help='E.g. "companyname" or "teamname"')
     description = fields.Text('Description', help='Team description')
-    
-    @api.one
-    def name_get(self):
-        display_name = "%s (%s)" % (self.name, self.description)
-        return (self.id, display_name)
