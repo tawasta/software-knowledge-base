@@ -23,3 +23,4 @@ import server_note
 import project_project
 import project_task
 import res_partner
+import vcs
