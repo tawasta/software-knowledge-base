@@ -34,8 +34,10 @@ Features
   * installation
   * platform
   * module
-  * repository
   * external component
+  * repository
+  * vcs
+  * vcs host
  * Links installations to projects and partners 
 
 Access rights
@@ -62,5 +64,7 @@ Access rights
         'security/ir.model.access.csv',
         'view/menus.xml',
         'data/installation_data_copy.xml',
+        'data/vcs_data.xml',
+        'data/vcs_host_data.xml',
     ],
 }
