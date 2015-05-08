@@ -15,5 +15,5 @@ class VcsHost(models.Model):
     
     @api.one
     def name_get(self):
-        display_name = "%s (%s)" % (self.name, self.description)
+        display_name = "%s (%s)" % (self.name, self.address)
         return (self.id, display_name)
