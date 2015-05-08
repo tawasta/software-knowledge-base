@@ -49,6 +49,12 @@
             <field name="name">VCS Hosts</field>
             <field name="res_model">software_knowledge_base.vcs_host</field>
             <field name="view_mode">tree,form</field>
+        </record>     
+                  
+        <record id="vcs_teams_action" model="ir.actions.act_window">
+            <field name="name">VCS Teams</field>
+            <field name="res_model">software_knowledge_base.vcs_team</field>
+            <field name="view_mode">tree,form</field>
         </record>               
 
 		<!-- Menu hierarchy -->
@@ -57,14 +63,18 @@
 
         <menuitem id="environment_menu" name="Environments" parent="root_menu"/>        
         <menuitem id="code_menu" name="Software" parent="root_menu"/>
+        <menuitem id="vcs_menu" name="Version Control" parent="root_menu"/>
+        
         <menuitem id="servers_menu"			parent="environment_menu" action="servers_action"/>
         <menuitem id="installations_menu"	parent="environment_menu" action="installations_action"/> 
         <menuitem id="modules_menu" 		parent="code_menu" action="modules_action"/>
         <menuitem id="ext_components_menu"	parent="code_menu" action="ext_components_action"/>        
 		<menuitem id="platforms_menu"		parent="code_menu" action="platforms_action"/>        
-		<menuitem id="repositories_menu"	parent="code_menu" action="repositories_action"/>        
-		<menuitem id="vcs_menu"				parent="code_menu" action="vcs_action"/>        
-		<menuitem id="vcs_hosts_menu"		parent="code_menu" action="vcs_hosts_action"/>        
+		<menuitem id="repositories_menu"	parent="code_menu" action="repositories_action"/>  
+		      
+		<menuitem id="vcs_type_menu"		parent="vcs_menu" action="vcs_action"/>        
+		<menuitem id="vcs_hosts_menu"		parent="vcs_menu" action="vcs_hosts_action"/>        
+		<menuitem id="vcs_teams_menu"		parent="vcs_menu" action="vcs_teams_action"/>        
 
     </data>
 </openerp>
