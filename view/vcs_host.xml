@@ -8,6 +8,7 @@
 	        <field name="arch" type="xml">
 	            <tree string="Repositories">
 	                <field name="name"/>
+	                <field name="description"/>
 					<field name="address"/>
 	            </tree>
 	        </field>
@@ -29,8 +30,10 @@
 	                        <h1><field name="name" required="1"/></h1>
 	                    </div>
 	
-						<separator string="Address"/>
-						<field name="address" nolabel="1"/>
+						<group col='3'>
+							<field name="address"/><group/>
+							<field name="description"/><group/>
+						</group>
 
 	                </sheet>
 	            </form>
