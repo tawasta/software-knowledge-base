@@ -4,7 +4,7 @@
 	    <!-- VCS Host Tree View -->
 	    <record model="ir.ui.view" id="vcs_host_tree_view">
 	        <field name="name">SW Knowledge Base - VCS Host tree</field>
-	        <field name="model">software_knowledge_base.vcs</field>
+	        <field name="model">software_knowledge_base.vcs_host</field>
 	        <field name="arch" type="xml">
 	            <tree string="Repositories">
 	                <field name="name"/>
@@ -16,7 +16,7 @@
 	    <!-- VCS Host Form View -->
 	    <record model="ir.ui.view" id="vcs_host_form_view">
 	        <field name="name">SW Knowledge Base - VCS Host form</field>
-	        <field name="model">software_knowledge_base.vcs</field>
+	        <field name="model">software_knowledge_base.vcs_host</field>
 	        <field name="arch" type="xml">
 	            <form string="Repositories">
 	                <header>
