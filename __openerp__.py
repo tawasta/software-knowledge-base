@@ -58,6 +58,7 @@ Access rights
         'view/repository.xml',
         'view/vcs.xml',
         'view/vcs_host.xml',
+        'view/vcs_team.xml',
         'view/project_project.xml',
         'view/project_task.xml',
         'view/res_partner.xml',
