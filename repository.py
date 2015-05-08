@@ -13,6 +13,7 @@ class Repository(models.Model):
     name = fields.Char('Name', help='E.g. "odoo-customizations" or "moodle-extension"')
     description = fields.Text('Description', help='Longer description')
     url = fields.Char('URL', help='The full URL')
+    url_readonly = fields.Char('URL', help='The full URL', readonly=True)
     vcs = fields.Many2one('software_knowledge_base.vcs', string='Type', default='git')
     vcs_host = fields.Many2one('software_knowledge_base.vcs_host', string='Host', default='Github')
     vcs_team = fields.Many2one('software_knowledge_base.vcs_team', string='Team')
@@ -23,6 +24,13 @@ class Repository(models.Model):
     @api.onchange('name', 'vcs', 'vcs_team', 'vcs_host')
     def generate_url(self):
         self.url = "%s/%s/%s" % (self.vcs_host.address or '', self.vcs_team.name or '' , self.name or '')
+        self.url_readonly = self.url
         
         ''' TODO: validate url structure '''
         ''' TODO: check if url exists '''
+        
+    @api.multi
+    def write(self, vals):
+        vals['url_readonly'] = self.url
+        
+        return super(Repository, self).write(vals)

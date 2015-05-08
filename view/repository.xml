@@ -30,7 +30,11 @@
 							<field name="vcs" required="1" /><group/>
 							<field name="vcs_host" required="1" /><group/>
 							<field name="vcs_team" required="1" /><group/>
-							<field name="url" required="1" /><group/>
+						</group>
+						
+						<group>
+							<field name="url" required="1" invisible='1'/>
+							<field name="url_readonly" widget='url'/>
 						</group>
 						
 						<separator string="Description"/>
