@@ -4,6 +4,8 @@
 "user_sw_knowledge_base_module_perm","user_sw_knowledge_base_module_perm","model_software_knowledge_base_module","base.group_user",1,0,0,0
 "user_sw_knowledge_base_platform_perm","user_sw_knowledge_base_platform_perm","model_software_knowledge_base_platform","base.group_user",1,0,0,0
 "user_sw_knowledge_base_repository_perm","user_sw_knowledge_base_repository_perm","model_software_knowledge_base_repository","base.group_user",1,0,0,0
+"user_sw_knowledge_base_vcs_perm","user_sw_knowledge_base_vcs_perm","model_software_knowledge_base_vcs","base.group_user",1,0,0,0
+"user_sw_knowledge_base_vcs_host_perm","user_sw_knowledge_base_vcs_host_perm","model_software_knowledge_base_vcs_host","base.group_user",1,0,0,0
 "user_sw_knowledge_base_server_perm","user_sw_knowledge_base_server_perm","model_software_knowledge_base_server","base.group_user",1,0,0,0
 "user_sw_knowledge_base_server_note_perm","user_sw_knowledge_base_server_note_perm","model_software_knowledge_base_server_note","base.group_user",1,0,0,0
 "dev_sw_knowledge_base_ext_comp_perm","dev_sw_knowledge_base_ext_comp_perm","model_software_knowledge_base_external_component","software_knowledge_base.developer",1,1,1,1
