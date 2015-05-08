@@ -11,12 +11,14 @@ class Repository(models.Model):
     
     ''' Columns '''
     name = fields.Char('Name', help='E.g. "odoo-customizations" or "moodle-extension"')
-    description = fields.Char('Description', help='Full name or description')
+    description = fields.Text('Description', help='Longer description')
     url = fields.Char('URL', help='The full URL')
     vcs = fields.Many2one('software_knowledge_base.vcs', string='Type', default='git')
     vcs_host = fields.Many2one('software_knowledge_base.vcs_host', string='Host', default='Github')
     vcs_team = fields.Many2one('software_knowledge_base.vcs_team', string='Team')
-        
+    
+    ''' TODO: add repository tags? '''
+    
     @api.one
     @api.onchange('name', 'vcs', 'vcs_team', 'vcs_host')
     def generate_url(self):
