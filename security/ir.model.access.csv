@@ -14,6 +14,9 @@
 "dev_sw_knowledge_base_installation_perm","dev_sw_knowledge_base_installation_perm","model_software_knowledge_base_installation","software_knowledge_base.developer",1,1,0,0
 "dev_sw_knowledge_base_platform_perm","dev_sw_knowledge_base_platform_perm","model_software_knowledge_base_platform","software_knowledge_base.developer",1,1,0,0
 "dev_sw_knowledge_base_repository_perm","dev_sw_knowledge_base_repository_perm","model_software_knowledge_base_repository","software_knowledge_base.developer",1,1,0,0
+"dev_sw_knowledge_base_vcs_perm","dev_sw_knowledge_base_vcs_perm","model_software_knowledge_base_vcs","software_knowledge_base.developer",1,1,0,0
+"dev_sw_knowledge_base_vcs_host_perm","dev_sw_knowledge_base_vcs_host_perm","model_software_knowledge_base_vcs_host","software_knowledge_base.developer",1,1,0,0
+"dev_sw_knowledge_base_vcs_team_perm","dev_sw_knowledge_base_vcs_team_perm","model_software_knowledge_base_vcs_team","software_knowledge_base.developer",1,1,1,1
 "dev_sw_knowledge_base_server_perm","dev_sw_knowledge_base_server_perm","model_software_knowledge_base_server","software_knowledge_base.developer",1,1,0,0
 "dev_sw_knowledge_base_server_note_perm","dev_sw_knowledge_base_server_note_perm","model_software_knowledge_base_server_note","software_knowledge_base.developer",1,1,0,0
 "admin_sw_knowledge_base_ext_comp_perm","admin_sw_knowledge_base_ext_comp_perm","model_software_knowledge_base_external_component","software_knowledge_base.admin",1,1,1,1
@@ -21,5 +24,8 @@
 "admin_sw_knowledge_base_installation_perm","admin_sw_knowledge_base_installation_perm","model_software_knowledge_base_installation","software_knowledge_base.admin",1,1,1,1
 "admin_sw_knowledge_base_platform_perm","admin_sw_knowledge_base_platform_perm","model_software_knowledge_base_platform","software_knowledge_base.admin",1,1,1,1
 "admin_sw_knowledge_base_repository_perm","admin_sw_knowledge_base_repository_perm","model_software_knowledge_base_repository","software_knowledge_base.admin",1,1,1,1
+"admin_sw_knowledge_base_vcs_perm","admin_sw_knowledge_base_vcs_perm","model_software_knowledge_base_vcs","software_knowledge_base.admin",1,1,1,1
+"admin_sw_knowledge_base_vcs_host_perm","admin_sw_knowledge_base_vcs_host_perm","model_software_knowledge_base_vcs_host","software_knowledge_base.admin",1,1,1,1
+"admin_sw_knowledge_base_vcs_team_perm","admin_sw_knowledge_base_vcs_team_perm","model_software_knowledge_base_vcs_team","software_knowledge_base.admin",1,1,1,1
 "admin_sw_knowledge_base_server_perm","admin_sw_knowledge_base_server_perm","model_software_knowledge_base_server","software_knowledge_base.admin",1,1,1,1
 "admin_sw_knowledge_base_server_note_perm","admin_sw_knowledge_base_server_note_perm","model_software_knowledge_base_server_note","software_knowledge_base.admin",1,1,1,1
