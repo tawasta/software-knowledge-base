@@ -10,4 +10,4 @@ class VcsHost(models.Model):
     ''' Columns '''
     name = fields.Char('Name', help='E.g. github or bitbucket')
     description = fields.Text('Description', help='Longer description, if needed')
-    url = fields.Char('URL', help='E.g. https://github.com or https://bitbucket.org')
+    address = fields.Char('Address', help='E.g. https://github.com or 192.168.100.100')
