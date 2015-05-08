@@ -11,9 +11,8 @@ class Vcs(models.Model):
     ''' Columns '''
     name = fields.Char('Name', help='E.g. git or svn')
     description = fields.Text('Description', help='The full name')
-    display_name = fields.Char(string='Name', compute='_compute_display_name')
-
+        
     @api.one
-    @api.depends('name', 'description')
-    def _compute_display_name(self):
-        self.display_name = "%s (%s)" % (self.name, self.description)
+    def name_get(self):
+        display_name = "%s (%s)" % (self.name, self.description)
+        return (self.id, display_name)
