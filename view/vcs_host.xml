@@ -6,7 +6,7 @@
 	        <field name="name">SW Knowledge Base - VCS Host tree</field>
 	        <field name="model">software_knowledge_base.vcs_host</field>
 	        <field name="arch" type="xml">
-	            <tree string="Repositories">
+	            <tree string="VCS Hosts">
 	                <field name="name"/>
 	                <field name="description"/>
 					<field name="address"/>
@@ -19,7 +19,7 @@
 	        <field name="name">SW Knowledge Base - VCS Host form</field>
 	        <field name="model">software_knowledge_base.vcs_host</field>
 	        <field name="arch" type="xml">
-	            <form string="Repositories">
+	            <form string="VCS Hosts">
 	                <header>
 	                </header>
 	                <sheet string="Form">

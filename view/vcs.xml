@@ -6,7 +6,7 @@
 	        <field name="name">SW Knowledge Base - VCS tree</field>
 	        <field name="model">software_knowledge_base.vcs</field>
 	        <field name="arch" type="xml">
-	            <tree string="Repositories">
+	            <tree string="VCS">
 	                <field name="name"/>
 					<field name="description"/>
 	            </tree>
@@ -18,7 +18,7 @@
 	        <field name="name">SW Knowledge Base - VCS form</field>
 	        <field name="model">software_knowledge_base.vcs</field>
 	        <field name="arch" type="xml">
-	            <form string="Repositories">
+	            <form string="VCS">
 	                <header>
 	                </header>
 	                <sheet string="Form">
