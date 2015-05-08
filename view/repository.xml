@@ -4,11 +4,12 @@
 	    <!-- Repository Tree View -->
 	    <record model="ir.ui.view" id="repository_tree_view">
 	        <field name="name">SW Knowledge Base - Repositories tree</field>
-	        <field name="model">software_knowledge_base.platform</field>
+	        <field name="model">software_knowledge_base.repository</field>
 	        <field name="arch" type="xml">
 	            <tree string="Repositories">
 	                <field name="name"/>
 					<field name="description"/>
+					<field name="url"/>
 	            </tree>
 	        </field>
 	    </record>
@@ -30,7 +31,7 @@
 							<field name="description" /><group/>
 							<field name="vcs" /><group/>
 							<field name="vcs_host" /><group/>
-							<field name="team" /><group/>
+							<field name="vcs_team" /><group/>
 							<field name="url" required="1"/><group/>
 						</group>
 
