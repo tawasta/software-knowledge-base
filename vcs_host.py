@@ -12,3 +12,8 @@ class VcsHost(models.Model):
     name = fields.Char('Name', help='E.g. github or bitbucket')
     description = fields.Text('Description', help='Longer description, if needed')
     address = fields.Char('Address', help='E.g. https://github.com or 192.168.100.100')
+    
+    @api.one
+    def name_get(self):
+        display_name = "%s (%s)" % (self.name, self.description)
+        return (self.id, display_name)
