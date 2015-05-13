@@ -31,19 +31,51 @@
             <field name="name">Platforms</field>
             <field name="res_model">software_knowledge_base.platform</field>
             <field name="view_mode">tree,form</field>
+        </record>
+                
+        <record id="repositories_action" model="ir.actions.act_window">
+            <field name="name">Repositories</field>
+            <field name="res_model">software_knowledge_base.repository</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+                       
+        <record id="vcs_action" model="ir.actions.act_window">
+            <field name="name">VCS</field>
+            <field name="res_model">software_knowledge_base.vcs</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <record id="vcs_hosts_action" model="ir.actions.act_window">
+            <field name="name">VCS Hosts</field>
+            <field name="res_model">software_knowledge_base.vcs_host</field>
+            <field name="view_mode">tree,form</field>
+        </record>     
+                  
+        <record id="vcs_teams_action" model="ir.actions.act_window">
+            <field name="name">VCS Teams</field>
+            <field name="res_model">software_knowledge_base.vcs_team</field>
+            <field name="view_mode">tree,form</field>
         </record>               
 
 		<!-- Menu hierarchy -->
         <menuitem id="root_menu" name="SW Development"/>
-        
+  
 
-        <menuitem id="environment_menu" name="Environments" parent="root_menu"/>        
-        <menuitem id="code_menu" name="Software" parent="root_menu"/>
-        <menuitem id="servers_menu"			parent="environment_menu" action="servers_action"/>
-        <menuitem id="installations_menu"	parent="environment_menu" action="installations_action"/> 
-        <menuitem id="modules_menu" 		parent="code_menu" action="modules_action"/>
-        <menuitem id="ext_components_menu"	parent="code_menu" action="ext_components_action"/>        
-		<menuitem id="platforms_menu"		parent="code_menu" action="platforms_action"/>        
+        <menuitem id="environment_menu" name="Environments" parent="root_menu" sequence='10' />        
+        <menuitem id="code_menu" name="Software" parent="root_menu" sequence='20' />
+        <menuitem id="vcs_menu" name="Version Control" parent="root_menu" sequence='30' />
+        
+        <menuitem id="servers_menu"			parent="environment_menu" action="servers_action" sequence='10' />
+        <menuitem id="installations_menu"	parent="environment_menu" action="installations_action" sequence='20' />
+        
+        <menuitem id="modules_menu" 		parent="code_menu" action="modules_action" sequence='10' />
+        <menuitem id="ext_components_menu"	parent="code_menu" action="ext_components_action" sequence='20' />        
+		<menuitem id="platforms_menu"		parent="code_menu" action="platforms_action" sequence='30' />        
+		<menuitem id="repositories_menu"	parent="code_menu" action="repositories_action" sequence='40' />  
+		      
+		<menuitem id="vcs_type_menu"		parent="vcs_menu" action="vcs_action" sequence='10' />        
+		<menuitem id="vcs_hosts_menu"		parent="vcs_menu" action="vcs_hosts_action" sequence='20' />        
+		<menuitem id="vcs_teams_menu"		parent="vcs_menu" action="vcs_teams_action" sequence='30'/>        
 
     </data>
 </openerp>

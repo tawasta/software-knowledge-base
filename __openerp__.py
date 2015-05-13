@@ -28,7 +28,16 @@ you may find this it useful for other platforms as well.
 
 Features
 --------
- * Adds the following models for storing and organizing development-related data: server, server note, installation, platform, module, external component
+ * Adds the following models for storing and organizing development-related data:
+  * server
+  * server note
+  * installation
+  * platform
+  * module
+  * external component
+  * repository
+  * vcs
+  * vcs host
  * Links installations to projects and partners 
 
 Access rights
@@ -46,6 +55,10 @@ Access rights
         'view/server_note.xml',
         'view/external_component.xml',
         'view/platform.xml',
+        'view/repository.xml',
+        'view/vcs.xml',
+        'view/vcs_host.xml',
+        'view/vcs_team.xml',
         'view/project_project.xml',
         'view/project_task.xml',
         'view/res_partner.xml',
@@ -54,5 +67,7 @@ Access rights
         'security/ir.model.access.csv',
         'view/menus.xml',
         'data/installation_data_copy.xml',
+        'data/vcs_data.xml',
+        'data/vcs_host_data.xml',
     ],
 }

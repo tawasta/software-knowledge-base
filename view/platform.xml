@@ -9,6 +9,7 @@
 	            <tree string="Platforms">
 	                <field name="name"/>
 					<field name="description"/>
+					<field name="repository"/>
 	            </tree>
 	        </field>
 	    </record>
@@ -29,8 +30,10 @@
 	                        <h1><field name="name" required="1"/></h1>
 	                    </div>
 	
-						<separator string="Description"/>
-						<field name="description" nolabel="1"/>
+						<group>
+							<field name="description" />
+							<field name="repository" />
+						</group>
 
 	                </sheet>
 	                <div class="oe_chatter">
