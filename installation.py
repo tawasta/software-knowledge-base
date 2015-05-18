@@ -43,6 +43,12 @@ class installation(osv.Model):
                     
         return True
         
+    def copy(self, cr, uid, id, default=None, context=None):
+        ''' Set default data_copied_to_m2m to allow copying installations without being admin '''
+        default['data_copied_to_m2m'] = True
+        
+        return super(installation, self).copy(cr, uid, id, default, context=context)
+        
     _columns = {
         'name':             fields.char('Name'),
         'company_id': fields.many2one('res.company', 'Company'),

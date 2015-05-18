@@ -29,6 +29,12 @@ class Repository(models.Model):
         ''' TODO: validate url structure '''
         ''' TODO: check if url exists '''
         
+    @api.model
+    def create(self, vals):
+        vals['url_readonly'] = vals.get('url')
+        
+        return super(Repository, self).create(vals)
+    
     @api.multi
     def write(self, vals):
         vals['url_readonly'] = self.url
