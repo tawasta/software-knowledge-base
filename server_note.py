@@ -5,6 +5,7 @@ from openerp.tools.translate import _
 class server_note(osv.Model):
     
     _name = 'software_knowledge_base.server_note'       
+    _order = 'event_date DESC, create_date DESC'
 
     _columns = {
         'name': fields.char('Short description', required=True),

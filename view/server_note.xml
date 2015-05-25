@@ -6,7 +6,7 @@
             <field name="name">SW Knowledge Base - Server notes tree</field>
             <field name="model">software_knowledge_base.server_note</field>
             <field name="arch" type="xml">
-                <tree string="Notes">
+                <tree string="Notes" editable="top">
                     <field name="event_date"/>
                     <field name="name"/>
                     <field name="description"/>
