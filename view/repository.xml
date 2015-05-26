@@ -9,6 +9,7 @@
 	            <tree string="Repositories">
 	                <field name="name"/>
 					<field name="url"/>
+					<field name="tag_ids"/>
 	            </tree>
 	        </field>
 	    </record>
@@ -35,6 +36,10 @@
 						<group>
 							<field name="url" required="1" invisible='1'/>
 							<field name="url_readonly" widget='url'/>
+						</group>
+						
+						<group>
+							<field name='tag_ids' widget='many2many_tags'/>
 						</group>
 						
 						<separator string="Description"/>

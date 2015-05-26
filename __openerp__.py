@@ -36,6 +36,7 @@ Features
   * module
   * external component
   * repository
+  * repository tags
   * vcs
   * vcs host
  * Links installations to projects and partners 

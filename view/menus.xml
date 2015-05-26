@@ -38,6 +38,12 @@
             <field name="res_model">software_knowledge_base.repository</field>
             <field name="view_mode">tree,form</field>
         </record>
+        
+        <record id="repository_tags_action" model="ir.actions.act_window">
+            <field name="name">Repository tags</field>
+            <field name="res_model">software_knowledge_base.repository_tag</field>
+            <field name="view_mode">tree,form</field>
+        </record>
                        
         <record id="vcs_action" model="ir.actions.act_window">
             <field name="name">VCS</field>
@@ -63,7 +69,7 @@
 
         <menuitem id="environment_menu" name="Environments" parent="root_menu" sequence='10' />        
         <menuitem id="code_menu" name="Software" parent="root_menu" sequence='20' />
-        <menuitem id="vcs_menu" name="Version Control" parent="root_menu" sequence='30' />
+        <menuitem id="vcs_menu" name="Version Control" parent="root_menu" sequence='30' groups='software_knowledge_base.developer'/>
         
         <menuitem id="servers_menu"			parent="environment_menu" action="servers_action" sequence='10' />
         <menuitem id="installations_menu"	parent="environment_menu" action="installations_action" sequence='20' />
@@ -71,11 +77,12 @@
         <menuitem id="modules_menu" 		parent="code_menu" action="modules_action" sequence='10' />
         <menuitem id="ext_components_menu"	parent="code_menu" action="ext_components_action" sequence='20' />        
 		<menuitem id="platforms_menu"		parent="code_menu" action="platforms_action" sequence='30' />        
-		<menuitem id="repositories_menu"	parent="code_menu" action="repositories_action" sequence='40' />  
-		      
-		<menuitem id="vcs_type_menu"		parent="vcs_menu" action="vcs_action" sequence='10' />        
-		<menuitem id="vcs_hosts_menu"		parent="vcs_menu" action="vcs_hosts_action" sequence='20' />        
-		<menuitem id="vcs_teams_menu"		parent="vcs_menu" action="vcs_teams_action" sequence='30'/>        
+
+		<menuitem id="repositories_menu"	parent="vcs_menu" action="repositories_action" sequence='10'/>   
+		<menuitem id="repository_tags_menu"	parent="vcs_menu" action="repository_tags_action" sequence='20' /> 
+		<menuitem id="vcs_type_menu"		parent="vcs_menu" action="vcs_action" sequence='30' />        
+		<menuitem id="vcs_hosts_menu"		parent="vcs_menu" action="vcs_hosts_action" sequence='40' />        
+		<menuitem id="vcs_teams_menu"		parent="vcs_menu" action="vcs_teams_action" sequence='50' />
 
     </data>
 </openerp>

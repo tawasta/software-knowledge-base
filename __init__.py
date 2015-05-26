@@ -18,6 +18,7 @@ import installation
 import module
 import platform
 import repository
+import repository_tag
 import server
 import server_note
 import project_project
