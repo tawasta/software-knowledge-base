@@ -10,7 +10,6 @@ class RepositoryTag(models.Model):
     
     ''' Columns '''
     name = fields.Char('Name')
-    repository_id = fields.One2many('software_knowledge_base.repository', 'tag_ids', string='Repository')
     active = fields.Boolean('Active', default=True)
     
     #parent_id = fields.Many2one('software_knowledge_base.repository_tag')
