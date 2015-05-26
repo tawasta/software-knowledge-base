@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-08 09:24+0000\n"
-"PO-Revision-Date: 2015-05-08 12:28+0200\n"
+"POT-Creation-Date: 2015-05-26 12:10+0000\n"
+"PO-Revision-Date: 2015-05-26 15:13+0200\n"
 "Last-Translator: Jarmo Kortetjärvi <jarmo@futurable.fi>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,16 @@ msgstr ""
 "Plural-Forms: \n"
 "Language: fi\n"
 "X-Generator: Poedit 1.7.5\n"
+
+#. module: software_knowledge_base
+#: sql_constraint:software_knowledge_base.repository_tag:0
+msgid "A tag with this name already exists"
+msgstr "Tällä nimellä on jo olemassa tunniste"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.repository_tag,active:0
+msgid "Active"
+msgstr "Aktiivinen"
 
 #. module: software_knowledge_base
 #: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
@@ -73,6 +83,7 @@ msgstr "Core"
 #: field:software_knowledge_base.module,create_uid:0
 #: field:software_knowledge_base.platform,create_uid:0
 #: field:software_knowledge_base.repository,create_uid:0
+#: field:software_knowledge_base.repository_tag,create_uid:0
 #: field:software_knowledge_base.server,create_uid:0
 #: field:software_knowledge_base.server_note,create_uid:0
 #: field:software_knowledge_base.vcs,create_uid:0
@@ -87,6 +98,7 @@ msgstr "Luonut"
 #: field:software_knowledge_base.module,create_date:0
 #: field:software_knowledge_base.platform,create_date:0
 #: field:software_knowledge_base.repository,create_date:0
+#: field:software_knowledge_base.repository_tag,create_date:0
 #: field:software_knowledge_base.server,create_date:0
 #: field:software_knowledge_base.server_note,create_date:0
 #: field:software_knowledge_base.vcs,create_date:0
@@ -127,7 +139,6 @@ msgid "Date of the last message posted on the record."
 msgstr "Viimeisen viestin päivämäärä."
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.platform:software_knowledge_base.platform_form_view
 #: field:software_knowledge_base.platform,description:0
 #: view:software_knowledge_base.repository:software_knowledge_base.repository_form_view
 #: field:software_knowledge_base.repository,description:0
@@ -275,6 +286,7 @@ msgstr "Host"
 #: field:software_knowledge_base.module,id:0
 #: field:software_knowledge_base.platform,id:0
 #: field:software_knowledge_base.repository,id:0
+#: field:software_knowledge_base.repository_tag,id:0
 #: field:software_knowledge_base.server,id:0
 #: field:software_knowledge_base.server_note,id:0
 #: field:software_knowledge_base.vcs,id:0
@@ -402,6 +414,7 @@ msgstr "Viimeisin viesti"
 #: field:software_knowledge_base.module,write_uid:0
 #: field:software_knowledge_base.platform,write_uid:0
 #: field:software_knowledge_base.repository,write_uid:0
+#: field:software_knowledge_base.repository_tag,write_uid:0
 #: field:software_knowledge_base.server,write_uid:0
 #: field:software_knowledge_base.server_note,write_uid:0
 #: field:software_knowledge_base.vcs,write_uid:0
@@ -416,6 +429,7 @@ msgstr "Viimeisin päivittäjä"
 #: field:software_knowledge_base.module,write_date:0
 #: field:software_knowledge_base.platform,write_date:0
 #: field:software_knowledge_base.repository,write_date:0
+#: field:software_knowledge_base.repository_tag,write_date:0
 #: field:software_knowledge_base.server,write_date:0
 #: field:software_knowledge_base.server_note,write_date:0
 #: field:software_knowledge_base.vcs,write_date:0
@@ -492,6 +506,7 @@ msgstr "Asennuksen käyttämät modulit."
 #: field:software_knowledge_base.module,name:0
 #: field:software_knowledge_base.platform,name:0
 #: field:software_knowledge_base.repository,name:0
+#: field:software_knowledge_base.repository_tag,name:0
 #: field:software_knowledge_base.server,name:0
 #: field:software_knowledge_base.vcs,name:0
 #: field:software_knowledge_base.vcs_host,name:0
@@ -577,18 +592,26 @@ msgstr "Repositoryt"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_repository
+#: field:software_knowledge_base.module,repository:0
+#: field:software_knowledge_base.platform,repository:0
 msgid "Repository"
 msgstr "Repository"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.module,repository:0
-msgid "Repository URL"
-msgstr "Repositoryn osoite"
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_repository_tag
+msgid "Repository Tag"
+msgstr "Repositoryn tunniste"
 
 #. module: software_knowledge_base
 #: view:software_knowledge_base.repository:software_knowledge_base.repository_form_view
 msgid "Repository name"
 msgstr "Repositoryn nimi"
+
+#. module: software_knowledge_base
+#: model:ir.actions.act_window,name:software_knowledge_base.repository_tags_action
+#: model:ir.ui.menu,name:software_knowledge_base.repository_tags_menu
+msgid "Repository tags"
+msgstr "Repositoryn tunnisteet"
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.module,user_id:0
@@ -669,6 +692,11 @@ msgid "Supported platforms"
 msgstr "Tuetut alustat"
 
 #. module: software_knowledge_base
+#: field:software_knowledge_base.repository,tag_ids:0
+msgid "Tags"
+msgstr "Tunnisteet"
+
+#. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_project_task
 msgid "Task"
 msgstr "Tehtävä"
@@ -732,7 +760,7 @@ msgid "The full name"
 msgstr "Koko nimi"
 
 #. module: software_knowledge_base
-#: code:addons/software_knowledge_base/repository.py:40
+#: code:addons/software_knowledge_base/repository.py:48
 #: sql_constraint:software_knowledge_base.repository:0
 #, python-format
 msgid "This repository already exists."
@@ -800,11 +828,6 @@ msgstr "Versionhallintajärjestelmän isäntä"
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_vcs_team
 msgid "Version Control System Team"
 msgstr "Versionhallintajärjestelmän tiimi"
-
-#. module: software_knowledge_base
-#: help:software_knowledge_base.module,repository:0
-msgid "Version control location"
-msgstr "Versionhallinta"
 
 #. module: software_knowledge_base
 #: help:software_knowledge_base.installation,state:0
