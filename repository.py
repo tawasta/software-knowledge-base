@@ -23,6 +23,8 @@ class Repository(models.Model):
     
     tag_ids = fields.Many2many('software_knowledge_base.repository_tag', 'software_knowledge_base_repository_tag_rel', 'id', 'repository_id', string='Tags')
     
+    master_branch = fields.Char('Master branch', default='master')
+    
     @api.one
     @api.onchange('name', 'vcs', 'vcs_team', 'vcs_host')
     def generate_url(self):

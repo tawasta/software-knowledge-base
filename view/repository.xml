@@ -31,6 +31,7 @@
 							<field name="vcs" required="1" /><group/>
 							<field name="vcs_host" required="1" /><group/>
 							<field name="vcs_team" required="1" /><group/>
+							<field name="master_branch" required="1" /><group/>
 						</group>
 						
 						<group>
