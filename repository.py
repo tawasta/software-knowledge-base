@@ -53,10 +53,15 @@ class Repository(models.Model):
 
     def _get_readme_url(self):
         vcs_type = self.vcs_host.name
+        filename = "README.md" # TODO: support other file names/types
         
-        url_suffix = "/raw/8.0/README.md" + self.vcs_host.name
+        if vcs_type == 'Gitlist':
+            url_suffix = "/raw/" + self.master_branch + "/" + filename
+        else:
+            url_suffix = ""
     
         target_url = self.url + url_suffix
+        print "\n\n" + target_url
         
         return target_url
         
