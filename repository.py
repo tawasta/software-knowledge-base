@@ -34,7 +34,7 @@ class Repository(models.Model):
         ''' TODO: validate url structure '''
         ''' TODO: check if url exists '''
         
-    @api.depends('url', 'vcs_host', 'master_branch')
+    @api.depends('url', 'vcs_host', 'vcs_team', 'master_branch')
     def _get_readme(self):
         target_urls = self._get_readme_urls()
         
@@ -43,6 +43,7 @@ class Repository(models.Model):
 
         for target_url in target_urls:
             try:
+                print target_url + "\n\n"
                 http_response = urllib2.urlopen(target_url)
                 break
             except urllib2.HTTPError:
@@ -56,17 +57,22 @@ class Repository(models.Model):
     def _get_readme_urls(self):
         vcs_type = self.vcs_host.name
         filenames = ['README.md', 'README.txt']
+        url_prefix = self.url
         
         target_urls = []
         
         for filename in filenames:
-            if vcs_type == 'Gitlist':
+            if vcs_type == 'Github':
+                # TODO: Get this from VCS host config
+                url_prefix = "https://raw.githubusercontent.com" + "/" + self.vcs_team.name + "/" + self.name
+                url_suffix =  "/" + self.master_branch + "/" + filename
+            elif vcs_type == 'Gitlist':
                 url_suffix = "/raw/" + self.master_branch + "/" + filename
             else:
                 url_suffix = ""
     
-            if self.url and url_suffix:
-                target_urls.append( self.url + url_suffix )
+            if url_prefix and url_suffix:
+                target_urls.append( url_prefix + url_suffix )
         
         return target_urls
         
