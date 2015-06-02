@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from openerp import models, fields, api, _
 from openerp.tools.translate import _
+import urllib2
 
 class Repository(models.Model):
     
@@ -11,7 +12,7 @@ class Repository(models.Model):
     
     ''' Columns '''
     name = fields.Char('Name', help='E.g. "odoo-customizations" or "moodle-extension"')
-    description = fields.Text('Description', help='Longer description')
+    description = fields.Text('Description', compute='_get_readme')
     
     url = fields.Char('URL', help='The full URL')
     url_readonly = fields.Char('URL', help='The full URL', readonly=True)
@@ -30,6 +31,32 @@ class Repository(models.Model):
         
         ''' TODO: validate url structure '''
         ''' TODO: check if url exists '''
+        
+    @api.depends('url', 'vcs_host')
+    def _get_readme(self):
+        target_url = self._get_readme_url()
+        
+        readme = str()
+        
+        try:
+            http_response = urllib2.urlopen(target_url)
+        except urllib2.HTTPError:
+            self.description = "README NOT FOUND"
+            return False
+        
+        for line in http_response:
+            readme += line
+        
+        self.description = readme
+
+    def _get_readme_url(self):
+        vcs_type = self.vcs_host.name
+        
+        url_suffix = "/raw/8.0/README.md" + self.vcs_host.name
+    
+        target_url = self.url + url_suffix
+        
+        return target_url
         
     @api.model
     def create(self, vals):
