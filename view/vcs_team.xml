@@ -14,7 +14,7 @@
 	    </record>
 
 	    <!-- VCS Team Form View -->
-	    <record model="ir.ui.view" id="vcs_host_form_view">
+	    <record model="ir.ui.view" id="vcs_team_form_view">
 	        <field name="name">SW Knowledge Base - VCS Team form</field>
 	        <field name="model">software_knowledge_base.vcs_team</field>
 	        <field name="arch" type="xml">
