@@ -20,15 +20,10 @@
 	        <field name="arch" type="xml">
 	            <form string="VCS Providers">
 	                <sheet string="Form">
-	                    <div class="oe_title">
-	                        <div class="oe_edit_only">
-	                            <label for="name"/>
-	                        </div>
-	                        <h1><field name="name" required="1"/></h1>
-	                    </div>
 	
 						<group col='3'>
-							<field name="address"/><group/>
+							<field name="name" required="1"/><group/>
+							<field name="address" required="1"/><group/>
 						</group>
 
 	                </sheet>
