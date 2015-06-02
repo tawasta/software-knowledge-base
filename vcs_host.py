@@ -12,7 +12,7 @@ class VcsHost(models.Model):
     name = fields.Char('Name', help='E.g. github or bitbucket')
     description = fields.Text('Description', help='Longer description, if needed')
     address = fields.Char('Address', help='E.g. https://github.com or 192.168.100.100')
-    provider = fields.Many2one('software_knowledge_base.vcs_provider', string='Provider')
+    #provider = fields.Many2one('software_knowledge_base.vcs_provider', string='Provider')
     
     @api.one
     def name_get(self):
