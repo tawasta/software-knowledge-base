@@ -34,36 +34,41 @@ class Repository(models.Model):
         ''' TODO: validate url structure '''
         ''' TODO: check if url exists '''
         
-    @api.depends('url', 'vcs_host')
+    @api.depends('url', 'vcs_host', 'master_branch')
     def _get_readme(self):
-        target_url = self._get_readme_url()
+        target_urls = self._get_readme_urls()
         
         readme = str()
-        
-        try:
-            http_response = urllib2.urlopen(target_url)
-        except urllib2.HTTPError:
-            self.description = "README NOT FOUND"
-            return False
+        http_response = {}
+
+        for target_url in target_urls:
+            try:
+                http_response = urllib2.urlopen(target_url)
+                break
+            except urllib2.HTTPError:
+                self.description = "README NOT FOUND"
         
         for line in http_response:
             readme += line
         
         self.description = readme
 
-    def _get_readme_url(self):
+    def _get_readme_urls(self):
         vcs_type = self.vcs_host.name
-        filename = "README.md" # TODO: support other file names/types
+        filenames = ['README.md', 'README.txt']
         
-        if vcs_type == 'Gitlist':
-            url_suffix = "/raw/" + self.master_branch + "/" + filename
-        else:
-            url_suffix = ""
+        target_urls = []
+        
+        for filename in filenames:
+            if vcs_type == 'Gitlist':
+                url_suffix = "/raw/" + self.master_branch + "/" + filename
+            else:
+                url_suffix = ""
     
-        target_url = self.url + url_suffix
-        print "\n\n" + target_url
+            if self.url and url_suffix:
+                target_urls.append( self.url + url_suffix )
         
-        return target_url
+        return target_urls
         
     @api.model
     def create(self, vals):
