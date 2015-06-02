@@ -4,15 +4,14 @@ from openerp.tools.translate import _
 
 class VcsHost(models.Model):
     
-    _name = 'software_knowledge_base.vcs_host'
-    _description = 'Version Control System Host'
+    _name = 'software_knowledge_base.vcs_provider'
+    _description = 'Version Control System Provider'
     _order = 'name'
     
     ''' Columns '''
     name = fields.Char('Name', help='E.g. github or bitbucket')
     description = fields.Text('Description', help='Longer description, if needed')
     address = fields.Char('Address', help='E.g. https://github.com or 192.168.100.100')
-    provider = fields.Many2one('software_knowledge_base.vcs_provider', string='Provider')
     
     @api.one
     def name_get(self):

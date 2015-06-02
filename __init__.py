@@ -25,5 +25,6 @@ import project_project
 import project_task
 import res_partner
 import vcs
+import vcs_provider
 import vcs_host
 import vcs_team
