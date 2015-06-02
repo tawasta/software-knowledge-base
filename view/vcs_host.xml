@@ -9,7 +9,6 @@
 	            <tree string="VCS Hosts">
 	                <field name="name"/>
 	                <field name="description"/>
-					<field name="provider"/>
 					<field name="address"/>
 	            </tree>
 	        </field>
