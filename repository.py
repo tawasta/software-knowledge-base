@@ -64,8 +64,8 @@ class Repository(models.Model):
         for filename in filenames:
             if vcs_type == 'Github':
                 # TODO: Get this from VCS host config
-                url_prefix = "https://raw.githubusercontent.com" + "/" + self.vcs_team.name + "/" + self.name
-                url_suffix =  "/" + self.master_branch + "/" + filename
+                url_prefix = "%s/%s/%s" % ("https://raw.githubusercontent.com", self.vcs_team.name, self.name)
+                url_suffix = "/%s/%s" % (self.master_branch, filename)
             elif vcs_type == 'Gitlist':
                 url_suffix = "/raw/" + self.master_branch + "/" + filename
             else:
