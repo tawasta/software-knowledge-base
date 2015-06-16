@@ -10,6 +10,8 @@
 	                <field name="name"/>
 	                <field name="description"/>
 					<field name="address"/>
+					<field name="address_readme"/>
+					<field name="readme_autofetch"/>
 	            </tree>
 	        </field>
 	    </record>
@@ -30,6 +32,8 @@
 	
 						<group col='3'>
 							<field name="address"/><group/>
+							<field name="address_readme"/><group/>
+							<field name="readme_autofetch"/><group/>
 							<field name="description"/><group/>
 						</group>
 
