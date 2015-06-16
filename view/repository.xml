@@ -45,6 +45,8 @@
 						
 						<separator string="Description"/>
 						<field name="description" nolabel="1"/>
+						
+						<separator string="Readme"/>
 						<field name="readme" nolabel="1"/>
 
 	                </sheet>

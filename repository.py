@@ -13,7 +13,7 @@ class Repository(models.Model):
     ''' Columns '''
     name = fields.Char('Name', help='E.g. "odoo-customizations" or "moodle-extension"')
     description = fields.Text('Description')
-    readme = fields.Text('Readme', compute='_get_readme')
+    readme = fields.Text('Readme', compute='_get_readme', store=True)
     
     url = fields.Char('URL', help='The full URL')
     url_readonly = fields.Char('URL', help='The full URL', readonly=True)
@@ -49,7 +49,7 @@ class Repository(models.Model):
             try:
                 http_response = urllib2.urlopen(target_url)
             except urllib2.HTTPError:
-                self.description = "README NOT FOUND"
+                self.readme = "README NOT FOUND"
         
         for line in http_response:
             readme += line
