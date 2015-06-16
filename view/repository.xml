@@ -45,6 +45,7 @@
 						
 						<separator string="Description"/>
 						<field name="description" nolabel="1"/>
+						<field name="readme" nolabel="1"/>
 
 	                </sheet>
 	                <div class="oe_chatter">

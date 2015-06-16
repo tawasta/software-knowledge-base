@@ -37,6 +37,9 @@ class Repository(models.Model):
         
     @api.depends('url', 'vcs_host', 'vcs_team', 'master_branch')
     def _get_readme(self):
+        if not self.vcs_host.readme_autofetch:
+            return False
+        
         target_urls = self._get_readme_urls()
         
         readme = str()
@@ -51,22 +54,24 @@ class Repository(models.Model):
         for line in http_response:
             readme += line
         
-        self.description = readme
+        self.readme = readme
 
     def _get_readme_urls(self):
-        vcs_type = self.vcs_host.name
+        vcs_host = self.vcs_host.name
+        
         filenames = ['README.md', 'README.txt']
         url_prefix = self.url
         
         target_urls = []
         
         for filename in filenames:
-            if vcs_type == 'Github':
-                # TODO: Get this from VCS host config
+            if vcs_host == 'Github':
                 url_prefix = "%s/%s/%s" % ("https://raw.githubusercontent.com", self.vcs_team.name, self.name)
                 url_suffix = "/%s/%s" % (self.master_branch, filename)
-            elif vcs_type == 'Gitlist':
+                
+            elif vcs_host == 'Gitlist':
                 url_suffix = "/raw/" + self.master_branch + "/" + filename
+                
             else:
                 url_suffix = ""
     
