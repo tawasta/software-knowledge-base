@@ -16,7 +16,7 @@ class Repository(models.Model):
     readme = fields.Text('Readme', compute='_get_readme', store=True)
     
     url = fields.Char('URL', help='The full URL')
-    url_readonly = fields.Char('URL', help='The full URL', readonly=True)
+    url_readonly = fields.Char('URL', help='The full URL', readonly=True, store=True)
     
     vcs = fields.Many2one('software_knowledge_base.vcs', string='Type', default=lambda self: self.vcs.search([('name', '=', 'git')]) )
     vcs_host = fields.Many2one('software_knowledge_base.vcs_host', string='Host', default=lambda self: self.vcs_host.search([('name', '=', 'github')]))
@@ -88,7 +88,7 @@ class Repository(models.Model):
     
     @api.multi
     def write(self, vals):
-        vals['url_readonly'] = self.url
+        vals['url_readonly'] = vals['url']
         
         return super(Repository, self).write(vals)
 
