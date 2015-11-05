@@ -95,13 +95,15 @@ class Repository(models.Model):
 
     @api.model
     def create(self, vals):
-        vals['url_readonly'] = vals.get('url')
+        if 'url' in vals:
+            vals['url_readonly'] = vals.get('url')
 
         return super(Repository, self).create(vals)
 
     @api.multi
     def write(self, vals):
-        vals['url_readonly'] = vals['url']
+        if 'url' in vals:
+            vals['url_readonly'] = vals['url']
 
         return super(Repository, self).write(vals)
 
