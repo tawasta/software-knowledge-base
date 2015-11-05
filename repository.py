@@ -71,7 +71,7 @@ class Repository(models.Model):
     def _get_readme_urls(self):
         vcs_host = self.vcs_host.name
 
-        filenames = ['README.md', 'README.txt']
+        filenames = ['README.md', 'README.rst', 'README.txt']
         url_prefix = self.url
 
         target_urls = []
