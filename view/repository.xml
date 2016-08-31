@@ -44,7 +44,7 @@
 						</group>
 						
 						<separator string="Description"/>
-						<field name="description" nolabel="1"/>
+						<field name="description" nolabel="1" widget="bootstrap_markdown"/>
 						
 						<separator string="Readme"/>
 						<field name="readme" nolabel="1"/>

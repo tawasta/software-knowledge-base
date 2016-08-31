@@ -43,10 +43,10 @@
 								<field name="installation_ids"/>
 							</page>
 							<page string="Technical specifications">
-								<field name="specification"/>
+								<field name="specification" widget="bootstrap_markdown"/>
 							</page>
 							<page string="Additional info">
-								<field name="additional_info"/>
+								<field name="additional_info" widget="bootstrap_markdown"/>
 							</page>
 	                         <page string="Notes">
                                 <field name="note_ids"/>
