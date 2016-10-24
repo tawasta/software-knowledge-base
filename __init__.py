@@ -13,8 +13,9 @@
 #
 ##############################################################################
 
+import modules
+
 import external_component
-import installation
 import module
 import platform
 import repository
