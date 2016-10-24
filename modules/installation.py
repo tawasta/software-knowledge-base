@@ -41,9 +41,15 @@ class Installation(models.Model):
     additional_info = fields.Text('Additional info')
 
     platform_id = fields.Many2one('software_knowledge_base.platform', string='Platform')
+
     server_id = fields.Many2one('software_knowledge_base.server', string='Server')
+    server_ip_address = fields.Char('Server IP-address', compute='compute_server_ip_address')
+
     port = fields.Integer('Port')
+
     db_server_id = fields.Many2one('software_knowledge_base.server', string='Database server')
+    db_server_ip_address = fields.Char('DB server IP-address', compute='compute_db_server_ip_address')
+
     disk_usage = fields.Float('Disk Usage (MB)')
     url = fields.Char('URL')
     identifier = fields.Char('Identifier')
@@ -72,6 +78,13 @@ class Installation(models.Model):
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
+    def compute_server_ip_address(self):
+        for record in self:
+            record.server_ip_address = record.server_id.ip_address
+
+    def compute_db_server_ip_address(self):
+        for record in self:
+            record.db_server_ip_address = record.db_server_id.ip_address
 
     # 5. Constraints and onchanges
 
