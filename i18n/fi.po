@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-26 12:10+0000\n"
-"PO-Revision-Date: 2015-05-26 15:13+0200\n"
-"Last-Translator: Jarmo Kortetjärvi <jarmo@futurable.fi>\n"
+"POT-Creation-Date: 2016-10-24 12:23+0000\n"
+"PO-Revision-Date: 2016-10-24 15:28+0300\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: fi\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
 #. module: software_knowledge_base
 #: sql_constraint:software_knowledge_base.repository_tag:0
@@ -56,6 +56,11 @@ msgid "Admin"
 msgstr "Admin"
 
 #. module: software_knowledge_base
+#: field:software_knowledge_base.vcs_host,readme_autofetch:0
+msgid "Automatically fetch README files"
+msgstr "Hae README-tiedostot automaattisesti\t"
+
+#. module: software_knowledge_base
 #: selection:software_knowledge_base.module,module_type:0
 msgid "Community"
 msgstr "Yhteisö"
@@ -75,7 +80,7 @@ msgstr "Yritys"
 #. module: software_knowledge_base
 #: selection:software_knowledge_base.module,module_type:0
 msgid "Core"
-msgstr "Core"
+msgstr "Ydin"
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.external_component,create_uid:0
@@ -108,11 +113,6 @@ msgid "Created on"
 msgstr "Luotu"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.installation,partner_id:0
-msgid "Customer"
-msgstr "Asiakas"
-
-#. module: software_knowledge_base
 #: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
 #: field:software_knowledge_base.installation,partner_ids:0
 msgid "Customers"
@@ -122,6 +122,11 @@ msgstr "Asiakkaat"
 #: help:software_knowledge_base.installation,partner_ids:0
 msgid "Customers of this installation."
 msgstr "Asennukseen liittyvät asiakkaat."
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.installation,db_server_ip_address:0
+msgid "DB server IP-address"
+msgstr "Tietokantapalvelimen IP-osoite"
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.installation,db_server_id:0
@@ -145,7 +150,7 @@ msgstr "Viimeisen viestin päivämäärä."
 #: view:software_knowledge_base.vcs:software_knowledge_base.vcs_form_view
 #: field:software_knowledge_base.vcs,description:0
 #: field:software_knowledge_base.vcs_host,description:0
-#: view:software_knowledge_base.vcs_team:software_knowledge_base.vcs_host_form_view
+#: view:software_knowledge_base.vcs_team:software_knowledge_base.vcs_team_form_view
 #: field:software_knowledge_base.vcs_team,description:0
 msgid "Description"
 msgstr "Kuvaus"
@@ -159,6 +164,21 @@ msgstr "Kehittäjä"
 #: field:software_knowledge_base.installation,disk_usage:0
 msgid "Disk Usage (MB)"
 msgstr "Levytilan käyttö (MB)"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,display_name:0
+#: field:software_knowledge_base.installation,display_name:0
+#: field:software_knowledge_base.module,display_name:0
+#: field:software_knowledge_base.platform,display_name:0
+#: field:software_knowledge_base.repository,display_name:0
+#: field:software_knowledge_base.repository_tag,display_name:0
+#: field:software_knowledge_base.server,display_name:0
+#: field:software_knowledge_base.server_note,display_name:0
+#: field:software_knowledge_base.vcs,display_name:0
+#: field:software_knowledge_base.vcs_host,display_name:0
+#: field:software_knowledge_base.vcs_team,display_name:0
+msgid "Display Name"
+msgstr "Nimi"
 
 #. module: software_knowledge_base
 #: help:software_knowledge_base.vcs_team,name:0
@@ -189,6 +209,11 @@ msgstr "Esim. github tai bitbucket"
 #: help:software_knowledge_base.vcs_host,address:0
 msgid "E.g. https://github.com or 192.168.100.100"
 msgstr "Esim. https://github.com tai 192.168.100.100"
+
+#. module: software_knowledge_base
+#: help:software_knowledge_base.vcs_host,address_readme:0
+msgid "E.g. https://raw.githubusercontent.com"
+msgstr "E.g. https://raw.githubusercontent.com"
 
 #. module: software_knowledge_base
 #: model:ir.ui.menu,name:software_knowledge_base.environment_menu
@@ -246,7 +271,8 @@ msgstr "Seuraajat"
 #: view:software_knowledge_base.server:software_knowledge_base.server_form_view
 #: view:software_knowledge_base.server_note:software_knowledge_base.server_note_form_view
 #: view:software_knowledge_base.vcs:software_knowledge_base.vcs_form_view
-#: view:software_knowledge_base.vcs_team:software_knowledge_base.vcs_host_form_view
+#: view:software_knowledge_base.vcs_host:software_knowledge_base.vcs_host_form_view
+#: view:software_knowledge_base.vcs_team:software_knowledge_base.vcs_team_form_view
 msgid "Form"
 msgstr "Lomake"
 
@@ -409,6 +435,21 @@ msgid "Last Message Date"
 msgstr "Viimeisin viesti"
 
 #. module: software_knowledge_base
+#: field:software_knowledge_base.external_component,__last_update:0
+#: field:software_knowledge_base.installation,__last_update:0
+#: field:software_knowledge_base.module,__last_update:0
+#: field:software_knowledge_base.platform,__last_update:0
+#: field:software_knowledge_base.repository,__last_update:0
+#: field:software_knowledge_base.repository_tag,__last_update:0
+#: field:software_knowledge_base.server,__last_update:0
+#: field:software_knowledge_base.server_note,__last_update:0
+#: field:software_knowledge_base.vcs,__last_update:0
+#: field:software_knowledge_base.vcs_host,__last_update:0
+#: field:software_knowledge_base.vcs_team,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: software_knowledge_base
 #: field:software_knowledge_base.external_component,write_uid:0
 #: field:software_knowledge_base.installation,write_uid:0
 #: field:software_knowledge_base.module,write_uid:0
@@ -444,14 +485,14 @@ msgid "Libraries and other third party components used by this installation."
 msgstr "Asennuksen käyttämät kirjastot ja muut ulkoiset komponentit."
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.repository,description:0
-msgid "Longer description"
-msgstr "Pidempi kuvaus"
-
-#. module: software_knowledge_base
 #: help:software_knowledge_base.vcs_host,description:0
 msgid "Longer description, if needed"
 msgstr "Pidempi kuvaus, jos tarpeellinen"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.repository,master_branch:0
+msgid "Master branch"
+msgstr "Master branch"
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.external_component,message_ids:0
@@ -476,7 +517,7 @@ msgstr "Viestihistoria"
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_module
 msgid "Module"
-msgstr "Moduli"
+msgstr "Moduuli"
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.module,module_type:0
@@ -531,11 +572,6 @@ msgid "Partner"
 msgstr "Kumppani"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.installation,data_copied_to_m2m:0
-msgid "Partner data moved to new m2m field"
-msgstr "Partner data moved to new m2m field"
-
-#. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_platform
 #: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
 #: field:software_knowledge_base.installation,platform_id:0
@@ -571,6 +607,17 @@ msgstr "Projektit"
 #: help:software_knowledge_base.installation,project_ids:0
 msgid "Projects utilizing this installation."
 msgstr "Projektit, joihin tämä asennus liittyy"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.repository:software_knowledge_base.repository_form_view
+#: field:software_knowledge_base.repository,readme:0
+msgid "Readme"
+msgstr "Readme"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.vcs_host,address_readme:0
+msgid "Readme Address"
+msgstr "Readme:n osoite"
 
 #. module: software_knowledge_base
 #: help:project.task,module_ids:0
@@ -634,6 +681,11 @@ msgstr "Hae asennuksia"
 #: field:software_knowledge_base.server_note,server_id:0
 msgid "Server"
 msgstr "Palvelin"
+
+#. module: software_knowledge_base
+#: field:software_knowledge_base.installation,server_ip_address:0
+msgid "Server IP-address"
+msgstr "Palvelimen IP-osoite"
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.server,note_ids:0
@@ -718,7 +770,7 @@ msgid "Team description"
 msgstr "Tiimin kuvaus"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.vcs_team:software_knowledge_base.vcs_host_form_view
+#: view:software_knowledge_base.vcs_team:software_knowledge_base.vcs_team_form_view
 #: view:software_knowledge_base.vcs_team:software_knowledge_base.vcs_team_tree_view
 msgid "Teams"
 msgstr "Tiimit"
@@ -760,7 +812,7 @@ msgid "The full name"
 msgstr "Koko nimi"
 
 #. module: software_knowledge_base
-#: code:addons/software_knowledge_base/repository.py:48
+#: code:addons/software_knowledge_base/repository.py:112
 #: sql_constraint:software_knowledge_base.repository:0
 #, python-format
 msgid "This repository already exists."
@@ -799,6 +851,7 @@ msgstr "VCS"
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.vcs_hosts_action
 #: model:ir.ui.menu,name:software_knowledge_base.vcs_hosts_menu
+#: view:software_knowledge_base.vcs_host:software_knowledge_base.vcs_host_form_view
 #: view:software_knowledge_base.vcs_host:software_knowledge_base.vcs_host_tree_view
 msgid "VCS Hosts"
 msgstr "VCS Isännät"
