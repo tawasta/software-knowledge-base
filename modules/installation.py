@@ -61,15 +61,13 @@ class Installation(models.Model):
 
     module_ids = fields.Many2many(
         'software_knowledge_base.module', 'module_installation_rel', 'installation_id', 'module_id',
-        string = 'Modules', help='Modules used by this installation.'
+        string='Modules', help='Modules used by this installation.'
     )
 
     external_component_ids = fields.Many2many(
         'software_knowledge_base.external_component', 'installation_ext_comp_rel', 'installation_id', 'ext_comp_id',
         string='External components', help='Libraries and other third party components used by this installation.'
     )
-
-    data_copied_to_m2m = fields.boolean('Partner data moved to new m2m field', groups='base.group_system')
 
     # 3. Default methods
 
