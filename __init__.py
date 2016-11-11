@@ -26,4 +26,3 @@ import server_note
 import vcs
 import vcs_host
 import vcs_team
-from misc.software_knowledge_base.modules import server

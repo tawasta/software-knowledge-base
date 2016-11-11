@@ -15,7 +15,7 @@
 {
     'name': 'Software development knowledge base',
     'category': 'Knowledge',
-    'version': '8.0.1.0.6',
+    'version': '8.0.1.0.7',
     'author': 'Vizucom Oy',
     'website': 'http://www.vizucom.com',    
     'depends': ['project'],
