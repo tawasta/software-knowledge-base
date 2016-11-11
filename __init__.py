@@ -13,19 +13,17 @@
 #
 ##############################################################################
 
-import modules
-
 import external_component
 import module
+import modules
 import platform
-import repository
-import repository_tag
-import server
-import server_note
 import project_project
 import project_task
+import repository
+import repository_tag
 import res_partner
+import server_note
 import vcs
-#import vcs_provider
 import vcs_host
 import vcs_team
+from misc.software_knowledge_base.modules import server
