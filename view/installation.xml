@@ -12,6 +12,7 @@
 					<field name="project_ids"/>
 					<field name="platform_id"/>
 					<field name="server_id"/>
+					<field name="server_ip_address"/>
 					<field name="port"/>
 					<field name="db_server_id"/>
 					<field name="state"/>
