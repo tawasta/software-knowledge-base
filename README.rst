@@ -12,18 +12,21 @@ you may find this it useful for other platforms as well.
 
 Features
 --------
- * Adds the following models for storing and organizing development-related data:
-  * server
-  * server note
-  * installation
-  * platform
-  * module
-  * external component
-  * repository
-  * repository tags
-  * vcs
-  * vcs host
- * Links installations to projects and partners
+
+Adds the following models for storing and organizing development-related data:
+
+* server
+* server note
+* installation
+* platform
+* module
+* external component
+* repository
+* repository tags
+* vcs
+* vcs host
+
+Links installations to projects and partners
 
 Access rights
 -------------
@@ -55,8 +58,8 @@ Credits
 Contributors
 ------------
 
-* Firstname Lastname <email.address@tawasta.fi>
-* Second Person <second.person@tawasta.fi>
+* Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
+* Timo Talvitie <timo.talvitie@vizucom.com>
 
 Maintainer
 ----------
