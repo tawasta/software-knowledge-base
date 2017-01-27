@@ -9,7 +9,7 @@
 			<field name="arch" type="xml">
 
 				<field name="address" position="after">
-					<field name="readme_autofetch"/>
+					<field name="readme_autofetch" />
 				</field>
 
 			</field>

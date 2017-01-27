@@ -8,8 +8,17 @@
 			<field name="inherit_id" ref="software_knowledge_base.vcs_host_form_view" />
 			<field name="arch" type="xml">
 
+				<header position="inside">
+                    <button name="action_update_repositories"
+                        type="object"
+                        string="Update repositories"
+                        groups="base.group_no_one"
+                        attrs="{}"
+                    />
+                </header>
+
 				<field name="address" position="after">
-					<field name="readme_autofetch"/>
+					<field name="api_token" password="True"/>
 				</field>
 
 			</field>
