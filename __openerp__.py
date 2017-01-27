@@ -30,7 +30,9 @@
     'application': False,
     'installable': True,
     'external_dependencies': {
-        'python': [],
+        'python': [
+            'pyapi-gitlab',
+        ],
         'bin': [],
     },
     'depends': [
