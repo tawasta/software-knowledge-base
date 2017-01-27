@@ -2,10 +2,10 @@
 <openerp>
 	<data>
 
-		<record id="vcs_host_form_view" model="ir.ui.view">
-			<field name="name">vcs_host_form_view_api</field>
+		<record id="vcs_host_tree_view" model="ir.ui.view">
+			<field name="name">vcs_host_tree_view_api</field>
 			<field name="model">software_knowledge_base.vcs_host</field>
-			<field name="inherit_id" ref="software_knowledge_base.vcs_host_form_view" />
+			<field name="inherit_id" ref="software_knowledge_base.vcs_host_tree_view" />
 			<field name="arch" type="xml">
 
 				<field name="address" position="after">
