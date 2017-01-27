@@ -54,6 +54,15 @@ class SWKBRepository(models.Model):
     # 4. Compute and search fields, in the same order that fields declaration
 
     # 5. Constraints and onchanges
+    @api.one
+    @api.onchange('name', 'vcs', 'vcs_team', 'vcs_host')
+    def onchange_repository_generate_url(self):
+        self.url = "%s/%s/%s" % (self.vcs_host.address or '',
+                                 self.vcs_team.name or '', self.name or '')
+        self.url_readonly = self.url
+
+        ''' TODO: validate url structure '''
+        ''' TODO: check if url exists '''
 
     # 6. CRUD methods
     @api.model
