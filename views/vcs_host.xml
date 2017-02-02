@@ -10,7 +10,6 @@
 	                <field name="name"/>
 	                <field name="description"/>
 					<field name="address"/>
-					<field name="readme_autofetch"/>
 	            </tree>
 	        </field>
 	    </record>
@@ -21,6 +20,10 @@
 	        <field name="model">software_knowledge_base.vcs_host</field>
 	        <field name="arch" type="xml">
 	            <form string="VCS Hosts">
+                    <header>
+
+                    </header>
+
 	                <sheet string="Form">
 	                    <div class="oe_title">
 	                        <div class="oe_edit_only">
@@ -29,10 +32,9 @@
 	                        <h1><field name="name" required="1"/></h1>
 	                    </div>
 	
-						<group col='3'>
-							<field name="address"/><group/>
-							<field name="readme_autofetch"/><group/>
-							<field name="description"/><group/>
+						<group col='2'>
+							<field name="address"/>
+							<field name="description"/>
 						</group>
 
 	                </sheet>

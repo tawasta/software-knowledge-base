@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
@@ -13,16 +14,4 @@
 #
 ##############################################################################
 
-import external_component
-import module
-import modules
-import platform
-import project_project
-import project_task
-import repository
-import repository_tag
-import res_partner
-import server_note
-import vcs
-import vcs_host
-import vcs_team
+import models
