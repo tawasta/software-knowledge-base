@@ -34,8 +34,8 @@
 	                    </div>
 	
 						<group col='2'>
-							<field name="vcs"/>
 							<field name="address"/>
+							<field name="vcs"/>
 							<field name="description"/>
 						</group>
 
