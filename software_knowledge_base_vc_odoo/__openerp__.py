@@ -22,7 +22,7 @@
 {
     'name': 'SDKB Version control - Odoo',
     'summary': 'Adds Odoo-spesific tools for Software development knowledge base version control',
-    'version': '8.0.0.1.0',
+    'version': '8.0.0.2.0',
     'category': 'Knowledge',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -39,7 +39,8 @@
         'software_knowledge_base_vc',
     ],
     'data': [
-
+        'views/swkb_repository_form.xml',
+        'views/swkb_vcs_host_form.xml',
     ],
     'demo': [
     ],
