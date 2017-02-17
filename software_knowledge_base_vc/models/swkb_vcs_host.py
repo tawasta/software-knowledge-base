@@ -35,36 +35,40 @@ class SWKBVcsHost(models.Model):
     # 7. Action methods
     @api.multi
     def action_update_repositories(self):
-        repository_model = self.env['software_knowledge_base.repository']
-
         for record in self:
             if not record.api_token:
                 return False
 
-        session = gitlab.Gitlab(self.address, token=self.api_token, verify_ssl=False)  # TODO: verify_ssl=True
+            session = gitlab.Gitlab(record.address, token=record.api_token, verify_ssl=False)  # TODO: verify_ssl=True
 
-        for project in session.getall(session.getprojects):
-            if repository_model.search([('url', '=', project['http_url_to_repo'])]):
-                # Update repository
-                repository_values = {
-                    'name': project['name'],
-                    'master_branch': project['default_branch'],
-                    'vcs': 1,  # TODO
-                    'vcs_host': record.id,
-                }
-
-                repository_model.write(repository_values)
-
-            else:
-                # Create new
-                repository_values = {
-                    'name': project['name'],
-                    'url': project['http_url_to_repo'],
-                    'master_branch': project['default_branch'],
-                    'vcs': 1,  # TODO
-                    'vcs_host': record.id,
-                }
-
-                repository_model.create(repository_values)
+            for project in session.getall(session.getprojects):
+                record.parse_repository_project(project)
 
     # 8. Business methods
+    def parse_repository_project(self, project):
+        self.ensure_one()
+
+        repository_model = self.env['software_knowledge_base.repository']
+
+        if repository_model.search([('url', '=', project['http_url_to_repo'])]):
+            # Update repository
+            repository_values = {
+                'name': project['name'],
+                'master_branch': project['default_branch'],
+                'vcs': 1,  # TODO
+                'vcs_host': self.id,
+            }
+
+            repository_model.write(repository_values)
+
+        else:
+            # Create new
+            repository_values = {
+                'name': project['name'],
+                'url': project['http_url_to_repo'],
+                'master_branch': project['default_branch'],
+                'vcs': 1,  # TODO
+                'vcs_host': self.id,
+            }
+
+            repository_model.create(repository_values)
