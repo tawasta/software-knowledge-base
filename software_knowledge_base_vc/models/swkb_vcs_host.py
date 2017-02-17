@@ -21,7 +21,7 @@ class SWKBVcsHost(models.Model):
 
     # 2. Fields declaration
     #readme = fields.Text(compute='_get_readme', store=True)
-    readme_autofetch = fields.Boolean("Automatically fetch README files")
+    vcs_api = fields.Many2one('software_knowledge_base.vcs_api', "VCS API")
     api_token = fields.Char("API token")
     api_verify_ssl = fields.Boolean("API verify SSL", default=True)
 
@@ -37,7 +37,7 @@ class SWKBVcsHost(models.Model):
     @api.multi
     def action_update_repositories(self):
         for record in self:
-            if not record.api_token:
+            if not record.api_token or not record.vcs_api:
                 return False
 
             session = gitlab.Gitlab(record.address, token=record.api_token, verify_ssl=record.api_verify_ssl)
@@ -48,6 +48,8 @@ class SWKBVcsHost(models.Model):
     # 8. Business methods
     def parse_repository_project(self, project):
         self.ensure_one()
+
+        print project
 
         repository_model = self.env['software_knowledge_base.repository']
 
