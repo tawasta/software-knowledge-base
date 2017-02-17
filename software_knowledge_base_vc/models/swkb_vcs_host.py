@@ -49,6 +49,12 @@ class SWKBVcsHost(models.Model):
             for project in session.getall(session.getprojects):
                 record.parse_repository_project(project)
 
+    @api.multi
+    def action_update_repository_readmes(self):
+        for record in self:
+            for repository in record.repositories:
+                repository._get_readme()
+
     # 8. Business methods
     def parse_repository_project(self, project):
         self.ensure_one()
@@ -68,26 +74,40 @@ class SWKBVcsHost(models.Model):
 
     def parse_repository_project_gitlab(self, project):
         repository_model = self.env['software_knowledge_base.repository']
+        vcs_team_model = self.env['software_knowledge_base.vcs_team']
 
-        if repository_model.search([('url', '=', project['http_url_to_repo'])]):
+        # Check if team exists
+        team_path = project['namespace']['path']
+        vcs_team = vcs_team_model.search([('name', '=', team_path)])
+
+        if not vcs_team:
+            vcs_team = vcs_team_model.create({'name': team_path})
+
+        existing_repository = repository_model.search([('url', '=', project['web_url'])])
+
+        if existing_repository:
             # Update repository
+
             repository_values = {
                 'name': project['name'],
                 'master_branch': project['default_branch'],
                 'vcs': 1,  # TODO
                 'vcs_host': self.id,
+                'vcs_team': vcs_team.id,
+                'url': project['web_url'],
             }
 
-            repository_model.write(repository_values)
+            existing_repository.write(repository_values)
 
         else:
             # Create new
             repository_values = {
                 'name': project['name'],
-                'url': project['http_url_to_repo'],
+                'url': project['web_url'],
                 'master_branch': project['default_branch'],
                 'vcs': 1,  # TODO
                 'vcs_host': self.id,
+                'vcs_team': vcs_team.id,
             }
 
             repository_model.create(repository_values)

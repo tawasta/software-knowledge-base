@@ -35,8 +35,7 @@ class SWKBRepository(models.Model):
     # 8. Business methods
     @api.depends('url', 'vcs_host', 'vcs_team', 'master_branch')
     def _get_readme(self):
-        if not self.vcs_host.readme_autofetch:
-            return False
+        return False
 
         target_urls = self._get_readme_urls()
 

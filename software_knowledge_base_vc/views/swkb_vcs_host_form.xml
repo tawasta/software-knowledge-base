@@ -15,9 +15,15 @@
                         groups="base.group_no_one"
                         attrs="{}"
                     />
+					<button name="action_update_repository_readmes"
+                        type="object"
+                        string="Update readmes"
+                        groups="base.group_no_one"
+                        attrs="{}"
+                    />
                 </header>
 
-				<field name="address" position="after">
+				<field name="vcs" position="after">
 					<field name="vcs_api" />
 					<field name="api_token" password="True"/>
 					<field name="api_verify_ssl" />
