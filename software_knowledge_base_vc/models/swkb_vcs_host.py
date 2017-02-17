@@ -89,9 +89,9 @@ class SWKBVcsHost(models.Model):
         if not vcs_team:
             vcs_team = vcs_team_model.create({'name': team_path})
 
-        existing_repository = repository_model.search([('url', '=', project['web_url'])])
+        repository = repository_model.search([('url', '=', project['web_url'])])
 
-        if existing_repository:
+        if repository:
             # Update repository
 
             repository_values = {
@@ -103,7 +103,7 @@ class SWKBVcsHost(models.Model):
                 'url': project['web_url'],
             }
 
-            existing_repository.write(repository_values)
+            repository.write(repository_values)
 
         else:
             # Create new
@@ -116,4 +116,6 @@ class SWKBVcsHost(models.Model):
                 'vcs_team': vcs_team.id,
             }
 
-            repository_model.create(repository_values)
+            repository = repository_model.create(repository_values)
+
+        return repository
