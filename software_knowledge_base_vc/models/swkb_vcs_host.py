@@ -93,7 +93,6 @@ class SWKBVcsHost(models.Model):
 
         if repository:
             # Update repository
-
             repository_values = {
                 'name': project['name'],
                 'master_branch': project['default_branch'],
@@ -106,7 +105,7 @@ class SWKBVcsHost(models.Model):
             repository.write(repository_values)
 
         else:
-            # Create new
+            # Create a new
             repository_values = {
                 'name': project['name'],
                 'url': project['web_url'],
