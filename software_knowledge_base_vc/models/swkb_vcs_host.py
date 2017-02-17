@@ -52,7 +52,7 @@ class SWKBVcsHost(models.Model):
             record.validate_host()
 
             for repository in record.repositories:
-                repository._get_readme()
+                repository.action_update_readme()
 
     # 8. Business methods
     def validate_host(self):

@@ -55,4 +55,4 @@ class SWKBRepository(models.Model):
                     readme_file_content = base64.b64decode(readme_file['content'])
 
                     self.readme = readme_file_content
-                    break
+                    continue
