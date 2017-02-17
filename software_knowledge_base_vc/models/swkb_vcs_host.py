@@ -7,6 +7,8 @@ import gitlab
 
 # 3. Odoo imports (openerp):
 from openerp import api, fields, models
+from openerp import _
+from openerp.exceptions import ValidationError
 
 # 4. Imports from Odoo modules:
 
@@ -37,8 +39,10 @@ class SWKBVcsHost(models.Model):
     @api.multi
     def action_update_repositories(self):
         for record in self:
-            if not record.api_token or not record.vcs_api:
-                return False
+            if not record.api_token:
+                raise ValidationError(_("API token is not set"))
+            if not record.vcs_api:
+                raise ValidationError(_("VCS API is not set"))
 
             session = gitlab.Gitlab(record.address, token=record.api_token, verify_ssl=record.api_verify_ssl)
 
@@ -49,8 +53,20 @@ class SWKBVcsHost(models.Model):
     def parse_repository_project(self, project):
         self.ensure_one()
 
-        print project
+        api = self.vcs_api.code
 
+        if api == 'github':
+            # TODO: github api
+            raise ValidationError(_("Github API is not implemented"))
+
+        if api == 'gitlab':
+            self.parse_repository_project_gitlab(project)
+
+        if api == 'bitbucket':
+            # TODO: bitbucket api
+            raise ValidationError(_("Bitbucket API is not implemented"))
+
+    def parse_repository_project_gitlab(self, project):
         repository_model = self.env['software_knowledge_base.repository']
 
         if repository_model.search([('url', '=', project['http_url_to_repo'])]):
