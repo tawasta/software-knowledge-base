@@ -22,7 +22,7 @@
 {
     'name': 'SDKB Version control',
     'summary': 'Adds version control integration to Software development knowledge base',
-    'version': '8.0.0.3.2',
+    'version': '8.0.0.3.3',
     'category': 'Knowledge',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',

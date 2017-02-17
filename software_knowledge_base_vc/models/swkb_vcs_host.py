@@ -23,6 +23,7 @@ class SWKBVcsHost(models.Model):
     #readme = fields.Text(compute='_get_readme', store=True)
     readme_autofetch = fields.Boolean("Automatically fetch README files")
     api_token = fields.Char("API token")
+    verify_ssl = fields.Boolean("Verify SSL", default=True)
 
     # 3. Default methods
 
@@ -39,7 +40,7 @@ class SWKBVcsHost(models.Model):
             if not record.api_token:
                 return False
 
-            session = gitlab.Gitlab(record.address, token=record.api_token, verify_ssl=False)  # TODO: verify_ssl=True
+            session = gitlab.Gitlab(record.address, token=record.api_token, verify_ssl=record.verify_ssl)
 
             for project in session.getall(session.getprojects):
                 record.parse_repository_project(project)
