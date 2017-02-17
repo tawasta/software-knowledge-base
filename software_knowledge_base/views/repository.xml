@@ -44,10 +44,10 @@
 						</group>
 						
 						<separator string="Description"/>
-						<field name="description" nolabel="1" widget="bootstrap_markdown"/>
+						<field name="description" nolabel="1" widget="bootstrap_markdown" />
 						
 						<separator string="Readme"/>
-						<field name="readme" nolabel="1"/>
+						<field name="readme" nolabel="1" widget="bootstrap_markdown"/>
 
 	                </sheet>
 	                <div class="oe_chatter">
