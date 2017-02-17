@@ -39,10 +39,7 @@ class SWKBVcsHost(models.Model):
     @api.multi
     def action_update_repositories(self):
         for record in self:
-            if not record.api_token:
-                raise ValidationError(_("API token is not set"))
-            if not record.vcs_api:
-                raise ValidationError(_("VCS API is not set"))
+            record.validate_host()
 
             session = gitlab.Gitlab(record.address, token=record.api_token, verify_ssl=record.api_verify_ssl)
 
@@ -52,10 +49,19 @@ class SWKBVcsHost(models.Model):
     @api.multi
     def action_update_repository_readmes(self):
         for record in self:
+            record.validate_host()
+
             for repository in record.repositories:
                 repository._get_readme()
 
     # 8. Business methods
+    def validate_host(self):
+        for record in self:
+            if not record.api_token:
+                raise ValidationError(_("API token is not set"))
+            if not record.vcs_api:
+                raise ValidationError(_("VCS API is not set"))
+
     def parse_repository_project(self, project):
         self.ensure_one()
 

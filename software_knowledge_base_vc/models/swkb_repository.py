@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
 # 1. Standard library imports:
-import urllib2
+import base64
 
 # 2. Known third party imports:
+import gitlab
 
 # 3. Odoo imports (openerp):
 from openerp import api, fields, models
@@ -31,49 +32,27 @@ class SWKBRepository(models.Model):
     # 6. CRUD methods
 
     # 7. Action methods
+    @api.multi
+    def action_update_readme(self):
+        for record in self:
+            record._get_readme()
 
     # 8. Business methods
     @api.depends('url', 'vcs_host', 'vcs_team', 'master_branch')
     def _get_readme(self):
-        return False
+        for record in self:
+            host = record.vcs_host
 
-        target_urls = self._get_readme_urls()
+            session = gitlab.Gitlab(host.address, token=host.api_token, verify_ssl=host.api_verify_ssl)
+            project_path = "%s/%s" % (record.vcs_team.name, record.name)
+            project = session.getproject(project_path)
+            files = session.getrepositorytree(project['id'])
 
-        readme = str()
-        http_response = {}
+            for file in files:
+                if file['path'][0:6].lower() == 'readme':
+                    readme_file = session.getfile(project['id'], file['path'], project['default_branch'])
 
-        for target_url in target_urls:
-            try:
-                http_response = urllib2.urlopen(target_url)
-            except urllib2.HTTPError:
-                self.readme = "README NOT FOUND"
+                    readme_file_content = base64.b64decode(readme_file['content'])
 
-        for line in http_response:
-            readme += line
-
-        self.readme = readme
-
-    def _get_readme_urls(self):
-        vcs_host = self.vcs_host.name
-
-        filenames = ['README.md', 'README.rst', 'README.txt']
-        url_prefix = self.url
-
-        target_urls = []
-
-        for filename in filenames:
-            if vcs_host == 'Github':
-                url_prefix = "%s/%s/%s" % ("https://raw.githubusercontent.com",
-                                           self.vcs_team.name, self.name)
-                url_suffix = "/%s/%s" % (self.master_branch, filename)
-
-            elif vcs_host == 'Gitlist':
-                url_suffix = "/raw/" + self.master_branch + "/" + filename
-
-            else:
-                url_suffix = ""
-
-            if url_prefix and url_suffix:
-                target_urls.append(url_prefix + url_suffix)
-
-        return target_urls
+                    self.readme = readme_file_content
+                    break
