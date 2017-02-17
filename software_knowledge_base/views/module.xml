@@ -42,6 +42,9 @@
 						<separator string="Summary"/>
 						<field name="summary" nolabel="1"/>
 						
+						<separator string="Readme"/>
+						<field name="readme" widget="bootstrap_markdown" nolabel="1"/>
+
 						<separator string="Features"/>
 						<field name="features" nolabel="1"/>
 

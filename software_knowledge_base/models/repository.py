@@ -26,7 +26,7 @@ class SWKBRepository(models.Model):
     name = fields.Char('Name', help='E.g. "odoo-customizations" or "moodle-extension"')
     description = fields.Text('Description')
     readme = fields.Text('Readme')
-    active = fields.Boolean()
+    active = fields.Boolean(default=True)
 
     url = fields.Char('URL', help='The full URL')
     url_readonly = fields.Char('URL', help='The full URL', readonly=True, store=True)

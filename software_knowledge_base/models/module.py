@@ -14,17 +14,19 @@ class module(models.Model):
                     ('community_commercial','Community (commercial)'),                    
                     ('inhouse','In-house')]
 
-    name =                 fields.Char('Name')
-    summary =              fields.Char(size=128, string='Summary')
-    module_type =          fields.Selection(_MODULE_TYPE_VALUES, 'Module type', help='Where the module has been developed')
-    repository =           fields.Many2one('software_knowledge_base.repository', string='Repository')
-    user_id =              fields.Many2one('res.users', 'Responsible')
-    features =             fields.Text('Features')
-    installation_notes =   fields.Text('Installation notes')
-    issues =               fields.Text('Issues', help='Known bugs, limitations, incompatibilities with other modules etc.')
-    additional_info =      fields.Text('Additional info', help='Additional information')
+    name = fields.Char('Name')
+    summary = fields.Char(size=128, string='Summary')
+    module_type = fields.Selection(_MODULE_TYPE_VALUES, 'Module type', help='Where the module has been developed')
+    repository = fields.Many2one('software_knowledge_base.repository', string='Repository')
+    user_id = fields.Many2one('res.users', 'Responsible')
+    features = fields.Text('Features')
+    readme = fields.Text('Readme')
+    installation_notes = fields.Text('Installation notes')
+    issues = fields.Text('Issues', help='Known bugs, limitations, incompatibilities with other modules etc.')
+    additional_info = fields.Text('Additional info', help='Additional information')
+    active = fields.Boolean(default=True)
     
-    installation_ids =     fields.Many2many('software_knowledge_base.installation', 'module_installation_rel', 'module_id', 'installation_id',
+    installation_ids = fields.Many2many('software_knowledge_base.installation', 'module_installation_rel', 'module_id', 'installation_id',
                                              string='Installations', help='Where this module has been deployed.')
             
     #'parent_ids'=           fields.many2many(
