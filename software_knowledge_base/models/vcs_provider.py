@@ -2,7 +2,7 @@
 from openerp import models, fields, api, _
 from openerp.tools.translate import _
 
-class VcsHost(models.Model):
+class VcsProvider(models.Model):
     
     _name = 'software_knowledge_base.vcs_provider'
     _description = 'Version Control System Provider'

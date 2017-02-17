@@ -8,6 +8,7 @@
 	        <field name="arch" type="xml">
 	            <tree string="VCS Hosts">
 	                <field name="name"/>
+	                <field name="vcs" string="VCS"/>
 	                <field name="description"/>
 					<field name="address"/>
 	            </tree>
@@ -33,6 +34,7 @@
 	                    </div>
 	
 						<group col='2'>
+							<field name="vcs"/>
 							<field name="address"/>
 							<field name="description"/>
 						</group>

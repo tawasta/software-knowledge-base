@@ -10,6 +10,7 @@ class VcsHost(models.Model):
     
     ''' Columns '''
     name = fields.Char('Name', help='E.g. github or bitbucket')
+    vcs = fields.Many2one('software_knowledge_base.vcs', string='Version control system', required=True)
     description = fields.Text('Description', help='Longer description, if needed')
     address = fields.Char('Address', help='E.g. https://github.com or 192.168.100.100')
     address_readme = fields.Char('Readme Address', help='E.g. https://raw.githubusercontent.com')
