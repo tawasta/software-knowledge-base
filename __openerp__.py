@@ -22,7 +22,7 @@
 {
     'name': 'Software development knowledge base',
     'summary': 'A module for maintaining data regarding software installations and modules',
-    'version': '8.0.1.0.10',
+    'version': '8.0.1.0.11',
     'category': 'Knowledge',
     'website': 'http://www.vizucom.com',
     'author': 'Vizucom Oy',
@@ -37,17 +37,14 @@
         'project',
     ],
     'data': [
-        'data/installation_data_copy.xml',
         'data/ir_module_category.xml',
         'data/res_groups.xml',
-        'security/ir.model.access.csv',
-        'view/menus.xml',
-
         'data/vcs_data.xml',
         'data/vcs_host_data.xml',
 
         'security/ir.model.access.csv',
 
+        'views/menus.xml',
         'views/external_component.xml',
         'views/installation.xml',
         'views/menus.xml',
