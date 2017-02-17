@@ -41,12 +41,19 @@ class SWKBVcsHost(models.Model):
             if not record.api_token:
                 return False
 
-        session = gitlab.Gitlab(self.address, token=self.api_token, verify_ssl=False)
+        session = gitlab.Gitlab(self.address, token=self.api_token, verify_ssl=False)  # TODO: verify_ssl=True
 
         for project in session.getall(session.getprojects):
-            if record.search([('name', '=', project['name'])]):
-                # TODO: update
-                pass
+            if repository_model.search([('url', '=', project['http_url_to_repo'])]):
+                # Update repository
+                repository_values = {
+                    'name': project['name'],
+                    'master_branch': project['default_branch'],
+                    'vcs': 1,  # TODO
+                    'vcs_host': record.id,
+                }
+
+                repository_model.write(repository_values)
 
             else:
                 # Create new
