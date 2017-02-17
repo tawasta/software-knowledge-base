@@ -37,6 +37,7 @@
 						<group>
 							<field name="url" required="1" invisible='1'/>
 							<field name="url_readonly" widget='url'/>
+							<field name="active" />
 						</group>
 						
 						<group>
