@@ -19,7 +19,7 @@
 
 				<field name="address" position="after">
 					<field name="api_token" password="True"/>
-					<field name="verify_ssl" />
+					<field name="api_verify_ssl" />
 				</field>
 
 			</field>
