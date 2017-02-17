@@ -37,6 +37,7 @@
 							<field name="address"/>
 							<field name="vcs"/>
 							<field name="description"/>
+							<field name="repositories"/>
 						</group>
 
 	                </sheet>

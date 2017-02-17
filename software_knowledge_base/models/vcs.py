@@ -11,7 +11,7 @@ class Vcs(models.Model):
     ''' Columns '''
     name = fields.Char('Name', help='E.g. git or svn')
     description = fields.Text('Description', help='The full name')
-    vcs_hosts = fields.One2many('software_knowledge_base.vcs_host', 'id', string='VCS Hosts', readme=True)
+    vcs_hosts = fields.One2many('software_knowledge_base.vcs_host', 'vcs', string='VCS Hosts', readme=True)
 
     @api.one
     def name_get(self):
