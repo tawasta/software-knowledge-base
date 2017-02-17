@@ -33,6 +33,7 @@
 						<group>
 							<field name="description" />
 							<field name="repository" />
+							<field name="active" />
 						</group>
 
 	                </sheet>

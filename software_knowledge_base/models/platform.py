@@ -12,3 +12,4 @@ class platform(models.Model):
     name = fields.Char('Name', help='E.g. Odoo 8 or Drupal 7')
     description = fields.Text('Description')
     repository = fields.Many2one('software_knowledge_base.repository', string='Repository')
+    active = fields.Booelan()
