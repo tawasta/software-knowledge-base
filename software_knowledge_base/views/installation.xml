@@ -42,11 +42,12 @@
                             <group col="2">
                                 <field name="platform_id"/>
                                 <field name="disk_usage"/>
-                                <field name="url" widget="url"/>
                                 <field name="identifier"/>
                                 <field name="company_id" widget="selection"/>
                             </group>
                             <group col="2">
+                                <field name="url" widget="url"/>
+
 							    <field name="server_id"/>
 							    <field name="server_ip_address"/>
                                 <field name="port"/>
