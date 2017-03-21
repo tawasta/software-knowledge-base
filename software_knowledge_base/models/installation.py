@@ -35,7 +35,7 @@ class Installation(models.Model):
     state = fields.Selection(
         _INSTALLATION_STATE_VALUES,
         'Status',
-        help='Where the module has been developed',
+        help='What is the deployments status of the installation',
         default='setup'
     )
     additional_info = fields.Text('Additional info')
