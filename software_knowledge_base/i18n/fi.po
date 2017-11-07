@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-24 12:23+0000\n"
-"PO-Revision-Date: 2016-10-24 15:28+0300\n"
+"POT-Creation-Date: 2017-11-07 13:23+0000\n"
+"PO-Revision-Date: 2017-11-07 15:24+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -23,6 +23,9 @@ msgid "A tag with this name already exists"
 msgstr "Tällä nimellä on jo olemassa tunniste"
 
 #. module: software_knowledge_base
+#: field:software_knowledge_base.module,active:0
+#: field:software_knowledge_base.platform,active:0
+#: field:software_knowledge_base.repository,active:0
 #: field:software_knowledge_base.repository_tag,active:0
 msgid "Active"
 msgstr "Aktiivinen"
@@ -56,11 +59,6 @@ msgid "Admin"
 msgstr "Admin"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.vcs_host,readme_autofetch:0
-msgid "Automatically fetch README files"
-msgstr "Hae README-tiedostot automaattisesti\t"
-
-#. module: software_knowledge_base
 #: selection:software_knowledge_base.module,module_type:0
 msgid "Community"
 msgstr "Yhteisö"
@@ -80,7 +78,7 @@ msgstr "Yritys"
 #. module: software_knowledge_base
 #: selection:software_knowledge_base.module,module_type:0
 msgid "Core"
-msgstr "Ydin"
+msgstr "Core"
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.external_component,create_uid:0
@@ -357,6 +355,11 @@ msgid "In-house"
 msgstr "Itse kehitetty"
 
 #. module: software_knowledge_base
+#: selection:software_knowledge_base.module,module_type:0
+msgid "In-house (commercial)"
+msgstr "In-house (commercial)"
+
+#. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_installation
 #: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
 #: view:software_knowledge_base.module:software_knowledge_base.module_form_view
@@ -609,6 +612,8 @@ msgid "Projects utilizing this installation."
 msgstr "Projektit, joihin tämä asennus liittyy"
 
 #. module: software_knowledge_base
+#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+#: field:software_knowledge_base.module,readme:0
 #: view:software_knowledge_base.repository:software_knowledge_base.repository_form_view
 #: field:software_knowledge_base.repository,readme:0
 msgid "Readme"
@@ -618,6 +623,11 @@ msgstr "Readme"
 #: field:software_knowledge_base.vcs_host,address_readme:0
 msgid "Readme Address"
 msgstr "Readme:n osoite"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+msgid "Ready"
+msgstr "Valmis"
 
 #. module: software_knowledge_base
 #: help:project.task,module_ids:0
@@ -634,6 +644,7 @@ msgstr "Projektihallinnan tehtävät"
 #: model:ir.ui.menu,name:software_knowledge_base.repositories_menu
 #: view:software_knowledge_base.repository:software_knowledge_base.repository_form_view
 #: view:software_knowledge_base.repository:software_knowledge_base.repository_tree_view
+#: field:software_knowledge_base.vcs_host,repositories:0
 msgid "Repositories"
 msgstr "Repositoryt"
 
@@ -677,6 +688,7 @@ msgstr "Hae asennuksia"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_server
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
 #: field:software_knowledge_base.installation,server_id:0
 #: field:software_knowledge_base.server_note,server_id:0
 msgid "Server"
@@ -707,6 +719,11 @@ msgid "Servers"
 msgstr "Palvelimet"
 
 #. module: software_knowledge_base
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+msgid "Setup"
+msgstr "Asennusvaiheessa"
+
+#. module: software_knowledge_base
 #: field:software_knowledge_base.server_note,name:0
 msgid "Short description"
 msgstr "Lyhyt kuvaus"
@@ -722,9 +739,14 @@ msgid "Software knowledge base"
 msgstr "Tietämyskanta"
 
 #. module: software_knowledge_base
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+msgid "State"
+msgstr "Tila"
+
+#. module: software_knowledge_base
 #: field:software_knowledge_base.installation,state:0
 msgid "Status"
-msgstr "Status"
+msgstr "Tila"
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.external_component,message_summary:0
@@ -786,6 +808,7 @@ msgid "Technical specifications"
 msgstr "Speksit"
 
 #. module: software_knowledge_base
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
 #: selection:software_knowledge_base.installation,state:0
 msgid "Terminated"
 msgstr "Irtisanottu"
@@ -810,13 +833,6 @@ msgstr "Koko url"
 #: help:software_knowledge_base.vcs,description:0
 msgid "The full name"
 msgstr "Koko nimi"
-
-#. module: software_knowledge_base
-#: code:addons/software_knowledge_base/repository.py:112
-#: sql_constraint:software_knowledge_base.repository:0
-#, python-format
-msgid "This repository already exists."
-msgstr "Tämä repository on jo olemassa."
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.repository,vcs:0
@@ -845,12 +861,15 @@ msgstr "Lukemattomat viestit"
 #: model:ir.ui.menu,name:software_knowledge_base.vcs_type_menu
 #: view:software_knowledge_base.vcs:software_knowledge_base.vcs_form_view
 #: view:software_knowledge_base.vcs:software_knowledge_base.vcs_tree_view
+#: view:software_knowledge_base.vcs_host:software_knowledge_base.vcs_host_tree_view
+#: field:software_knowledge_base.vcs_host,vcs:0
 msgid "VCS"
 msgstr "VCS"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.vcs_hosts_action
 #: model:ir.ui.menu,name:software_knowledge_base.vcs_hosts_menu
+#: field:software_knowledge_base.vcs,vcs_hosts:0
 #: view:software_knowledge_base.vcs_host:software_knowledge_base.vcs_host_form_view
 #: view:software_knowledge_base.vcs_host:software_knowledge_base.vcs_host_tree_view
 msgid "VCS Hosts"
@@ -884,6 +903,10 @@ msgstr "Versionhallintajärjestelmän tiimi"
 
 #. module: software_knowledge_base
 #: help:software_knowledge_base.installation,state:0
+msgid "What is the deployments status of the installation"
+msgstr "What is the deployments status of the installation"
+
+#. module: software_knowledge_base
 #: help:software_knowledge_base.module,module_type:0
 msgid "Where the module has been developed"
 msgstr "Onko moduli peräisin coresta tai yhteisöstä, vai onko se itse kehitetty."

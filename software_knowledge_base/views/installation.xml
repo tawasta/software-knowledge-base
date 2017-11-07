@@ -60,19 +60,19 @@
 
 
 						<notebook>
-							<page string="Customers">
+							<page name="customers" string="Customers">
 								<field name="partner_ids"/>
 							</page>
-							<page string="Modules">
+							<page name="modules" string="Modules">
 								<field name="module_ids"/>
 							</page>
-							<page string="External components">
+							<page name="components" string="External components">
 								<field name="external_component_ids"/>
 							</page>
-							<page string="Projects">
+							<page name="projects" string="Projects">
 								<field name="project_ids"/>
 							</page>
-							<page string="Additional info">
+							<page name="info" string="Additional info">
 								<field name="additional_info"/>
 							</page>
 
@@ -94,11 +94,22 @@
 				<search string="Search Installations">
 					<field name="name"/>
 					<field name="url"/>
+					<field name="state"/>
 					<field name="platform_id"/>
+					<field name="server_id"/>
+
+					<group expand="0" string="State">
+						<filter string="Setup" name="state_setup" domain="[('state','=','setup')]"/>
+						<filter string="Ready" name="state_ready" domain="[('state','=','ready')]"/>
+						<filter string="Terminated" name="state_terminated" domain="[('state','=','terminated')]"/>
+					</group>
 
 					<group expand="0" string="Group By...">
 						<filter string="Company" context="{'group_by':'company_id'}"/>
 						<filter string="Platform" context="{'group_by':'platform_id'}"/>					
+						<filter string="Server" context="{'group_by':'server_id'}"/>
+						<filter string="DB server" context="{'group_by':'db_server_id'}"/>
+						<filter string="State" context="{'group_by':'state'}"/>
 					</group>
 				</search>
 			</field>

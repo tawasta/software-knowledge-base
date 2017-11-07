@@ -19,6 +19,7 @@
             <field name="name">Installations</field>
             <field name="res_model">software_knowledge_base.installation</field>
             <field name="view_mode">tree,form</field>
+            <field name="context">{"search_default_state_setup":1, "search_default_state_ready":1}</field>
         </record>
         
         <record id="servers_action" model="ir.actions.act_window">
