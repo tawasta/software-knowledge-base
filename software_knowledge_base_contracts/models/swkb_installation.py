@@ -9,11 +9,13 @@ class SWKBInstallation(models.Model):
     account_analytic_account_id = fields.Many2one(
         string='Contract',
         comodel_name='account.analytic.account',
-        domain=[('type', '=', 'contract')],
+        domain=[('type', '=', 'contract'), ('recurring_invoices', '!=', False)],
+        copy=False,
     )
     analytic_account_invoice_line_ids = fields.One2many(
         string='Contract line',
         comodel_name='account.analytic.invoice.line',
         inverse_name='installation_id',
+        copy=False,
     )
 

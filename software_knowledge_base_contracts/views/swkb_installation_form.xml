@@ -14,7 +14,7 @@
                                options="{'no_quick_create':True,'no_create_edit':True}"/>
                         <field name="analytic_account_invoice_line_ids"
                                options="{'no_quick_create':True,'no_create_edit':True}"
-                               domain="[('analytic_account_id', '=', account_analytic_account_id)]"
+                               domain="[('analytic_account_id', '=', account_analytic_account_id), ('installation_id', '=', False)]"
                                widget="many2many_tags"
                         />
                     </group>

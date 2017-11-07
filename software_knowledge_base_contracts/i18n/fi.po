@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-07 13:22+0000\n"
-"PO-Revision-Date: 2017-11-07 15:22+0200\n"
+"POT-Creation-Date: 2017-11-07 14:07+0000\n"
+"PO-Revision-Date: 2017-11-07 16:08+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,3 +32,9 @@ msgstr "Sopimuksen rivi"
 #: model:ir.model,name:software_knowledge_base_contracts.model_software_knowledge_base_installation
 msgid "Installation"
 msgstr "Asennus"
+
+#. module: software_knowledge_base_contracts
+#: view:account.analytic.account:software_knowledge_base_contracts.view_account_analytic_account_form
+#: model:ir.actions.act_window,name:software_knowledge_base_contracts.act_installations
+msgid "Installations"
+msgstr "Asennukset"

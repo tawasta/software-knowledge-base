@@ -22,7 +22,7 @@
 {
     'name': 'SDKB Contracts',
     'summary': 'Adds contract/contract line to SDKB installations',
-    'version': '8.0.1.0.0',
+    'version': '8.0.1.1.0',
     'category': 'Knowledge',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
@@ -35,6 +35,7 @@
         'bin': [],
     },
     'depends': [
+        'analytic',
         'account_analytic_analysis',
         'software_knowledge_base',
     ],

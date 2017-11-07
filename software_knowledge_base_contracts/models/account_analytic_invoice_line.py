@@ -9,6 +9,7 @@ class AccountAnalyticInvoiceLine(models.Model):
     installation_id = fields.Many2one(
         string='Installation',
         comodel_name='software_knowledge_base.installation',
+        copy=False,
     )
 
     @api.multi
