@@ -14,6 +14,13 @@ class Installation(models.Model):
         ('terminated', 'Terminated')
     ]
 
+    _INSTALLATION_TYPE_VALUES = [
+        ('dev', 'Dev'),
+        ('test', 'Test'),
+        ('staging', 'Staging'),
+        ('production', 'Production'),
+    ]
+
     name = fields.Char('Name')
     company_id = fields.Many2one('res.company', 'Company')
 
@@ -23,6 +30,11 @@ class Installation(models.Model):
         help='What is the deployments status of the installation',
         default='setup'
     )
+    type = fields.Selection(
+        selection=_INSTALLATION_TYPE_VALUES,
+        string='Type',
+    )
+
     additional_info = fields.Text('Additional info')
 
     platform_id = fields.Many2one('software_knowledge_base.platform', string='Platform')

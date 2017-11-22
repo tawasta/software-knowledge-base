@@ -16,6 +16,7 @@
 					<field name="server_ip_address"/>
 					<field name="port"/>
 					<field name="db_server_id"/>
+					<field name="type"/>
 					<field name="state"/>
 					<field name="company_id"/>
 	            </tree>
@@ -47,6 +48,7 @@
                                 <field name="company_id" widget="selection"/>
                             </group>
                             <group col="2">
+                                <field name="type" />
                                 <field name="url" widget="url"/>
 
 							    <field name="server_id"/>
@@ -95,6 +97,7 @@
 					<field name="name"/>
 					<field name="url"/>
 					<field name="state"/>
+					<field name="type"/>
 					<field name="platform_id"/>
 					<field name="server_id"/>
 
@@ -104,12 +107,20 @@
 						<filter string="Terminated" name="state_terminated" domain="[('state','=','terminated')]"/>
 					</group>
 
+					<group expand="0" string="Type">
+						<filter string="Dev" name="type_dev" domain="[('state','=','dev')]"/>
+						<filter string="Test" name="type_test" domain="[('state','=','test')]"/>
+						<filter string="Staging" name="type_staging" domain="[('state','=','staging')]"/>
+						<filter string="Production" name="type_prodution" domain="[('state','=','prodution')]"/>
+					</group>
+
 					<group expand="0" string="Group By...">
 						<filter string="Company" context="{'group_by':'company_id'}"/>
 						<filter string="Platform" context="{'group_by':'platform_id'}"/>					
 						<filter string="Server" context="{'group_by':'server_id'}"/>
 						<filter string="DB server" context="{'group_by':'db_server_id'}"/>
 						<filter string="State" context="{'group_by':'state'}"/>
+						<filter string="Type" context="{'group_by':'type'}"/>
 					</group>
 				</search>
 			</field>

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-07 13:23+0000\n"
-"PO-Revision-Date: 2017-11-07 15:24+0200\n"
+"POT-Creation-Date: 2017-11-22 12:24+0000\n"
+"PO-Revision-Date: 2017-11-22 14:26+0200\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -122,6 +122,11 @@ msgid "Customers of this installation."
 msgstr "Asennukseen liittyvät asiakkaat."
 
 #. module: software_knowledge_base
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+msgid "DB server"
+msgstr "DB server"
+
+#. module: software_knowledge_base
 #: field:software_knowledge_base.installation,db_server_ip_address:0
 msgid "DB server IP-address"
 msgstr "Tietokantapalvelimen IP-osoite"
@@ -152,6 +157,11 @@ msgstr "Viimeisen viestin päivämäärä."
 #: field:software_knowledge_base.vcs_team,description:0
 msgid "Description"
 msgstr "Kuvaus"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+msgid "Dev"
+msgstr "Dev"
 
 #. module: software_knowledge_base
 #: model:res.groups,name:software_knowledge_base.developer
@@ -357,7 +367,7 @@ msgstr "Itse kehitetty"
 #. module: software_knowledge_base
 #: selection:software_knowledge_base.module,module_type:0
 msgid "In-house (commercial)"
-msgstr "In-house (commercial)"
+msgstr "In-house (kaupallinen)"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_installation
@@ -596,6 +606,16 @@ msgid "Port"
 msgstr "Portti"
 
 #. module: software_knowledge_base
+#: field:project.project,price_list:0
+msgid "Price list"
+msgstr "Hinnasto"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+msgid "Production"
+msgstr "Tuotanto"
+
+#. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_project_project
 msgid "Project"
 msgstr "Projekti"
@@ -740,13 +760,18 @@ msgstr "Tietämyskanta"
 
 #. module: software_knowledge_base
 #: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+msgid "Staging"
+msgstr "Staging"
+
+#. module: software_knowledge_base
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
 msgid "State"
 msgstr "Tila"
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.installation,state:0
 msgid "Status"
-msgstr "Tila"
+msgstr "Status"
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.external_component,message_summary:0
@@ -814,6 +839,11 @@ msgid "Terminated"
 msgstr "Irtisanottu"
 
 #. module: software_knowledge_base
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+msgid "Test"
+msgstr "Testi"
+
+#. module: software_knowledge_base
 #: view:software_knowledge_base.module:software_knowledge_base.module_form_view
 msgid "Tested platforms"
 msgstr "Testatut alustat"
@@ -835,9 +865,10 @@ msgid "The full name"
 msgstr "Koko nimi"
 
 #. module: software_knowledge_base
+#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
 #: field:software_knowledge_base.repository,vcs:0
 msgid "Type"
-msgstr "Type"
+msgstr "Tyyppi"
 
 #. module: software_knowledge_base
 #: field:software_knowledge_base.installation,url:0
@@ -904,7 +935,7 @@ msgstr "Versionhallintajärjestelmän tiimi"
 #. module: software_knowledge_base
 #: help:software_knowledge_base.installation,state:0
 msgid "What is the deployments status of the installation"
-msgstr "What is the deployments status of the installation"
+msgstr "Mikä on asennuksen käyttöönoton vaihe"
 
 #. module: software_knowledge_base
 #: help:software_knowledge_base.module,module_type:0
