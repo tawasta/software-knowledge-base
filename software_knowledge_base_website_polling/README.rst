@@ -6,7 +6,7 @@
 SDKB Website polling
 ====================
 
-Allows polling if websites are up.
+Allows auto-polling whether installation websites are up.
 
 Installation
 ============

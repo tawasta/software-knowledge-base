@@ -21,7 +21,7 @@
 
 {
     'name': 'SDKB Website polling',
-    'summary': 'Allows polling if websites are up',
+    'summary': 'Allows auto-polling whether installation websites are up',
     'version': '8.0.0.2.0',
     'category': 'Knowledge',
     'website': 'http://www.tawasta.fi',
