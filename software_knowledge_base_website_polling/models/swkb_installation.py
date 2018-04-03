@@ -82,9 +82,6 @@ class SWKBInstallation(models.Model):
 
                 record.installation_poll_ids = [(0, 0, poll)]
 
-                msg = _('Page fetched in {} s: {}'.format(delay, content))
-                record.message_post(msg)
-
             except Exception as e:
                 msg = _('Could not fetch website {}: {}'.format(url, e))
 
