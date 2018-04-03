@@ -49,6 +49,10 @@ class SWKBInstallation(models.Model):
         for record in self:
             url = record.url
 
+            # Add http, if necessary
+            if url.find('http') == -1:
+                url = 'http://%s' % url
+
             poll = {
                 'name': url,
                 'installation_id': record.id,
