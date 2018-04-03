@@ -54,7 +54,7 @@ class SWKBInstallation(models.Model):
                 'installation_id': record.id,
             }
 
-            _logger.info(_('Trying to open {}'.format(url)))
+            _logger.debug(_('Trying to open {}'.format(url)))
             try:
                 start = timer()
                 response = urllib2.urlopen(url)
