@@ -63,9 +63,13 @@ class SWKBInstallation(models.Model):
                 soup = BeautifulSoup(response.read(), 'lxml')
 
                 title = soup.find('title', text=True).contents[0]
-                robots = soup.find('meta', {'name': 'robots'}).get(
-                    'content', 'no robots meta'
-                )
+
+                robots = soup.find('meta', {'name': 'robots'})
+                if robots:
+                    robots = robots.get('content', 'no robots meta')
+                else:
+                    robots = 'no robots meta'
+
                 content = '{} ({})'.format(title, robots)
 
                 poll['description'] = content
