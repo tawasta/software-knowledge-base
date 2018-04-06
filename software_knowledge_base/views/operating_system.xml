@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+	    <!-- Operating system Tree View -->
+	    <record model="ir.ui.view" id="operating_system_tree_view">
+	        <field name="name">SW Knowledge Base - Operating system tree</field>
+	        <field name="model">software_knowledge_base.operating_system</field>
+	        <field name="arch" type="xml">
+	            <tree string="Operating systems">
+	                <field name="name" string="Name"/>
+	            </tree>
+	        </field>
+	    </record>
+
+	    <!-- Operating system Form View -->
+	    <record model="ir.ui.view" id="operating_system_form_view">
+	        <field name="name">SW Knowledge Base - Operating system form</field>
+	        <field name="model">software_knowledge_base.operating_system</field>
+	        <field name="arch" type="xml">
+	            <form string="Operating systems">
+	                <header>
+	                </header>
+	                <sheet string="Form">
+	                    <div class="oe_title">
+	                        <div class="oe_edit_only">
+	                            <label for="name"/>
+	                        </div>
+	                        <h1><field name="name" required="1"/></h1>
+	                    </div>
+	
+						<group>
+							<field name="version" />
+							<field name="codename" />
+							<field name="url" widget="url" />
+							<field name="description" />
+							<field name="active" />
+						</group>
+
+                        <field name="server_ids" />
+
+	                </sheet>
+	            </form>
+	        </field>
+	    </record>
+
+    </data>
+</openerp>

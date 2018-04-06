@@ -1,15 +1,16 @@
-import external_component
-import installation
-import module
-import platform
-import repository
-import repository_tag
-import server
-import server_note
-import project_project
-import project_task
-import res_partner
-import vcs
-#import vcs_provider
-import vcs_host
-import vcs_team
+from . import external_component
+from . import installation
+from . import module
+from . import operating_system
+from . import platform
+from . import repository
+from . import repository_tag
+from . import server
+from . import server_note
+from . import project_project
+from . import project_task
+from . import res_partner
+from . import vcs
+#from . import vcs_provider
+from . import vcs_host
+from . import vcs_team

@@ -34,6 +34,12 @@
             <field name="res_model">software_knowledge_base.platform</field>
             <field name="view_mode">tree,form</field>
         </record>
+
+        <record id="os_action" model="ir.actions.act_window">
+            <field name="name">Operating systems</field>
+            <field name="res_model">software_knowledge_base.operating_system</field>
+            <field name="view_mode">tree,form</field>
+        </record>
                 
         <record id="repositories_action" model="ir.actions.act_window">
             <field name="name">Repositories</field>
@@ -79,6 +85,7 @@
         <menuitem id="modules_menu" 		parent="code_menu" action="modules_action" sequence='10' />
         <menuitem id="ext_components_menu"	parent="code_menu" action="ext_components_action" sequence='20' />        
 		<menuitem id="platforms_menu"		parent="code_menu" action="platforms_action" sequence='30' />        
+		<menuitem id="os_menu"              parent="code_menu" action="os_action" sequence='40' />
 
 		<menuitem id="repositories_menu"	parent="vcs_menu" action="repositories_action" sequence='10'/>   
 		<menuitem id="repository_tags_menu"	parent="vcs_menu" action="repository_tags_action" sequence='20' /> 

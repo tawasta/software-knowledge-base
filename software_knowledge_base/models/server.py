@@ -44,6 +44,12 @@ class SoftwareKnowledgeBaseServer(models.Model):
     )
 
     operating_system = fields.Char(
+        string='Operating system (DEPRECATED)',
+        readonly=True,
+    )
+
+    operating_system_id = fields.Many2one(
+        comodel_name='software_knowledge_base.operating_system',
         string='Operating system',
     )
 
