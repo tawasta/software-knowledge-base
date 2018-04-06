@@ -12,6 +12,7 @@
 					<field name="operating_system"/>
 					<field name="installation_ids"/>
 					<field name="company_id"/>
+					<field name="active"/>
 	            </tree>
 	        </field>
 	    </record>
@@ -62,6 +63,30 @@
 	            </form>
 	        </field>
 	    </record>
+
+		<!-- Servers search view -->
+		<record model="ir.ui.view" id="server_search_view">
+	        <field name="name">Servers search</field>
+	        <field name="model">software_knowledge_base.server</field>
+			<field name="arch" type="xml">
+				<search string="Search servers">
+					<field name="name"/>
+					<field name="ip_address"/>
+					<field name="operating_system"/>
+
+					<group expand="0" string="State">
+						<filter string="Active" name="active" domain="[('active', '=', True)]"/>
+						<filter string="Inactive" name="invactive" domain="[('active', '=', False)]"/>
+					</group>
+
+					<group expand="0" string="Group By...">
+						<filter string="Company" context="{'group_by':'company_id'}"/>
+						<filter string="OS" context="{'group_by':'operating_system'}"/>
+					</group>
+				</search>
+			</field>
+		</record>
+
 
     </data>
 </openerp>
