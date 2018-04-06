@@ -8,6 +8,7 @@
 	        <field name="arch" type="xml">
 	            <tree string="Operating systems">
 	                <field name="name" string="Name"/>
+	                <field name="server_ids" />
 	            </tree>
 	        </field>
 	    </record>
