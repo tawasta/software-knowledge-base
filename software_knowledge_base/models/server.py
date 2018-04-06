@@ -24,7 +24,12 @@ class SoftwareKnowledgeBaseServer(models.Model):
 
     # 2. Fields declaration
     name = fields.Char('Name')
-    company_id = fields.Many2one('res.company', 'Company')
+    company_id = fields.Many2one(
+        comodel_name='res.company',
+        string='Company',
+        default=lambda self: self.env['res.users'].browse(
+            [self._uid]).company_id,
+    )
 
     active = fields.Boolean(
         string='Active',
