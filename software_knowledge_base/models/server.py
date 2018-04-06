@@ -23,7 +23,10 @@ class SoftwareKnowledgeBaseServer(models.Model):
     _order = 'name'
 
     # 2. Fields declaration
-    name = fields.Char('Name')
+    name = fields.Char(
+        string='Name'
+    )
+
     company_id = fields.Many2one(
         comodel_name='res.company',
         string='Company',
@@ -36,13 +39,33 @@ class SoftwareKnowledgeBaseServer(models.Model):
         default=True,
     )
 
-    ip_address = fields.Char('IP Address')
-    operating_system = fields.Char('Operating system')
-    installation_ids = fields.One2many('software_knowledge_base.installation', 'server_id', 'Installations')
-    note_ids = fields.One2many('software_knowledge_base.server_note', 'server_id', 'Server note')
+    ip_address = fields.Char(
+        string='IP Address',
+    )
 
-    specification = fields.Text('Technical specification')
-    additional_info = fields.Text('Additional info')
+    operating_system = fields.Char(
+        string='Operating system',
+    )
+
+    installation_ids = fields.One2many(
+        comodel_name='software_knowledge_base.installation',
+        inverse_name='server_id',
+        string='Installations',
+    )
+
+    note_ids = fields.One2many(
+        comodel_name='software_knowledge_base.server_note',
+        inverse_name='server_id',
+        string='Server note',
+    )
+
+    specification = fields.Text(
+        string='Technical specification',
+    )
+
+    additional_info = fields.Text(
+        string='Additional info'
+    )
 
     # 3. Default methods
 
