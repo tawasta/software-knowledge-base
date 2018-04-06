@@ -22,7 +22,7 @@
 {
     'name': 'Software development knowledge base',
     'summary': 'A module for maintaining data regarding software installations and modules',
-    'version': '8.0.1.1.1',
+    'version': '8.0.1.1.2',
     'category': 'Knowledge',
     'website': 'http://www.vizucom.com',
     'author': 'Vizucom Oy',
