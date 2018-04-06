@@ -26,6 +26,11 @@ class SoftwareKnowledgeBaseServer(models.Model):
     name = fields.Char('Name')
     company_id = fields.Many2one('res.company', 'Company')
 
+    active = fields.Boolean(
+        string='Active',
+        default=True,
+    )
+
     ip_address = fields.Char('IP Address')
     operating_system = fields.Char('Operating system')
     installation_ids = fields.One2many('software_knowledge_base.installation', 'server_id', 'Installations')

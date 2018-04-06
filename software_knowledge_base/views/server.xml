@@ -36,6 +36,7 @@
 							<field name="company_id" widget="selection"/>          
 							<field name="ip_address"/>
 							<field name="operating_system"/>
+							<field name="active"/>
 	                    </group>
 
 						<notebook>
