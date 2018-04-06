@@ -36,7 +36,6 @@
 	                    <group col="4">	              
 							<field name="company_id" widget="selection"/>          
 							<field name="ip_address"/>
-							<field name="operating_system"/>
 							<field name="operating_system_id"/>
 							<field name="active"/>
 	                    </group>

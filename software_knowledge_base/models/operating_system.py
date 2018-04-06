@@ -77,6 +77,10 @@ class SWKBOperatingSystem(models.Model):
             record.display_name = name
 
     # 5. Constraints and onchanges
+    _sql_constraints = [
+        ('name_unique', 'unique(name)',
+         'An operating system with this name already exists')
+    ]
 
     # 6. CRUD methods
 
