@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from openerp import models, fields, api, _
-from openerp.tools.translate import _
+from odoo import models, fields, api, _
+
+
 
 class module(models.Model):
     

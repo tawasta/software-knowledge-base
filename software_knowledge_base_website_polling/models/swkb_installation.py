@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from timeit import default_timer as timer
 
 # 3. Odoo imports (openerp):
-from openerp import api, fields, models, _
+from odoo import api, fields, models, _
 
 # 4. Imports from Odoo modules:
 
