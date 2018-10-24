@@ -1,28 +1,24 @@
-<?xml version="1.0"?>
-<openerp>
-    <data noupdate="0">
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- VCS hosts -->
+    <record model="software_knowledge_base.vcs_host" id="vcs_host_github">
+        <field name="name">Github</field>
+        <field name="vcs" ref="vcs_git"></field>
+        <field name="address">https://github.com</field>
+        <field name="address_readme">https://raw.githubusercontent.com</field>
+    </record>
 
-        <!-- VCS hosts -->
-        <record model="software_knowledge_base.vcs_host" id="vcs_host_github">
-            <field name="name">Github</field>
-            <field name="vcs" ref="vcs_git"></field>
-            <field name="address">https://github.com</field>
-            <field name="address_readme">https://raw.githubusercontent.com</field>
-        </record>
-        
-        <record model="software_knowledge_base.vcs_host" id="vcs_host_bitbucket">
-            <field name="name">Bitbucket</field>
-            <field name="vcs" ref="vcs_git"></field>
-            <field name="address">https://bitbucket.org</field>
-            <field name="address_readme">https://bitbucket.org</field>
-        </record>
-        
-        <record model="software_knowledge_base.vcs_host" id="vcs_host_gitlab">
-            <field name="name">Gitlab</field>
-            <field name="vcs" ref="vcs_git"></field>
-            <field name="address">https://gitlab.com</field>
-            <field name="address_readme">https://gitlab.com</field>
-        </record>
+    <record model="software_knowledge_base.vcs_host" id="vcs_host_bitbucket">
+        <field name="name">Bitbucket</field>
+        <field name="vcs" ref="vcs_git"></field>
+        <field name="address">https://bitbucket.org</field>
+        <field name="address_readme">https://bitbucket.org</field>
+    </record>
 
-    </data>
-</openerp>
+    <record model="software_knowledge_base.vcs_host" id="vcs_host_gitlab">
+        <field name="name">Gitlab</field>
+        <field name="vcs" ref="vcs_git"></field>
+        <field name="address">https://gitlab.com</field>
+        <field name="address_readme">https://gitlab.com</field>
+    </record>
+</odoo>

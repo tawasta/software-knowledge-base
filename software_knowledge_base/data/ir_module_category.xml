@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data noupdate="0">
-        <record id="software_knowledge_base.software" model="ir.module.category">
-            <field name="name">Software knowledge base</field>
-        </record>
-    </data>
-</openerp>
+<odoo>
+    <record id="software_knowledge_base.software" model="ir.module.category">
+        <field name="name">Software knowledge base</field>
+    </record>
+</odoo>
