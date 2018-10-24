@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Author: Vizucom Oy
-#    Copyright 2016 Vizucom Oy (http://www.vizucom.com)
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2016 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -21,14 +21,14 @@
 
 {
     'name': 'Software development knowledge base',
-    'summary': 'A module for maintaining data regarding software installations and modules',
+    'summary': 'Maintain software installation and module data',
     'version': '10.0.0.1.0',
-    'category': 'Knowledge',
-    'website': 'http://www.vizucom.com',
-    'author': 'Vizucom Oy',
+    'category': 'Specific Industry Applications',
+    'website': 'http://www.tawasta.fi',
+    'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
-    'application': True,
-    'installable': False,
+    'application': False,
+    'installable': True,
     'external_dependencies': {
         'python': [],
         'bin': [],
@@ -60,7 +60,7 @@
         'views/vcs_host.xml',
         'views/vcs_team.xml',
         'views/vcs.xml',
-        # 'views/vcs_provider.xml',
+        # 'views/vcs_provider.xml',        
     ],
     'demo': [
     ],

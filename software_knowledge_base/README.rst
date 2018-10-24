@@ -8,7 +8,7 @@ Software development knowledge base
 
 A module for maintaining data regarding software installations and modules. Built mainly around the needs
 of a Odoo development company, but if you do module-based software development and offer cloud services,
-you may find this it useful for other platforms as well.
+you may find it useful for other platforms as well.
 
 Features
 --------
@@ -59,7 +59,7 @@ Contributors
 ------------
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
-* Timo Talvitie <timo.talvitie@vizucom.com>
+* Timo Talvitie <timo.talvitie@tawasta.fi>
 
 Maintainer
 ----------
