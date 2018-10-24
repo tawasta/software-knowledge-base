@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class Installation(models.Model):
+
     _name = 'software_knowledge_base.installation'
     _description = 'Installation'
     _inherit = ['mail.thread']
@@ -21,53 +22,106 @@ class Installation(models.Model):
         ('production', 'Production'),
     ]
 
-    name = fields.Char('Name')
-    company_id = fields.Many2one('res.company', 'Company')
+    name = fields.Char(
+        string='Name'
+    )
+
+    company_id = fields.Many2one(
+        comodel_name='res.company',
+        string='Company'
+    )
 
     state = fields.Selection(
-        _INSTALLATION_STATE_VALUES,
-        'Status',
+        selection=_INSTALLATION_STATE_VALUES,
+        string='Status',
         help='What is the deployments status of the installation',
         default='setup'
     )
+
     type = fields.Selection(
         selection=_INSTALLATION_TYPE_VALUES,
-        string='Type',
+        string='Type'
     )
 
-    additional_info = fields.Text('Additional info')
+    additional_info = fields.Text(
+        string='Additional info'
+    )
 
-    platform_id = fields.Many2one('software_knowledge_base.platform', string='Platform')
+    platform_id = fields.Many2one(
+        comodel_name='software_knowledge_base.platform',
+        string='Platform'
+    )
 
-    server_id = fields.Many2one('software_knowledge_base.server', string='Server')
-    server_ip_address = fields.Char('Server IP-address', related='server_id.ip_address')
+    server_id = fields.Many2one(
+        comodel_name='software_knowledge_base.server',
+        string='Server'
+    )
 
-    port = fields.Integer('Port')
+    server_ip_address = fields.Char(
+        string='Server IP-address',
+        related='server_id.ip_address'
+    )
 
-    db_server_id = fields.Many2one('software_knowledge_base.server', string='Database server')
-    db_server_ip_address = fields.Char('DB server IP-address', related='db_server_id.ip_address')
+    port = fields.Integer(
+        string='Port'
+    )
 
-    disk_usage = fields.Float('Disk Usage (MB)')
-    url = fields.Char('URL')
-    identifier = fields.Char('Identifier')
+    db_server_id = fields.Many2one(
+        comodel_name='software_knowledge_base.server',
+        string='Database server'
+    )
+
+    db_server_ip_address = fields.Char(
+        string='DB server IP-address',
+        related='db_server_id.ip_address'
+    )
+
+    disk_usage = fields.Float(
+        string='Disk Usage (MB)'
+    )
+
+    url = fields.Char(
+        string='URL'
+    )
+
+    identifier = fields.Char(
+        string='Identifier'
+    )
 
     project_ids = fields.Many2many(
-        'project.project', 'installation_project_rel', 'installation_id', 'project_id',
-        string='Projects', help='Projects utilizing this installation.'
+        comodel_name='project.project',
+        relation='installation_project_rel',
+        column1='installation_id',
+        column2='project_id',
+        string='Projects',
+        help='Projects utilizing this installation.'
     )
 
     # Note the misnamed table module_partner_rel!
     partner_ids = fields.Many2many(
-        'res.partner', 'module_partner_rel', 'installation_id', 'partner_id',
-        string='Customers', help='Customers of this installation.'
+        comodel_name='res.partner',
+        relation='module_partner_rel',
+        column1='installation_id',
+        column2='partner_id',
+        string='Customers',
+        help='Customers of this installation.'
     )
 
     module_ids = fields.Many2many(
-        'software_knowledge_base.module', 'module_installation_rel', 'installation_id', 'module_id',
-        string='Modules', help='Modules used by this installation.'
+        comodel_name='software_knowledge_base.module',
+        relation='module_installation_rel',
+        column1='installation_id',
+        column2='module_id',
+        string='Modules',
+        help='Modules used by this installation.'
     )
 
     external_component_ids = fields.Many2many(
-        'software_knowledge_base.external_component', 'installation_ext_comp_rel', 'installation_id', 'ext_comp_id',
-        string='External components', help='Libraries and other third party components used by this installation.'
+        comodel_name='software_knowledge_base.external_component',
+        relation='installation_ext_comp_rel',
+        column1='installation_id',
+        column2='ext_comp_id',
+        string='External components',
+        help=('Libraries and other third party components used by this '
+              'installation.')
     )

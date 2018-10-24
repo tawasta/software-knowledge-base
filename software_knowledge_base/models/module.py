@@ -9,25 +9,71 @@ class Module(models.Model):
     _inherit = ['mail.thread']
     _order = 'name'
 
-    _MODULE_TYPE_VALUES = [('core','Core'),
-                    ('community','Community'),
-                    ('community_commercial','Community (commercial)'),                    
-                    ('inhouse','In-house')]
+    _MODULE_TYPE_VALUES = [('core', 'Core'),
+                           ('community', 'Community'),
+                           ('community_commercial', 'Community (commercial)'),
+                           ('inhouse', 'In-house')]
 
-    name = fields.Char('Name')
-    summary = fields.Char(size=128, string='Summary')
-    module_type = fields.Selection(_MODULE_TYPE_VALUES, 'Module type', help='Where the module has been developed')
-    repository = fields.Many2one('software_knowledge_base.repository', string='Repository')
-    user_id = fields.Many2one('res.users', 'Responsible')
-    features = fields.Text('Features')
-    readme = fields.Text('Readme')
-    installation_notes = fields.Text('Installation notes')
-    issues = fields.Text('Issues', help='Known bugs, limitations, incompatibilities with other modules etc.')
-    additional_info = fields.Text('Additional info', help='Additional information')
-    active = fields.Boolean(default=True)
-    
-    installation_ids = fields.Many2many('software_knowledge_base.installation', 'module_installation_rel', 'module_id', 'installation_id',
-                                             string='Installations', help='Where this module has been deployed.')
+    name = fields.Char(
+        string='Name'
+    )
+
+    summary = fields.Char(
+        size=128,
+        string='Summary'
+    )
+
+    module_type = fields.Selection(
+        selection=_MODULE_TYPE_VALUES,
+        string='Module type',
+        help='Where the module has been developed'
+    )
+
+    repository = fields.Many2one(
+        comodel_name='software_knowledge_base.repository',
+        string='Repository'
+    )
+
+    user_id = fields.Many2one(
+        comodel_name='res.users',
+        string='Responsible'
+    )
+
+    features = fields.Text(
+        string='Features'
+    )
+
+    readme = fields.Text(
+        string='Readme'
+    )
+
+    installation_notes = fields.Text(
+        string='Installation notes'
+    )
+
+    issues = fields.Text(
+        string='Issues',
+        help=('Known bugs, limitations, incompatibilities with other '
+              'modules etc.')
+    )
+
+    additional_info = fields.Text(
+        string='Additional info',
+        help='Additional information'
+    )
+
+    active = fields.Boolean(
+        default=True
+    )
+
+    installation_ids = fields.Many2many(
+        comodel_name='software_knowledge_base.installation',
+        relation='module_installation_rel',
+        column1='module_id',
+        column2='installation_id',
+        string='Installations',
+        help='Where this module has been deployed.'
+    )
             
     #'parent_ids'=           fields.many2many(
     #                            'software_knowledge_base.module',
@@ -36,7 +82,20 @@ class Module(models.Model):
     #                            'parent_id',
     #                            'Dependencies', help='Other modules that are required for this module to work.'),       
             
-    task_ids =             fields.Many2many('project.task', 'module_task_rel', 'module_id', 'task_id',
-                                             string='Tasks', help='Related project management tasks')
-    platform_ids =         fields.Many2many('software_knowledge_base.platform', 'module_platform_rel', 'module_id', 'platform_id',
-                                                 string='Platforms',help='Supported platforms')
+    task_ids = fields.Many2many(
+        comodel_name='project.task',
+        relation='module_task_rel',
+        column1='module_id',
+        column2='task_id',
+        string='Tasks',
+        help='Related project management tasks'
+    )
+
+    platform_ids = fields.Many2many(
+        comodel_name='software_knowledge_base.platform',
+        relation='module_platform_rel',
+        column1='module_id',
+        column2='platform_id',
+        string='Platforms',
+        help='Supported platforms'
+    )

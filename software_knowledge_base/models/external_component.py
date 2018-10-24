@@ -5,7 +5,7 @@
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import api, fields, models
+from odoo import fields, models
 
 # 4. Imports from Odoo modules:
 
@@ -15,6 +15,7 @@ from odoo import api, fields, models
 
 
 class SWKBExternalComponent(models.Model):
+
     # 1. Private attributes
     _name = 'software_knowledge_base.external_component'
     _description = 'External component'
@@ -22,20 +23,34 @@ class SWKBExternalComponent(models.Model):
     _order = 'name'
 
     # 2. Fields declaration
-    name = fields.Char('Name')
-    url = fields.Char('Homepage')
-    features = fields.Text('Features')
+    name = fields.Char(
+        string='Name'
+    )
+
+    url = fields.Char(
+        string='Homepage'
+    )
+    features = fields.Text(
+        string='Features'
+    )
 
     installation_ids = fields.Many2many(
-        'software_knowledge_base.installation',
-        'installation_ext_comp_rel',
-        'ext_comp_id',
-        'installation_id',
-        string = 'Installations',
+        comodel_name='software_knowledge_base.installation',
+        relation='installation_ext_comp_rel',
+        column1='ext_comp_id',
+        column2='installation_id',
+        string='Installations',
         help='Installations using this component.'
     )
-    installation_notes = fields.Text('Installation notes')
-    additional_info = fields.Text('Additional info', help='Additional information')
+
+    installation_notes = fields.Text(
+        string='Installation notes'
+    )
+
+    additional_info = fields.Text(
+        string='Additional info',
+        help='Additional information'
+    )
 
     # 3. Default methods
 
