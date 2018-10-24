@@ -22,13 +22,13 @@
 {
     'name': 'Software development knowledge base',
     'summary': 'A module for maintaining data regarding software installations and modules',
-    'version': '8.0.1.1.3',
+    'version': '10.0.0.1.0',
     'category': 'Knowledge',
     'website': 'http://www.vizucom.com',
     'author': 'Vizucom Oy',
     'license': 'AGPL-3',
     'application': True,
-    'installable': True,
+    'installable': False,
     'external_dependencies': {
         'python': [],
         'bin': [],

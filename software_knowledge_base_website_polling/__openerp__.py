@@ -22,13 +22,13 @@
 {
     'name': 'SDKB Website polling',
     'summary': 'Allows auto-polling whether installation websites are up',
-    'version': '8.0.0.2.3',
+    'version': '10.0.0.1.0',
     'category': 'Knowledge',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
-    'installable': True,
+    'installable': False,
     'external_dependencies': {
         'python': [
         ],
