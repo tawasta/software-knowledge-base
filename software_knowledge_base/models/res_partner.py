@@ -7,5 +7,10 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     # Note the misnamed table module_partner_rel!
-    installation_ids = fields.Many2many('software_knowledge_base.installation', 'module_partner_rel', 'partner_id', 'installation_id',
-                                                 string='Installations')
+    installation_ids = fields.Many2many(
+        comodel_name='software_knowledge_base.installation',
+        relation='module_partner_rel',
+        column1='partner_id',
+        column2='installation_id',
+        string='Installations'
+    )
