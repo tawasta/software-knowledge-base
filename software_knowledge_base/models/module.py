@@ -2,13 +2,12 @@
 from odoo import models, fields, api, _
 
 
+class Module(models.Model):
 
-class module(models.Model):
-    
-    _name           = 'software_knowledge_base.module'
-    _description    = 'Module' 
-    _inherit        = ['mail.thread']
-    _order          = 'name'
+    _name = 'software_knowledge_base.module'
+    _description = 'Module'
+    _inherit = ['mail.thread']
+    _order = 'name'
 
     _MODULE_TYPE_VALUES = [('core','Core'),
                     ('community','Community'),
