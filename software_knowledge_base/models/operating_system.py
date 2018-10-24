@@ -5,8 +5,7 @@
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import api, fields, models
-
+from odoo import fields, models
 
 # 4. Imports from Odoo modules:
 
@@ -16,6 +15,7 @@ from odoo import api, fields, models
 
 
 class SWKBOperatingSystem(models.Model):
+
     # 1. Private attributes
     _name = 'software_knowledge_base.operating_system'
     _description = 'Operating system'

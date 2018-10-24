@@ -16,6 +16,7 @@ from odoo import api, fields, models
 
 
 class SWKBRepository(models.Model):
+
     # 1. Private attributes
     _name = 'software_knowledge_base.repository'
     _description = 'Repository'
@@ -23,32 +24,63 @@ class SWKBRepository(models.Model):
     _order = 'name'
 
     # 2. Fields declaration
-    name = fields.Char('Name', help='E.g. "odoo-customizations" or "moodle-extension"')
-    description = fields.Text('Description')
-    readme = fields.Text('Readme')
-    active = fields.Boolean(default=True)
+    name = fields.Char(
+        string='Name',
+        help='E.g. "odoo-customizations" or "moodle-extension"'
+    )
+    description = fields.Text(
+        string='Description'
+    )
 
-    url = fields.Char('URL', help='The full URL')
-    url_readonly = fields.Char('URL', help='The full URL', readonly=True, store=True)
+    readme = fields.Text(
+        string='Readme'
+    )
+
+    active = fields.Boolean(
+        default=True
+    )
+
+    url = fields.Char(
+        string='URL',
+        help='The full URL'
+    )
+
+    url_readonly = fields.Char(
+        string='URL',
+        help='The full URL',
+        readonly=True,
+        store=True
+    )
 
     vcs = fields.Many2one(
-        'software_knowledge_base.vcs',
+        comodel_name='software_knowledge_base.vcs',
         string='Type',
-        default=lambda self: self.vcs.search([('name', '=', 'git')]))
+        default=lambda self: self.vcs.search([('name', '=', 'git')])
+    )
+
     vcs_host = fields.Many2one(
-        'software_knowledge_base.vcs_host',
+        comodel_name='software_knowledge_base.vcs_host',
         string='Host',
-        default=lambda self: self.vcs_host.search([('name', '=', 'github')]))
-    vcs_team = fields.Many2one('software_knowledge_base.vcs_team', string='Team')
+        default=lambda self: self.vcs_host.search([('name', '=', 'github')])
+    )
+
+    vcs_team = fields.Many2one(
+        comodel_name='software_knowledge_base.vcs_team',
+        string='Team'
+    )
 
     tag_ids = fields.Many2many(
-        'software_knowledge_base.repository_tag',
-        'software_knowledge_base_repository_tag_rel',
-        'id', 'repository_id',
+        comodel_name='software_knowledge_base.repository_tag',
+        relation='software_knowledge_base_repository_tag_rel',
+        column1='id',
+        column2='repository_id',
         string='Tags'
     )
 
-    master_branch = fields.Char('Master branch', default='master')
+    master_branch = fields.Char(
+        string='Master branch',
+        default='master'
+    )
 
     # 3. Default methods
 
