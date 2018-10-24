@@ -1,37 +1,36 @@
 <?xml version="1.0"?>
-<openerp>
-    <data>
-        <!-- Server notes Tree View -->
-        <record model="ir.ui.view" id="server_note_tree_view">
-            <field name="name">SW Knowledge Base - Server notes tree</field>
-            <field name="model">software_knowledge_base.server_note</field>
-            <field name="arch" type="xml">
-                <tree string="Notes">
-                    <field name="event_date"/>
-                    <field name="name" widget="bootstrap_markdown" />
-                    <field name="description" widget="bootstrap_markdown" />
-                    <field name="extra" widget="bootstrap_markdown" />
-                </tree>
-            </field>
-        </record>
+<odoo>
 
-        <!-- Server notes Form View -->
-        <record model="ir.ui.view" id="server_note_form_view">
-            <field name="name">SW Knowledge Base - Server notes form</field>
-            <field name="model">software_knowledge_base.server_note</field>
-            <field name="arch" type="xml">
-                <form string="Server notes">
-                    <sheet string="Form">
-                        <group>
-                            <field name="event_date"/>
-		                    <field name="name" placeholder='e.g. Installed git' widget="bootstrap_markdown" />
-		                    <field name="description" placeholder='e.g. Installed git for updating Odoo modules etc.' widget="bootstrap_markdown" />
-		                    <field name="extra" placeholder='e.g. apt-get install git'/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+    <!-- Server notes Tree View -->
+    <record model="ir.ui.view" id="server_note_tree_view">
+        <field name="name">SW Knowledge Base - Server notes tree</field>
+        <field name="model">software_knowledge_base.server_note</field>
+        <field name="arch" type="xml">
+            <tree string="Notes">
+                <field name="event_date"/>
+                <field name="name" widget="bootstrap_markdown" />
+                <field name="description" widget="bootstrap_markdown" />
+                <field name="extra" widget="bootstrap_markdown" />
+            </tree>
+        </field>
+    </record>
 
-    </data>
-</openerp>
+    <!-- Server notes Form View -->
+    <record model="ir.ui.view" id="server_note_form_view">
+        <field name="name">SW Knowledge Base - Server notes form</field>
+        <field name="model">software_knowledge_base.server_note</field>
+        <field name="arch" type="xml">
+            <form string="Server notes">
+                <sheet string="Form">
+                    <group>
+                        <field name="event_date"/>
+                        <field name="name" placeholder='e.g. Installed git' widget="bootstrap_markdown" />
+                        <field name="description" placeholder='e.g. Installed git for updating Odoo modules etc.' widget="bootstrap_markdown" />
+                        <field name="extra" placeholder='e.g. apt-get install git'/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

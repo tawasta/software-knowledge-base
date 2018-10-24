@@ -1,130 +1,129 @@
 <?xml version="1.0"?>
-<openerp>
-    <data>
-	    <!-- Installations Tree View -->
-	    <record model="ir.ui.view" id="installation_tree_view">
-	        <field name="name">SW Knowledge Base - Installations tree</field>
-	        <field name="model">software_knowledge_base.installation</field>
-	        <field name="arch" type="xml">
-	            <tree string="Installations"
-					  colors="grey: (state=='terminated'); blue: (state=='setup');">
-	                <field name="name"/>
-					<field name="partner_ids"/>
-					<field name="project_ids"/>
-					<field name="platform_id"/>
-					<field name="server_id"/>
-					<field name="server_ip_address"/>
-					<field name="port"/>
-					<field name="db_server_id"/>
-					<field name="type"/>
-					<field name="state"/>
-					<field name="company_id"/>
-	            </tree>
-	        </field>
-	    </record>
+<odoo>
 
-	    <!-- Installations Form View -->
-	    <record model="ir.ui.view" id="installation_form_view">
-	        <field name="name">SW Knowledge Base - Installations form</field>
-	        <field name="model">software_knowledge_base.installation</field>
-	        <field name="arch" type="xml">
-	            <form string="Installations">
-	                <header>
-						<field name="state" widget="statusbar" clickable="1"/>
-	                </header>
-	                <sheet string="Form">
-	                    <div class="oe_title">
-	                        <div class="oe_edit_only">
-	                            <label for="name"/>
-	                        </div>
-	                        <h1><field name="name" required="1"/></h1>
-	                    </div>
-	
-	                    <group col="4">
-                            <group col="2">
-                                <field name="platform_id"/>
-                                <field name="disk_usage"/>
-                                <field name="identifier"/>
-                                <field name="company_id" widget="selection"/>
-                            </group>
-                            <group col="2">
-                                <field name="type" />
-                                <field name="url" widget="url"/>
+	<!-- Installations Tree View -->
+	<record model="ir.ui.view" id="installation_tree_view">
+		<field name="name">SW Knowledge Base - Installations tree</field>
+		<field name="model">software_knowledge_base.installation</field>
+		<field name="arch" type="xml">
+			<tree string="Installations"
+					colors="grey: (state=='terminated'); blue: (state=='setup');">
+				<field name="name"/>
+				<field name="partner_ids"/>
+				<field name="project_ids"/>
+				<field name="platform_id"/>
+				<field name="server_id"/>
+				<field name="server_ip_address"/>
+				<field name="port"/>
+				<field name="db_server_id"/>
+				<field name="type"/>
+				<field name="state"/>
+				<field name="company_id"/>
+			</tree>
+		</field>
+	</record>
 
-							    <field name="server_id"/>
-							    <field name="server_ip_address"/>
-                                <field name="port"/>
+	<!-- Installations Form View -->
+	<record model="ir.ui.view" id="installation_form_view">
+		<field name="name">SW Knowledge Base - Installations form</field>
+		<field name="model">software_knowledge_base.installation</field>
+		<field name="arch" type="xml">
+			<form string="Installations">
+				<header>
+					<field name="state" widget="statusbar" clickable="1"/>
+				</header>
+				<sheet string="Form">
+					<div class="oe_title">
+						<div class="oe_edit_only">
+							<label for="name"/>
+						</div>
+						<h1><field name="name" required="1"/></h1>
+					</div>
 
-                                <field name="db_server_id"/>
-							    <field name="db_server_ip_address"/>
-                            </group>
-	                    </group>
+					<group col="4">
+						<group col="2">
+							<field name="platform_id"/>
+							<field name="disk_usage"/>
+							<field name="identifier"/>
+							<field name="company_id" widget="selection"/>
+						</group>
+						<group col="2">
+							<field name="type" />
+							<field name="url" widget="url"/>
 
+							<field name="server_id"/>
+							<field name="server_ip_address"/>
+							<field name="port"/>
 
-						<notebook>
-							<page name="customers" string="Customers">
-								<field name="partner_ids"/>
-							</page>
-							<page name="modules" string="Modules">
-								<field name="module_ids"/>
-							</page>
-							<page name="components" string="External components">
-								<field name="external_component_ids"/>
-							</page>
-							<page name="projects" string="Projects">
-								<field name="project_ids"/>
-							</page>
-							<page name="info" string="Additional info">
-								<field name="additional_info"/>
-							</page>
-
-						</notebook>
-	                </sheet>
-	                <div class="oe_chatter">
-	                    <field name="message_follower_ids" widget="mail_followers"/>
-	                    <field name="message_ids" widget="mail_thread"/>
-	                </div>
-	            </form>
-	        </field>
-	    </record>
-
-		<!-- Installations search view -->
-		<record model="ir.ui.view" id="installation_search_view">
-	        <field name="name">Installations search</field>
-	        <field name="model">software_knowledge_base.installation</field>
-			<field name="arch" type="xml">
-				<search string="Search Installations">
-					<field name="name"/>
-					<field name="url"/>
-					<field name="state"/>
-					<field name="type"/>
-					<field name="platform_id"/>
-					<field name="server_id"/>
-
-					<group expand="0" string="State">
-						<filter string="Setup" name="state_setup" domain="[('state','=','setup')]"/>
-						<filter string="Ready" name="state_ready" domain="[('state','=','ready')]"/>
-						<filter string="Terminated" name="state_terminated" domain="[('state','=','terminated')]"/>
+							<field name="db_server_id"/>
+							<field name="db_server_ip_address"/>
+						</group>
 					</group>
 
-					<group expand="0" string="Type">
-						<filter string="Dev" name="type_dev" domain="[('state','=','dev')]"/>
-						<filter string="Test" name="type_test" domain="[('state','=','test')]"/>
-						<filter string="Staging" name="type_staging" domain="[('state','=','staging')]"/>
-						<filter string="Production" name="type_prodution" domain="[('state','=','prodution')]"/>
-					</group>
 
-					<group expand="0" string="Group By...">
-						<filter string="Company" context="{'group_by':'company_id'}"/>
-						<filter string="Platform" context="{'group_by':'platform_id'}"/>					
-						<filter string="Server" context="{'group_by':'server_id'}"/>
-						<filter string="DB server" context="{'group_by':'db_server_id'}"/>
-						<filter string="State" context="{'group_by':'state'}"/>
-						<filter string="Type" context="{'group_by':'type'}"/>
-					</group>
-				</search>
-			</field>
-		</record>
+					<notebook>
+						<page name="customers" string="Customers">
+							<field name="partner_ids"/>
+						</page>
+						<page name="modules" string="Modules">
+							<field name="module_ids"/>
+						</page>
+						<page name="components" string="External components">
+							<field name="external_component_ids"/>
+						</page>
+						<page name="projects" string="Projects">
+							<field name="project_ids"/>
+						</page>
+						<page name="info" string="Additional info">
+							<field name="additional_info"/>
+						</page>
 
-    </data>
-</openerp>
+					</notebook>
+				</sheet>
+				<div class="oe_chatter">
+					<field name="message_follower_ids" widget="mail_followers"/>
+					<field name="message_ids" widget="mail_thread"/>
+				</div>
+			</form>
+		</field>
+	</record>
+
+	<!-- Installations search view -->
+	<record model="ir.ui.view" id="installation_search_view">
+		<field name="name">Installations search</field>
+		<field name="model">software_knowledge_base.installation</field>
+		<field name="arch" type="xml">
+			<search string="Search Installations">
+				<field name="name"/>
+				<field name="url"/>
+				<field name="state"/>
+				<field name="type"/>
+				<field name="platform_id"/>
+				<field name="server_id"/>
+
+				<group expand="0" string="State">
+					<filter string="Setup" name="state_setup" domain="[('state','=','setup')]"/>
+					<filter string="Ready" name="state_ready" domain="[('state','=','ready')]"/>
+					<filter string="Terminated" name="state_terminated" domain="[('state','=','terminated')]"/>
+				</group>
+
+				<group expand="0" string="Type">
+					<filter string="Dev" name="type_dev" domain="[('state','=','dev')]"/>
+					<filter string="Test" name="type_test" domain="[('state','=','test')]"/>
+					<filter string="Staging" name="type_staging" domain="[('state','=','staging')]"/>
+					<filter string="Production" name="type_prodution" domain="[('state','=','prodution')]"/>
+				</group>
+
+				<group expand="0" string="Group By...">
+					<filter string="Company" context="{'group_by':'company_id'}"/>
+					<filter string="Platform" context="{'group_by':'platform_id'}"/>
+					<filter string="Server" context="{'group_by':'server_id'}"/>
+					<filter string="DB server" context="{'group_by':'db_server_id'}"/>
+					<filter string="State" context="{'group_by':'state'}"/>
+					<filter string="Type" context="{'group_by':'type'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+
+</odoo>

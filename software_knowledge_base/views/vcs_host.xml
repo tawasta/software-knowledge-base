@@ -1,49 +1,48 @@
 <?xml version="1.0"?>
-<openerp>
-    <data>
-	    <!-- VCS Host Tree View -->
-	    <record model="ir.ui.view" id="vcs_host_tree_view">
-	        <field name="name">SW Knowledge Base - VCS Host tree</field>
-	        <field name="model">software_knowledge_base.vcs_host</field>
-	        <field name="arch" type="xml">
-	            <tree string="VCS Hosts">
-	                <field name="name"/>
-	                <field name="vcs" string="VCS"/>
-	                <field name="description"/>
-					<field name="address"/>
-	            </tree>
-	        </field>
-	    </record>
+<odoo>
 
-	    <!-- VCS Host Form View -->
-	    <record model="ir.ui.view" id="vcs_host_form_view">
-	        <field name="name">SW Knowledge Base - VCS Host form</field>
-	        <field name="model">software_knowledge_base.vcs_host</field>
-	        <field name="arch" type="xml">
-	            <form string="VCS Hosts">
-                    <header>
+	<!-- VCS Host Tree View -->
+	<record model="ir.ui.view" id="vcs_host_tree_view">
+		<field name="name">SW Knowledge Base - VCS Host tree</field>
+		<field name="model">software_knowledge_base.vcs_host</field>
+		<field name="arch" type="xml">
+			<tree string="VCS Hosts">
+				<field name="name"/>
+				<field name="vcs" string="VCS"/>
+				<field name="description"/>
+				<field name="address"/>
+			</tree>
+		</field>
+	</record>
 
-                    </header>
+	<!-- VCS Host Form View -->
+	<record model="ir.ui.view" id="vcs_host_form_view">
+		<field name="name">SW Knowledge Base - VCS Host form</field>
+		<field name="model">software_knowledge_base.vcs_host</field>
+		<field name="arch" type="xml">
+			<form string="VCS Hosts">
+				<header>
 
-	                <sheet string="Form">
-	                    <div class="oe_title">
-	                        <div class="oe_edit_only">
-	                            <label for="name"/>
-	                        </div>
-	                        <h1><field name="name" required="1"/></h1>
-	                    </div>
-	
-						<group col='2'>
-							<field name="address"/>
-							<field name="vcs"/>
-							<field name="description"/>
-							<field name="repositories"/>
-						</group>
+				</header>
 
-	                </sheet>
-	            </form>
-	        </field>
-	    </record>
+				<sheet string="Form">
+					<div class="oe_title">
+						<div class="oe_edit_only">
+							<label for="name"/>
+						</div>
+						<h1><field name="name" required="1"/></h1>
+					</div>
 
-    </data>
-</openerp>
+					<group col='2'>
+						<field name="address"/>
+						<field name="vcs"/>
+						<field name="description"/>
+						<field name="repositories"/>
+					</group>
+
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+</odoo>

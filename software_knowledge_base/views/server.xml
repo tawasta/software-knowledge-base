@@ -1,92 +1,90 @@
 <?xml version="1.0"?>
-<openerp>
-    <data>
-	    <!-- Servers Tree View -->
-	    <record model="ir.ui.view" id="server_tree_view">
-	        <field name="name">SW Knowledge Base - Servers tree</field>
-	        <field name="model">software_knowledge_base.server</field>
-	        <field name="arch" type="xml">
-	            <tree string="Servers">
-	                <field name="name"/>
-					<field name="ip_address"/>
-					<field name="operating_system_id"/>
-					<field name="installation_ids"/>
-					<field name="company_id"/>
-					<field name="active"/>
-	            </tree>
-	        </field>
-	    </record>
+<odoo>
 
-	    <!-- Servers Form View -->
-	    <record model="ir.ui.view" id="server_form_view">
-	        <field name="name">SW Knowledge Base - Servers form</field>
-	        <field name="model">software_knowledge_base.server</field>
-	        <field name="arch" type="xml">
-	            <form string="Servers">
-	                <header>
-	                </header>
-	                <sheet string="Form">
-	                    <div class="oe_title">
-	                        <div class="oe_edit_only">
-	                            <label for="name"/>
-	                        </div>
-	                        <h1><field name="name" required="1"/></h1>
-	                    </div>
-	
-	                    <group col="4">	              
-							<field name="company_id" widget="selection"/>          
-							<field name="ip_address"/>
-							<field name="operating_system_id"/>
-							<field name="active"/>
-	                    </group>
+	<!-- Servers Tree View -->
+	<record model="ir.ui.view" id="server_tree_view">
+		<field name="name">SW Knowledge Base - Servers tree</field>
+		<field name="model">software_knowledge_base.server</field>
+		<field name="arch" type="xml">
+			<tree string="Servers">
+				<field name="name"/>
+				<field name="ip_address"/>
+				<field name="operating_system_id"/>
+				<field name="installation_ids"/>
+				<field name="company_id"/>
+				<field name="active"/>
+			</tree>
+		</field>
+	</record>
 
-						<notebook>
-							<page string="Installations">
-								<field name="installation_ids"/>
-							</page>
-							<page string="Technical specifications">
-								<field name="specification" widget="bootstrap_markdown"/>
-							</page>
-							<page string="Additional info">
-								<field name="additional_info" widget="bootstrap_markdown"/>
-							</page>
-	                         <page string="Notes">
-                                <field name="note_ids"/>
-                            </page>
+	<!-- Servers Form View -->
+	<record model="ir.ui.view" id="server_form_view">
+		<field name="name">SW Knowledge Base - Servers form</field>
+		<field name="model">software_knowledge_base.server</field>
+		<field name="arch" type="xml">
+			<form string="Servers">
+				<header>
+				</header>
+				<sheet string="Form">
+					<div class="oe_title">
+						<div class="oe_edit_only">
+							<label for="name"/>
+						</div>
+						<h1><field name="name" required="1"/></h1>
+					</div>
 
-						</notebook>
-	                </sheet>
-	                <div class="oe_chatter">
-	                    <field name="message_follower_ids" widget="mail_followers"/>
-	                    <field name="message_ids" widget="mail_thread"/>
-	                </div>
-	            </form>
-	        </field>
-	    </record>
-
-		<!-- Servers search view -->
-		<record model="ir.ui.view" id="server_search_view">
-	        <field name="name">Servers search</field>
-	        <field name="model">software_knowledge_base.server</field>
-			<field name="arch" type="xml">
-				<search string="Search servers">
-					<field name="name"/>
-					<field name="ip_address"/>
-					<field name="operating_system_id"/>
-
-					<group expand="0" string="State">
-						<filter string="Active" name="active" domain="[('active', '=', True)]"/>
-						<filter string="Inactive" name="invactive" domain="[('active', '=', False)]"/>
+					<group col="4">
+						<field name="company_id" widget="selection"/>
+						<field name="ip_address"/>
+						<field name="operating_system_id"/>
+						<field name="active"/>
 					</group>
 
-					<group expand="0" string="Group By...">
-						<filter string="Company" context="{'group_by':'company_id'}"/>
-						<filter string="OS" context="{'group_by':'operating_system'}"/>
-					</group>
-				</search>
-			</field>
-		</record>
+					<notebook>
+						<page string="Installations">
+							<field name="installation_ids"/>
+						</page>
+						<page string="Technical specifications">
+							<field name="specification" widget="bootstrap_markdown"/>
+						</page>
+						<page string="Additional info">
+							<field name="additional_info" widget="bootstrap_markdown"/>
+						</page>
+							<page string="Notes">
+							<field name="note_ids"/>
+						</page>
 
+					</notebook>
+				</sheet>
+				<div class="oe_chatter">
+					<field name="message_follower_ids" widget="mail_followers"/>
+					<field name="message_ids" widget="mail_thread"/>
+				</div>
+			</form>
+		</field>
+	</record>
 
-    </data>
-</openerp>
+	<!-- Servers search view -->
+	<record model="ir.ui.view" id="server_search_view">
+		<field name="name">Servers search</field>
+		<field name="model">software_knowledge_base.server</field>
+		<field name="arch" type="xml">
+			<search string="Search servers">
+				<field name="name"/>
+				<field name="ip_address"/>
+				<field name="operating_system_id"/>
+
+				<group expand="0" string="State">
+					<filter string="Active" name="active" domain="[('active', '=', True)]"/>
+					<filter string="Inactive" name="invactive" domain="[('active', '=', False)]"/>
+				</group>
+
+				<group expand="0" string="Group By...">
+					<filter string="Company" context="{'group_by':'company_id'}"/>
+					<filter string="OS" context="{'group_by':'operating_system'}"/>
+				</group>
+			</search>
+		</field>
+	</record>
+
+</odoo>

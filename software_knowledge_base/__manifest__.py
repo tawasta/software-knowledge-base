@@ -60,7 +60,7 @@
         'views/vcs_host.xml',
         'views/vcs_team.xml',
         'views/vcs.xml',
-        # 'views/vcs_provider.xml',        
+        # 'views/vcs_provider.xml',
     ],
     'demo': [
     ],
