@@ -7,7 +7,7 @@ import re
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import api, fields, models
+from odoo import api, models
 
 # 4. Imports from Odoo modules:
 
@@ -46,8 +46,10 @@ class SWKBRepository(models.Model):
                 if file['type'] == 'tree':
                     sub_files = record.api_gitlab_get_files(path=file['path'])
 
-                    readme = record.api_get_readme_from_repository_tree(sub_files)
-                    manifest = record.api_get_manifest_from_repository_tree(sub_files)
+                    readme = record.api_get_readme_from_repository_tree(
+                        sub_files)
+                    manifest = record.api_get_manifest_from_repository_tree(
+                        sub_files)
                     summary = ''
 
                     if manifest:
@@ -87,9 +89,10 @@ class SWKBRepository(models.Model):
 
         for file in tree:
             if file['name'][0:15].lower() == '__manifest__.py' or \
-                file['name'][0:14] == '__openerp__.py':
+                    file['name'][0:14] == '__openerp__.py':
                 manifest_file = self.api_gitlab_get_file(file['path'])
-                manifest_file_content = base64.b64decode(manifest_file['content'])
+                manifest_file_content \
+                    = base64.b64decode(manifest_file['content'])
 
                 return manifest_file_content
 

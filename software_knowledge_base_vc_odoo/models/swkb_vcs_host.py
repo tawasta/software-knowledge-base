@@ -3,10 +3,9 @@
 # 1. Standard library imports:
 
 # 2. Known third party imports:
-import gitlab
 
 # 3. Odoo imports (openerp):
-from odoo import api, fields, models
+from odoo import api, models
 
 # 4. Imports from Odoo modules:
 
@@ -35,6 +34,5 @@ class SWKBVcsHost(models.Model):
         for record in self:
             for repository in record.repositories:
                 repository.action_update_odoo_modules()
-
 
     # 8. Business methods
