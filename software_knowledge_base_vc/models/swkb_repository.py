@@ -8,7 +8,7 @@ import logging
 import gitlab
 
 # 3. Odoo imports (openerp):
-from odoo import api, fields, models
+from odoo import api, models
 from odoo import _
 
 # 4. Imports from Odoo modules:
@@ -53,7 +53,9 @@ class SWKBRepository(models.Model):
         host = self.vcs_host
         if not host:
             _logger.warning(_("No VCS host set: %s", self))
-        session = gitlab.Gitlab(host.address, token=host.api_token, verify_ssl=host.api_verify_ssl)
+        session = gitlab.Gitlab(host.address,
+                                token=host.api_token,
+                                verify_ssl=host.api_verify_ssl)
 
         return session
 
@@ -93,7 +95,9 @@ class SWKBRepository(models.Model):
         if not project:
             return False
 
-        file = session.getfile(project['id'], file_path, project['default_branch'])
+        file = session.getfile(project['id'],
+                               file_path,
+                               project['default_branch'])
 
         return file
 
@@ -106,7 +110,9 @@ class SWKBRepository(models.Model):
         if not project:
             return False
 
-        file = session.getfile(project['id'], file['path'], project['default_branch'])
+        file = session.getfile(project['id'],
+                               file['path'],
+                               project['default_branch'])
 
         return file
 

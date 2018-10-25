@@ -1,3 +1,3 @@
-import swkb_repository
-import swkb_vcs_api
-import swkb_vcs_host
+from . import swkb_repository
+from . import swkb_vcs_api
+from . import swkb_vcs_host

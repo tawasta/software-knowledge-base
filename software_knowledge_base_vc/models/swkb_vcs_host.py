@@ -41,7 +41,9 @@ class SWKBVcsHost(models.Model):
         for record in self:
             record.validate_host()
 
-            session = gitlab.Gitlab(record.address, token=record.api_token, verify_ssl=record.api_verify_ssl)
+            session = gitlab.Gitlab(record.address,
+                                    token=record.api_token,
+                                    verify_ssl=record.api_verify_ssl)
 
             for project in session.getall(session.getprojects):
                 record.parse_repository_project(project)
@@ -89,7 +91,8 @@ class SWKBVcsHost(models.Model):
         if not vcs_team:
             vcs_team = vcs_team_model.create({'name': team_path})
 
-        repository = repository_model.search([('url', '=', project['web_url'])])
+        repository \
+            = repository_model.search([('url', '=', project['web_url'])])
 
         if repository:
             # Update repository
