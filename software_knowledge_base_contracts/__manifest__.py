@@ -23,20 +23,19 @@
     'name': 'SDKB Contracts',
     'summary': 'Adds contract/contract line to SDKB installations',
     'version': '10.0.0.1.0',
-    'category': 'Knowledge',
+    'category': 'Specific Industry Applications',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',
     'application': False,
-    'installable': False,
+    'installable': True,
     'external_dependencies': {
         'python': [
         ],
         'bin': [],
     },
     'depends': [
-        'analytic',
-        'account_analytic_analysis',
+        'contract',
         'software_knowledge_base',
     ],
     'data': [

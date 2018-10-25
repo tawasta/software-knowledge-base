@@ -19,6 +19,7 @@ class AccountAnalyticInvoiceLine(models.Model):
         if 'installation_id' in values:
             for record in self:
                 if record.installation_id:
-                    record.installation_id.account_analytic_account_id = record.analytic_account_id.id
+                    record.installation_id.account_analytic_account_id \
+                        = record.analytic_account_id.id
 
         return res
