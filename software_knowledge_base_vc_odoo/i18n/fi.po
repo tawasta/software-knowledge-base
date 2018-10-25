@@ -1,0 +1,32 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* software_knowledge_base_vc_odoo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-25 08:39+0000\n"
+"PO-Revision-Date: 2018-10-25 08:39+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: software_knowledge_base_vc_odoo
+#: model:ir.model,name:software_knowledge_base_vc_odoo.model_software_knowledge_base_repository
+msgid "Repository"
+msgstr "Repository"
+
+#. module: software_knowledge_base_vc_odoo
+#: model:ir.ui.view,arch_db:software_knowledge_base_vc_odoo.repository_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base_vc_odoo.vcs_host_form_view
+msgid "Update Odoo modules"
+msgstr "Update Odoo modules"
+
+#. module: software_knowledge_base_vc_odoo
+#: model:ir.model,name:software_knowledge_base_vc_odoo.model_software_knowledge_base_vcs_host
+msgid "Version Control System Host"
+msgstr "Versionhallintajärjestelmän isäntä"

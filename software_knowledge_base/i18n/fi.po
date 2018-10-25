@@ -1,21 +1,19 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* software_knowledge_base
+#	* software_knowledge_base
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-06 20:38+0000\n"
-"PO-Revision-Date: 2018-04-06 23:41+0300\n"
+"POT-Creation-Date: 2018-10-25 07:45+0000\n"
+"PO-Revision-Date: 2018-10-25 07:45+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
-"Language: fi\n"
-"X-Generator: Poedit 1.8.7.1\n"
 
 #. module: software_knowledge_base
 #: sql_constraint:software_knowledge_base.repository_tag:0
@@ -23,36 +21,36 @@ msgid "A tag with this name already exists"
 msgstr "Tällä nimellä on jo olemassa tunniste"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.module,active:0
-#: field:software_knowledge_base.operating_system,active:0
-#: field:software_knowledge_base.platform,active:0
-#: field:software_knowledge_base.repository,active:0
-#: field:software_knowledge_base.repository_tag,active:0
-#: view:software_knowledge_base.server:software_knowledge_base.server_search_view
-#: field:software_knowledge_base.server,active:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_active
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_active
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform_active
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_active
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_tag_active
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_active
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_search_view
 msgid "Active"
 msgstr "Aktiivinen"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
-#: field:software_knowledge_base.external_component,additional_info:0
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
-#: field:software_knowledge_base.installation,additional_info:0
-#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
-#: field:software_knowledge_base.module,additional_info:0
-#: view:software_knowledge_base.server:software_knowledge_base.server_form_view
-#: field:software_knowledge_base.server,additional_info:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_additional_info
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_additional_info
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_additional_info
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_additional_info
+#: model:ir.ui.view,arch_db:software_knowledge_base.external_component_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_form_view
 msgid "Additional info"
 msgstr "Lisätiedot"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.external_component,additional_info:0
-#: help:software_knowledge_base.module,additional_info:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_external_component_additional_info
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module_additional_info
 msgid "Additional information"
 msgstr "Lisätiedot"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.vcs_host,address:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host_address
 msgid "Address"
 msgstr "Osoite"
 
@@ -62,7 +60,12 @@ msgid "Admin"
 msgstr "Admin"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.operating_system,codename:0
+#: sql_constraint:software_knowledge_base.operating_system:0
+msgid "An operating system with this name already exists"
+msgstr "Tällä nimellä on jo olemassa käyttöjärjestelmä"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_codename
 msgid "Codename"
 msgstr "Koodinimi"
 
@@ -77,10 +80,10 @@ msgid "Community (commercial)"
 msgstr "Yhteisö (kaupallinen)"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
-#: field:software_knowledge_base.installation,company_id:0
-#: view:software_knowledge_base.server:software_knowledge_base.server_search_view
-#: field:software_knowledge_base.server,company_id:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_company_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_company_id
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_search_view
 msgid "Company"
 msgstr "Yritys"
 
@@ -90,88 +93,79 @@ msgid "Core"
 msgstr "Core"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,create_uid:0
-#: field:software_knowledge_base.installation,create_uid:0
-#: field:software_knowledge_base.module,create_uid:0
-#: field:software_knowledge_base.operating_system,create_uid:0
-#: field:software_knowledge_base.platform,create_uid:0
-#: field:software_knowledge_base.repository,create_uid:0
-#: field:software_knowledge_base.repository_tag,create_uid:0
-#: field:software_knowledge_base.server,create_uid:0
-#: field:software_knowledge_base.server_note,create_uid:0
-#: field:software_knowledge_base.vcs,create_uid:0
-#: field:software_knowledge_base.vcs_host,create_uid:0
-#: field:software_knowledge_base.vcs_team,create_uid:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_create_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_create_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_create_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_create_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform_create_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_create_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_tag_create_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_create_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note_create_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_create_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host_create_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_team_create_uid
 msgid "Created by"
 msgstr "Luonut"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,create_date:0
-#: field:software_knowledge_base.installation,create_date:0
-#: field:software_knowledge_base.module,create_date:0
-#: field:software_knowledge_base.operating_system,create_date:0
-#: field:software_knowledge_base.platform,create_date:0
-#: field:software_knowledge_base.repository,create_date:0
-#: field:software_knowledge_base.repository_tag,create_date:0
-#: field:software_knowledge_base.server,create_date:0
-#: field:software_knowledge_base.server_note,create_date:0
-#: field:software_knowledge_base.vcs,create_date:0
-#: field:software_knowledge_base.vcs_host,create_date:0
-#: field:software_knowledge_base.vcs_team,create_date:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_create_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_create_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_create_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_create_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform_create_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_create_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_tag_create_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_create_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note_create_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_create_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host_create_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_team_create_date
 msgid "Created on"
 msgstr "Luotu"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
-#: field:software_knowledge_base.installation,partner_ids:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_partner_ids
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
 msgid "Customers"
 msgstr "Asiakkaat"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.installation,partner_ids:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_installation_partner_ids
 msgid "Customers of this installation."
-msgstr "Asennukseen liittyvät asiakkaat."
+msgstr "Asennukseen liittyvät asiakkaat"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "DB server"
 msgstr "Tietokantapalvelin"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.installation,db_server_ip_address:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_db_server_ip_address
 msgid "DB server IP-address"
 msgstr "Tietokantapalvelimen IP-osoite"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.installation,db_server_id:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_db_server_id
 msgid "Database server"
 msgstr "Tietokantapalvelin"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.external_component,message_last_post:0
-#: help:software_knowledge_base.installation,message_last_post:0
-#: help:software_knowledge_base.module,message_last_post:0
-#: help:software_knowledge_base.platform,message_last_post:0
-#: help:software_knowledge_base.repository,message_last_post:0
-#: help:software_knowledge_base.server,message_last_post:0
-msgid "Date of the last message posted on the record."
-msgstr "Viimeisen viestin päivämäärä."
-
-#. module: software_knowledge_base
-#: field:software_knowledge_base.operating_system,description:0
-#: field:software_knowledge_base.platform,description:0
-#: view:software_knowledge_base.repository:software_knowledge_base.repository_form_view
-#: field:software_knowledge_base.repository,description:0
-#: view:software_knowledge_base.vcs:software_knowledge_base.vcs_form_view
-#: field:software_knowledge_base.vcs,description:0
-#: field:software_knowledge_base.vcs_host,description:0
-#: view:software_knowledge_base.vcs_team:software_knowledge_base.vcs_team_form_view
-#: field:software_knowledge_base.vcs_team,description:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_description
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform_description
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_description
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_description
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host_description
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_team_description
+#: model:ir.ui.view,arch_db:software_knowledge_base.repository_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.vcs_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.vcs_team_form_view
 msgid "Description"
 msgstr "Kuvaus"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
+#: selection:software_knowledge_base.installation,type:0
 msgid "Dev"
 msgstr "Dev"
 
@@ -181,74 +175,74 @@ msgid "Developer"
 msgstr "Kehittäjä"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.installation,disk_usage:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_disk_usage
 msgid "Disk Usage (MB)"
 msgstr "Levytilan käyttö (MB)"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,display_name:0
-#: field:software_knowledge_base.installation,display_name:0
-#: field:software_knowledge_base.module,display_name:0
-#: field:software_knowledge_base.platform,display_name:0
-#: field:software_knowledge_base.repository,display_name:0
-#: field:software_knowledge_base.repository_tag,display_name:0
-#: field:software_knowledge_base.server,display_name:0
-#: field:software_knowledge_base.server_note,display_name:0
-#: field:software_knowledge_base.vcs,display_name:0
-#: field:software_knowledge_base.vcs_host,display_name:0
-#: field:software_knowledge_base.vcs_team,display_name:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_display_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_display_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_display_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform_display_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_display_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_tag_display_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_display_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note_display_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_display_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host_display_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_team_display_name
 msgid "Display Name"
-msgstr "Nimi"
+msgstr "Näyttönimi"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.operating_system,display_name:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_display_name
 msgid "Display name"
-msgstr "Display name"
+msgstr "Näyttönimi"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.operating_system,codename:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_operating_system_codename
 msgid "E.g. \"Buster\" or \"Zapus\""
-msgstr "Esim. \"Buster\" or \"Zapus\""
+msgstr "Esim. \"Buster\" tai \"Zapus\""
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.operating_system,name:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_operating_system_name
 msgid "E.g. \"Debian\" or \"CentOS\""
-msgstr "Esim. \"Debian\" or \"CentOS\""
+msgstr "Esim. \"Debian\" tai \"CentOS\""
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.vcs_team,name:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_vcs_team_name
 msgid "E.g. \"companyname\" or \"teamname\""
-msgstr "Esim. \"yrityksennimi\" tai \"tiiminnimi\""
+msgstr "Esim. \"companyname\" tai \"teamname\""
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.repository,name:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_repository_name
 msgid "E.g. \"odoo-customizations\" or \"moodle-extension\""
-msgstr "Esim. \"odoo-customization\" tai \"moodle-extension\""
+msgstr "Esim. \"odoo-customizations\" tai \"moodle-extension\""
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.platform,name:0
-msgid "E.g. Odoo 8 or Drupal 7"
-msgstr "Esim. Odoo 8 tai Drupal 7"
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_platform_name
+msgid "E.g. Odoo 10 or Drupal 8"
+msgstr "Esim Odoo 10 tai Drupal 8"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.vcs,name:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_vcs_name
 msgid "E.g. git or svn"
-msgstr "moodle-extension"
+msgstr "Esim. git tai svn"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.vcs_host,name:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_vcs_host_name
 msgid "E.g. github or bitbucket"
 msgstr "Esim. github tai bitbucket"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.vcs_host,address:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_vcs_host_address
 msgid "E.g. https://github.com or 192.168.100.100"
 msgstr "Esim. https://github.com tai 192.168.100.100"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.vcs_host,address_readme:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_vcs_host_address_readme
 msgid "E.g. https://raw.githubusercontent.com"
-msgstr "E.g. https://raw.githubusercontent.com"
+msgstr "Esim. https://raw.githubusercontent.com"
 
 #. module: software_knowledge_base
 #: model:ir.ui.menu,name:software_knowledge_base.environment_menu
@@ -256,7 +250,7 @@ msgid "Environments"
 msgstr "Ympäristöt"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.server_note,event_date:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note_event_date
 msgid "Event date"
 msgstr "Tapahtumapäivä"
 
@@ -267,117 +261,87 @@ msgstr "Ulkoinen komponentti"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.ext_components_action
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_external_component_ids
 #: model:ir.ui.menu,name:software_knowledge_base.ext_components_menu
-#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_tree_view
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
-#: field:software_knowledge_base.installation,external_component_ids:0
+#: model:ir.ui.view,arch_db:software_knowledge_base.external_component_tree_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
 msgid "External components"
 msgstr "Ulkoiset komponentit"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.server_note,extra:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note_extra
 msgid "Extra info"
 msgstr "Lisätiedot"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
-#: field:software_knowledge_base.external_component,features:0
-#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
-#: field:software_knowledge_base.module,features:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_features
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_features
+#: model:ir.ui.view,arch_db:software_knowledge_base.external_component_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_form_view
 msgid "Features"
 msgstr "Ominaisuudet"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,message_follower_ids:0
-#: field:software_knowledge_base.installation,message_follower_ids:0
-#: field:software_knowledge_base.module,message_follower_ids:0
-#: field:software_knowledge_base.platform,message_follower_ids:0
-#: field:software_knowledge_base.repository,message_follower_ids:0
-#: field:software_knowledge_base.server,message_follower_ids:0
-msgid "Followers"
-msgstr "Seuraajat"
-
-#. module: software_knowledge_base
-#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
-#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
-#: view:software_knowledge_base.operating_system:software_knowledge_base.operating_system_form_view
-#: view:software_knowledge_base.platform:software_knowledge_base.platform_form_view
-#: view:software_knowledge_base.repository:software_knowledge_base.repository_form_view
-#: view:software_knowledge_base.server:software_knowledge_base.server_form_view
-#: view:software_knowledge_base.server_note:software_knowledge_base.server_note_form_view
-#: view:software_knowledge_base.vcs:software_knowledge_base.vcs_form_view
-#: view:software_knowledge_base.vcs_host:software_knowledge_base.vcs_host_form_view
-#: view:software_knowledge_base.vcs_team:software_knowledge_base.vcs_team_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.external_component_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.operating_system_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.platform_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.repository_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_note_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.vcs_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.vcs_host_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.vcs_team_form_view
 msgid "Form"
 msgstr "Lomake"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.server_note,description:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note_description
 msgid "Full description"
 msgstr "Pitkä kuvaus"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
-#: view:software_knowledge_base.server:software_knowledge_base.server_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_search_view
 msgid "Group By..."
 msgstr "Ryhmittele..."
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.external_component,message_summary:0
-#: help:software_knowledge_base.installation,message_summary:0
-#: help:software_knowledge_base.module,message_summary:0
-#: help:software_knowledge_base.platform,message_summary:0
-#: help:software_knowledge_base.repository,message_summary:0
-#: help:software_knowledge_base.server,message_summary:0
-msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
-msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
-
-#. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,url:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_url
 msgid "Homepage"
 msgstr "WWW"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.repository,vcs_host:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_vcs_host
 msgid "Host"
 msgstr "Host"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,id:0
-#: field:software_knowledge_base.installation,id:0
-#: field:software_knowledge_base.module,id:0
-#: field:software_knowledge_base.operating_system,id:0
-#: field:software_knowledge_base.platform,id:0
-#: field:software_knowledge_base.repository,id:0
-#: field:software_knowledge_base.repository_tag,id:0
-#: field:software_knowledge_base.server,id:0
-#: field:software_knowledge_base.server_note,id:0
-#: field:software_knowledge_base.vcs,id:0
-#: field:software_knowledge_base.vcs_host,id:0
-#: field:software_knowledge_base.vcs_team,id:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_tag_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_team_id
 msgid "ID"
-msgstr "ID"
+msgstr "Tunniste (ID)"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.server,ip_address:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_ip_address
 msgid "IP Address"
 msgstr "IP-osoite"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.installation,identifier:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_identifier
 msgid "Identifier"
 msgstr "Tunniste"
-
-#. module: software_knowledge_base
-#: help:software_knowledge_base.external_component,message_unread:0
-#: help:software_knowledge_base.installation,message_unread:0
-#: help:software_knowledge_base.module,message_unread:0
-#: help:software_knowledge_base.platform,message_unread:0
-#: help:software_knowledge_base.repository,message_unread:0
-#: help:software_knowledge_base.server,message_unread:0
-msgid "If checked new messages require your attention."
-msgstr "If checked new messages require your attention."
 
 #. module: software_knowledge_base
 #: selection:software_knowledge_base.installation,state:0
@@ -395,175 +359,132 @@ msgid "In-house"
 msgstr "Itse kehitetty"
 
 #. module: software_knowledge_base
-#: selection:software_knowledge_base.module,module_type:0
-msgid "In-house (commercial)"
-msgstr "In-house (commercial)"
-
-#. module: software_knowledge_base
-#: view:software_knowledge_base.server:software_knowledge_base.server_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_search_view
 msgid "Inactive"
-msgstr "Inactive"
+msgstr "Ei aktiivinen"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_installation
-#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
-#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.external_component_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_form_view
 msgid "Installation"
 msgstr "Asennus"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
-#: field:software_knowledge_base.external_component,installation_notes:0
-#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
-#: field:software_knowledge_base.module,installation_notes:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_installation_notes
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_installation_notes
+#: model:ir.ui.view,arch_db:software_knowledge_base.external_component_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_form_view
 msgid "Installation notes"
 msgstr "Asennushuomiot"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.installations_action
+#: model:ir.model.fields,field_description:software_knowledge_base.field_procountor_res_partner_installation_ids
+#: model:ir.model.fields,field_description:software_knowledge_base.field_project_project_installation_ids
+#: model:ir.model.fields,field_description:software_knowledge_base.field_res_partner_installation_ids
+#: model:ir.model.fields,field_description:software_knowledge_base.field_res_users_installation_ids
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_installation_ids
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_installation_ids
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_installation_ids
 #: model:ir.ui.menu,name:software_knowledge_base.installations_menu
-#: view:project.project:software_knowledge_base.project_form_view
-#: field:project.project,installation_ids:0
-#: view:res.partner:software_knowledge_base.partner_form_view
-#: field:res.partner,installation_ids:0
-#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
-#: field:software_knowledge_base.external_component,installation_ids:0
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_tree_view
-#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
-#: field:software_knowledge_base.module,installation_ids:0
-#: view:software_knowledge_base.server:software_knowledge_base.server_form_view
-#: field:software_knowledge_base.server,installation_ids:0
+#: model:ir.ui.view,arch_db:software_knowledge_base.external_component_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_tree_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.partner_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.project_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_form_view
 msgid "Installations"
 msgstr "Asennukset"
 
 #. module: software_knowledge_base
-#: help:project.project,installation_ids:0
+#: model:ir.model.fields,help:software_knowledge_base.field_project_project_installation_ids
 msgid "Installations related to this project."
 msgstr "Projektiin liittyvät asennukset"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.external_component,installation_ids:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_external_component_installation_ids
 msgid "Installations using this component."
 msgstr "Asennukset, jotka käyttävät tätä komponenttia."
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,message_is_follower:0
-#: field:software_knowledge_base.installation,message_is_follower:0
-#: field:software_knowledge_base.module,message_is_follower:0
-#: field:software_knowledge_base.platform,message_is_follower:0
-#: field:software_knowledge_base.repository,message_is_follower:0
-#: field:software_knowledge_base.server,message_is_follower:0
-msgid "Is a Follower"
-msgstr "On seuraaja"
-
-#. module: software_knowledge_base
-#: field:software_knowledge_base.module,issues:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_issues
 msgid "Issues"
 msgstr "Ongelmat"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.module,issues:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module_issues
 msgid "Known bugs, limitations, incompatibilities with other modules etc."
 msgstr "Tiedossa olevat bugit, rajoitukset, yhteensopimattomuudet muihiin moduleihin ym."
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_form_view
 msgid "Known issues"
 msgstr "Ongelmat"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,message_last_post:0
-#: field:software_knowledge_base.installation,message_last_post:0
-#: field:software_knowledge_base.module,message_last_post:0
-#: field:software_knowledge_base.platform,message_last_post:0
-#: field:software_knowledge_base.repository,message_last_post:0
-#: field:software_knowledge_base.server,message_last_post:0
-msgid "Last Message Date"
-msgstr "Viimeisin viesti"
-
-#. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,__last_update:0
-#: field:software_knowledge_base.installation,__last_update:0
-#: field:software_knowledge_base.module,__last_update:0
-#: field:software_knowledge_base.operating_system,__last_update:0
-#: field:software_knowledge_base.platform,__last_update:0
-#: field:software_knowledge_base.repository,__last_update:0
-#: field:software_knowledge_base.repository_tag,__last_update:0
-#: field:software_knowledge_base.server,__last_update:0
-#: field:software_knowledge_base.server_note,__last_update:0
-#: field:software_knowledge_base.vcs,__last_update:0
-#: field:software_knowledge_base.vcs_host,__last_update:0
-#: field:software_knowledge_base.vcs_team,__last_update:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component___last_update
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation___last_update
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module___last_update
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system___last_update
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform___last_update
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository___last_update
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_tag___last_update
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server___last_update
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note___last_update
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs___last_update
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host___last_update
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_team___last_update
 msgid "Last Modified on"
-msgstr "Last Modified on"
+msgstr "Viimeksi muokattu"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,write_uid:0
-#: field:software_knowledge_base.installation,write_uid:0
-#: field:software_knowledge_base.module,write_uid:0
-#: field:software_knowledge_base.operating_system,write_uid:0
-#: field:software_knowledge_base.platform,write_uid:0
-#: field:software_knowledge_base.repository,write_uid:0
-#: field:software_knowledge_base.repository_tag,write_uid:0
-#: field:software_knowledge_base.server,write_uid:0
-#: field:software_knowledge_base.server_note,write_uid:0
-#: field:software_knowledge_base.vcs,write_uid:0
-#: field:software_knowledge_base.vcs_host,write_uid:0
-#: field:software_knowledge_base.vcs_team,write_uid:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_write_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_write_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_write_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_write_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform_write_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_tag_write_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_write_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note_write_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_write_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host_write_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_team_write_uid
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_write_uid
 msgid "Last Updated by"
-msgstr "Viimeisin päivittäjä"
+msgstr "Viimeksi päivittänyt"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,write_date:0
-#: field:software_knowledge_base.installation,write_date:0
-#: field:software_knowledge_base.module,write_date:0
-#: field:software_knowledge_base.operating_system,write_date:0
-#: field:software_knowledge_base.platform,write_date:0
-#: field:software_knowledge_base.repository,write_date:0
-#: field:software_knowledge_base.repository_tag,write_date:0
-#: field:software_knowledge_base.server,write_date:0
-#: field:software_knowledge_base.server_note,write_date:0
-#: field:software_knowledge_base.vcs,write_date:0
-#: field:software_knowledge_base.vcs_host,write_date:0
-#: field:software_knowledge_base.vcs_team,write_date:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_write_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_write_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_write_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_write_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform_write_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_tag_write_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_write_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note_write_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_write_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host_write_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_team_write_date
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_write_date
 msgid "Last Updated on"
 msgstr "Viimeksi päivitetty"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.installation,external_component_ids:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_installation_external_component_ids
 msgid "Libraries and other third party components used by this installation."
 msgstr "Asennuksen käyttämät kirjastot ja muut ulkoiset komponentit."
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.vcs_host,description:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_vcs_host_description
 msgid "Longer description, if needed"
 msgstr "Pidempi kuvaus, jos tarpeellinen"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.repository,master_branch:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_master_branch
 msgid "Master branch"
 msgstr "Master branch"
-
-#. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,message_ids:0
-#: field:software_knowledge_base.installation,message_ids:0
-#: field:software_knowledge_base.module,message_ids:0
-#: field:software_knowledge_base.platform,message_ids:0
-#: field:software_knowledge_base.repository,message_ids:0
-#: field:software_knowledge_base.server,message_ids:0
-msgid "Messages"
-msgstr "Viestit"
-
-#. module: software_knowledge_base
-#: help:software_knowledge_base.external_component,message_ids:0
-#: help:software_knowledge_base.installation,message_ids:0
-#: help:software_knowledge_base.module,message_ids:0
-#: help:software_knowledge_base.platform,message_ids:0
-#: help:software_knowledge_base.repository,message_ids:0
-#: help:software_knowledge_base.server,message_ids:0
-msgid "Messages and communication history"
-msgstr "Viestihistoria"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_module
@@ -571,70 +492,75 @@ msgid "Module"
 msgstr "Moduuli"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.module,module_type:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_module_type
 msgid "Module type"
-msgstr "Modulin alkuperä"
+msgstr "Moduulin tyyppi"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.modules_action
+#: model:ir.model.fields,field_description:software_knowledge_base.field_project_task_module_ids
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_module_ids
 #: model:ir.ui.menu,name:software_knowledge_base.modules_menu
-#: view:project.task:software_knowledge_base.project_task_view
-#: field:project.task,module_ids:0
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
-#: field:software_knowledge_base.installation,module_ids:0
-#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
-#: view:software_knowledge_base.module:software_knowledge_base.module_tree_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_tree_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.project_task_view
 msgid "Modules"
 msgstr "Moduulit"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.installation,module_ids:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_installation_module_ids
 msgid "Modules used by this installation."
-msgstr "Asennuksen käyttämät modulit."
+msgstr "Asennuksen käyttämät moduulit"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.operating_system,url:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_operating_system_url
 msgid "More information about the OS"
-msgstr "More information about the OS"
+msgstr "Lisätietoa käyttöjärjestelmästä"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,name:0
-#: field:software_knowledge_base.installation,name:0
-#: field:software_knowledge_base.module,name:0
-#: view:software_knowledge_base.operating_system:software_knowledge_base.operating_system_tree_view
-#: field:software_knowledge_base.operating_system,name:0
-#: field:software_knowledge_base.platform,name:0
-#: field:software_knowledge_base.repository,name:0
-#: field:software_knowledge_base.repository_tag,name:0
-#: field:software_knowledge_base.server,name:0
-#: field:software_knowledge_base.vcs,name:0
-#: field:software_knowledge_base.vcs_host,name:0
-#: field:software_knowledge_base.vcs_team,name:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_tag_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_name
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_team_name
+#: model:ir.ui.view,arch_db:software_knowledge_base.operating_system_tree_view
 msgid "Name"
 msgstr "Nimi"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.server:software_knowledge_base.server_form_view
-#: view:software_knowledge_base.server_note:software_knowledge_base.server_note_tree_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_note_tree_view
 msgid "Notes"
-msgstr "Muistiinpanot"
+msgstr "Lisätiedot"
+
+#. module: software_knowledge_base
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_search_view
+msgid "OS"
+msgstr "OS"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_operating_system
-#: field:software_knowledge_base.server,operating_system_id:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_operating_system_id
 msgid "Operating system"
 msgstr "Käyttöjärjestelmä"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.server,operating_system:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_operating_system
 msgid "Operating system (DEPRECATED)"
-msgstr "Käyttöjärjestelmä (DEPRECATED)"
+msgstr "Operating system (DEPRECATED)"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.os_action
 #: model:ir.ui.menu,name:software_knowledge_base.os_menu
-#: view:software_knowledge_base.operating_system:software_knowledge_base.operating_system_form_view
-#: view:software_knowledge_base.operating_system:software_knowledge_base.operating_system_tree_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.operating_system_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.operating_system_tree_view
 msgid "Operating systems"
 msgstr "Käyttöjärjestelmät"
 
@@ -645,92 +571,88 @@ msgstr "Kumppani"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_platform
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
-#: field:software_knowledge_base.installation,platform_id:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_platform_id
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Platform"
 msgstr "Alusta"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.platforms_action
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_platform_ids
 #: model:ir.ui.menu,name:software_knowledge_base.platforms_menu
-#: field:software_knowledge_base.module,platform_ids:0
-#: view:software_knowledge_base.platform:software_knowledge_base.platform_form_view
-#: view:software_knowledge_base.platform:software_knowledge_base.platform_tree_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.platform_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.platform_tree_view
 msgid "Platforms"
 msgstr "Alustat"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.installation,port:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_port
 msgid "Port"
 msgstr "Portti"
 
 #. module: software_knowledge_base
-#: field:project.project,price_list:0
-msgid "Price list"
-msgstr "Hinnasto"
-
-#. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
+#: selection:software_knowledge_base.installation,type:0
 msgid "Production"
 msgstr "Tuotanto"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_project_project
 msgid "Project"
-msgstr "Projekti"
+msgstr "Projektit"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_form_view
-#: field:software_knowledge_base.installation,project_ids:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_project_ids
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
 msgid "Projects"
 msgstr "Projektit"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.installation,project_ids:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_installation_project_ids
 msgid "Projects utilizing this installation."
-msgstr "Projektit, joihin tämä asennus liittyy"
+msgstr "Projects utilizing this installation."
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
-#: field:software_knowledge_base.module,readme:0
-#: view:software_knowledge_base.repository:software_knowledge_base.repository_form_view
-#: field:software_knowledge_base.repository,readme:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_readme
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_readme
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.repository_form_view
 msgid "Readme"
 msgstr "Readme"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.vcs_host,address_readme:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host_address_readme
 msgid "Readme Address"
-msgstr "Readme:n osoite"
+msgstr "Readme-osoite"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Ready"
 msgstr "Valmis"
 
 #. module: software_knowledge_base
-#: help:project.task,module_ids:0
+#: model:ir.model.fields,help:software_knowledge_base.field_project_task_module_ids
 msgid "Related modules"
-msgstr "Modulit"
+msgstr "Moduulit"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.module,task_ids:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module_task_ids
 msgid "Related project management tasks"
 msgstr "Projektihallinnan tehtävät"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.repositories_action
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host_repositories
 #: model:ir.ui.menu,name:software_knowledge_base.repositories_menu
-#: view:software_knowledge_base.repository:software_knowledge_base.repository_form_view
-#: view:software_knowledge_base.repository:software_knowledge_base.repository_tree_view
-#: field:software_knowledge_base.vcs_host,repositories:0
+#: model:ir.ui.view,arch_db:software_knowledge_base.repository_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.repository_tree_view
 msgid "Repositories"
 msgstr "Repositoryt"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_repository
-#: field:software_knowledge_base.module,repository:0
-#: field:software_knowledge_base.platform,repository:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_repository
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform_repository
 msgid "Repository"
 msgstr "Repository"
 
@@ -740,7 +662,7 @@ msgid "Repository Tag"
 msgstr "Repositoryn tunniste"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.repository:software_knowledge_base.repository_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.repository_form_view
 msgid "Repository name"
 msgstr "Repositoryn nimi"
 
@@ -751,7 +673,7 @@ msgid "Repository tags"
 msgstr "Repositoryn tunnisteet"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.module,user_id:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_user_id
 msgid "Responsible"
 msgstr "Vastuuhenkilö"
 
@@ -761,55 +683,55 @@ msgid "SW Development"
 msgstr "Tietämyskanta"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Search Installations"
 msgstr "Hae asennuksia"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.server:software_knowledge_base.server_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_search_view
 msgid "Search servers"
-msgstr "Etsi palvelimia"
+msgstr "Hae palvelimia"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_server
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
-#: field:software_knowledge_base.installation,server_id:0
-#: field:software_knowledge_base.server_note,server_id:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_server_id
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note_server_id
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Server"
 msgstr "Palvelin"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.installation,server_ip_address:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_server_ip_address
 msgid "Server IP-address"
 msgstr "Palvelimen IP-osoite"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.server,note_ids:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note_ids
 msgid "Server note"
 msgstr "Palvelinmuistiinpano"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.server_note:software_knowledge_base.server_note_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_note_form_view
 msgid "Server notes"
 msgstr "Palvelinmuistiinpanot"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.servers_action
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_server_ids
 #: model:ir.ui.menu,name:software_knowledge_base.servers_menu
-#: view:software_knowledge_base.external_component:software_knowledge_base.external_component_form_view
-#: field:software_knowledge_base.operating_system,server_ids:0
-#: view:software_knowledge_base.server:software_knowledge_base.server_form_view
-#: view:software_knowledge_base.server:software_knowledge_base.server_tree_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.external_component_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_tree_view
 msgid "Servers"
 msgstr "Palvelimet"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Setup"
 msgstr "Asennusvaiheessa"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.server_note,name:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_note_name
 msgid "Short description"
 msgstr "Lyhyt kuvaus"
 
@@ -824,40 +746,35 @@ msgid "Software knowledge base"
 msgstr "Tietämyskanta"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
+#: selection:software_knowledge_base.installation,type:0
 msgid "Staging"
 msgstr "Staging"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
-#: view:software_knowledge_base.server:software_knowledge_base.server_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_search_view
 msgid "State"
 msgstr "Tila"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.installation,state:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_state
 msgid "Status"
-msgstr "Status"
+msgstr "Tila"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,message_summary:0
-#: field:software_knowledge_base.installation,message_summary:0
-#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
-#: field:software_knowledge_base.module,message_summary:0
-#: field:software_knowledge_base.module,summary:0
-#: field:software_knowledge_base.platform,message_summary:0
-#: field:software_knowledge_base.repository,message_summary:0
-#: field:software_knowledge_base.server,message_summary:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_summary
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_form_view
 msgid "Summary"
 msgstr "Yhteenveto"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.module,platform_ids:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module_platform_ids
 msgid "Supported platforms"
 msgstr "Tuetut alustat"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.repository,tag_ids:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_tag_ids
 msgid "Tags"
 msgstr "Tunnisteet"
 
@@ -867,126 +784,123 @@ msgid "Task"
 msgstr "Tehtävä"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
-#: field:software_knowledge_base.module,task_ids:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_task_ids
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_form_view
 msgid "Tasks"
 msgstr "Tehtävät"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.repository,vcs_team:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_vcs_team
 msgid "Team"
 msgstr "Tiimi"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.vcs_team,description:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_vcs_team_description
 msgid "Team description"
 msgstr "Tiimin kuvaus"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.vcs_team:software_knowledge_base.vcs_team_form_view
-#: view:software_knowledge_base.vcs_team:software_knowledge_base.vcs_team_tree_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.vcs_team_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.vcs_team_tree_view
 msgid "Teams"
 msgstr "Tiimit"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.server,specification:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server_specification
 msgid "Technical specification"
 msgstr "Speksit"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.server:software_knowledge_base.server_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_form_view
 msgid "Technical specifications"
 msgstr "Speksit"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 #: selection:software_knowledge_base.installation,state:0
 msgid "Terminated"
 msgstr "Irtisanottu"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
+#: selection:software_knowledge_base.installation,type:0
 msgid "Test"
 msgstr "Testi"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.module:software_knowledge_base.module_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.module_form_view
 msgid "Tested platforms"
 msgstr "Testatut alustat"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.server_note,event_date:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_server_note_event_date
 msgid "The actual date when the operation was made"
 msgstr "The actual date when the operation was made"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.repository,url:0
-#: help:software_knowledge_base.repository,url_readonly:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_repository_url
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_repository_url_readonly
 msgid "The full URL"
-msgstr "Koko url"
+msgstr "Koko URL"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.vcs,description:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_vcs_description
 msgid "The full name"
 msgstr "Koko nimi"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.installation:software_knowledge_base.installation_search_view
-#: field:software_knowledge_base.repository,vcs:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_project_project_total_invoiced
+msgid "Total Invoiced"
+msgstr "Laskutettu yhteensä"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_type
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_vcs
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Type"
 msgstr "Tyyppi"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.installation,url:0
-#: field:software_knowledge_base.repository,url:0
-#: field:software_knowledge_base.repository,url_readonly:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_url
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_url
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_url_readonly
 msgid "URL"
 msgstr "URL"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.external_component,message_unread:0
-#: field:software_knowledge_base.installation,message_unread:0
-#: field:software_knowledge_base.module,message_unread:0
-#: field:software_knowledge_base.platform,message_unread:0
-#: field:software_knowledge_base.repository,message_unread:0
-#: field:software_knowledge_base.server,message_unread:0
-msgid "Unread Messages"
-msgstr "Lukemattomat viestit"
-
-#. module: software_knowledge_base
-#: field:software_knowledge_base.operating_system,url:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_url
 msgid "Url"
-msgstr "Url"
+msgstr "Verkko-osoite"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.vcs_action
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_host_vcs
 #: model:ir.ui.menu,name:software_knowledge_base.vcs_type_menu
-#: view:software_knowledge_base.vcs:software_knowledge_base.vcs_form_view
-#: view:software_knowledge_base.vcs:software_knowledge_base.vcs_tree_view
-#: view:software_knowledge_base.vcs_host:software_knowledge_base.vcs_host_tree_view
-#: field:software_knowledge_base.vcs_host,vcs:0
+#: model:ir.ui.view,arch_db:software_knowledge_base.vcs_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.vcs_host_tree_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.vcs_tree_view
 msgid "VCS"
 msgstr "VCS"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.vcs_hosts_action
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_vcs_vcs_hosts
 #: model:ir.ui.menu,name:software_knowledge_base.vcs_hosts_menu
-#: field:software_knowledge_base.vcs,vcs_hosts:0
-#: view:software_knowledge_base.vcs_host:software_knowledge_base.vcs_host_form_view
-#: view:software_knowledge_base.vcs_host:software_knowledge_base.vcs_host_tree_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.vcs_host_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.vcs_host_tree_view
 msgid "VCS Hosts"
-msgstr "VCS Isännät"
+msgstr "VCS-isännät"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.vcs_teams_action
 #: model:ir.ui.menu,name:software_knowledge_base.vcs_teams_menu
 msgid "VCS Teams"
-msgstr "VCS Tiimit"
+msgstr "VCS-tiimit"
 
 #. module: software_knowledge_base
-#: field:software_knowledge_base.operating_system,version:0
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_version
 msgid "Version"
-msgstr "Version"
+msgstr "Versio"
 
 #. module: software_knowledge_base
 #: model:ir.ui.menu,name:software_knowledge_base.vcs_menu
@@ -1009,31 +923,36 @@ msgid "Version Control System Team"
 msgstr "Versionhallintajärjestelmän tiimi"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.installation,state:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_installation_state
 msgid "What is the deployments status of the installation"
-msgstr "What is the deployments status of the installation"
+msgstr "Mikä on asennuksen status"
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.module,module_type:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module_module_type
 msgid "Where the module has been developed"
-msgstr "Onko moduli peräisin coresta tai yhteisöstä, vai onko se itse kehitetty."
+msgstr "Onko moduuli peräisin coresta tai yhteisöstä, vai onko se itse kehitetty."
 
 #. module: software_knowledge_base
-#: help:software_knowledge_base.module,installation_ids:0
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module_installation_ids
 msgid "Where this module has been deployed."
-msgstr "Mihin moduli on asennettu."
+msgstr "Mihin moduuli on asennettu"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.server_note:software_knowledge_base.server_note_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_note_form_view
 msgid "e.g. Installed git"
 msgstr "esim. git asennettu"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.server_note:software_knowledge_base.server_note_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_note_form_view
 msgid "e.g. Installed git for updating Odoo modules etc."
 msgstr "esim. git asennettu Odoon moduulien päivittämistä yms. varten"
 
 #. module: software_knowledge_base
-#: view:software_knowledge_base.server_note:software_knowledge_base.server_note_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base.server_note_form_view
 msgid "e.g. apt-get install git"
 msgstr "esim. apt-get install git"
+
+#. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_server_note
+msgid "software_knowledge_base.server_note"
+msgstr "software_knowledge_base.server_note"
