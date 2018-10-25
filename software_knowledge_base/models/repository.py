@@ -55,13 +55,13 @@ class SWKBRepository(models.Model):
     vcs = fields.Many2one(
         comodel_name='software_knowledge_base.vcs',
         string='Type',
-        default=lambda self: self.vcs.search([('name', '=', 'git')])
+        default=lambda self: self._get_default_vcs()
     )
 
     vcs_host = fields.Many2one(
         comodel_name='software_knowledge_base.vcs_host',
         string='Host',
-        default=lambda self: self.vcs_host.search([('name', '=', 'github')])
+        default=lambda self: self._get_default_vcs_host()
     )
 
     vcs_team = fields.Many2one(
@@ -83,11 +83,20 @@ class SWKBRepository(models.Model):
     )
 
     # 3. Default methods
+    def _get_default_vcs(self):
+        args = [('name', '=', 'git')]
+        res = self.env['software_knowledge_base.vcs'].search(args)
+        return res and res[0] or False
+
+    def _get_default_vcs_host(self):
+        args = [('name', '=', 'Github')]
+        res = self.env['software_knowledge_base.vcs_host'].search(args)
+        return res and res[0] or False
 
     # 4. Compute and search fields, in the same order that fields declaration
 
     # 5. Constraints and onchanges
-    @api.one
+
     @api.onchange('name', 'vcs', 'vcs_team', 'vcs_host')
     def onchange_repository_generate_url(self):
         self.url = "%s/%s/%s" % (self.vcs_host.address or '',
@@ -115,7 +124,7 @@ class SWKBRepository(models.Model):
     # 7. Action methods
 
     # 8. Business methods
-    @api.one
+
     @api.onchange('name', 'vcs', 'vcs_team', 'vcs_host')
     def generate_url(self):
         self.url = "%s/%s/%s" % (self.vcs_host.address or '',
