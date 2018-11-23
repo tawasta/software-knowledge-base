@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api, _
+from odoo import models, fields
 
 
 class Module(models.Model):
@@ -9,10 +9,13 @@ class Module(models.Model):
     _inherit = ['mail.thread']
     _order = 'name'
 
-    _MODULE_TYPE_VALUES = [('core', 'Core'),
-                           ('community', 'Community'),
-                           ('community_commercial', 'Community (commercial)'),
-                           ('inhouse', 'In-house')]
+    _MODULE_TYPE_VALUES = [
+        ('core', 'Core'),
+        ('community', 'Community'),
+        ('community_commercial', 'Community (commercial)'),
+        ('inhouse', 'In-house'),
+        ('inhouse_commercial', 'In-house (commercial)')
+    ]
 
     name = fields.Char(
         string='Name'
@@ -74,14 +77,7 @@ class Module(models.Model):
         string='Installations',
         help='Where this module has been deployed.'
     )
-            
-    #'parent_ids'=           fields.many2many(
-    #                            'software_knowledge_base.module',
-    #                            'module_dependency_rel',
-    #                            'child_id',
-    #                            'parent_id',
-    #                            'Dependencies', help='Other modules that are required for this module to work.'),       
-            
+
     task_ids = fields.Many2many(
         comodel_name='project.task',
         relation='module_task_rel',

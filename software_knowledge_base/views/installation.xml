@@ -43,6 +43,14 @@
 					<group>
 						<group>
 							<field name="platform_id"/>
+							<label for="user_accounts_active" />
+							<div col="4">
+								<field name="user_accounts_active" nolabel="1" class="oe_inline"/>
+								<label for="user_accounts_active_interval" class="oe_inline" string="in" />
+								<field name="user_accounts_active_interval" nolabel="1" class="oe_inline"/>
+								<field name="user_accounts_active_type" nolabel="1" class="oe_inline"/>
+							</div>
+							<field name="user_accounts_total"/>
 							<field name="disk_usage"/>
 							<field name="identifier"/>
 							<field name="company_id" widget="selection"/>

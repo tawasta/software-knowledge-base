@@ -88,6 +88,30 @@ class Installation(models.Model):
         string='Identifier'
     )
 
+    server_ip_address = fields.Char(
+        string='Server IP-address',
+        # compute='compute_server_ip_address' # FIXME:should this be computed?
+    )
+    user_accounts_total = fields.Integer(
+        string='Total User Accounts'
+    )
+    user_accounts_active = fields.Integer(
+        string='Active User Accounts',
+    )
+    user_accounts_active_interval = fields.Integer(
+        string='Active Interval',
+        default='6',
+    )
+    user_accounts_active_type = fields.Selection(
+        selection=[
+            ('days', 'Days'),
+            ('weeks', 'Weeks'),
+            ('months', 'Months')
+        ],
+        string='Interval Unit',
+        default='months',
+    )
+
     project_ids = fields.Many2many(
         comodel_name='project.project',
         relation='installation_project_rel',
