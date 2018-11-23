@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-25 07:45+0000\n"
-"PO-Revision-Date: 2018-10-25 07:45+0000\n"
+"POT-Creation-Date: 2018-11-23 20:48+0000\n"
+"PO-Revision-Date: 2018-11-23 20:48+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -30,6 +30,16 @@ msgstr "Tällä nimellä on jo olemassa tunniste"
 #: model:ir.ui.view,arch_db:software_knowledge_base.server_search_view
 msgid "Active"
 msgstr "Aktiivinen"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_user_accounts_active_interval
+msgid "Active Interval"
+msgstr "Aktiivisuuden aikaväli"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_user_accounts_active
+msgid "Active User Accounts"
+msgstr "Aktiiviset tunnukset"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component_additional_info
@@ -149,6 +159,11 @@ msgstr "Tietokantapalvelimen IP-osoite"
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_db_server_id
 msgid "Database server"
 msgstr "Tietokantapalvelin"
+
+#. module: software_knowledge_base
+#: selection:software_knowledge_base.installation,user_accounts_active_type:0
+msgid "Days"
+msgstr "Päivää"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_description
@@ -359,6 +374,11 @@ msgid "In-house"
 msgstr "Itse kehitetty"
 
 #. module: software_knowledge_base
+#: selection:software_knowledge_base.module,module_type:0
+msgid "In-house (commercial)"
+msgstr "In-house (kaupallinen)"
+
+#. module: software_knowledge_base
 #: model:ir.ui.view,arch_db:software_knowledge_base.server_search_view
 msgid "Inactive"
 msgstr "Ei aktiivinen"
@@ -399,6 +419,12 @@ msgid "Installations"
 msgstr "Asennukset"
 
 #. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_res_partner_installation_technical_contact_ids
+#: model:ir.model.fields,field_description:software_knowledge_base.field_res_users_installation_technical_contact_ids
+msgid "Installations (Technical contact)"
+msgstr "Asennukset (eTuki)"
+
+#. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_project_project_installation_ids
 msgid "Installations related to this project."
 msgstr "Projektiin liittyvät asennukset"
@@ -407,6 +433,17 @@ msgstr "Projektiin liittyvät asennukset"
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_external_component_installation_ids
 msgid "Installations using this component."
 msgstr "Asennukset, jotka käyttävät tätä komponenttia."
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,help:software_knowledge_base.field_res_partner_installation_technical_contact_ids
+#: model:ir.model.fields,help:software_knowledge_base.field_res_users_installation_technical_contact_ids
+msgid "Installations where the partner has been marked as a technical contact."
+msgstr "Installations where the partner has been marked as a technical contact."
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_user_accounts_active_type
+msgid "Interval Unit"
+msgstr "Väliyksikkö"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module_issues
@@ -512,6 +549,11 @@ msgstr "Moduulit"
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_installation_module_ids
 msgid "Modules used by this installation."
 msgstr "Asennuksen käyttämät moduulit"
+
+#. module: software_knowledge_base
+#: selection:software_knowledge_base.installation,user_accounts_active_type:0
+msgid "Months"
+msgstr "Kuukautta"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_operating_system_url
@@ -690,7 +732,7 @@ msgstr "Hae asennuksia"
 #. module: software_knowledge_base
 #: model:ir.ui.view,arch_db:software_knowledge_base.server_search_view
 msgid "Search servers"
-msgstr "Hae palvelimia"
+msgstr "Etsi palvelimia"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_server
@@ -755,7 +797,7 @@ msgstr "Staging"
 #: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 #: model:ir.ui.view,arch_db:software_knowledge_base.server_search_view
 msgid "State"
-msgstr "Tila"
+msgstr "Osavaltio/Maakunta"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_state
@@ -854,6 +896,11 @@ msgid "Total Invoiced"
 msgstr "Laskutettu yhteensä"
 
 #. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_user_accounts_total
+msgid "Total User Accounts"
+msgstr "Tunnukset yhteensä"
+
+#. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation_type
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_repository_vcs
 #: model:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
@@ -889,13 +936,13 @@ msgstr "VCS"
 #: model:ir.ui.view,arch_db:software_knowledge_base.vcs_host_form_view
 #: model:ir.ui.view,arch_db:software_knowledge_base.vcs_host_tree_view
 msgid "VCS Hosts"
-msgstr "VCS-isännät"
+msgstr "VCS Isännät"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.vcs_teams_action
 #: model:ir.ui.menu,name:software_knowledge_base.vcs_teams_menu
 msgid "VCS Teams"
-msgstr "VCS-tiimit"
+msgstr "VCS Tiimit"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system_version
@@ -921,6 +968,11 @@ msgstr "Versionhallintajärjestelmän isäntä"
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_vcs_team
 msgid "Version Control System Team"
 msgstr "Versionhallintajärjestelmän tiimi"
+
+#. module: software_knowledge_base
+#: selection:software_knowledge_base.installation,user_accounts_active_type:0
+msgid "Weeks"
+msgstr "Viikkoa"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_installation_state
@@ -951,6 +1003,11 @@ msgstr "esim. git asennettu Odoon moduulien päivittämistä yms. varten"
 #: model:ir.ui.view,arch_db:software_knowledge_base.server_note_form_view
 msgid "e.g. apt-get install git"
 msgstr "esim. apt-get install git"
+
+#. module: software_knowledge_base
+#: model:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
+msgid "in"
+msgstr "ajalla"
 
 #. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_server_note
