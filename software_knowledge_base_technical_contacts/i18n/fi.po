@@ -1,0 +1,67 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* software_knowledge_base_technical_contacts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-23 20:53+0000\n"
+"PO-Revision-Date: 2018-11-23 20:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: software_knowledge_base_technical_contacts
+#: model:ir.model,name:software_knowledge_base_technical_contacts.model_software_knowledge_base_installation
+msgid "Installation"
+msgstr "Asennus"
+
+#. module: software_knowledge_base_technical_contacts
+#: model:ir.model.fields,field_description:software_knowledge_base_technical_contacts.field_procountor_res_partner_installation_technical_contact_ids
+#: model:ir.ui.view,arch_db:software_knowledge_base_technical_contacts.partner_form_view
+msgid "Installations (Technical contact)"
+msgstr "Asennukset (eTuki)"
+
+#. module: software_knowledge_base_technical_contacts
+#: model:ir.model.fields,help:software_knowledge_base_technical_contacts.field_procountor_res_partner_installation_technical_contact_ids
+msgid "Installations where the partner has been marked as a technical contact."
+msgstr "Asennukset, joihin henkilö on merkitty eTueksi."
+
+#. module: software_knowledge_base_technical_contacts
+#: model:ir.model,name:software_knowledge_base_technical_contacts.model_res_partner
+msgid "Partner"
+msgstr "Kumppani"
+
+#. module: software_knowledge_base_technical_contacts
+#: model:ir.model,name:software_knowledge_base_technical_contacts.model_software_knowledge_base_server
+msgid "Server"
+msgstr "Palvelin"
+
+#. module: software_knowledge_base_technical_contacts
+#: code:addons/software_knowledge_base_technical_contacts/models/server.py:11
+#: model:ir.model.fields,field_description:software_knowledge_base_technical_contacts.field_software_knowledge_base_server_technical_contact_ids
+#, python-format
+msgid "Technical contact"
+msgstr "eTuki-henkilö"
+
+#. module: software_knowledge_base_technical_contacts
+#: model:ir.model.fields,field_description:software_knowledge_base_technical_contacts.field_software_knowledge_base_installation_technical_contact_emails
+#: model:ir.model.fields,field_description:software_knowledge_base_technical_contacts.field_software_knowledge_base_server_technical_contact_emails
+msgid "Technical contact emails"
+msgstr "eTuen sähköpostit"
+
+#. module: software_knowledge_base_technical_contacts
+#: model:ir.model.fields,field_description:software_knowledge_base_technical_contacts.field_software_knowledge_base_installation_technical_contact_ids
+#: model:ir.ui.view,arch_db:software_knowledge_base_technical_contacts.installation_form_view
+#: model:ir.ui.view,arch_db:software_knowledge_base_technical_contacts.server_form_viewsssss
+msgid "Technical contacts"
+msgstr "eTuki-henkilöt"
+
+#. module: software_knowledge_base_technical_contacts
+#: model:ir.model.fields,help:software_knowledge_base_technical_contacts.field_software_knowledge_base_installation_technical_contact_ids
+msgid "Technical contacts for this installation"
+msgstr "Tämän asennuksen eTuki-henkilöt"
