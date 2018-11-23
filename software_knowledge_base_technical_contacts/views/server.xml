@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<odoo>
+	<record id="server_form_viewsssss" model="ir.ui.view">
+		<field name="name">SW Knowledge Base - Servers form</field>
+		<field name="model">software_knowledge_base.server</field>
+		<field name="inherit_id" ref="software_knowledge_base.server_form_view"/>
+		<field name="arch" type="xml">
+			<notebook position="inside">
+				<page string="Technical contacts">
+					<field name="technical_contact_ids">
+						<tree string='Technical contacts'>
+							<field name='parent_id'/>
+							<field name='name'/>
+							<field name='email'/>
+						</tree>
+					</field>
+					<label for="technical_contact_emails" />
+					<field name="technical_contact_emails" />
+				</page>
+			</notebook>
+		</field>
+	</record>
+</odoo>

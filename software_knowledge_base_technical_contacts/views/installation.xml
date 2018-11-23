@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<odoo>
+	<record model="ir.ui.view" id="installation_form_view">
+		<field name="name">SW Knowledge Base - Installations form</field>
+		<field name="model">software_knowledge_base.installation</field>
+		<field name="inherit_id" ref="software_knowledge_base.installation_form_view"/>
+		<field name="arch" type="xml">
+			<notebook position="inside">
+				<page string="Technical contacts">
+					<field name="technical_contact_ids"/>
+					<label for="technical_contact_emails" />
+					<field name="technical_contact_emails"/>
+				</page>
+			</notebook>
+		</field>
+	</record>
+</odoo>
