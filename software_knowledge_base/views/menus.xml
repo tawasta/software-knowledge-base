@@ -71,7 +71,7 @@
     </record>
 
     <!-- Menu hierarchy -->
-    <menuitem id="root_menu" name="SW Development"/>
+    <menuitem id="root_menu" name="SW Development" web_icon="software_knowledge_base,static/description/icon.png"/>
 
     <menuitem id="environment_menu" name="Environments" parent="root_menu" sequence='10' />
     <menuitem id="code_menu" name="Software" parent="root_menu" sequence='20' />
