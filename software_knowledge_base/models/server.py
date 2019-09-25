@@ -57,6 +57,7 @@ class SoftwareKnowledgeBaseServer(models.Model):
         comodel_name='software_knowledge_base.installation',
         inverse_name='server_id',
         string='Installations',
+        domain=[('state', '!=', 'terminated')],
     )
 
     note_ids = fields.One2many(
