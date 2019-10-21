@@ -16,6 +16,7 @@
 				<field name="server_ip_address"/>
 				<field name="port"/>
 				<field name="db_server_id"/>
+				<field name="db_server_ip_address"/>
 				<field name="type"/>
 				<field name="state"/>
 				<field name="company_id"/>
@@ -60,11 +61,11 @@
 							<field name="url" widget="url"/>
 
 							<field name="server_id"/>
-							<field name="server_ip_address"/>
+							<field name="server_ip_address" readonly="1"/>
 							<field name="port"/>
 
 							<field name="db_server_id"/>
-							<field name="db_server_ip_address"/>
+							<field name="db_server_ip_address" readonly="1"/>
 						</group>
 					</group>
 

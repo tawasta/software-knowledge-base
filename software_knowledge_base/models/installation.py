@@ -59,7 +59,8 @@ class Installation(models.Model):
 
     server_ip_address = fields.Char(
         string='Server IP-address',
-        related='server_id.ip_address'
+        related='server_id.ip_address',
+        store=True,
     )
 
     port = fields.Integer(
@@ -73,7 +74,8 @@ class Installation(models.Model):
 
     db_server_ip_address = fields.Char(
         string='DB server IP-address',
-        related='db_server_id.ip_address'
+        related='db_server_id.ip_address',
+        store = True,
     )
 
     disk_usage = fields.Float(
@@ -86,11 +88,6 @@ class Installation(models.Model):
 
     identifier = fields.Char(
         string='Identifier'
-    )
-
-    server_ip_address = fields.Char(
-        string='Server IP-address',
-        # compute='compute_server_ip_address' # FIXME:should this be computed?
     )
     user_accounts_total = fields.Integer(
         string='Total User Accounts'
