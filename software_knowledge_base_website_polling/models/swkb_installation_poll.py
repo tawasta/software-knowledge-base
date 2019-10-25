@@ -17,7 +17,7 @@ from odoo import fields, models
 class SWKBInstallationPoll(models.Model):
     # 1. Private attributes
     _name = 'software_knowledge_base.installation_poll'
-    _order = 'id DESC'
+    _order = 'create_date DESC'
 
     # 2. Fields declaration
     installation_id = fields.Many2one(
@@ -28,12 +28,22 @@ class SWKBInstallationPoll(models.Model):
         string='Url',
     )
 
-    description = fields.Char(
-        string='Description'
+    status_code = fields.Integer(
+        string='Status code',
+    )
+
+    content = fields.Html(
+        string='content',
+    )
+
+    title = fields.Char(
+        string='Title',
+        oldname='description',
     )
 
     delay = fields.Float(
         string='Delay in seconds',
+        group_operator='avg',
     )
 
     success = fields.Boolean(

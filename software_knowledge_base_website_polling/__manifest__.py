@@ -22,8 +22,8 @@
 {
     'name': 'SDKB Website polling',
     'summary': 'Allows auto-polling whether installation websites are up',
-    'version': '10.0.1.0.0',
-    'category': 'Specific Industry Applictions',
+    'version': '10.0.1.1.0',
+    'category': 'Specific Industry Applications',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
     'license': 'AGPL-3',

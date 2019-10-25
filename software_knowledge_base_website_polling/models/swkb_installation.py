@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 # 1. Standard library imports:
-import urllib2
+import requests
 import logging
 
 # 2. Known third party imports:
-from bs4 import BeautifulSoup
+from lxml.html import fromstring
 from timeit import default_timer as timer
 
 # 3. Odoo imports (openerp):
@@ -61,26 +61,29 @@ class SWKBInstallation(models.Model):
             _logger.debug(_('Trying to open {}'.format(url)))
             try:
                 start = timer()
-                response = urllib2.urlopen(url)
+                response = requests.get(url)
                 end = timer()
                 delay = (end - start)
-                soup = BeautifulSoup(response.read(), 'lxml')
 
-                title = soup.find('title', text=True).contents[0]
+                tree = fromstring(response.content)
+                title = tree.findtext('.//title')
 
-                robots = soup.find('meta', {'name': 'robots'})
-                if robots:
-                    robots = robots.get('content', 'no robots meta')
-                else:
-                    robots = 'no robots meta'
-
-                content = '{} ({})'.format(title, robots)
-
-                poll['description'] = content
+                poll['title'] = title
+                poll['content'] = response.content
+                poll['status_code'] = response.status_code
                 poll['delay'] = delay
-                poll['success'] = True
+                poll['success'] = response.status_code == 200
 
                 record.installation_poll_ids = [(0, 0, poll)]
+
+                if response.status_code == 200:
+                    msg = _('Could not fetch website {}: [{}] {} '
+                            .format(url, response.status_code, title))
+                    record.message_post(
+                        type='comment',
+                        subtype='mt_comment',
+                        body=msg,
+                    )
 
             except Exception as e:
                 msg = _('Could not fetch website {}: {}'.format(url, e))
