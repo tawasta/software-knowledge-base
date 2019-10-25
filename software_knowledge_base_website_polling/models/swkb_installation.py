@@ -80,7 +80,7 @@ class SWKBInstallation(models.Model):
                     msg = _('Could not fetch website {}: [{}] {} '
                             .format(url, response.status_code, title))
                     record.message_post(
-                        type='comment',
+                        message_type='comment',
                         subtype='mt_comment',
                         body=msg,
                     )
@@ -94,7 +94,7 @@ class SWKBInstallation(models.Model):
                 record.installation_poll_ids = [(0, 0, poll)]
 
                 record.message_post(
-                    type='comment',
+                    message_type='comment',
                     subtype='mt_comment',
                     body=msg,
                 )
