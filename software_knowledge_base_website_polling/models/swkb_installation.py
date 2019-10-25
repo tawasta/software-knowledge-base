@@ -76,7 +76,7 @@ class SWKBInstallation(models.Model):
 
                 record.installation_poll_ids = [(0, 0, poll)]
 
-                if response.status_code == 200:
+                if response.status_code != 200:
                     msg = _('Could not fetch website {}: [{}] {} '
                             .format(url, response.status_code, title))
                     record.message_post(
