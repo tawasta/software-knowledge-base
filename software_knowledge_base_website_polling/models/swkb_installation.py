@@ -6,9 +6,8 @@ import logging
 
 # 2. Known third party imports:
 from lxml.html import fromstring
-from timeit import default_timer as timer
 
-# 3. Odoo imports (openerp):
+# 3. Odoo imports:
 from odoo import api, fields, models, _
 
 # 4. Imports from Odoo modules:
@@ -60,10 +59,7 @@ class SWKBInstallation(models.Model):
 
             _logger.debug(_('Trying to open {}'.format(url)))
             try:
-                start = timer()
                 response = requests.get(url, timeout=5)
-                end = timer()
-                delay = (end - start)
 
                 tree = fromstring(response.content)
                 title = tree.findtext('.//title')
@@ -71,7 +67,7 @@ class SWKBInstallation(models.Model):
                 poll['title'] = title
                 poll['content'] = response.content
                 poll['status_code'] = response.status_code
-                poll['delay'] = delay
+                poll['delay'] = response.elapsed.total_seconds()
                 poll['success'] = response.status_code == 200
 
                 record.installation_poll_ids = [(0, 0, poll)]
