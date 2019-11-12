@@ -61,7 +61,7 @@ class SWKBInstallation(models.Model):
             _logger.debug(_('Trying to open {}'.format(url)))
             try:
                 start = timer()
-                response = requests.get(url)
+                response = requests.get(url, timeout=5)
                 end = timer()
                 delay = (end - start)
 
