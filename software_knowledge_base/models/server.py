@@ -23,10 +23,6 @@ class SoftwareKnowledgeBaseServer(models.Model):
     _order = 'name'
 
     # 2. Fields declaration
-    active = fields.Boolean(
-        default=True,
-    )
-
     name = fields.Char(
         string='Name'
     )

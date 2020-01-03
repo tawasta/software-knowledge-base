@@ -9,10 +9,6 @@ class Platform(models.Model):
     _inherit = ['mail.thread']    
     _order = 'name'
 
-    active = fields.Boolean(
-        default=True,
-    )
-
     name = fields.Char(
         string='Name',
         help='E.g. Odoo 10 or Drupal 8'

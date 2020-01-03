@@ -17,10 +17,6 @@ class Module(models.Model):
         ('inhouse_commercial', 'In-house (commercial)')
     ]
 
-    active = fields.Boolean(
-        default=True,
-    )
-
     name = fields.Char(
         string='Name'
     )

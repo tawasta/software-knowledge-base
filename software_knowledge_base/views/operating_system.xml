@@ -40,7 +40,6 @@
 						<field name="codename" />
 						<field name="url" widget="url" />
 						<field name="description" />
-						<field name="active" />
 					</group>
 
 					<field name="server_ids" />

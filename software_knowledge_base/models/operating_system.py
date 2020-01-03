@@ -22,10 +22,6 @@ class SWKBOperatingSystem(models.Model):
     _order = 'name'
 
     # 2. Fields declaration
-    active = fields.Boolean(
-        default=True,
-    )
-
     display_name = fields.Char(
         string='Display name',
         compute='_compute_display_name',
