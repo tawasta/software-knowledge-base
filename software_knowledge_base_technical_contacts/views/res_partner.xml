@@ -12,4 +12,15 @@
             </notebook>
         </field>
     </record>
+
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">res.partner.select.technical.contact</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="server_technical_contact_ids" filter_domain="[('installation_technical_contact_ids.server_id','ilike', self)]"/>
+            </field>
+        </field>
+    </record>
 </odoo>
