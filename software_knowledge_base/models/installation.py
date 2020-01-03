@@ -22,6 +22,10 @@ class Installation(models.Model):
         ('production', 'Production'),
     ]
 
+    active = fields.Boolean(
+        default=True,
+    )
+
     name = fields.Char(
         string='Name'
     )
