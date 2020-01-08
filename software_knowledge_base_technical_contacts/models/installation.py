@@ -23,9 +23,7 @@ class Installation(models.Model):
 
     @api.multi
     def compute_technical_contact_emails(self):
-        # Technical contacts in copy-ready string
+        # Technical contacts in a copy-ready string
         for record in self:
-            record.technical_contact_emails = \
-                ", ".join([contact.email
-                          for contact
-                          in record.technical_contact_ids])
+            emails = filter(None, record.technical_contact_ids.mapped('email'))
+            record.technical_contact_emails = ", ".join(emails)
