@@ -60,7 +60,7 @@
 							<field name="user_accounts_total"/>
 							<field name="disk_usage"/>
 							<field name="identifier"/>
-							<field name="company_id" widget="selection"/>
+							<field name="company_id"/>
 						</group>
 						<group>
 							<field name="type" />

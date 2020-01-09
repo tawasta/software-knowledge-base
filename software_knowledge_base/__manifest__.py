@@ -22,7 +22,7 @@
 {
     'name': 'Software development knowledge base',
     'summary': 'Maintain software installation and module data',
-    'version': '10.0.1.2.1',
+    'version': '10.0.1.2.2',
     'category': 'Specific Industry Applications',
     'website': 'http://www.tawasta.fi',
     'author': 'Oy Tawasta Technologies Ltd.',
