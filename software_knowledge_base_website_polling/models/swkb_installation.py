@@ -45,8 +45,19 @@ class SWKBInstallation(models.Model):
 
     # 7. Action methods
     def action_get_website_status(self):
+        installation_poll = \
+            self.env['software_knowledge_base.installation_poll']
+
         for record in self:
             url = record.url
+
+            if not url:
+                msg = _('URL not set for {}'.format(record.name))
+                record.message_post(
+                    message_type='comment',
+                    subtype='mt_comment',
+                    body=msg,
+                )
 
             # Add http, if necessary
             if url.find('http') == -1:
@@ -59,18 +70,15 @@ class SWKBInstallation(models.Model):
 
             _logger.debug(_('Trying to open {}'.format(url)))
             try:
-                response = requests.get(url, timeout=5)
-
+                response = requests.get(url, timeout=1)
                 tree = fromstring(response.content)
                 title = tree.findtext('.//title')
-
                 poll['title'] = title
                 poll['content'] = response.content
                 poll['status_code'] = response.status_code
                 poll['delay'] = response.elapsed.total_seconds()
                 poll['success'] = response.status_code == 200
-
-                record.installation_poll_ids = [(0, 0, poll)]
+                installation_poll.create(poll)
 
                 if response.status_code != 200:
                     msg = _('Could not fetch website {}: [{}] {} '
