@@ -77,8 +77,8 @@
     <menuitem id="code_menu" name="Software" parent="root_menu" sequence='20' />
     <menuitem id="vcs_menu" name="Version Control" parent="root_menu" sequence='30' groups='software_knowledge_base.developer'/>
 
-    <menuitem id="servers_menu"			parent="environment_menu" action="servers_action" sequence='10' />
-    <menuitem id="installations_menu"	parent="environment_menu" action="installations_action" sequence='20' />
+    <menuitem id="installations_menu"	parent="environment_menu" action="installations_action" sequence='10' />
+    <menuitem id="servers_menu"			parent="environment_menu" action="servers_action" sequence='20' />
 
     <menuitem id="modules_menu" 		parent="code_menu" action="modules_action" sequence='10' />
     <menuitem id="ext_components_menu"	parent="code_menu" action="ext_components_action" sequence='20' />
