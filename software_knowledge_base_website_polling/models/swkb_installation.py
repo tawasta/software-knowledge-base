@@ -9,6 +9,8 @@ from lxml.html import fromstring
 
 # 3. Odoo imports:
 from odoo import api, fields, models, _
+from odoo.addons.queue_job.job import job
+
 
 # 4. Imports from Odoo modules:
 
@@ -44,6 +46,7 @@ class SWKBInstallation(models.Model):
     # 6. CRUD methods
 
     # 7. Action methods
+    @job
     def action_get_website_status(self):
         installation_poll = \
             self.env['software_knowledge_base.installation_poll']
@@ -110,4 +113,7 @@ class SWKBInstallation(models.Model):
             ('url_poll', '=', True),
         ])
 
-        installations.action_get_website_status()
+        for installation in installations:
+            job_desc = _("SWKB URL Poll for '%s'" % installation.name)
+            installation.with_delay(description=job_desc).action_get_website_status()
+
