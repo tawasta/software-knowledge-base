@@ -8,6 +8,10 @@
         <field name="inherit_id" ref="software_knowledge_base.installation_form_view" />
         <field name="arch" type="xml">
 
+            <xpath expr="//header" position="inside">
+                <button name="action_get_website_status" string="Poll website status" type="object" class="btn-primary" groups="software_knowledge_base.admin" />
+            </xpath>
+
             <field name="url" position="after">
                 <field name="url_poll" groups="software_knowledge_base.admin"/>
             </field>
