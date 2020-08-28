@@ -73,7 +73,7 @@ class SWKBInstallation(models.Model):
 
             _logger.debug(_('Trying to open {}'.format(url)))
             try:
-                response = requests.get(url, timeout=1)
+                response = requests.get(url, timeout=5)
                 tree = fromstring(response.content)
                 title = tree.findtext('.//title')
                 poll['title'] = title
