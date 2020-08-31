@@ -85,6 +85,7 @@ class SWKBInstallation(models.Model):
                 poll['content'] = response.content
                 poll['status_code'] = response.status_code
                 poll['delay'] = response.elapsed.total_seconds()
+                poll['timeout'] = record.url_poll_timeout
                 poll['success'] = response.status_code == 200
                 installation_poll.create(poll)
 

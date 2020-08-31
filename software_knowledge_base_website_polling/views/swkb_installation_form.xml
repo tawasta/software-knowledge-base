@@ -34,6 +34,7 @@
                             <field name="status_code" />
                             <field name="title" />
                             <field name="delay" avg='Avg delay'/>
+                            <field name="timeout" />
                             <field name="success" />
                         </tree>
                     </field>
