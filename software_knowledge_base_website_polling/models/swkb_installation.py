@@ -103,6 +103,7 @@ class SWKBInstallation(models.Model):
 
                 poll['description'] = e
                 poll['success'] = False
+                poll['timeout'] = record.url_poll_timeout
 
                 record.installation_poll_ids = [(0, 0, poll)]
 
