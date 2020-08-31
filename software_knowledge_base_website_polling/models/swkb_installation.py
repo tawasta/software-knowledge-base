@@ -31,6 +31,11 @@ class SWKBInstallation(models.Model):
         help='Periodically poll the url and alert if no response is got',
     )
 
+    url_poll_timeout = fields.Integer(
+        string='URL Polling timeout',
+        default=5,
+    )
+
     installation_poll_ids = fields.One2many(
         comodel_name='software_knowledge_base.installation_poll',
         inverse_name='installation_id',
@@ -73,7 +78,7 @@ class SWKBInstallation(models.Model):
 
             _logger.debug(_('Trying to open {}'.format(url)))
             try:
-                response = requests.get(url, timeout=5)
+                response = requests.get(url, timeout=record.url_poll_timeout)
                 tree = fromstring(response.content)
                 title = tree.findtext('.//title')
                 poll['title'] = title
