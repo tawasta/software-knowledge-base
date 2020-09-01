@@ -2,6 +2,9 @@
 
 # 1. Standard library imports:
 import requests
+from urllib3.util.retry import Retry
+from requests.adapters import HTTPAdapter
+
 import logging
 
 # 2. Known third party imports:
@@ -31,9 +34,9 @@ class SWKBInstallation(models.Model):
         help='Periodically poll the url and alert if no response is got',
     )
 
-    url_poll_timeout = fields.Integer(
+    url_poll_timeout = fields.Float(
         string='URL Polling timeout',
-        default=5,
+        default=5.0,
     )
 
     installation_poll_ids = fields.One2many(
@@ -55,6 +58,16 @@ class SWKBInstallation(models.Model):
     def action_get_website_status(self):
         installation_poll = \
             self.env['software_knowledge_base.installation_poll']
+
+        s = requests.Session()
+
+        retries = Retry(
+            total=5,
+            backoff_factor=0.1,
+            status_forcelist=[ 500, 502, 503, 504 ]
+        )
+
+        s.mount('http://', HTTPAdapter(max_retries=retries))
 
         for record in self:
             url = record.url
@@ -78,7 +91,7 @@ class SWKBInstallation(models.Model):
 
             _logger.debug(_('Trying to open {}'.format(url)))
             try:
-                response = requests.get(url, timeout=record.url_poll_timeout)
+                response = s.get(url, timeout=record.url_poll_timeout)
                 tree = fromstring(response.content)
                 title = tree.findtext('.//title')
                 poll['title'] = title
