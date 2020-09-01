@@ -46,7 +46,7 @@ class SWKBInstallationPoll(models.Model):
         group_operator='avg',
     )
 
-    timeout = fields.Integer(
+    timeout = fields.Float(
         string='Timeout',
     )
 
