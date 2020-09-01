@@ -39,6 +39,11 @@ class SWKBInstallation(models.Model):
         default=5.0,
     )
 
+    verify_ssl = fields.Boolean(
+        string='Verify SSL',
+        default=True,
+    )
+
     installation_poll_ids = fields.One2many(
         comodel_name='software_knowledge_base.installation_poll',
         inverse_name='installation_id',
@@ -91,7 +96,7 @@ class SWKBInstallation(models.Model):
 
             _logger.debug(_('Trying to open {}'.format(url)))
             try:
-                response = s.get(url, timeout=record.url_poll_timeout)
+                response = s.get(url, timeout=record.url_poll_timeout, verify=record.verify_ssl)
                 tree = fromstring(response.content)
                 title = tree.findtext('.//title')
                 poll['title'] = title

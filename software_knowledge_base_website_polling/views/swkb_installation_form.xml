@@ -19,6 +19,7 @@
 
             <field name="url" position="after">
                 <field name="url_poll" groups="software_knowledge_base.admin"/>
+                <field name="verify_ssl" groups="software_knowledge_base.admin" attrs="{'invisible':[('url_poll', '=', False)]}"/>
                 <field name="url_poll_timeout" groups="software_knowledge_base.admin" attrs="{'invisible':[('url_poll', '=', False)]}"/>
             </field>
 
