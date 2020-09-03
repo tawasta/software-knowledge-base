@@ -12,7 +12,8 @@ class ResPartner(models.Model):
         relation='module_partner_rel',
         column1='partner_id',
         column2='installation_id',
-        string='Installations'
+        string='Installations',
+        domain=[('state', '=', 'ready')],
     )
 
     installation_technical_contact_ids = fields.Many2many(
@@ -21,5 +22,6 @@ class ResPartner(models.Model):
         column1='partner_id',
         column2='instalation_id',
         string='Installations (Technical contact)',
+        domain=[('state', '=', 'ready')],
         help='Installations where the partner has been marked as a '
              'technical contact.')
