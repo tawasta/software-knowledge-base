@@ -22,7 +22,7 @@
 {
     'name': 'SDKB Website polling',
     'summary': 'Allows auto-polling whether installation websites are up',
-    'version': '10.0.1.4.2',
+    'version': '10.0.1.4.3',
     'category': 'Specific Industry Applications',
     'website': 'https://tawasta.fi',
     'author': 'Tawasta',

@@ -89,6 +89,7 @@ class SWKBInstallation(models.Model):
             if url.find('http') == -1:
                 url = 'http://%s' % url
 
+            msg = False
             poll = {
                 'name': url,
                 'installation_id': record.id,
@@ -110,11 +111,6 @@ class SWKBInstallation(models.Model):
                 if response.status_code != 200:
                     msg = _('Could not fetch website {}: [{}] {} '
                             .format(url, response.status_code, title))
-                    record.message_post(
-                        message_type='comment',
-                        subtype='mt_comment',
-                        body=msg,
-                    )
 
             except Exception as e:
                 msg = _('Could not fetch website {}: {}'.format(url, e))
@@ -125,6 +121,10 @@ class SWKBInstallation(models.Model):
 
                 record.installation_poll_ids = [(0, 0, poll)]
 
+            # Error message is set, and this is the second failed fetch
+            # This allows one failed fetch, which will reduce the number of
+            # false warning messages
+            if msg and len(record.installation_poll_ids) > 1 and not record.installation_poll_ids[1].success:
                 record.message_post(
                     message_type='comment',
                     subtype='mt_comment',
