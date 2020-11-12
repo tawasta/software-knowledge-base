@@ -22,7 +22,7 @@
 {
     "name": "SWKB Classification",
     "summary": "Adds classifications to Software knowledge base",
-    "version": "10.0.1.0.0",
+    "version": "10.0.1.0.1",
     "category": "Knowledge",
     "website": "http://www.tawasta.fi",
     "author": "Oy Tawasta Technologies Ltd.",
@@ -37,6 +37,7 @@
         "software_knowledge_base",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "views/swkb_installation_form.xml",
     ],
     "demo": [
