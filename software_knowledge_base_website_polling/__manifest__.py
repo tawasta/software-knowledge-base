@@ -20,29 +20,21 @@
 ##############################################################################
 
 {
-    'name': 'SDKB Website polling',
-    'summary': 'Allows auto-polling whether installation websites are up',
-    'version': '10.0.1.4.3',
-    'category': 'Specific Industry Applications',
-    'website': 'https://tawasta.fi',
-    'author': 'Tawasta',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [
-        ],
-        'bin': [],
-    },
-    'depends': [
-        'software_knowledge_base',
-        'queue_job',
+    "name": "SDKB Website polling",
+    "summary": "Allows auto-polling whether installation websites are up",
+    "version": "12.0.1.4.3",
+    "category": "Specific Industry Applications",
+    "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {"python": [], "bin": [],},
+    "depends": ["software_knowledge_base", "queue_job",],
+    "data": [
+        "security/ir.model.access.csv",
+        "data/ir_cron.xml",
+        "views/swkb_installation_form.xml",
     ],
-    'data': [
-        'security/ir.model.access.csv',
-        'data/ir_cron.xml',
-        'views/swkb_installation_form.xml',
-    ],
-    'demo': [
-    ],
+    "demo": [],
 }

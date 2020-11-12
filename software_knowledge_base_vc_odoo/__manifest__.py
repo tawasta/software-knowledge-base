@@ -20,28 +20,17 @@
 ##############################################################################
 
 {
-    'name': 'SDKB Version control - Odoo',
-    'summary': 'Adds Odoo-spesific tools for Software development knowledge base version control',
-    'version': '10.0.1.0.0',
-    'category': 'Specific Industry Applications',
-    'website': 'http://www.tawasta.fi',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [
-
-        ],
-        'bin': [],
-    },
-    'depends': [
-        'software_knowledge_base_vc',
-    ],
-    'data': [
-        'views/swkb_repository_form.xml',
-        'views/swkb_vcs_host_form.xml',
-    ],
-    'demo': [
-    ],
+    "name": "SDKB Version control - Odoo",
+    "summary": "Adds Odoo-spesific tools for Software development knowledge base version control",
+    "version": "12.0.1.0.0",
+    "category": "Specific Industry Applications",
+    "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {"python": [], "bin": [],},
+    "depends": ["software_knowledge_base_vc",],
+    "data": ["views/swkb_repository_form.xml", "views/swkb_vcs_host_form.xml",],
+    "demo": [],
 }

@@ -22,24 +22,15 @@
 {
     "name": "SWKB Classification",
     "summary": "Adds classifications to Software knowledge base",
-    "version": "10.0.1.0.1",
+    "version": "12.0.1.0.1",
     "category": "Knowledge",
     "website": "http://www.tawasta.fi",
-    "author": "Oy Tawasta Technologies Ltd.",
+    "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "external_dependencies": {
-        "python": [],
-        "bin": [],
-    },
-    "depends": [
-        "software_knowledge_base",
-    ],
-    "data": [
-        "security/ir.model.access.csv",
-        "views/swkb_installation_form.xml",
-    ],
-    "demo": [
-    ],
+    "external_dependencies": {"python": [], "bin": [],},
+    "depends": ["software_knowledge_base",],
+    "data": ["security/ir.model.access.csv", "views/swkb_installation_form.xml",],
+    "demo": [],
 }

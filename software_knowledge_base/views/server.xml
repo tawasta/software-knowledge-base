@@ -50,10 +50,10 @@
 							<field name="installation_ids"/>
 						</page>
 						<page string="Technical specifications">
-							<field name="specification" widget="bootstrap_markdown"/>
+							<field name="specification" />
 						</page>
 						<page string="Additional info">
-							<field name="additional_info" widget="bootstrap_markdown"/>
+							<field name="additional_info" />
 						</page>
 							<page string="Notes">
 							<field name="note_ids"/>
@@ -76,6 +76,7 @@
 		<field name="arch" type="xml">
 			<search string="Search servers">
 				<field name="name"/>
+				<field name="company_id"/>
 				<field name="ip_address"/>
 				<field name="operating_system_id"/>
 
@@ -84,9 +85,9 @@
 					<filter string="Inactive" name="invactive" domain="[('active', '=', False)]"/>
 				</group>
 
-				<group expand="0" string="Group By...">
-					<filter string="Company" context="{'group_by':'company_id'}"/>
-					<filter string="OS" context="{'group_by':'operating_system'}"/>
+				<group expand="0" string="Group By">
+					<filter string="Company" name="company" context="{'group_by': 'company_id'}"/>
+					<filter string="OS" name="os" context="{'group_by': 'operating_system_id'}"/>
 				</group>
 			</search>
 		</field>

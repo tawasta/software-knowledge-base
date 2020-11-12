@@ -20,32 +20,28 @@
 ##############################################################################
 
 {
-    'name': 'SDKB Version control',
-    'summary': 'Adds version control integration to Software development knowledge base',
-    'version': '10.0.1.0.0',
-    'category': 'Knowledge',
-    'website': 'http://www.tawasta.fi',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [
+    "name": "SDKB VCS Integration",
+    "summary": "Adds version control integration to Software development knowledge base",
+    "version": "12.0.1.0.0",
+    "category": "Knowledge",
+    "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {
+        "python": [
             #'pyapi-gitlab',
         ],
-        'bin': [],
+        "bin": [],
     },
-    'depends': [
-        'software_knowledge_base',
-    ],
-    'data': [
-        'data/vcs_api_data.xml',
-        'data/vcs_host_data.xml',
-
-        'views/swkb_repository_form.xml',
-        'views/swkb_vcs_host_form.xml',
+    "depends": ["software_knowledge_base",],
+    "data": [
+        "data/vcs_api_data.xml",
+        "data/vcs_host_data.xml",
+        "views/swkb_repository_form.xml",
+        "views/swkb_vcs_host_form.xml",
         #'views/swkb_vcs_host_tree.xml',
     ],
-    'demo': [
-    ],
+    "demo": [],
 }

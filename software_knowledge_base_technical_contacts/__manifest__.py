@@ -20,27 +20,17 @@
 ##############################################################################
 
 {
-    'name': 'SDKB Technical Contacts',
-    'summary': 'Linking technical contacts to SDKB data',
-    'version': '10.0.1.0.3',
-    'category': 'Specific Industry Applications',
-    'website': 'http://www.tawasta.fi',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [],
-        'bin': [],
-    },
-    'depends': [
-        'software_knowledge_base',
-    ],
-    'data': [
-        'views/installation.xml',
-        'views/res_partner.xml',
-        'views/server.xml',
-    ],
-    'demo': [
-    ],
+    "name": "SDKB Technical Contacts",
+    "summary": "Linking technical contacts to SDKB data",
+    "version": "12.0.1.0.3",
+    "category": "Specific Industry Applications",
+    "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {"python": [], "bin": [],},
+    "depends": ["software_knowledge_base",],
+    "data": ["views/installation.xml", "views/res_partner.xml", "views/server.xml",],
+    "demo": [],
 }

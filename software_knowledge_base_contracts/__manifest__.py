@@ -20,28 +20,20 @@
 ##############################################################################
 
 {
-    'name': 'SDKB Contracts',
-    'summary': 'Adds contract/contract line to SDKB installations',
-    'version': '10.0.1.0.0',
-    'category': 'Specific Industry Applications',
-    'website': 'http://www.tawasta.fi',
-    'author': 'Oy Tawasta Technologies Ltd.',
-    'license': 'AGPL-3',
-    'application': False,
-    'installable': True,
-    'external_dependencies': {
-        'python': [
-        ],
-        'bin': [],
-    },
-    'depends': [
-        'contract',
-        'software_knowledge_base',
+    "name": "SDKB Contracts",
+    "summary": "Adds contract/contract line to SDKB installations",
+    "version": "12.0.1.0.0",
+    "category": "Specific Industry Applications",
+    "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
+    "author": "Tawasta",
+    "license": "AGPL-3",
+    "application": False,
+    "installable": True,
+    "external_dependencies": {"python": [], "bin": [],},
+    "depends": ["contract", "software_knowledge_base",],
+    "data": [
+        "views/account_analytic_account_form.xml",
+        "views/swkb_installation_form.xml",
     ],
-    'data': [
-        'views/account_analytic_account_form.xml',
-        'views/swkb_installation_form.xml',
-    ],
-    'demo': [
-    ],
+    "demo": [],
 }
