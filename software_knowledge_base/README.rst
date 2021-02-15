@@ -21,10 +21,6 @@ Adds the following models for storing and organizing development-related data:
 * platform
 * module
 * external component
-* repository
-* repository tags
-* vcs
-* vcs host
 
 Links installations to projects and partners
 

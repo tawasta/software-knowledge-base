@@ -21,6 +21,12 @@
 		<field name="arch" type="xml">
 			<form string="Repositories">
 				<header>
+					<button name="action_update_readme"
+						type="object"
+						string="Update readme"
+						groups="base.group_no_one"
+						attrs="{}"
+					/>
 				</header>
 				<sheet string="Form">
 					<div class="oe_title">

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # 1. Standard library imports:
 
 # 2. Known third party imports:
@@ -20,8 +18,7 @@ class SWKBInstallationClassification(models.Model):
 
     # 2. Fields declaration
     name = fields.Char(
-        string="Classification name",
-        help="Name for this classification",
+        string="Classification name", help="Name for this classification",
     )
 
     # 3. Default methods

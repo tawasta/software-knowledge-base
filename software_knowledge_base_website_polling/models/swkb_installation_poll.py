@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # 1. Standard library imports:
 
 # 2. Known third party imports:
@@ -16,44 +14,27 @@ from odoo import fields, models
 
 class SWKBInstallationPoll(models.Model):
     # 1. Private attributes
-    _name = 'software_knowledge_base.installation_poll'
-    _order = 'create_date DESC'
+    _name = "software_knowledge_base.installation_poll"
+    _order = "create_date DESC"
 
     # 2. Fields declaration
     installation_id = fields.Many2one(
-        comodel_name='software_knowledge_base.installation',
+        comodel_name="software_knowledge_base.installation",
     )
 
-    name = fields.Char(
-        string='Url',
-    )
+    name = fields.Char(string="Url",)
 
-    status_code = fields.Integer(
-        string='Status code',
-    )
+    status_code = fields.Integer(string="Status code",)
 
-    content = fields.Html(
-        string='content',
-    )
+    content = fields.Html(string="content",)
 
-    title = fields.Char(
-        string='Title',
-        oldname='description',
-    )
+    title = fields.Char(string="Title", oldname="description",)
 
-    delay = fields.Float(
-        string='Delay in seconds',
-        group_operator='avg',
-    )
+    delay = fields.Float(string="Delay in seconds", group_operator="avg",)
 
-    timeout = fields.Float(
-        string='Timeout',
-    )
+    timeout = fields.Float(string="Timeout",)
 
-    success = fields.Boolean(
-        string='Success',
-        default=False,
-    )
+    success = fields.Boolean(string="Success", default=False,)
 
     # 3. Default methods
 

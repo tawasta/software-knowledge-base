@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -24,13 +23,13 @@
     "summary": "Adds classifications to Software knowledge base",
     "version": "12.0.1.0.1",
     "category": "Knowledge",
-    "website": "http://www.tawasta.fi",
+    "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base/",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "external_dependencies": {"python": [], "bin": [],},
-    "depends": ["software_knowledge_base",],
-    "data": ["security/ir.model.access.csv", "views/swkb_installation_form.xml",],
+    "external_dependencies": {"python": [], "bin": []},
+    "depends": ["software_knowledge_base"],
+    "data": ["security/ir.model.access.csv", "views/swkb_installation_form.xml"],
     "demo": [],
 }

@@ -1,144 +1,188 @@
 <?xml version="1.0"?>
 <odoo>
 
-	<!-- Installations Tree View -->
-	<record model="ir.ui.view" id="installation_tree_view">
-		<field name="name">SW Knowledge Base - Installations tree</field>
-		<field name="model">software_knowledge_base.installation</field>
-		<field name="arch" type="xml">
-			<tree string="Installations"
-					colors="grey: (state=='terminated'); blue: (state=='setup');">
-				<field name="name"/>
-				<field name="partner_ids"/>
-				<field name="project_ids"/>
-				<field name="platform_id"/>
-				<field name="server_id"/>
-				<field name="server_ip_address"/>
-				<field name="port"/>
-				<field name="db_server_id"/>
-				<field name="db_server_ip_address"/>
-				<field name="type"/>
-				<field name="state"/>
-				<field name="company_id"/>
-			</tree>
-		</field>
-	</record>
+    <!-- Installations Tree View -->
+    <record model="ir.ui.view" id="installation_tree_view">
+        <field name="name">SW Knowledge Base - Installations tree</field>
+        <field name="model">software_knowledge_base.installation</field>
+        <field name="arch" type="xml">
+            <tree string="Installations"
+                  colors="grey: (state=='terminated'); blue: (state=='setup');">
+                <field name="name"/>
+                <field name="partner_ids"/>
+                <field name="project_ids"/>
+                <field name="platform_id"/>
+                <field name="server_id"/>
+                <field name="server_ip_address"/>
+                <field name="port"/>
+                <field name="db_server_id"/>
+                <field name="db_server_ip_address"/>
+                <field name="type"/>
+                <field name="state"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
 
-	<!-- Installations Form View -->
-	<record model="ir.ui.view" id="installation_form_view">
-		<field name="name">SW Knowledge Base - Installations form</field>
-		<field name="model">software_knowledge_base.installation</field>
-		<field name="arch" type="xml">
-			<form string="Installations">
-				<header>
-					<field name="state" widget="statusbar" clickable="1"/>
-				</header>
-				<sheet string="Form">
+    <!-- Installations Form View -->
+    <record model="ir.ui.view" id="installation_form_view">
+        <field name="name">SW Knowledge Base - Installations form</field>
+        <field name="model">software_knowledge_base.installation</field>
+        <field name="arch" type="xml">
+            <form string="Installations">
+                <header>
+                    <field name="state" widget="statusbar" clickable="1"/>
+                </header>
+                <sheet string="Form">
                     <div class="oe_button_box" name="button_box">
-                        <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-archive">
-                            <field name="active" widget="boolean_button" options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                        <button name="toggle_active" type="object"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                   options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
                         </button>
                     </div>
 
-					<div class="oe_title">
-						<div class="oe_edit_only">
-							<label for="name"/>
-						</div>
-						<h1><field name="name" required="1"/></h1>
-					</div>
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name"/>
+                        </div>
+                        <h1><field name="name" required="1"/></h1>
+                    </div>
 
-					<group>
-						<group>
-							<field name="platform_id"/>
-							<label for="user_accounts_active" />
-							<div col="4">
-								<field name="user_accounts_active" nolabel="1" class="oe_inline"/>
-								<label for="user_accounts_active_interval" class="oe_inline" string="in" />
-								<field name="user_accounts_active_interval" nolabel="1" class="oe_inline"/>
-								<field name="user_accounts_active_type" nolabel="1" class="oe_inline"/>
-							</div>
-							<field name="user_accounts_total"/>
-							<field name="disk_usage"/>
-							<field name="identifier"/>
-							<field name="company_id"/>
-						</group>
-						<group>
-							<field name="type" />
-							<field name="url" widget="url"/>
+                    <group>
+                        <group>
+                            <field name="platform_id"/>
 
-							<field name="server_id"/>
-							<field name="server_ip_address" readonly="1"/>
-							<field name="port"/>
+                            <label for="user_accounts_active"/>
+                            <div col="4">
+                                <field name="user_accounts_active_min" class="oe_inline" decoration-warning="user_accounts_active &lt;= user_accounts_active_min" />
+                                /
+                                <field name="user_accounts_active" class="oe_inline"/>
+                                /
+                                <field name="user_accounts_active_max" class="oe_inline" decoration-warning="user_accounts_active &gt;= user_accounts_active_max" />
+                            </div>
 
-							<field name="db_server_id"/>
-							<field name="db_server_ip_address" readonly="1"/>
-						</group>
-					</group>
+                            <label for="user_accounts_active_interval"/>
+                            <div col="4">
+                                <field name="user_accounts_active_interval"
+                                       nolabel="1" class="oe_inline"/>
+                                <span> </span>
+                                <field name="user_accounts_active_type"
+                                       nolabel="1" class="oe_inline"/>
+                            </div>
+
+                            <label for="user_accounts_total"/>
+                            <div col="4">
+                                <field name="user_accounts_total_min" class="oe_inline" decoration-warning="user_accounts_total &lt;= user_accounts_total_min" />
+                                /
+                                <field name="user_accounts_total" class="oe_inline"/>
+                                /
+                                <field name="user_accounts_total_max" class="oe_inline" decoration-warning="user_accounts_total &gt;= user_accounts_total_max" />
+                            </div>
+
+                            <label for="disk_usage" string="Disk usage min / current / max" />
+                            <div col="4">
+                                <field name="disk_usage_min" class="oe_inline" decoration-warning="disk_usage &lt;= disk_usage_min" />
+                                /
+                                <field name="disk_usage" class="oe_inline"/>
+                                /
+                                <field name="disk_usage_max" class="oe_inline" decoration-warning="disk_usage &gt;= disk_usage_max" />
+                                <span class=""> MB </span>
+                            </div>
+
+                            <field name="identifier"/>
+                            <field name="company_id"/>
+                        </group>
+                        <group>
+                            <field name="type"/>
+                            <field name="url" widget="url"/>
+
+                            <field name="server_id"/>
+                            <field name="server_ip_address" readonly="1"/>
+                            <field name="port"/>
+
+                            <field name="db_server_id"/>
+                            <field name="db_server_ip_address" readonly="1"/>
+                        </group>
+                    </group>
 
 
-					<notebook>
-						<page name="customers" string="Customers">
-							<field name="partner_ids"/>
-						</page>
-						<page name="modules" string="Modules">
-							<field name="module_ids"/>
-						</page>
-						<page name="components" string="External components">
-							<field name="external_component_ids"/>
-						</page>
-						<page name="projects" string="Projects">
-							<field name="project_ids"/>
-						</page>
-						<page name="info" string="Additional info">
-							<field name="additional_info"/>
-						</page>
+                    <notebook>
+                        <page name="customers" string="Customers">
+                            <field name="partner_ids"/>
+                        </page>
+                        <page name="modules" string="Modules">
+                            <field name="module_ids"/>
+                        </page>
+                        <page name="components" string="External components">
+                            <field name="external_component_ids"/>
+                        </page>
+                        <page name="projects" string="Projects">
+                            <field name="project_ids"/>
+                        </page>
+                        <page name="info" string="Additional info">
+                            <field name="additional_info"/>
+                        </page>
 
-					</notebook>
-				</sheet>
-				<div class="oe_chatter">
-					<field name="message_follower_ids" widget="mail_followers"/>
-					<field name="message_ids" widget="mail_thread"/>
-				</div>
-			</form>
-		</field>
-	</record>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
 
-	<!-- Installations search view -->
-	<record model="ir.ui.view" id="installation_search_view">
-		<field name="name">Installations search</field>
-		<field name="model">software_knowledge_base.installation</field>
-		<field name="arch" type="xml">
-			<search string="Search Installations">
-				<field name="name"/>
-				<field name="url"/>
-				<field name="state"/>
-				<field name="type"/>
-				<field name="platform_id"/>
-				<field name="server_id"/>
+    <!-- Installations search view -->
+    <record model="ir.ui.view" id="installation_search_view">
+        <field name="name">Installations search</field>
+        <field name="model">software_knowledge_base.installation</field>
+        <field name="arch" type="xml">
+            <search string="Search Installations">
+                <field name="name"/>
+                <field name="url"/>
+                <field name="state"/>
+                <field name="type"/>
+                <field name="platform_id"/>
+                <field name="server_id"/>
 
-				<group expand="0" string="State">
-					<filter string="Setup" name="state_setup" domain="[('state','=','setup')]"/>
-					<filter string="Ready" name="state_ready" domain="[('state','=','ready')]"/>
-					<filter string="Terminated" name="state_terminated" domain="[('state','=','terminated')]"/>
-				</group>
+                <group expand="0" string="State">
+                    <filter string="Setup" name="state_setup"
+                            domain="[('state','=','setup')]"/>
+                    <filter string="Ready" name="state_ready"
+                            domain="[('state','=','ready')]"/>
+                    <filter string="Terminated" name="state_terminated"
+                            domain="[('state','=','terminated')]"/>
+                </group>
 
-				<group expand="0" string="Type">
-					<filter string="Dev" name="type_dev" domain="[('state','=','dev')]"/>
-					<filter string="Test" name="type_test" domain="[('state','=','test')]"/>
-					<filter string="Staging" name="type_staging" domain="[('state','=','staging')]"/>
-					<filter string="Production" name="type_prodution" domain="[('state','=','prodution')]"/>
-				</group>
+                <group expand="0" string="Type">
+                    <filter string="Dev" name="type_dev"
+                            domain="[('state','=','dev')]"/>
+                    <filter string="Test" name="type_test"
+                            domain="[('state','=','test')]"/>
+                    <filter string="Staging" name="type_staging"
+                            domain="[('state','=','staging')]"/>
+                    <filter string="Production" name="type_prodution"
+                            domain="[('state','=','prodution')]"/>
+                </group>
 
-				<group expand="0" string="Group By...">
-					<filter string="Company" name="company" context="{'group_by':'company_id'}"/>
-					<filter string="Platform" name="platform" context="{'group_by':'platform_id'}"/>
-					<filter string="Server" name="server" context="{'group_by':'server_id'}"/>
-					<filter string="DB server" name="db_server" context="{'group_by':'db_server_id'}"/>
-					<filter string="State" name="state" context="{'group_by':'state'}"/>
-					<filter string="Type" name="type" context="{'group_by':'type'}"/>
-				</group>
-			</search>
-		</field>
-	</record>
+                <group expand="0" string="Group By...">
+                    <filter string="Company" name="company"
+                            context="{'group_by':'company_id'}"/>
+                    <filter string="Platform" name="platform"
+                            context="{'group_by':'platform_id'}"/>
+                    <filter string="Server" name="server"
+                            context="{'group_by':'server_id'}"/>
+                    <filter string="DB server" name="db_server"
+                            context="{'group_by':'db_server_id'}"/>
+                    <filter string="State" name="state"
+                            context="{'group_by':'state'}"/>
+                    <filter string="Type" name="type"
+                            context="{'group_by':'type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
 
 </odoo>

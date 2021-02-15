@@ -1,14 +1,13 @@
-# -*- coding: utf-8 -*-
 from odoo import api, fields, models
 
 
 class AccountAnalyticInvoiceLine(models.Model):
 
-    _inherit = 'account.analytic.invoice.line'
+    _inherit = "account.analytic.invoice.line"
 
     installation_id = fields.Many2one(
-        string='Installation',
-        comodel_name='software_knowledge_base.installation',
+        string="Installation",
+        comodel_name="software_knowledge_base.installation",
         copy=False,
     )
 
@@ -16,10 +15,11 @@ class AccountAnalyticInvoiceLine(models.Model):
     def write(self, values):
         res = super(AccountAnalyticInvoiceLine, self).write(values)
 
-        if 'installation_id' in values:
+        if "installation_id" in values:
             for record in self:
                 if record.installation_id:
-                    record.installation_id.account_analytic_account_id \
-                        = record.analytic_account_id.id
+                    record.installation_id.account_analytic_account_id = (
+                        record.analytic_account_id.id
+                    )
 
         return res

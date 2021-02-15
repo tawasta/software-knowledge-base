@@ -3,10 +3,10 @@
    :alt: License: AGPL-3
 
 ====================
-SDKB VCS Integration
+SDKB Version Control
 ====================
 
-Adds version control integration to Software development knowledge base
+Adds version control to Software development knowledge base
 
 Installation
 ============

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 # 1. Standard library imports:
 
 # 2. Known third party imports:
@@ -16,7 +14,7 @@ from odoo import api, models
 
 class SWKBVcsHost(models.Model):
     # 1. Private attributes
-    _inherit = 'software_knowledge_base.vcs_host'
+    _inherit = "software_knowledge_base.vcs_host"
 
     # 2. Fields declaration
 

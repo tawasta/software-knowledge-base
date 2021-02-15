@@ -8,9 +8,9 @@
         <field name="arch" type="xml">
             <tree string="Notes">
                 <field name="event_date"/>
-                <field name="name" widget="bootstrap_markdown" />
-                <field name="description" widget="bootstrap_markdown" />
-                <field name="extra" widget="bootstrap_markdown" />
+                <field name="name" widget="bootstrap_markdown"/>
+                <field name="description" widget="bootstrap_markdown"/>
+                <field name="extra" widget="bootstrap_markdown"/>
             </tree>
         </field>
     </record>
@@ -24,9 +24,13 @@
                 <sheet string="Form">
                     <group>
                         <field name="event_date"/>
-                        <field name="name" placeholder='e.g. Installed git' widget="bootstrap_markdown" />
-                        <field name="description" placeholder='e.g. Installed git for updating Odoo modules etc.' widget="bootstrap_markdown" />
-                        <field name="extra" placeholder='e.g. apt-get install git'/>
+                        <field name="name" placeholder='e.g. Installed git'
+                               widget="bootstrap_markdown"/>
+                        <field name="description"
+                               placeholder='e.g. Installed git for updating Odoo modules etc.'
+                               widget="bootstrap_markdown"/>
+                        <field name="extra"
+                               placeholder='e.g. apt-get install git'/>
                     </group>
                 </sheet>
             </form>

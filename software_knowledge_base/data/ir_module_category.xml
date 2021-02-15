@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="software_knowledge_base.software" model="ir.module.category">
+    <record id="software" model="ir.module.category">
         <field name="name">Software knowledge base</field>
     </record>
 </odoo>

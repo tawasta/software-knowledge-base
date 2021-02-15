@@ -3,14 +3,8 @@ from . import installation
 from . import module
 from . import operating_system
 from . import platform
-from . import repository
-from . import repository_tag
 from . import server
 from . import server_note
 from . import project_project
 from . import project_task
 from . import res_partner
-from . import vcs
-#from . import vcs_provider
-from . import vcs_host
-from . import vcs_team

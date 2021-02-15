@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -20,8 +19,8 @@
 ##############################################################################
 
 {
-    "name": "SDKB VCS Integration",
-    "summary": "Adds version control integration to Software development knowledge base",
+    "name": "SDKB Version Control",
+    "summary": "Adds version control to Software development knowledge base",
     "version": "12.0.1.0.0",
     "category": "Knowledge",
     "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
@@ -29,19 +28,15 @@
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "external_dependencies": {
-        "python": [
-            #'pyapi-gitlab',
-        ],
-        "bin": [],
-    },
-    "depends": ["software_knowledge_base",],
+    "external_dependencies": {"python": ["gitlab"], "bin": []},
+    "depends": ["software_knowledge_base"],
     "data": [
         "data/vcs_api_data.xml",
+        "data/vcs_data.xml",
         "data/vcs_host_data.xml",
-        "views/swkb_repository_form.xml",
-        "views/swkb_vcs_host_form.xml",
-        #'views/swkb_vcs_host_tree.xml',
+        "views/menus.xml",
+        "views/platform.xml",
+        "views/repository.xml",
     ],
     "demo": [],
 }

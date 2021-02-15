@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
@@ -27,33 +26,25 @@
     "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
     "author": "Tawasta",
     "license": "AGPL-3",
-    "application": False,
+    "application": True,
     "installable": True,
     "external_dependencies": {"python": [], "bin": []},
-    "depends": ["project"],
+    "depends": ["contacts", "project"],
     "data": [
         "data/ir_module_category.xml",
         "data/res_groups.xml",
-        "data/vcs_data.xml",
-        "data/vcs_host_data.xml",
-        "security/ir.model.access.csv",
+        "security/ir_model_access.xml",
         "views/menus.xml",
         "views/external_component.xml",
         "views/installation.xml",
-        "views/menus.xml",
         "views/module.xml",
         "views/operating_system.xml",
         "views/platform.xml",
         "views/project_project.xml",
         "views/project_task.xml",
-        "views/repository.xml",
         "views/res_partner.xml",
         "views/server_note.xml",
         "views/server.xml",
-        "views/vcs_host.xml",
-        "views/vcs_team.xml",
-        "views/vcs.xml",
-        # 'views/vcs_provider.xml',
     ],
     "demo": [],
 }

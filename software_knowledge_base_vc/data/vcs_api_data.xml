@@ -2,17 +2,17 @@
 <odoo>
 
     <!-- VCS APIs -->
-    <record model="software_knowledge_base.vcs_api" id="software_knowledge_base.vcs_api_github">
+    <record model="software_knowledge_base.vcs_api" id="vcs_api_github">
         <field name="name">Github APIv3</field>
         <field name="code">github</field>
     </record>
 
-    <record model="software_knowledge_base.vcs_api" id="software_knowledge_base.vcs_api_gitlab">
+    <record model="software_knowledge_base.vcs_api" id="vcs_api_gitlab">
         <field name="name">Gitlab API</field>
         <field name="code">gitlab</field>
     </record>
 
-    <record model="software_knowledge_base.vcs_api" id="software_knowledge_base.vcs_api_bitbucket">
+    <record model="software_knowledge_base.vcs_api" id="vcs_api_bitbucket">
         <field name="name">Bitbucket API</field>
         <field name="code">bitbucket</field>
     </record>

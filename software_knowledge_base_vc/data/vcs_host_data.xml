@@ -2,16 +2,28 @@
 <odoo>
 
         <!-- VCS hosts -->
-        <record model="software_knowledge_base.vcs_host" id="software_knowledge_base.vcs_host_github">
-            <field name="vcs_api" ref="software_knowledge_base.vcs_api_github"></field>
+        <record model="software_knowledge_base.vcs_host" id="vcs_host_github">
+            <field name="name">Github</field>
+            <field name="vcs" ref="vcs_git"></field>
+            <field name="address">https://github.com</field>
+            <field name="address_readme">https://raw.githubusercontent.com</field>
+            <field name="vcs_api" ref="software_knowledge_base_vc.vcs_api_github"></field>
         </record>
 
-        <record model="software_knowledge_base.vcs_host" id="software_knowledge_base.vcs_host_gitlab">
-            <field name="vcs_api" ref="software_knowledge_base.vcs_api_gitlab"></field>
+        <record model="software_knowledge_base.vcs_host" id="vcs_host_gitlab">
+            <field name="name">Bitbucket</field>
+            <field name="vcs" ref="vcs_git"></field>
+            <field name="address">https://bitbucket.org</field>
+            <field name="address_readme">https://bitbucket.org</field>
+            <field name="vcs_api" ref="software_knowledge_base_vc.vcs_api_gitlab"></field>
         </record>
 
-        <record model="software_knowledge_base.vcs_host" id="software_knowledge_base.vcs_host_bitbucket">
-            <field name="vcs_api" ref="software_knowledge_base.vcs_api_bitbucket"></field>
+        <record model="software_knowledge_base.vcs_host" id="vcs_host_bitbucket">
+            <field name="vcs_api" ref="software_knowledge_base_vc.vcs_api_bitbucket"></field>
+            <field name="name">Gitlab</field>
+            <field name="vcs" ref="vcs_git"></field>
+            <field name="address">https://gitlab.com</field>
+            <field name="address_readme">https://gitlab.com</field>
         </record>
 
 </odoo>
