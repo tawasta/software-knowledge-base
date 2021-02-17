@@ -103,11 +103,11 @@ class Installation(models.Model):
 
     user_accounts_active_min = fields.Integer(string="Min active users",)
     user_accounts_active = fields.Integer(string="Active users",)
-    user_accounts_active_max = fields.Integer(string="Min active users",)
+    user_accounts_active_max = fields.Integer(string="Max active users",)
 
     user_accounts_total_min = fields.Integer(string="Min total users")
     user_accounts_total = fields.Integer(string="Total Users")
-    user_accounts_total_max = fields.Integer(string="Masx total users")
+    user_accounts_total_max = fields.Integer(string="Max total users")
 
     user_accounts_active_interval = fields.Integer(
         string='Active Interval',
