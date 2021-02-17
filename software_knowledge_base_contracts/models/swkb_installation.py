@@ -13,7 +13,7 @@ class SWKBInstallation(models.Model):
         copy=False,
     )
     contract_user_id = fields.One2many(
-        comodel_name='res.partner',
+        comodel_name='res.users',
         related='account_analytic_account_id.user_id',
         store=True,
         readonly=True,
