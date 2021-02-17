@@ -216,22 +216,22 @@
                     <filter
             string="Dev"
             name="type_dev"
-            domain="[('state','=','dev')]"
+            domain="[('type','=','dev')]"
           />
                     <filter
             string="Test"
             name="type_test"
-            domain="[('state','=','test')]"
+            domain="[('type','=','test')]"
           />
                     <filter
             string="Staging"
             name="type_staging"
-            domain="[('state','=','staging')]"
+            domain="[('type','=','staging')]"
           />
                     <filter
             string="Production"
             name="type_prodution"
-            domain="[('state','=','prodution')]"
+            domain="[('type','=','prodution')]"
           />
                 </group>
 
