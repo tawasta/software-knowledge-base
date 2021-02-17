@@ -73,6 +73,21 @@ class SoftwareKnowledgeBaseServer(models.Model):
         string='Additional info'
     )
 
+    supplier_id = fields.Many2one(
+        string="Supplier",
+        comodel_name="res.partner",
+        help="The supplier of this server",
+        domain=[("is_company", "=", True), ("supplier", "=", True)],
+    )
+
+    user_id = fields.Many2one(
+        comodel_name="res.users",
+        string="Responsible",
+        help="Appointed responsible person for this server",
+        default=lambda self: self.env.user,
+        track_visibility="onchange",
+    )
+
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration

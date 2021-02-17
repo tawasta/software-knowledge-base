@@ -83,8 +83,14 @@ class Installation(models.Model):
         store = True,
     )
 
-    disk_usage = fields.Float(
-        string='Disk Usage (MB)'
+    disk_usage_min = fields.Float(
+        string="Disk Usage Min (MB)",
+        help="The minimum amount of disk, this installation is expected to use",
+    )
+    disk_usage = fields.Float(string="Disk Usage (MB)")
+    disk_usage_max = fields.Float(
+        string="Disk Usage Max (MB)",
+        help="The minimum amount of disk, this installation is allowed to use",
     )
 
     url = fields.Char(
@@ -94,12 +100,15 @@ class Installation(models.Model):
     identifier = fields.Char(
         string='Identifier'
     )
-    user_accounts_total = fields.Integer(
-        string='Total User Accounts'
-    )
-    user_accounts_active = fields.Integer(
-        string='Active User Accounts',
-    )
+
+    user_accounts_active_min = fields.Integer(string="Min active users",)
+    user_accounts_active = fields.Integer(string="Active users",)
+    user_accounts_active_max = fields.Integer(string="Min active users",)
+
+    user_accounts_total_min = fields.Integer(string="Min total users")
+    user_accounts_total = fields.Integer(string="Total Users")
+    user_accounts_total_max = fields.Integer(string="Masx total users")
+
     user_accounts_active_interval = fields.Integer(
         string='Active Interval',
         default='6',
