@@ -12,7 +12,7 @@ class SWKBInstallation(models.Model):
         domain=[('recurring_invoices', '!=', False)],
         copy=False,
     )
-    contract_user_id = fields.One2many(
+    contract_user_id = fields.Many2one(
         comodel_name='res.users',
         related='account_analytic_account_id.user_id',
         store=True,
