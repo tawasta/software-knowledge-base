@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
     <!-- Actions -->
@@ -33,12 +33,43 @@
     </record>
 
     <!-- Menu hierarchy -->
-    <menuitem id="vcs_menu" name="Version Control" parent="software_knowledge_base.root_menu" sequence='30' groups='software_knowledge_base.developer'/>
+    <menuitem
+    id="vcs_menu"
+    name="Version Control"
+    parent="software_knowledge_base.root_menu"
+    sequence='30'
+    groups='software_knowledge_base.developer'
+  />
 
-    <menuitem id="repositories_menu"	parent="vcs_menu" action="repositories_action" sequence='10'/>
-    <menuitem id="repository_tags_menu"	parent="vcs_menu" action="repository_tags_action" sequence='20' />
-    <menuitem id="vcs_type_menu"		parent="vcs_menu" action="vcs_action" sequence='30' />
-    <menuitem id="vcs_hosts_menu"		parent="vcs_menu" action="vcs_hosts_action" sequence='40' />
-    <menuitem id="vcs_teams_menu"		parent="vcs_menu" action="vcs_teams_action" sequence='50' />
+    <menuitem
+    id="repositories_menu"
+    parent="vcs_menu"
+    action="repositories_action"
+    sequence='10'
+  />
+    <menuitem
+    id="repository_tags_menu"
+    parent="vcs_menu"
+    action="repository_tags_action"
+    sequence='20'
+  />
+    <menuitem
+    id="vcs_type_menu"
+    parent="vcs_menu"
+    action="vcs_action"
+    sequence='30'
+  />
+    <menuitem
+    id="vcs_hosts_menu"
+    parent="vcs_menu"
+    action="vcs_hosts_action"
+    sequence='40'
+  />
+    <menuitem
+    id="vcs_teams_menu"
+    parent="vcs_menu"
+    action="vcs_teams_action"
+    sequence='50'
+  />
 
 </odoo>

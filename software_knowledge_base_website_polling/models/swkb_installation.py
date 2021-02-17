@@ -127,7 +127,7 @@ class SWKBInstallation(models.Model):
     # 8. Business methods
     @api.model
     def cron_url_poll(self):
-        installations = self.search([("url_poll", "=", True),])
+        installations = self.search([("url_poll", "=", True)])
 
         for installation in installations:
             job_desc = _("SWKB URL Poll for '%s'" % installation.name)

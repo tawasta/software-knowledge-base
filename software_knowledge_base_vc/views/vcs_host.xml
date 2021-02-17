@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
 
     <!-- VCS Host Tree View -->
@@ -7,10 +7,10 @@
         <field name="model">software_knowledge_base.vcs_host</field>
         <field name="arch" type="xml">
             <tree string="VCS Hosts">
-                <field name="name"/>
-                <field name="vcs" string="VCS"/>
-                <field name="description"/>
-                <field name="address"/>
+                <field name="name" />
+                <field name="vcs" string="VCS" />
+                <field name="description" />
+                <field name="address" />
             </tree>
         </field>
     </record>
@@ -22,36 +22,38 @@
         <field name="arch" type="xml">
             <form string="VCS Hosts">
                 <header>
-                    <button name="action_update_repositories"
-                            type="object"
-                            string="Update repositories"
-                            groups="base.group_no_one"
-                            attrs="{}"
-                    />
-                    <button name="action_update_repository_readmes"
-                            type="object"
-                            string="Update readmes"
-                            groups="base.group_no_one"
-                            attrs="{}"
-                    />
+                    <button
+            name="action_update_repositories"
+            type="object"
+            string="Update repositories"
+            groups="base.group_no_one"
+            attrs="{}"
+          />
+                    <button
+            name="action_update_repository_readmes"
+            type="object"
+            string="Update readmes"
+            groups="base.group_no_one"
+            attrs="{}"
+          />
                 </header>
 
                 <sheet string="Form">
                     <div class="oe_title">
                         <div class="oe_edit_only">
-                            <label for="name"/>
+                            <label for="name" />
                         </div>
-                        <h1><field name="name" required="1"/></h1>
+                        <h1><field name="name" required="1" /></h1>
                     </div>
 
                     <group col='2'>
-                        <field name="address"/>
-                        <field name="vcs"/>
-                        <field name="vcs_api"/>
-                        <field name="api_token" password="True"/>
-                        <field name="api_verify_ssl"/>
-                        <field name="description"/>
-                        <field name="repositories"/>
+                        <field name="address" />
+                        <field name="vcs" />
+                        <field name="vcs_api" />
+                        <field name="api_token" password="True" />
+                        <field name="api_verify_ssl" />
+                        <field name="description" />
+                        <field name="repositories" />
                     </group>
 
                 </sheet>

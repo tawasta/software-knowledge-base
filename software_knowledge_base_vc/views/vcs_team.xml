@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
 
     <!-- VCS Team Tree View -->
@@ -7,8 +7,8 @@
         <field name="model">software_knowledge_base.vcs_team</field>
         <field name="arch" type="xml">
             <tree string="Teams">
-                <field name="name"/>
-                <field name="description"/>
+                <field name="name" />
+                <field name="description" />
             </tree>
         </field>
     </record>
@@ -24,13 +24,13 @@
                 <sheet string="Form">
                     <div class="oe_title">
                         <div class="oe_edit_only">
-                            <label for="name"/>
+                            <label for="name" />
                         </div>
-                        <h1><field name="name" required="1"/></h1>
+                        <h1><field name="name" required="1" /></h1>
                     </div>
 
-                    <separator string="Description"/>
-                    <field name="description" nolabel="1"/>
+                    <separator string="Description" />
+                    <field name="description" nolabel="1" />
 
                 </sheet>
             </form>

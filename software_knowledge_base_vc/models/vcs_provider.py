@@ -15,7 +15,10 @@ class VcsProvider(models.Model):
         string="Address", help="E.g. https://github.com or 192.168.100.100"
     )
 
-    @api.one
     def name_get(self):
-        display_name = "{} ({})".format(self.name, self.address)
-        return (self.id, display_name)
+        res = []
+        for record in self:
+            display_name = "{} ({})".format(record.name, record.address)
+            res.append((record.id, display_name))
+
+        return res

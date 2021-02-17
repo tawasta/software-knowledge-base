@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
 
     <!-- Operating system Tree View -->
@@ -7,8 +7,8 @@
         <field name="model">software_knowledge_base.operating_system</field>
         <field name="arch" type="xml">
             <tree string="Operating systems">
-                <field name="name" string="Name"/>
-                <field name="server_ids"/>
+                <field name="name" string="Name" />
+                <field name="server_ids" />
             </tree>
         </field>
     </record>
@@ -20,10 +20,17 @@
         <field name="arch" type="xml">
             <form string="Operating systems">
                 <div class="oe_button_box" name="button_box">
-                    <button name="toggle_active" type="object"
-                            class="oe_stat_button" icon="fa-archive">
-                        <field name="active" widget="boolean_button"
-                               options="{&quot;terminology&quot;: &quot;archive&quot;}"/>
+                    <button
+            name="toggle_active"
+            type="object"
+            class="oe_stat_button"
+            icon="fa-archive"
+          >
+                        <field
+              name="active"
+              widget="boolean_button"
+              options="{&quot;terminology&quot;: &quot;archive&quot;}"
+            />
                     </button>
                 </div>
 
@@ -32,19 +39,19 @@
                 <sheet string="Form">
                     <div class="oe_title">
                         <div class="oe_edit_only">
-                            <label for="name"/>
+                            <label for="name" />
                         </div>
-                        <h1><field name="name" required="1"/></h1>
+                        <h1><field name="name" required="1" /></h1>
                     </div>
 
                     <group>
-                        <field name="version"/>
-                        <field name="codename"/>
-                        <field name="url" widget="url"/>
-                        <field name="description"/>
+                        <field name="version" />
+                        <field name="codename" />
+                        <field name="url" widget="url" />
+                        <field name="description" />
                     </group>
 
-                    <field name="server_ids"/>
+                    <field name="server_ids" />
 
                 </sheet>
             </form>

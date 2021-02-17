@@ -1,39 +1,55 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 
-	<record id="act_installations" model="ir.actions.act_window">
-		<field name="name">Installations</field>
-		<field name="res_model">software_knowledge_base.installation</field>
-		<field name="domain">[('account_analytic_account_id','=',active_id)]</field>
-	</record>
+    <record id="act_installations" model="ir.actions.act_window">
+        <field name="name">Installations</field>
+        <field name="res_model">software_knowledge_base.installation</field>
+        <field name="domain">[
+            ('account_analytic_account_id', '=', active_id)]</field>
+    </record>
 
 
-	<record id="view_account_analytic_account_form" model="ir.ui.view">
-		<field name="name">view_account_analytic_account_form_installation</field>
-		<field name="model">account.analytic.account</field>
-		<field name="inherit_id" ref="analytic.view_account_analytic_account_form" />
-		<field name="arch" type="xml">
+    <record id="view_account_analytic_account_form" model="ir.ui.view">
+        <field name="name">
+            view_account_analytic_account_form_installation</field>
+        <field name="model">account.analytic.account</field>
+        <field
+      name="inherit_id"
+      ref="analytic.view_account_analytic_account_form"
+    />
+        <field name="arch" type="xml">
 
-			<xpath expr='//div[@name="button_box"]' position='inside'>
-				<button class="oe_stat_button" type="action" icon="fa-cube"
-					name="%(software_knowledge_base_contracts.act_installations)d"
-					string="Installations">
-				</button>
-			</xpath>
-		</field>
-	</record>
+            <xpath expr='//div[@name="button_box"]' position='inside'>
+                <button
+          class="oe_stat_button"
+          type="action"
+          icon="fa-cube"
+          name="%(software_knowledge_base_contracts.act_installations)d"
+          string="Installations"
+        >
+                </button>
+            </xpath>
+        </field>
+    </record>
 
-	<record id="account_analytic_account_form_form" model="ir.ui.view">
-		<field name="name">account_analytic_account_form_form_installation</field>
-		<field name="model">account.analytic.account</field>
-		<field name="inherit_id" ref="contract.account_analytic_account_recurring_form_form" />
-		<field name="arch" type="xml">
+    <record id="account_analytic_account_form_form" model="ir.ui.view">
+        <field name="name">
+            account_analytic_account_form_form_installation</field>
+        <field name="model">account.analytic.account</field>
+        <field
+      name="inherit_id"
+      ref="contract.account_analytic_account_recurring_form_form"
+    />
+        <field name="arch" type="xml">
 
-			<xpath expr="//tree/field[@name='quantity']" position="before">
-				<field name="installation_id" domain="[('analytic_account_invoice_line_ids', '=', False)]"/>
-			</xpath>
+            <xpath expr="//tree/field[@name='quantity']" position="before">
+                <field
+          name="installation_id"
+          domain="[('analytic_account_invoice_line_ids', '=', False)]"
+        />
+            </xpath>
 
-		</field>
-	</record>
+        </field>
+    </record>
 
 </odoo>

@@ -40,7 +40,6 @@ class VcsHost(models.Model):
 
     # provider = fields.Many2one('software_knowledge_base.vcs_provider', string='Provider')
 
-    @api.one
     def name_get(self):
         display_name = "{} ({})".format(self.name, self.address)
         return (self.id, display_name)

@@ -44,3 +44,18 @@ class SoftwareKnowledgeBaseServer(models.Model):
     specification = fields.Text(string="Technical specification",)
 
     additional_info = fields.Text(string="Additional info")
+
+    supplier_id = fields.Many2one(
+        string="Supplier",
+        comodel_name="res.partner",
+        help="The supplier of this server",
+        domain=[("is_company", "=", True), ("supplier", "=", True)],
+    )
+
+    user_id = fields.Many2one(
+        comodel_name="res.users",
+        string="Responsible",
+        help="Appointed responsible person for this server",
+        default=lambda self: self.env.user,
+        track_visibility="onchange",
+    )
