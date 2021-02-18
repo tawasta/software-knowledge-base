@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import api, fields, models
 
 
 class Installation(models.Model):
@@ -64,26 +64,53 @@ class Installation(models.Model):
     )
 
     disk_usage_min = fields.Float(
-        string="Disk Usage Min (MB)",
+        string="Disk Usage Min (GB)",
         help="The minimum amount of disk, this installation is expected to use",
     )
-    disk_usage = fields.Float(string="Disk Usage (MB)")
+    disk_usage = fields.Float(
+        string="Disk Usage (GB)", help="Current disk usage in Gigabytes"
+    )
     disk_usage_max = fields.Float(
-        string="Disk Usage Max (MB)",
+        string="Disk Usage Max (GB)",
         help="The minimum amount of disk, this installation is allowed to use",
+    )
+    disk_usage_percent = fields.Float(
+        string="Disk usage %", compute="_compute_disk_usage_percent", store=True
     )
 
     url = fields.Char(string="URL")
 
     identifier = fields.Char(string="Identifier")
 
-    user_accounts_active_min = fields.Integer(string="Min active users",)
-    user_accounts_active = fields.Integer(string="Active users",)
-    user_accounts_active_max = fields.Integer(string="Min active users",)
+    user_accounts_active_min = fields.Integer(
+        string="Min active users", help="Min active users"
+    )
+    user_accounts_active = fields.Integer(
+        string="Active users", help="Current active users"
+    )
+    user_accounts_active_max = fields.Integer(
+        string="Max active users", help="Max active users"
+    )
+    user_accounts_active_percent = fields.Float(
+        string="Active users %",
+        compute="_compute_user_accounts_active_percent",
+        store=True,
+    )
 
-    user_accounts_total_min = fields.Integer(string="Min total users")
-    user_accounts_total = fields.Integer(string="Total Users")
-    user_accounts_total_max = fields.Integer(string="Masx total users")
+    user_accounts_total_min = fields.Integer(
+        string="Min total users", help="Min total users"
+    )
+    user_accounts_total = fields.Integer(
+        string="Total Users", help="Current total users"
+    )
+    user_accounts_total_max = fields.Integer(
+        string="Max total users", help="Max total users"
+    )
+    user_accounts_total_percent = fields.Float(
+        string="Total users %",
+        compute="_compute_user_accounts_total_percent",
+        store=True,
+    )
 
     user_accounts_active_interval = fields.Integer(
         string="Active Interval", default="6",
@@ -132,3 +159,33 @@ class Installation(models.Model):
             "Libraries and other third party components used by this " "installation."
         ),
     )
+
+    @api.depends("disk_usage", "disk_usage_max")
+    def _compute_disk_usage_percent(self):
+        for record in self:
+            if record.disk_usage_max == 0:
+                record.disk_usage_percent = 0
+            else:
+                record.disk_usage_percent = (
+                    record.disk_usage / record.disk_usage_max * 100
+                )
+
+    @api.depends("user_accounts_active", "user_accounts_active_max")
+    def _compute_user_accounts_active_percent(self):
+        for record in self:
+            if record.user_accounts_active_max == 0:
+                record.user_accounts_active_percent = 0
+            else:
+                record.user_accounts_active_percent = (
+                    record.user_accounts_active / record.user_accounts_active_max * 100
+                )
+
+    @api.depends("user_accounts_total", "user_accounts_total_max")
+    def _compute_user_accounts_total_percent(self):
+        for record in self:
+            if record.user_accounts_total_max == 0:
+                record.user_accounts_total_percent = 0
+            else:
+                record.user_accounts_total_percent = (
+                    record.user_accounts_total / record.user_accounts_total_max * 100
+                )

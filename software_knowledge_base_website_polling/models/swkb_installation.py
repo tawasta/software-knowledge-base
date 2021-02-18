@@ -2,6 +2,7 @@
 import logging
 
 import requests
+
 # 2. Known third party imports:
 from lxml.html import fromstring
 from requests.adapters import HTTPAdapter

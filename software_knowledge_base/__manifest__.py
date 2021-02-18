@@ -31,6 +31,7 @@
     "external_dependencies": {"python": [], "bin": []},
     "depends": ["contacts", "project"],
     "data": [
+        "data/ir_cron.xml",
         "data/ir_module_category.xml",
         "data/res_groups.xml",
         "security/ir_model_access.xml",
