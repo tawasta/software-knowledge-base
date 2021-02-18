@@ -11,6 +11,11 @@
                 <field name="name"/>
                 <field name="partner_ids"/>
                 <field name="platform_id"/>
+				<field
+				name="user_accounts_active_percent"
+				widget="progressbar" />
+				<field name="disk_usage_percent" widget="progressbar" />
+
                 <field name="server_id"/>
                 <field name="server_ip_address"/>
                 <field name="type"/>
@@ -46,8 +51,13 @@
 					<group>
 						<group>
 							<field name="platform_id"/>
+							<field name="identifier"/>
+							<field name="company_id"/>							
 
-                            <label for="user_accounts_active"/>
+							<label
+							for="user_accounts_active"
+							string="Active users"
+							/>
                             <div col="4">
                                 <field
                                         name="user_accounts_active_min"
@@ -57,7 +67,7 @@
                                 /
                                 <field
                                         name="user_accounts_active"
-                                        class="oe_inline"
+                                        class="oe_inline" decoration-bf="1"
                                 />
                                 /
                                 <field
@@ -81,8 +91,16 @@
                                         class="oe_inline"
                                 />
                             </div>
+							<field
+							name="user_accounts_active_percent"
+							widget="progressbar"
+							/>
 
-                            <label for="user_accounts_total"/>
+
+							<label
+							for="user_accounts_total"
+							string="Total users"
+							/>
                             <div col="4">
                                 <field
                                         name="user_accounts_total_min"
@@ -93,6 +111,7 @@
                                 <field
                                         name="user_accounts_total"
                                         class="oe_inline"
+										decoration-bf="1"
                                 />
                                 /
                                 <field
@@ -101,10 +120,15 @@
                                         decoration-warning="user_accounts_total &gt;= user_accounts_total_max"
                                 />
                             </div>
+							<field
+							name="user_accounts_total_percent"
+							widget="progressbar"
+							/>
 
                             <label
                                     for="disk_usage"
                                     string="Disk usage min / current / max"
+									decoration-bf="1"
                             />
                             <div col="4">
                                 <field
@@ -113,18 +137,19 @@
                                         decoration-warning="disk_usage &lt;= disk_usage_min"
                                 />
                                 /
-                                <field name="disk_usage" class="oe_inline"/>
+                                <field name="disk_usage" class="oe_inline" decoration-bf="1"/>
                                 /
                                 <field
                                         name="disk_usage_max"
                                         class="oe_inline"
                                         decoration-warning="disk_usage &gt;= disk_usage_max"
                                 />
-                                <span class=""> MB </span>
+                                <span class=""> GB </span>
                             </div>
-
-							<field name="identifier"/>
-							<field name="company_id"/>
+							<field
+							name="disk_usage_percent"
+							widget="progressbar"
+							/>
 						</group>
 						<group>
 							<field name="type" />
@@ -179,6 +204,30 @@
 				<field name="type"/>
 				<field name="platform_id"/>
 				<field name="server_id"/>
+
+                <separator />
+                <group expand="0" string="Usage">
+                    <filter
+            string="Disk overuse"
+            name="disk_overuse"
+            domain="[('disk_usage_percent','&gt;', 100)]"
+          />
+                    <separator />
+                    <filter
+            string="Active users exeeded"
+            name="users_active_exeeded"
+            domain="[('user_accounts_active_percent','&gt;', 100)]"
+          />
+                    <separator />
+                    <filter
+            string="Total users exeeded"
+            name="users_total_exeeded"
+            domain="[('user_accounts_total_percent','&gt;', 100)]"
+          />
+                </group>
+
+                <separator />
+
 
 				<group expand="0" string="State">
 					<filter string="Setup" name="state_setup" domain="[('state','=','setup')]"/>

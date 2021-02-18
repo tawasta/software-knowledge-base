@@ -37,6 +37,7 @@
         'project',
     ],
     'data': [
+        "data/ir_cron.xml",
         'data/ir_module_category.xml',
         'data/res_groups.xml',
         'data/vcs_data.xml',
