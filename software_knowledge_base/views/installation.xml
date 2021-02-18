@@ -72,16 +72,16 @@
                             <div col="4">
                                 <field
                   name="user_accounts_active_min"
-                  class="oe_inline"
+                  class="oe_inline oe_edit_only"
                   decoration-warning="user_accounts_active &lt;= user_accounts_active_min"
                 />
-                                /
+                                <span class="oe_edit_only">/</span>
                                 <field
                   name="user_accounts_active"
                   class="oe_inline"
                   decoration-bf="1"
                 />
-                                /
+                                <span class="">/</span>
                                 <field
                   name="user_accounts_active_max"
                   class="oe_inline"
@@ -90,6 +90,7 @@
                             </div>
                             <field
                 name="user_accounts_active_percent"
+                class="oe_read_only"
                 widget="progressbar"
               />
 
@@ -115,16 +116,16 @@
                             <div col="4">
                                 <field
                   name="user_accounts_total_min"
-                  class="oe_inline"
+                  class="oe_inline oe_edit_only"
                   decoration-warning="user_accounts_total &lt;= user_accounts_total_min"
                 />
-                                /
+                                <span class="oe_edit_only">/</span>
                                 <field
                   name="user_accounts_total"
                   class="oe_inline"
                   decoration-bf="1"
                 />
-                                /
+                                <span class="">/</span>
                                 <field
                   name="user_accounts_total_max"
                   class="oe_inline"
@@ -133,6 +134,7 @@
                             </div>
                             <field
                 name="user_accounts_total_percent"
+                class="oe_read_only"
                 widget="progressbar"
               />
 
@@ -140,16 +142,16 @@
                             <div col="4">
                                 <field
                   name="disk_usage_min"
-                  class="oe_inline"
+                  class="oe_inline oe_edit_only"
                   decoration-warning="disk_usage &lt;= disk_usage_min"
                 />
-                                /
+                                <span class="oe_edit_only">/</span>
                                 <field
                   name="disk_usage"
                   decoration-bf="1"
                   class="oe_inline"
                 />
-                                /
+                                <span class="">/</span>
                                 <field
                   name="disk_usage_max"
                   class="oe_inline"
@@ -159,6 +161,7 @@
                             </div>
                             <field
                 name="disk_usage_percent"
+                class="oe_read_only"
                 widget="progressbar"
               />
                         </group>
