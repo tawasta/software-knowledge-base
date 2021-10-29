@@ -1,25 +1,50 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* software_knowledge_base_website_polling
+# 	* software_knowledge_base_website_polling
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 10.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-25 08:40+0000\n"
-"PO-Revision-Date: 2018-10-25 08:40+0000\n"
+"POT-Creation-Date: 2021-10-29 07:53+0000\n"
+"PO-Revision-Date: 2021-10-29 10:57+0300\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
+"Language: fi\n"
+"X-Generator: Poedit 2.0.6\n"
 
 #. module: software_knowledge_base_website_polling
-#: code:addons/software_knowledge_base_website_polling/models/swkb_installation.py:86
+#: code:addons/software_knowledge_base_website_polling/models/swkb_installation.py:142
+#, python-format
+msgid ""
+"### :bangbang: Polling failed\n"
+"\n"
+"{}"
+msgstr ""
+"### :bangbang: Pollaus epäonnistui\n"
+"\n"
+"{}"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.ui.view,arch_db:software_knowledge_base_website_polling.installation_form_view
+msgid "Avg delay"
+msgstr "Viiveen keskiarvo"
+
+#. module: software_knowledge_base_website_polling
+#: code:addons/software_knowledge_base_website_polling/models/swkb_installation.py:113
+#, python-format
+msgid "Could not fetch website {}: [{}] {} "
+msgstr "Verkkosivu ei vastannut {}: [{}] {} "
+
+#. module: software_knowledge_base_website_polling
+#: code:addons/software_knowledge_base_website_polling/models/swkb_installation.py:116
 #, python-format
 msgid "Could not fetch website {}: {}"
-msgstr "Could not fetch website {}: {}"
+msgstr "Verkkosivu ei vastannut {}: {}"
 
 #. module: software_knowledge_base_website_polling
 #: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_create_uid
@@ -34,12 +59,7 @@ msgstr "Luotu"
 #. module: software_knowledge_base_website_polling
 #: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_delay
 msgid "Delay in seconds"
-msgstr "Delay in seconds"
-
-#. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_description
-msgid "Description"
-msgstr "Kuvaus"
+msgstr "Viive sekunteina"
 
 #. module: software_knowledge_base_website_polling
 #: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_display_name
@@ -79,24 +99,66 @@ msgstr "Viimeksi päivitetty"
 #. module: software_knowledge_base_website_polling
 #: model:ir.model.fields,help:software_knowledge_base_website_polling.field_software_knowledge_base_installation_url_poll
 msgid "Periodically poll the url and alert if no response is got"
-msgstr "Periodically poll the url and alert if no response is got"
+msgstr "Pyydä säännöllisin väliajoin verkko-osoitetta ja hälytä jos vaustausta ei saada"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.ui.view,arch_db:software_knowledge_base_website_polling.installation_form_view
+msgid "Poll website status"
+msgstr "Pollaa verkkosivun tilaa"
+
+#. module: software_knowledge_base_website_polling
+#: code:addons/software_knowledge_base_website_polling/models/swkb_installation.py:153
+#, python-format
+msgid "SWKB URL Poll for '%s'"
+msgstr "SWKB URL Poll for '%s'"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_status_code
+msgid "Status code"
+msgstr "Vastauskoodi"
 
 #. module: software_knowledge_base_website_polling
 #: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_success
 msgid "Success"
-msgstr "Success"
+msgstr "Onnistunut"
 
 #. module: software_knowledge_base_website_polling
-#: code:addons/software_knowledge_base_website_polling/models/swkb_installation.py:61
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_timeout
+msgid "Timeout"
+msgstr "Aikakatkaisu"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_title
+msgid "Title"
+msgstr "Titteli"
+
+#. module: software_knowledge_base_website_polling
+#: code:addons/software_knowledge_base_website_polling/models/swkb_installation.py:98
 #, python-format
 msgid "Trying to open {}"
-msgstr "Trying to open {}"
+msgstr "Yritetään avata {}"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_url_poll_timeout
+msgid "URL Polling timeout"
+msgstr "URL Polling timeout"
+
+#. module: software_knowledge_base_website_polling
+#: code:addons/software_knowledge_base_website_polling/models/swkb_installation.py:81
+#, python-format
+msgid "URL not set for {}"
+msgstr "Verkko-osoitetta ei ole asetettu {}"
 
 #. module: software_knowledge_base_website_polling
 #: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_installation_poll_ids
 #: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_url_poll
 msgid "URL polling"
-msgstr "URL polling"
+msgstr "Verkko-osoitteen pollaus"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.ui.view,arch_db:software_knowledge_base_website_polling.installation_form_view
+msgid "URL polls"
+msgstr "Verkko-osoitteen pollaukset"
 
 #. module: software_knowledge_base_website_polling
 #: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_name
@@ -104,9 +166,14 @@ msgid "Url"
 msgstr "Verkko-osoite"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.ui.view,arch_db:software_knowledge_base_website_polling.installation_form_view
-msgid "Url polls"
-msgstr "Url polls"
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_verify_ssl
+msgid "Verify SSL"
+msgstr "Vahvista SSL"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_content
+msgid "content"
+msgstr "content"
 
 #. module: software_knowledge_base_website_polling
 #: model:ir.model,name:software_knowledge_base_website_polling.model_software_knowledge_base_installation_poll

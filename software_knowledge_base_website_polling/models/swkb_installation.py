@@ -139,7 +139,7 @@ class SWKBInstallation(models.Model):
                     ('hook', '!=', False),
                 ], limit=1)
                 if hook:
-                    mattermost_msg = _('### :bangbang:Polling failed\n\n{}'.format(msg))
+                    mattermost_msg = _('### :bangbang: Polling failed\n\n{}'.format(msg))
                     hook.sudo().post_mattermost(mattermost_msg, verify=False)
 
     # 8. Business methods
