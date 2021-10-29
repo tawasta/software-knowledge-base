@@ -22,7 +22,7 @@
 {
     'name': 'SDKB Website polling',
     'summary': 'Allows auto-polling whether installation websites are up',
-    'version': '10.0.1.4.3',
+    'version': '10.0.1.5.0',
     'category': 'Specific Industry Applications',
     'website': 'https://tawasta.fi',
     'author': 'Tawasta',
@@ -37,10 +37,12 @@
     'depends': [
         'software_knowledge_base',
         'queue_job',
+        'mattermost_hook',
     ],
     'data': [
         'security/ir.model.access.csv',
         'data/ir_cron.xml',
+        'data/mattermost_hook_data.xml',
         'views/swkb_installation_form.xml',
     ],
     'demo': [

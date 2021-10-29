@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="mattermost_poll_failed" model="mattermost.hook">
+            <field name="name">Poll failed</field>
+            <field name="mattermost_url">https://matters.intra.fi</field>
+            <field name="res_model" ref="software_knowledge_base.model_software_knowledge_base_installation"/>
+            <field name="function">mattermost_poll_failed</field>
+        </record>
+   </data>
+</odoo>
