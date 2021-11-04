@@ -126,7 +126,7 @@ class SWKBInstallation(models.Model):
             # false warning messages
             if msg and len(record.installation_poll_ids) > 2:
                 res_statuses = record.installation_poll_ids[:3].mapped("success")
-                if len(res_statuses) == 1 and not res_statuses[0]:
+                if not any(res_statuses):
                     # Three failures in a row, send warning message
                     hook = self.env['mattermost.hook'].sudo().search([
                         ('res_model', '=', 'software_knowledge_base.installation'),
