@@ -101,7 +101,6 @@ class SWKBInstallation(models.Model):
                 tree = fromstring(response.content)
                 title = tree.findtext('.//title')
                 poll['title'] = title
-                poll['content'] = response.content
                 poll['status_code'] = response.status_code
                 poll['delay'] = response.elapsed.total_seconds()
                 poll['timeout'] = record.url_poll_timeout
