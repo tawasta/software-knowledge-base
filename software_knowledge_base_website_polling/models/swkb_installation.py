@@ -124,23 +124,19 @@ class SWKBInstallation(models.Model):
             # Error message is set, and this is the second failed fetch
             # This allows one failed fetch, which will reduce the number of
             # false warning messages
-            if msg and len(record.installation_poll_ids) > 1 and not record.installation_poll_ids[1].success:
-                # TODO: Remove posting to thread eventually?
-                record.message_post(
-                    message_type='comment',
-                    subtype='mt_comment',
-                    body=msg,
-                )
-                # Add mattermost message here
-                hook = self.env['mattermost.hook'].sudo().search([
-                    ('res_model', '=', 'software_knowledge_base.installation'),
-                    ('function', '=', 'mattermost_poll_failed'),
-                    ('company_id', '=', record.company_id.id),
-                    ('hook', '!=', False),
-                ], limit=1)
-                if hook:
-                    mattermost_msg = _('### :bangbang: Polling failed\n\n{}'.format(msg))
-                    hook.sudo().post_mattermost(mattermost_msg, verify=False)
+            if msg and len(record.installation_poll_ids) > 2:
+                res_statuses = record.installation_poll_ids[:3].mapped("success")
+                if len(res_statuses) == 1 and not res_statuses[0]:
+                    # Three failures in a row, send warning message
+                    hook = self.env['mattermost.hook'].sudo().search([
+                        ('res_model', '=', 'software_knowledge_base.installation'),
+                        ('function', '=', 'mattermost_poll_failed'),
+                        ('company_id', '=', record.company_id.id),
+                        ('hook', '!=', False),
+                    ], limit=1)
+                    if hook:
+                        mattermost_msg = _('### :bangbang: Polling failed\n\n{}'.format(msg))
+                        hook.sudo().post_mattermost(mattermost_msg, verify=False)
 
     # 8. Business methods
     @api.model
