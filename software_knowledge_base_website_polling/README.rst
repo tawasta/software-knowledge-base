@@ -2,16 +2,10 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-====================
-SDKB Website polling
-====================
-
-Allows auto-polling whether installation websites are up.
-
-Installation
-============
-
-Install the module form Settings->Local Modules
+=======================================
+Software Knowledge Base Website Polling
+=======================================
+* Allows auto-polling whether installation websites are up.
 
 Configuration
 =============
@@ -33,6 +27,7 @@ Contributors
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 * Timo Talvitie <timo.talvitie@tawasta.fi>
+* Miika Nissi <miika.nissi@tawasta.fi>
 
 Maintainer
 ----------

@@ -2,7 +2,6 @@
 import logging
 
 import requests
-
 # 2. Known third party imports:
 from lxml.html import fromstring
 from requests.adapters import HTTPAdapter
@@ -10,8 +9,6 @@ from urllib3.util.retry import Retry
 
 # 3. Odoo imports:
 from odoo import _, api, fields, models
-
-from odoo.addons.queue_job.job import job
 
 # 4. Imports from Odoo modules:
 
@@ -21,7 +18,7 @@ from odoo.addons.queue_job.job import job
 _logger = logging.getLogger(__name__)
 
 
-class SWKBInstallation(models.Model):
+class Installation(models.Model):
     # 1. Private attributes
     _inherit = "software_knowledge_base.installation"
 
@@ -32,9 +29,9 @@ class SWKBInstallation(models.Model):
         help="Periodically poll the url and alert if no response is got",
     )
 
-    url_poll_timeout = fields.Float(string="URL Polling timeout", default=5.0,)
+    url_poll_timeout = fields.Float(string="URL Polling timeout", default=5.0)
 
-    verify_ssl = fields.Boolean(string="Verify SSL", default=True,)
+    verify_ssl = fields.Boolean(string="Verify SSL", default=True)
 
     installation_poll_ids = fields.One2many(
         comodel_name="software_knowledge_base.installation_poll",
@@ -51,7 +48,6 @@ class SWKBInstallation(models.Model):
     # 6. CRUD methods
 
     # 7. Action methods
-    @job
     def action_get_website_status(self):
         installation_poll = self.env["software_knowledge_base.installation_poll"]
 
@@ -69,7 +65,7 @@ class SWKBInstallation(models.Model):
             if not url:
                 msg = _("URL not set for {}".format(record.name))
                 record.message_post(
-                    message_type="comment", subtype="mt_comment", body=msg,
+                    message_type="comment", subtype="mt_comment", body=msg
                 )
 
             # Add http, if necessary
@@ -77,10 +73,7 @@ class SWKBInstallation(models.Model):
                 url = "http://%s" % url
 
             msg = False
-            poll = {
-                "name": url,
-                "installation_id": record.id,
-            }
+            poll = {"name": url, "installation_id": record.id}
 
             _logger.debug(_("Trying to open {}".format(url)))
             try:
@@ -122,7 +115,7 @@ class SWKBInstallation(models.Model):
                 and not record.installation_poll_ids[1].success
             ):
                 record.message_post(
-                    message_type="comment", subtype="mt_comment", body=msg,
+                    message_type="comment", subtype="mt_comment", body=msg
                 )
 
     # 8. Business methods
