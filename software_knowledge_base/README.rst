@@ -3,7 +3,7 @@
    :alt: License: AGPL-3
 
 ===================================
-Software development knowledge base
+Software Development Knowledge Base
 ===================================
 
 A module for maintaining data regarding software installations and modules. Built mainly around the needs
@@ -56,6 +56,7 @@ Contributors
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 * Timo Talvitie <timo.talvitie@tawasta.fi>
+* Miika Nissi <miika.nissi@tawasta.fi>
 
 Maintainer
 ----------

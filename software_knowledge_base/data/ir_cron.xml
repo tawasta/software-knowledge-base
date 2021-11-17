@@ -1,11 +1,8 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="0">
     <record id="ir_cron_recompute_installation_usage" model="ir.cron">
         <field name="name">Installation: Recompute usage</field>
-        <field
-      name="model_id"
-      ref="model_software_knowledge_base_installation"
-    />
+        <field name="model_id" ref="model_software_knowledge_base_installation"/>
         <field name="state">code</field>
         <field name="code">
 installations = model.search([])
@@ -13,8 +10,8 @@ installations._compute_disk_usage_percent()
 installations._compute_user_accounts_active_percent()
 installations._compute_user_accounts_total_percent()
         </field>
-        <field name="active" eval="True" />
-        <field name="user_id" ref="base.user_root" />
+        <field name="active" eval="True"/>
+        <field name="user_id" ref="base.user_root"/>
         <field name="interval_number">1</field>
         <field name="interval_type">weeks</field>
         <field name="numbercall">-1</field>

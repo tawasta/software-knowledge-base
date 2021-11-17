@@ -1,7 +1,39 @@
+##############################################################################
+#
+#    Author: Oy Tawasta OS Technologies Ltd.
+#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
+#
+##############################################################################
+
+# 1. Standard library imports:
+
+# 2. Known third party imports:
+
+# 3. Odoo imports (openerp):
 from odoo import api, fields, models
+
+# 4. Imports from Odoo modules:
+
+# 5. Local imports in the relative form:
+
+# 6. Unknown third party imports:
 
 
 class Installation(models.Model):
+    # 1. Private attributes
     _name = "software_knowledge_base.installation"
     _description = "Installation"
     _inherit = ["mail.thread"]
@@ -20,7 +52,8 @@ class Installation(models.Model):
         ("production", "Production"),
     ]
 
-    active = fields.Boolean(default=True,)
+    # 2. Fields declaration
+    active = fields.Boolean(default=True)
 
     name = fields.Char(string="Name")
 
@@ -50,7 +83,7 @@ class Installation(models.Model):
     )
 
     server_ip_address = fields.Char(
-        string="Server IP-address", related="server_id.ip_address", store=True,
+        string="Server IP-address", related="server_id.ip_address", store=True
     )
 
     port = fields.Integer(string="Port")
@@ -60,7 +93,7 @@ class Installation(models.Model):
     )
 
     db_server_ip_address = fields.Char(
-        string="DB server IP-address", related="db_server_id.ip_address", store=True,
+        string="DB server IP-address", related="db_server_id.ip_address", store=True
     )
 
     disk_usage_min = fields.Float(
@@ -113,7 +146,7 @@ class Installation(models.Model):
     )
 
     user_accounts_active_interval = fields.Integer(
-        string="Active Interval", default="6",
+        string="Active Interval", default="6"
     )
     user_accounts_active_type = fields.Selection(
         selection=[("days", "Days"), ("weeks", "Weeks"), ("months", "Months")],
@@ -160,6 +193,9 @@ class Installation(models.Model):
         ),
     )
 
+    # 3. Default methods
+
+    # 4. Compute and search fields, in the same order that fields declaration
     @api.depends("disk_usage", "disk_usage_max")
     def _compute_disk_usage_percent(self):
         for record in self:
@@ -189,3 +225,11 @@ class Installation(models.Model):
                 record.user_accounts_total_percent = (
                     record.user_accounts_total / record.user_accounts_total_max * 100
                 )
+
+    # 5. Constraints and onchanges
+
+    # 6. CRUD methods
+
+    # 7. Action methods
+
+    # 8. Business methods

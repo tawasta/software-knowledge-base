@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2016 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,16 +19,15 @@
 ##############################################################################
 
 {
-    "name": "Software development knowledge base",
+    "name": "Software Development Knowledge Base",
     "summary": "Maintain software installation and module data",
-    "version": "12.0.1.2.3",
+    "version": "14.0.1.0.0",
     "category": "Specific Industry Applications",
     "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": True,
     "installable": True,
-    "external_dependencies": {"python": [], "bin": []},
     "depends": ["contacts", "project"],
     "data": [
         "data/ir_cron.xml",
@@ -47,5 +46,4 @@
         "views/server_note.xml",
         "views/server.xml",
     ],
-    "demo": [],
 }
