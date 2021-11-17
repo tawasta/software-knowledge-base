@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2016 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
+#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,17 +19,15 @@
 ##############################################################################
 
 {
-    "name": "SDKB Technical Contacts",
+    "name": "Software Knowledge Base Technical Contacts",
     "summary": "Linking technical contacts to SDKB data",
-    "version": "12.0.1.0.3",
-    "category": "Specific Industry Applications",
+    "version": "14.0.1.0.0",
+    "category": "Knowledge",
     "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
-    "external_dependencies": {"python": [], "bin": [],},
-    "depends": ["software_knowledge_base",],
-    "data": ["views/installation.xml", "views/res_partner.xml", "views/server.xml",],
-    "demo": [],
+    "depends": ["software_knowledge_base"],
+    "data": ["views/installation.xml", "views/res_partner.xml", "views/server.xml"],
 }

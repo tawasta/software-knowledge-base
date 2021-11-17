@@ -2,10 +2,9 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-========================================================
-Software Development Knowledge Base - Technical Contacts
-========================================================
-
+==========================================
+Software Knowledge Base Technical Contacts
+==========================================
 * Linking technical contacts to SDKB data
 
 Configuration
@@ -28,6 +27,7 @@ Contributors
 
 * Jarmo Kortetjärvi <jarmo.kortetjarvi@tawasta.fi>
 * Timo Talvitie <timo.talvitie@tawasta.fi>
+* Miika Nissi <miika.nissi@tawasta.fi>
 
 Maintainer
 ----------
