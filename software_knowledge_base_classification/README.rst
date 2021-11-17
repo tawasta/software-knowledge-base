@@ -2,16 +2,14 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-===================
-SWKB Classification
-===================
-
-Adds classifications to Software knowledge base installations.
+======================================
+Software Knowledge Base Classification
+======================================
+* Adds classifications to Software knowledge base installations.
 
 Installation
 ============
-
-Install the module form Settings->Local Modules
+\-
 
 Configuration
 =============
@@ -32,6 +30,7 @@ Contributors
 ------------
 
 * Aleksi Savijoki <aleksi.savijoki@tawasta.fi>
+* Miika Nissi <miika.nissi@tawasta.fi>
 
 
 Maintainer

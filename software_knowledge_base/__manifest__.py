@@ -22,7 +22,7 @@
     "name": "Software Development Knowledge Base",
     "summary": "Maintain software installation and module data",
     "version": "14.0.1.0.0",
-    "category": "Specific Industry Applications",
+    "category": "Knowledge",
     "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
     "author": "Tawasta",
     "license": "AGPL-3",
