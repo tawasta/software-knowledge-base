@@ -1,14 +1,14 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* software_knowledge_base_website_polling
+# 	* software_knowledge_base_website_polling
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 12.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-25 08:40+0000\n"
-"PO-Revision-Date: 2018-10-25 08:40+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2021-11-18 15:23+0000\n"
+"PO-Revision-Date: 2021-11-18 15:23+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,99 +16,158 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: software_knowledge_base_website_polling
-#: code:addons/software_knowledge_base_website_polling/models/swkb_installation.py:86
-#, python-format
-msgid "Could not fetch website {}: {}"
-msgstr "Could not fetch website {}: {}"
+#: model_terms:ir.ui.view,arch_db:software_knowledge_base_website_polling.installation_form_view
+msgid "Avg delay"
+msgstr "Viiveen keskiarvo"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_create_uid
+#: code:addons/software_knowledge_base_website_polling/models/installation.py:0
+#, python-format
+msgid "Could not fetch website {}: [{}] {} "
+msgstr "Verkkosivu ei vastannut {}: [{}] {} "
+
+#. module: software_knowledge_base_website_polling
+#: code:addons/software_knowledge_base_website_polling/models/installation.py:0
+#, python-format
+msgid "Could not fetch website {}: {}"
+msgstr "Verkkosivu ei vastannut {}: {}"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__create_uid
 msgid "Created by"
 msgstr "Luonut"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_create_date
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__create_date
 msgid "Created on"
 msgstr "Luotu"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_delay
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__delay
 msgid "Delay in seconds"
-msgstr "Delay in seconds"
+msgstr "Viive sekunteina"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_description
-msgid "Description"
-msgstr "Kuvaus"
-
-#. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_display_name
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation__display_name
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__display_name
 msgid "Display Name"
 msgstr "Näyttönimi"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_id
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation__id
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__id
 msgid "ID"
 msgstr "Tunniste (ID)"
 
 #. module: software_knowledge_base_website_polling
 #: model:ir.model,name:software_knowledge_base_website_polling.model_software_knowledge_base_installation
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__installation_id
 msgid "Installation"
 msgstr "Asennus"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_installation_id
-msgid "Installation id"
-msgstr "Installation id"
-
-#. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll___last_update
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation____last_update
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll____last_update
 msgid "Last Modified on"
 msgstr "Viimeksi muokattu"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_write_uid
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__write_uid
 msgid "Last Updated by"
 msgstr "Viimeksi päivittänyt"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_write_date
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__write_date
 msgid "Last Updated on"
 msgstr "Viimeksi päivitetty"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,help:software_knowledge_base_website_polling.field_software_knowledge_base_installation_url_poll
+#: model:ir.model.fields,help:software_knowledge_base_website_polling.field_software_knowledge_base_installation__url_poll
 msgid "Periodically poll the url and alert if no response is got"
-msgstr "Periodically poll the url and alert if no response is got"
+msgstr "Pyydä säännöllisin väliajoin verkko-osoitetta ja hälytä jos vaustausta ei saada"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_success
+#: model_terms:ir.ui.view,arch_db:software_knowledge_base_website_polling.installation_form_view
+msgid "Poll website status"
+msgstr "Pollaa verkkosivun tilaa"
+
+#. module: software_knowledge_base_website_polling
+#: code:addons/software_knowledge_base_website_polling/models/installation.py:0
+#, python-format
+msgid "SWKB URL Poll for '%s'"
+msgstr "Tietämyskannan verkko-osoitteen pollaus tietueelle '%s'"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.actions.server,name:software_knowledge_base_website_polling.ir_cron_swkb_website_poll_ir_actions_server
+#: model:ir.cron,cron_name:software_knowledge_base_website_polling.ir_cron_swkb_website_poll
+#: model:ir.cron,name:software_knowledge_base_website_polling.ir_cron_swkb_website_poll
+msgid "SWKB website poll"
+msgstr "Tietämyskannan verkko-osoitteen pollaus"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__status_code
+msgid "Status code"
+msgstr "Vastauskoodi"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__success
 msgid "Success"
-msgstr "Success"
+msgstr "Onnistunut"
 
 #. module: software_knowledge_base_website_polling
-#: code:addons/software_knowledge_base_website_polling/models/swkb_installation.py:61
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__timeout
+msgid "Timeout"
+msgstr "Aikakatkaisu"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__title
+msgid "Title"
+msgstr "Titteli"
+
+#. module: software_knowledge_base_website_polling
+#: code:addons/software_knowledge_base_website_polling/models/installation.py:0
 #, python-format
 msgid "Trying to open {}"
-msgstr "Trying to open {}"
+msgstr "Yritetään avata {}"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_installation_poll_ids
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_url_poll
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation__url_poll_timeout
+msgid "URL Polling timeout"
+msgstr "Verkko-osoitteen pollauksen aikakatkaisu"
+
+#. module: software_knowledge_base_website_polling
+#: code:addons/software_knowledge_base_website_polling/models/installation.py:0
+#, python-format
+msgid "URL not set for {}"
+msgstr "Verkko-osoitetta ei ole asetettu {}"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation__installation_poll_ids
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation__url_poll
 msgid "URL polling"
-msgstr "URL polling"
+msgstr "Verkko-osoitteen pollaus"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll_name
+#: model_terms:ir.ui.view,arch_db:software_knowledge_base_website_polling.installation_form_view
+msgid "URL polls"
+msgstr "Verkko-osoitteen pollaukset"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__name
 msgid "Url"
 msgstr "Verkko-osoite"
 
 #. module: software_knowledge_base_website_polling
-#: model:ir.ui.view,arch_db:software_knowledge_base_website_polling.installation_form_view
-msgid "Url polls"
-msgstr "Url polls"
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation__verify_ssl
+msgid "Verify SSL"
+msgstr "Vahvista SSL"
+
+#. module: software_knowledge_base_website_polling
+#: model:ir.model.fields,field_description:software_knowledge_base_website_polling.field_software_knowledge_base_installation_poll__content
+msgid "content"
+msgstr "sisältö"
 
 #. module: software_knowledge_base_website_polling
 #: model:ir.model,name:software_knowledge_base_website_polling.model_software_knowledge_base_installation_poll
 msgid "software_knowledge_base.installation_poll"
-msgstr "software_knowledge_base.installation_poll"
+msgstr ""
