@@ -123,7 +123,7 @@ class SWKBInstallation(models.Model):
             # Error message is set, and this is the second failed fetch
             # This allows one failed fetch, which will reduce the number of
             # false warning messages
-            if msg and len(record.installation_poll_ids) > 2:
+            if msg and len(record.installation_poll_ids) > 3:
                 res_statuses = record.installation_poll_ids[:3].mapped("success")
                 if not any(res_statuses):
                     # Three failures in a row, send warning message
