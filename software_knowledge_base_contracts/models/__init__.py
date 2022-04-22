@@ -1,2 +1,3 @@
-from . import account_analytic_invoice_line
+from . import contract
+from . import contract_line
 from . import swkb_installation
