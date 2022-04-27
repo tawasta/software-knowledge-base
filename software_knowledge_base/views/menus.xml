@@ -11,13 +11,15 @@
         <field name="res_model">software_knowledge_base.external_component</field>
         <field name="view_mode">tree,form</field>
     </record>
+
     <record id="installations_action" model="ir.actions.act_window">
         <field name="name">Installations</field>
         <field name="res_model">software_knowledge_base.installation</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="context">{"search_default_state_setup": 1,
                                "search_default_state_ready": 1}</field>
     </record>
+
     <record id="servers_action" model="ir.actions.act_window">
         <field name="name">Servers</field>
         <field name="res_model">software_knowledge_base.server</field>
