@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="user_sw_knowledge_base_vcs_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_vcs_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_vcs"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <record id="user_sw_knowledge_base_vcs_host_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_vcs_host_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_vcs_host"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <record id="user_sw_knowledge_base_vcs_team_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_vcs_team_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_vcs_team"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <record id="user_sw_knowledge_base_repository_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_repository_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_repository"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <record id="user_sw_knowledge_base_vcs_api_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_vcs_api_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_vcs_api"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <record id="user_sw_knowledge_base_repository_tag_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_repository_tag_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_repository_tag"/>
+        <field name="group_id" ref="base.group_user"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <record id="admin_sw_knowledge_base_vcs_perm" model="ir.model.access">
+        <field name="name">admin_sw_knowledge_base_vcs_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_vcs"/>
+        <field name="group_id" ref="software_knowledge_base.admin"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="admin_sw_knowledge_base_vcs_host_perm" model="ir.model.access">
+        <field name="name">admin_sw_knowledge_base_vcs_host_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_vcs_host"/>
+        <field name="group_id" ref="software_knowledge_base.admin"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="admin_sw_knowledge_base_vcs_team_perm" model="ir.model.access">
+        <field name="name">admin_sw_knowledge_base_vcs_team_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_vcs_team"/>
+        <field name="group_id" ref="software_knowledge_base.admin"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+
+    <record id="admim_sw_knowledge_base_vcs_api_perm" model="ir.model.access">
+        <field name="name">admim_sw_knowledge_base_vcs_api_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_vcs_team"/>
+        <field name="group_id" ref="software_knowledge_base.admin"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+</odoo>
