@@ -1,4 +1,4 @@
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class Vcs(models.Model):
@@ -10,9 +10,9 @@ class Vcs(models.Model):
 
     description = fields.Text(string="Description", help="The full name")
 
-    vcs_hosts = fields.One2many(
+    vcs_host_ids = fields.One2many(
         comodel_name="software_knowledge_base.vcs_host",
-        inverse_name="vcs",
+        inverse_name="vcs_id",
         string="VCS Hosts",
         readme=True,
     )

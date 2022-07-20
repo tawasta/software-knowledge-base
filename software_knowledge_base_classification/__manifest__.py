@@ -23,7 +23,7 @@
     "summary": "Adds classifications to Software Knowledge Base",
     "version": "14.0.1.0.0",
     "category": "Knowledge",
-    "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base/",
+    "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": False,

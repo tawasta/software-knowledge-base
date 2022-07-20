@@ -53,12 +53,7 @@
         action="repository_tags_action"
         sequence='20'
     />
-    <menuitem
-        id="vcs_type_menu"
-        parent="vcs_menu"
-        action="vcs_action"
-        sequence='30'
-    />
+    <menuitem id="vcs_type_menu" parent="vcs_menu" action="vcs_action" sequence='30' />
     <menuitem
         id="vcs_hosts_menu"
         parent="vcs_menu"

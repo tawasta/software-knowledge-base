@@ -7,9 +7,9 @@
         <field name="model">software_knowledge_base.vcs_host</field>
         <field name="arch" type="xml">
             <tree string="VCS Hosts">
-                <field name="name"/>
-                <field name="vcs" string="VCS"/>
-                <field name="address"/>
+                <field name="name" />
+                <field name="vcs_id" string="VCS" />
+                <field name="address" />
             </tree>
         </field>
     </record>
@@ -33,22 +33,22 @@
                 <sheet string="Form">
                     <div class="oe_title">
                         <div class="oe_edit_only">
-                            <label for="name"/>
+                            <label for="name" />
                         </div>
                         <h1>
-                            <field name="name" required="1"/>
+                            <field name="name" required="1" />
                         </h1>
                     </div>
 
                     <group col='2'>
-                        <field name="address"/>
-                        <field name="vcs"/>
-                        <field name="description"/>
-                        <field name="vcs_api"/>
-                        <field name="api_token" password="True"/>
+                        <field name="address" />
+                        <field name="description" />
+                        <field name="vcs_id" />
+                        <field name="vcs_api_id" />
+                        <field name="api_token" />
                     </group>
 
-                    <field name="repositories"/>
+                    <field name="repository_ids" />
 
                 </sheet>
             </form>

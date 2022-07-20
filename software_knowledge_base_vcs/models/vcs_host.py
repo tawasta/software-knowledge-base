@@ -1,5 +1,4 @@
-from odoo import fields, models
-from odoo import _
+from odoo import _, fields, models
 from odoo.exceptions import ValidationError
 
 
@@ -10,11 +9,11 @@ class VcsHost(models.Model):
 
     name = fields.Char(string="Name", help="E.g. github or bitbucket", required=True)
 
-    vcs = fields.Many2one(
+    vcs_id = fields.Many2one(
         comodel_name="software_knowledge_base.vcs", string="VCS", required=True
     )
 
-    repositories = fields.One2many(
+    repository_ids = fields.One2many(
         comodel_name="software_knowledge_base.repository",
         inverse_name="vcs_host",
         string="Repositories",
@@ -33,7 +32,7 @@ class VcsHost(models.Model):
         string="Readme Address", help="E.g. https://raw.githubusercontent.com"
     )
 
-    vcs_api = fields.Many2one("software_knowledge_base.vcs_api", "VCS API")
+    vcs_api_id = fields.Many2one("software_knowledge_base.vcs_api", "VCS API")
     api_token = fields.Char("API token")
 
     # provider = fields.Many2one('software_knowledge_base.vcs_provider', string='Provider')
@@ -47,8 +46,10 @@ class VcsHost(models.Model):
 
     def action_update_repositories(self):
         for record in self:
-            # TODO
-            pass
+            api_code = record.vcs_api_id.code
+            method_name = f"{api_code}_update_repositories"
+            if hasattr(self, method_name):
+                getattr(record, method_name)()
 
     def validate_host(self):
         for record in self:

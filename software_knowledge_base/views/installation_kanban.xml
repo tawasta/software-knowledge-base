@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
     <!-- Installations Tree View -->
     <record model="ir.ui.view" id="installation_kanban_view">
@@ -7,17 +7,17 @@
         <field name="arch" type="xml">
 
             <kanban sample="1">
-                <field name="id"/>
-                <field name="name"/>
-                <field name="state"/>
-                <field name="platform_id"/>
-                <field name="server_id"/>
-                <field name="server_ip_address"/>
-                <field name="platform_image"/>
-                <field name="disk_usage"/>
-                <field name="disk_usage_max"/>
-                <field name="user_accounts_active"/>
-                <field name="user_accounts_active_max"/>
+                <field name="id" />
+                <field name="name" />
+                <field name="state" />
+                <field name="platform_id" />
+                <field name="server_id" />
+                <field name="server_ip_address" />
+                <field name="platform_image" />
+                <field name="disk_usage" />
+                <field name="disk_usage_max" />
+                <field name="user_accounts_active" />
+                <field name="user_accounts_active_max" />
 
                 <templates>
                     <t t-name="kanban-box">
@@ -26,32 +26,43 @@
                             <div class="o_kanban_content container">
                                 <div class="row">
                                     <div class="col-8">
-                                        <h4><strong><field name="name"/></strong></h4>
+                                        <h4><strong><field name="name" /></strong></h4>
                                         <p>
                                             <field name="server_id" /><br />
                                             <field name="server_ip_address" />
                                         </p>
                                     </div>
                                     <div class="col-4">
-                                        <field name="platform_image" widget="image" class="oe_avatar" options="{'style': 'height: 40px;'}"/>
-                                        <span><field name="state"
-                                               widget="badge"
-                                               decoration-success="state == 'ready'"
-                                               decoration-info="state == 'setup'"
-                                               decoration-danger="state == 'terminated'" />
+                                        <field
+                                            name="platform_image"
+                                            widget="image"
+                                            class="oe_avatar"
+                                            options="{'style': 'height: 40px;'}"
+                                        />
+                                        <span><field
+                                                name="state"
+                                                widget="badge"
+                                                decoration-success="state == 'ready'"
+                                                decoration-info="state == 'setup'"
+                                                decoration-danger="state == 'terminated'"
+                                            />
                                         </span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6">
-                                        <field name="disk_usage"
-                                               widget="gauge"
-                                               options="{'max_field': 'disk_usage_max', 'style': 'width:120px; height: 120px;'}"/>
+                                        <field
+                                            name="disk_usage"
+                                            widget="gauge"
+                                            options="{'max_field': 'disk_usage_max', 'style': 'width:120px; height: 120px;'}"
+                                        />
                                     </div>
                                     <div class="col-6">
-                                        <field name="user_accounts_active"
-                                               widget="gauge"
-                                               options="{'max_field': 'user_accounts_active_max', 'style': 'width:120px; height: 120px;'}"/>
+                                        <field
+                                            name="user_accounts_active"
+                                            widget="gauge"
+                                            options="{'max_field': 'user_accounts_active_max', 'style': 'width:120px; height: 120px;'}"
+                                        />
                                     </div>
                                 </div>
                             </div>

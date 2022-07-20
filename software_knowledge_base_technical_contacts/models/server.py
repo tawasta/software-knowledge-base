@@ -23,7 +23,7 @@
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import _, fields, models
+from odoo import fields, models
 
 # 4. Imports from Odoo modules:
 
@@ -39,7 +39,7 @@ class Server(models.Model):
     # 2. Fields declaration
     technical_contact_ids = fields.Many2many(
         comodel_name="res.partner",
-        string=_("Technical contact"),
+        string="Technical contact",
         compute="_compute_technical_contact_ids",
     )
 

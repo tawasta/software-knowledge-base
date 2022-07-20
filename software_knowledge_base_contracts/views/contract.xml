@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="act_installations" model="ir.actions.act_window">
         <field name="name">Installations</field>
@@ -10,19 +10,42 @@
     <record id="contract_contract_customer_form_view" model="ir.ui.view">
         <field name="name">Contract SWKB</field>
         <field name="model">contract.contract</field>
-        <field name="inherit_id" ref="contract.contract_contract_customer_form_view"/>
+        <field name="inherit_id" ref="contract.contract_contract_customer_form_view" />
         <field name="arch" type="xml">
             <xpath expr="//button[@name='action_show_invoices']" position="after">
-                <button name="action_show_invoices" type="object" icon="fa-cube" class="oe_stat_button">
-                    <field string="Installations" name="installation_count" widget="statinfo"/>
+                <button
+                    name="action_show_invoices"
+                    type="object"
+                    icon="fa-cube"
+                    class="oe_stat_button"
+                >
+                    <field
+                        string="Installations"
+                        name="installation_count"
+                        widget="statinfo"
+                    />
                 </button>
             </xpath>
 
-            <xpath expr="//field[@name='contract_line_fixed_ids']/tree/field[@name='quantity']" position="before">
-                <field name="installation_ids" domain="[('contract_line_id', '=', False)]" widget="many2many_tags"/>
+            <xpath
+                expr="//field[@name='contract_line_fixed_ids']/tree/field[@name='quantity']"
+                position="before"
+            >
+                <field
+                    name="installation_ids"
+                    domain="[('contract_line_id', '=', False)]"
+                    widget="many2many_tags"
+                />
             </xpath>
-            <xpath expr="//field[@name='contract_line_ids']/tree/field[@name='quantity']" position="before">
-                <field name="installation_ids" domain="[('contract_line_id', '=', False)]" widget="many2many_tags"/>
+            <xpath
+                expr="//field[@name='contract_line_ids']/tree/field[@name='quantity']"
+                position="before"
+            >
+                <field
+                    name="installation_ids"
+                    domain="[('contract_line_id', '=', False)]"
+                    widget="many2many_tags"
+                />
             </xpath>
         </field>
     </record>

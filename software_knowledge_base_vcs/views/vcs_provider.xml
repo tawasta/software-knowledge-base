@@ -7,8 +7,8 @@
         <field name="model">software_knowledge_base.vcs_provider</field>
         <field name="arch" type="xml">
             <tree string="VCS Providers">
-                <field name="name"/>
-                <field name="address"/>
+                <field name="name" />
+                <field name="address" />
             </tree>
         </field>
     </record>
@@ -22,10 +22,10 @@
                 <sheet string="Form">
 
                     <group col='3'>
-                        <field name="name" required="1"/>
-                        <group/>
-                        <field name="address" required="1"/>
-                        <group/>
+                        <field name="name" required="1" />
+                        <group />
+                        <field name="address" required="1" />
+                        <group />
                     </group>
 
                 </sheet>

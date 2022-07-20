@@ -5,13 +5,10 @@
     <record id="platform_tree_view" model="ir.ui.view">
         <field name="name">SW Knowledge Base - Platforms tree</field>
         <field name="model">software_knowledge_base.platform</field>
-        <field
-            name="inherit_id"
-            ref="software_knowledge_base.platform_tree_view"
-        />
+        <field name="inherit_id" ref="software_knowledge_base.platform_tree_view" />
         <field name="arch" type="xml">
             <field name="description" position="after">
-                <field name="repository"/>
+                <field name="repository" />
             </field>
         </field>
     </record>
@@ -20,13 +17,10 @@
     <record id="platform_form_view" model="ir.ui.view">
         <field name="name">SW Knowledge Base - Platforms form</field>
         <field name="model">software_knowledge_base.platform</field>
-        <field
-            name="inherit_id"
-            ref="software_knowledge_base.platform_form_view"
-        />
+        <field name="inherit_id" ref="software_knowledge_base.platform_form_view" />
         <field name="arch" type="xml">
             <field name="description" position="after">
-                <field name="repository"/>
+                <field name="repository" />
             </field>
         </field>
     </record>
