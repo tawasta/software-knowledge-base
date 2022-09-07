@@ -14,7 +14,6 @@ class Vcs(models.Model):
         comodel_name="software_knowledge_base.vcs_host",
         inverse_name="vcs_id",
         string="VCS Hosts",
-        readme=True,
     )
 
     def name_get(self):
