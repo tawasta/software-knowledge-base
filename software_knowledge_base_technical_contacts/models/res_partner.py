@@ -59,8 +59,8 @@ class ResPartner(models.Model):
     # 4. Compute and search fields, in the same order that fields declaration
     def _compute_server_technical_contact_ids(self):
         for record in self:
-            record.server_technical_contact_ids = record.installation_technical_contact_ids.mapped(
-                "server_id"
+            record.server_technical_contact_ids = (
+                record.installation_technical_contact_ids.mapped("server_id")
             )
 
     # 5. Constraints and onchanges

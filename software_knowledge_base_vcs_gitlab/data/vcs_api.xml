@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="software_knowledge_base.vcs_api" id="vcs_api_gitlab">
+        <field name="name">Gitlab API</field>
+        <field name="code">gitlab</field>
+    </record>
+
+</odoo>

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <odoo>
     <!-- Server notes Tree View -->
     <record model="ir.ui.view" id="server_note_tree_view">
@@ -6,10 +6,10 @@
         <field name="model">software_knowledge_base.server_note</field>
         <field name="arch" type="xml">
             <tree string="Notes">
-                <field name="event_date" optional="show"/>
-                <field name="name" widget="bootstrap_markdown"/>
-                <field name="description" widget="bootstrap_markdown" optional="show"/>
-                <field name="extra" widget="bootstrap_markdown" optional="show"/>
+                <field name="event_date" optional="show" />
+                <field name="name" widget="bootstrap_markdown" />
+                <field name="description" widget="bootstrap_markdown" optional="show" />
+                <field name="extra" widget="bootstrap_markdown" optional="show" />
             </tree>
         </field>
     </record>
@@ -21,10 +21,18 @@
             <form string="Server notes">
                 <sheet string="Form">
                     <group>
-                        <field name="event_date"/>
-                        <field name="name" placeholder="e.g. Installed git" widget="bootstrap_markdown"/>
-                        <field name="description" placeholder="e.g. Installed git for updating Odoo modules etc." widget="bootstrap_markdown"/>
-                        <field name="extra" placeholder="e.g. apt-get install git"/>
+                        <field name="event_date" />
+                        <field
+                            name="name"
+                            placeholder="e.g. Installed git"
+                            widget="bootstrap_markdown"
+                        />
+                        <field
+                            name="description"
+                            placeholder="e.g. Installed git for updating Odoo modules etc."
+                            widget="bootstrap_markdown"
+                        />
+                        <field name="extra" placeholder="e.g. apt-get install git" />
                     </group>
                 </sheet>
             </form>

@@ -1,13 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="partner_form_view_technical_contacts" model="ir.ui.view">
         <field name="name">res.partner.form.view.technical.contacts</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
             <notebook position="inside">
-                <page string="Installations (Technical contact)" attrs="{ 'invisible': [('is_company','=',True)] }">
-                    <field name="installation_technical_contact_ids"/>
+                <page
+                    string="Installations (Technical contact)"
+                    attrs="{ 'invisible': [('is_company','=',True)] }"
+                >
+                    <field name="installation_technical_contact_ids" />
                 </page>
             </notebook>
         </field>
@@ -15,10 +18,13 @@
     <record id="view_res_partner_filter" model="ir.ui.view">
         <field name="name">res.partner.select.technical.contact</field>
         <field name="model">res.partner</field>
-        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
         <field name="arch" type="xml">
             <field name="parent_id" position="after">
-                <field name="server_technical_contact_ids" filter_domain="[('installation_technical_contact_ids.server_id','ilike', self)]"/>
+                <field
+                    name="server_technical_contact_ids"
+                    filter_domain="[('installation_technical_contact_ids.server_id','ilike', self)]"
+                />
             </field>
         </field>
     </record>

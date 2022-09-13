@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Installations search view -->
+    <record model="ir.ui.view" id="installation_search_view">
+        <field name="name">installation.search.view</field>
+        <field name="model">software_knowledge_base.installation</field>
+        <field name="arch" type="xml">
+            <search string="Search Installations">
+                <field name="name" />
+                <field name="url" />
+                <field name="state" />
+                <field name="type" />
+                <field name="platform_id" />
+                <field name="server_id" />
+                <separator />
+                <group expand="0" string="Usage">
+                    <filter
+                        string="Disk overuse"
+                        name="disk_overuse"
+                        domain="[('disk_usage_percent','&gt;', 100)]"
+                    />
+                    <separator />
+                    <filter
+                        string="Active users exeeded"
+                        name="users_active_exeeded"
+                        domain="[('user_accounts_active_percent','&gt;', 100)]"
+                    />
+                    <separator />
+                    <filter
+                        string="Total users exeeded"
+                        name="users_total_exeeded"
+                        domain="[('user_accounts_total_percent','&gt;', 100)]"
+                    />
+                </group>
+                <separator />
+                <group expand="0" string="State">
+                    <filter
+                        string="Setup"
+                        name="state_setup"
+                        domain="[('state','=','setup')]"
+                    />
+                    <filter
+                        string="Ready"
+                        name="state_ready"
+                        domain="[('state','=','ready')]"
+                    />
+                    <filter
+                        string="Terminated"
+                        name="state_terminated"
+                        domain="[('state','=','terminated')]"
+                    />
+                </group>
+                <group expand="0" string="Type">
+                    <filter
+                        string="Dev"
+                        name="type_dev"
+                        domain="[('type','=','dev')]"
+                    />
+                    <filter
+                        string="Test"
+                        name="type_test"
+                        domain="[('type','=','test')]"
+                    />
+                    <filter
+                        string="Staging"
+                        name="type_staging"
+                        domain="[('type','=','staging')]"
+                    />
+                    <filter
+                        string="Production"
+                        name="type_prodution"
+                        domain="[('type','=','prodution')]"
+                    />
+                </group>
+                <group expand="0" string="Group By...">
+                    <filter
+                        string="Company"
+                        name="company"
+                        context="{'group_by':'company_id'}"
+                    />
+                    <filter
+                        string="Platform"
+                        name="platform"
+                        context="{'group_by':'platform_id'}"
+                    />
+                    <filter
+                        string="Server"
+                        name="server"
+                        context="{'group_by':'server_id'}"
+                    />
+                    <filter
+                        string="DB server"
+                        name="db_server"
+                        context="{'group_by':'db_server_id'}"
+                    />
+                    <filter
+                        string="State"
+                        name="state"
+                        context="{'group_by':'state'}"
+                    />
+                    <filter string="Type" name="type" context="{'group_by':'type'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>
