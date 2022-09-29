@@ -10,7 +10,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[software_knowledge_base](software_knowledge_base/) | 14.0.1.0.0 |  | Maintain software installation and module data
+[software_knowledge_base](software_knowledge_base/) | 14.0.1.0.1 |  | Maintain software installation and module data
 [software_knowledge_base_classification](software_knowledge_base_classification/) | 14.0.1.0.0 |  | Adds classifications to Software Knowledge Base
 [software_knowledge_base_contracts](software_knowledge_base_contracts/) | 14.0.1.0.0 |  | Adds contract/contract line to SDKB installations
 [software_knowledge_base_technical_contacts](software_knowledge_base_technical_contacts/) | 14.0.1.0.0 |  | Linking technical contacts to SDKB data

@@ -35,6 +35,13 @@ class SoftwareKnowledgeBaseServer(models.Model):
         domain=[("state", "!=", "terminated")],
     )
 
+    db_installation_ids = fields.One2many(
+        comodel_name="software_knowledge_base.installation",
+        inverse_name="db_server_id",
+        string="DB Installations",
+        domain=[("state", "!=", "terminated")],
+    )
+
     note_ids = fields.One2many(
         comodel_name="software_knowledge_base.server_note",
         inverse_name="server_id",
