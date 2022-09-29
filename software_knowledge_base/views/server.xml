@@ -65,7 +65,14 @@
                     </group>
                     <notebook>
                         <page string="Installations">
-                            <field name="installation_ids" />
+                            <field
+                                name="installation_ids"
+                                attrs="{'invisible': [('installation_ids', '=', [])]}"
+                            />
+                            <field
+                                name="db_installation_ids"
+                                attrs="{'invisible': [('db_installation_ids', '=', [])]}"
+                            />
                         </page>
                         <page string="Technical specifications">
                             <field name="specification" />
