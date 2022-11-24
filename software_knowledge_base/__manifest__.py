@@ -21,7 +21,7 @@
 {
     "name": "Software Development Knowledge Base",
     "summary": "Maintain software installation and module data",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.0.2",
     "category": "Knowledge",
     "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
     "author": "Tawasta",

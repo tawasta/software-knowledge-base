@@ -11,6 +11,7 @@
                 decoration-info="state=='setup'"
             >
                 <field name="name" />
+                <field name="url" widget="url" optional="show" />
                 <field name="partner_ids" optional="show" />
                 <field name="platform_id" optional="show" />
                 <field
