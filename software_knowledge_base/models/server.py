@@ -56,7 +56,7 @@ class SoftwareKnowledgeBaseServer(models.Model):
         string="Supplier",
         comodel_name="res.partner",
         help="The supplier of this server",
-        domain=[("is_company", "=", True), ("supplier", "=", True)],
+        domain=[("is_company", "=", True), ("supplier_rank", ">", 0)],
     )
 
     user_id = fields.Many2one(
