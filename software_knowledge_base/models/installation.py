@@ -1,4 +1,5 @@
-from odoo import api, fields, models
+from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class Installation(models.Model):
@@ -204,3 +205,42 @@ class Installation(models.Model):
     # 7. Action methods
 
     # 8. Business methods
+    def update_info(self, **kwargs):
+        """
+        Helper for updating or creating installations
+        url is used for matching existing installations
+        kwargs can include fields to be saved as record values
+        """
+        url = kwargs.get("url")
+        if not url:
+            raise ValidationError(_("url is a mandatory field"))
+
+        self.ensure_one()
+        installation = self.search([("url", "=ilike", url)])
+
+        if not installation:
+            # Existing installation is not found - create a new one
+            installation = self.create({"name": url, "url": url})
+
+        # Update installation modules
+        swkb_module = self.env["software_knowledge_base.module"]
+        for module in kwargs.get("module_ids"):
+            domain = [
+                ("name", "=", module.get("name")),
+                ("website", "=", module.get("website")),
+            ]
+            existing_module = swkb_module.search(domain, limit=1)
+
+            if not existing_module:
+                existing_module = swkb_module.create(module)
+
+            if existing_module not in installation.module_ids:
+                installation.module_ids = [(4, existing_module.id)]
+
+        # Update installation users
+        if kwargs.get("user_accounts_active"):
+            installation.user_accounts_active = kwargs.get("user_accounts_active")
+        if kwargs.get("user_accounts_total"):
+            installation.user_accounts_total = kwargs.get("user_accounts_total")
+
+        return installation.id
