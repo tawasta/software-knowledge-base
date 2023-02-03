@@ -20,5 +20,5 @@ class Platform(models.Model):
     installation_ids = fields.One2many(
         string="Installations",
         comodel_name="software_knowledge_base.installation",
-        inverse_name="platform_id"
+        inverse_name="platform_id",
     )
