@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record id="swkb_server" model="ir.config_parameter">
+        <field name="key">swkb_server</field>
+        <field name="value">https://futural.fi</field>
+    </record>
+    <record id="swkb_user" model="ir.config_parameter">
+        <field name="key">swkb_user</field>
+        <field name="value">swkb.integration</field>
+    </record>
+    <record id="swkb_token" model="ir.config_parameter">
+        <field name="key">swkb_token</field>
+        <field name="value">0f3bbf66dc808ec7cc0934709a1beed9e9ea481c</field>
+    </record>
+    <record id="swkb_db" model="ir.config_parameter">
+        <field name="key">swkb_db</field>
+        <field name="value">futural</field>
+    </record>
+</odoo>
