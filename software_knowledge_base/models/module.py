@@ -49,7 +49,9 @@ class Module(models.Model):
 
     # 2. Fields declaration
     name = fields.Char(string="Name")
-
+    description = fields.Char(string="Description")
+    author = fields.Char(string="Author")
+    website = fields.Char(string="Website")
     summary = fields.Char(size=128, string="Summary")
 
     module_type = fields.Selection(

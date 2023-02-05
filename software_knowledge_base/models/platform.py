@@ -16,3 +16,9 @@ class Platform(models.Model):
         max_width=256,
         max_height=256,
     )
+
+    installation_ids = fields.One2many(
+        string="Installations",
+        comodel_name="software_knowledge_base.installation",
+        inverse_name="platform_id",
+    )
