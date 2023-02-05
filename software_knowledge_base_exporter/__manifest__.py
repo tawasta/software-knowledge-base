@@ -1,7 +1,7 @@
 ##############################################################################
 #
 #    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Copyright 2023 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,34 +19,18 @@
 ##############################################################################
 
 {
-    "name": "Software Development Knowledge Base",
-    "summary": "Maintain software installation and module data",
-    "version": "14.0.1.0.3",
+    "name": "Export information to Software Development Knowledge Base",
+    "summary": "Export installation information to SDKB",
+    "version": "14.0.1.0.0",
     "category": "Knowledge",
     "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
     "author": "Tawasta",
     "license": "AGPL-3",
     "application": True,
     "installable": True,
-    "depends": ["contacts", "project"],
+    "depends": ["base"],
     "data": [
+        "data/ir_config_parameter.xml",
         "data/ir_cron.xml",
-        "data/ir_module_category.xml",
-        "data/res_groups.xml",
-        "security/ir_model_access.xml",
-        "views/menus.xml",
-        "views/external_component.xml",
-        "views/installation_form.xml",
-        "views/installation_kanban.xml",
-        "views/installation_search.xml",
-        "views/installation_tree.xml",
-        "views/module.xml",
-        "views/operating_system.xml",
-        "views/platform.xml",
-        "views/project_project.xml",
-        "views/project_task.xml",
-        "views/res_partner.xml",
-        "views/server_note.xml",
-        "views/server.xml",
     ],
 }

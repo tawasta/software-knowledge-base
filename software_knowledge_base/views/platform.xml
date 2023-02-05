@@ -8,6 +8,7 @@
             <tree string="Platforms">
                 <field name="name" />
                 <field name="description" optional="show" />
+                <field name="installation_ids" optional="show" />
             </tree>
         </field>
     </record>
@@ -37,6 +38,7 @@
                         <label for="description" />
                         <field name="description" nolabel="1" />
                     </group>
+                    <field name="installation_ids" />
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers" />
