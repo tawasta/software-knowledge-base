@@ -18,5 +18,7 @@ addon | version | maintainers | summary
 [software_knowledge_base_vcs](software_knowledge_base_vcs/) | 14.0.1.0.0 |  | Adds version control to Software development knowledge base
 [software_knowledge_base_vcs_gitlab](software_knowledge_base_vcs_gitlab/) | 14.0.1.0.0 |  | Adds Gitlab support for SWKB version control
 [software_knowledge_base_website_polling](software_knowledge_base_website_polling/) | 14.0.1.0.0 |  | Allows auto-polling whether installation websites are up
+[software_knowledge_project_manager](software_knowledge_project_manager/) | 14.0.1.0.0 |  | Show project manager on installation
+[software_knowledge_technical_responsible_person](software_knowledge_technical_responsible_person/) | 14.0.1.0.0 |  | Show technical responsible person on installation
 
 [//]: # (end addons)
