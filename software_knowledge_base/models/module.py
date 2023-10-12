@@ -88,6 +88,10 @@ class Module(models.Model):
         help="Where this module has been deployed.",
     )
 
+    installation_count = fields.Integer(
+        "Installation count", compute="_compute_installation_count"
+    )
+
     task_ids = fields.Many2many(
         comodel_name="project.task",
         relation="module_task_rel",
@@ -109,6 +113,9 @@ class Module(models.Model):
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
+    def _compute_installation_count(self):
+        for record in self:
+            record.installation_count = len(record.installation_ids)
 
     # 5. Constraints and onchanges
 
