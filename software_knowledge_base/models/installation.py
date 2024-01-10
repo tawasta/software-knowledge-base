@@ -67,15 +67,15 @@ class Installation(models.Model):
     )
 
     disk_usage_min = fields.Float(
-        string="Disk Usage Min (GB)",
+        string="Disk Usage Min (Gb)",
         help="The minimum amount of disk, this installation is expected to use",
     )
     disk_usage = fields.Float(
-        string="Disk Usage (GB)", help="Current disk usage in Gigabytes"
+        string="Disk Usage (Gb)", help="Current disk usage in Gigabytes"
     )
     disk_usage_max = fields.Float(
-        string="Disk Usage Max (GB)",
-        help="The minimum amount of disk, this installation is allowed to use",
+        string="Disk Usage Max (Gb)",
+        help="The maximum amount of disk, this installation is allowed to use",
     )
     disk_usage_percent = fields.Float(
         string="Disk usage %", compute="_compute_disk_usage_percent", store=True

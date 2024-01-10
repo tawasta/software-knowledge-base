@@ -4,16 +4,18 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 14.0-20230629\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-17 16:12+0000\n"
-"PO-Revision-Date: 2021-11-17 16:12+0000\n"
+"POT-Creation-Date: 2024-01-10 20:01+0000\n"
+"PO-Revision-Date: 2024-01-10 22:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
@@ -89,6 +91,11 @@ msgid "An operating system with this name already exists"
 msgstr "Tällä nimellä on jo olemassa käyttöjärjestelmä"
 
 #. module: software_knowledge_base
+#: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_server__server_type__application
+msgid "Application server"
+msgstr "Sovelluspalvelin"
+
+#. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_server__user_id
 msgid "Appointed responsible person for this server"
 msgstr "Nimetty vastuuhenkilö tälle palvelimelle"
@@ -101,6 +108,27 @@ msgstr "Nimetty vastuuhenkilö tälle palvelimelle"
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__message_attachment_count
 msgid "Attachment Count"
 msgstr "Liitteiden määrä"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__author
+msgid "Author"
+msgstr "Tekijä"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_server__db_connections_available
+#: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_server__db_connections_used
+msgid "Available DB connections"
+msgstr "Käytettävissä olevat tietokantayhteydet"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__disk_available
+msgid "Available disk (Gb)"
+msgstr "Käytettävissä oleva levy (Gb)"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__cpu_cores
+msgid "CPU Cores"
+msgstr "Prosessoriytimet"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system__codename
@@ -133,7 +161,7 @@ msgstr "Kontakti"
 #. module: software_knowledge_base
 #: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_module__module_type__core
 msgid "Core"
-msgstr "Core"
+msgstr "Ydin"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component__create_uid
@@ -184,6 +212,17 @@ msgid "Customers of this installation."
 msgstr "Asennukseen liittyvät asiakkaat."
 
 #. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__db_connections_available
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__db_connections_used
+msgid "DB Connections"
+msgstr "Tietokantayhteydet"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__db_installation_ids
+msgid "DB Installations"
+msgstr "Tietokanta-asennukset"
+
+#. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "DB server"
 msgstr "Tietokantapalvelin"
@@ -194,7 +233,18 @@ msgid "DB server IP-address"
 msgstr "Tietokantapalvelimen IP-osoite"
 
 #. module: software_knowledge_base
+#: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_server__server_type__dhcp
+msgid "DHCP server"
+msgstr "DHCP-palvelin"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_server__server_type__dns
+msgid "DNS server"
+msgstr "DNS-palvelin"
+
+#. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation__db_server_id
+#: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_server__server_type__database
 msgid "Database server"
 msgstr "Tietokantapalvelin"
 
@@ -204,6 +254,7 @@ msgid "Days"
 msgstr "Päivää"
 
 #. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__description
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system__description
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform__description
 msgid "Description"
@@ -213,7 +264,7 @@ msgstr "Kuvaus"
 #: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_installation__type__dev
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Dev"
-msgstr "Dev"
+msgstr "Kehitys"
 
 #. module: software_knowledge_base
 #: model:res.groups,name:software_knowledge_base.developer
@@ -222,23 +273,28 @@ msgstr "Kehittäjä"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation__disk_usage
-msgid "Disk Usage (GB)"
-msgstr "Levytilan käyttö (GT)"
+msgid "Disk Usage (Gb)"
+msgstr "Levynkäyttö (Gb)"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation__disk_usage_max
-msgid "Disk Usage Max (GB)"
-msgstr "Levytilan maksimi käyttö (GT)"
+msgid "Disk Usage Max (Gb)"
+msgstr "Levynkäytön yläraja (Gb)"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation__disk_usage_min
-msgid "Disk Usage Min (GB)"
-msgstr "Levytilan minimi käyttö (GT)"
+msgid "Disk Usage Min (Gb)"
+msgstr "Levynkäytön alaraja (Gb)"
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Disk overuse"
 msgstr "Levytilan liikakäyttö"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__disk_size
+msgid "Disk size (Gb)"
+msgstr "Levytila (Gb)"
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
@@ -247,6 +303,7 @@ msgstr "Levytilan käyttö"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation__disk_usage_percent
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__disk_usage_percent
 msgid "Disk usage %"
 msgstr "Levytilan käyttö %"
 
@@ -316,9 +373,13 @@ msgstr "Lisätiedot"
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component__features
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__features
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.external_component_form_view
-#: model_terms:ir.ui.view,arch_db:software_knowledge_base.module_form_view
 msgid "Features"
 msgstr "Ominaisuudet"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_server__server_type__file
+msgid "File server"
+msgstr "Tiedostopalvelin"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component__message_follower_ids
@@ -376,7 +437,7 @@ msgstr "Ryhmittele..."
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component__url
 msgid "Homepage"
-msgstr "WWW"
+msgstr "Kotisivu"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_project_project__id
@@ -463,6 +524,11 @@ msgid "Installation"
 msgstr "Asennus"
 
 #. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__installation_count
+msgid "Installation count"
+msgstr "Asennusmäärä"
+
+#. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component__installation_notes
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__installation_notes
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.external_component_form_view
@@ -479,19 +545,19 @@ msgstr "Asennus: Uudelleenlaske käyttö"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.installations_action
-#: model:ir.model.fields,field_description:software_knowledge_base.field_op_faculty__installation_ids
-#: model:ir.model.fields,field_description:software_knowledge_base.field_op_student__installation_ids
 #: model:ir.model.fields,field_description:software_knowledge_base.field_project_project__installation_ids
 #: model:ir.model.fields,field_description:software_knowledge_base.field_res_partner__installation_ids
 #: model:ir.model.fields,field_description:software_knowledge_base.field_res_users__installation_ids
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component__installation_ids
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__installation_ids
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform__installation_ids
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__installation_ids
 #: model:ir.ui.menu,name:software_knowledge_base.installations_menu
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.external_component_form_view
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_tree_view
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.module_form_view
+#: model_terms:ir.ui.view,arch_db:software_knowledge_base.module_tree_view
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.partner_form_view_installations
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.project_form_view_installations
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.server_form_view
@@ -499,8 +565,6 @@ msgid "Installations"
 msgstr "Asennukset"
 
 #. module: software_knowledge_base
-#: model:ir.model.fields,field_description:software_knowledge_base.field_op_faculty__installation_technical_contact_ids
-#: model:ir.model.fields,field_description:software_knowledge_base.field_op_student__installation_technical_contact_ids
 #: model:ir.model.fields,field_description:software_knowledge_base.field_res_partner__installation_technical_contact_ids
 #: model:ir.model.fields,field_description:software_knowledge_base.field_res_users__installation_technical_contact_ids
 msgid "Installations (Technical contact)"
@@ -517,14 +581,11 @@ msgid "Installations using this component."
 msgstr "Asennukset, jotka käyttävät tätä komponenttia."
 
 #. module: software_knowledge_base
-#: model:ir.model.fields,help:software_knowledge_base.field_op_faculty__installation_technical_contact_ids
-#: model:ir.model.fields,help:software_knowledge_base.field_op_student__installation_technical_contact_ids
 #: model:ir.model.fields,help:software_knowledge_base.field_res_partner__installation_technical_contact_ids
 #: model:ir.model.fields,help:software_knowledge_base.field_res_users__installation_technical_contact_ids
 msgid ""
 "Installations where the partner has been marked as a technical contact."
-msgstr ""
-"Asennukset, joissa partneri on merkattu tekniseksi yhteyshenkilöksi."
+msgstr "Asennukset, joissa partneri on merkattu tekniseksi yhteyshenkilöksi."
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation__user_accounts_active_type
@@ -548,7 +609,9 @@ msgstr "Ongelmat"
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module__issues
 msgid "Known bugs, limitations, incompatibilities with other modules etc."
-msgstr "Tiedossa olevat bugit, rajoitukset, yhteensopimattomuudet muihiin moduleihin ym."
+msgstr ""
+"Tiedossa olevat bugit, rajoitukset, yhteensopimattomuudet muihiin "
+"moduleihin ym."
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.module_form_view
@@ -595,6 +658,11 @@ msgstr "Viimeksi päivitetty"
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_installation__external_component_ids
 msgid "Libraries and other third party components used by this installation."
 msgstr "Asennuksen käyttämät kirjastot ja muut ulkoiset komponentit."
+
+#. module: software_knowledge_base
+#: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_server__server_type__mail
+msgid "Mail server"
+msgstr "Sähköpostipalvelin"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component__message_main_attachment_id
@@ -771,11 +839,22 @@ msgid "Operating systems"
 msgstr "Käyttöjärjestelmät"
 
 #. module: software_knowledge_base
+#: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_server__server_type__other
+msgid "Other server"
+msgstr "Muu palvelin"
+
+#. module: software_knowledge_base
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_platform
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation__platform_id
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Platform"
 msgstr "Alusta"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation__platform_image
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_platform__image
+msgid "Platform icon"
+msgstr "Alustan ikoni"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.platforms_action
@@ -790,6 +869,11 @@ msgstr "Alustat"
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation__port
 msgid "Port"
 msgstr "Portti"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_server__server_type__print
+msgid "Print server"
+msgstr "Tulostuspalvelin"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_installation__type__production
@@ -814,8 +898,17 @@ msgid "Projects utilizing this installation."
 msgstr "Tätä asennusta käyttävät projektit."
 
 #. module: software_knowledge_base
+#: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_server__server_type__proxy
+msgid "Proxy server"
+msgstr "Proxy-palvelin"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__ram
+msgid "RAM (Gb)"
+msgstr "RAM (Gb)"
+
+#. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__readme
-#: model_terms:ir.ui.view,arch_db:software_knowledge_base.module_form_view
 msgid "Readme"
 msgstr "Readme"
 
@@ -883,9 +976,16 @@ msgid "Server note"
 msgstr "Palvelinmuistiinpano"
 
 #. module: software_knowledge_base
+#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_server_note
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.server_note_form_view
 msgid "Server notes"
 msgstr "Palvelinmuistiinpanot"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__server_type
+#: model_terms:ir.ui.view,arch_db:software_knowledge_base.server_search_view
+msgid "Server type"
+msgstr "Palvelintyyppi"
 
 #. module: software_knowledge_base
 #: model:ir.actions.act_window,name:software_knowledge_base.servers_action
@@ -921,13 +1021,13 @@ msgstr "Tietämyskanta"
 #: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_installation__type__staging
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Staging"
-msgstr "Lavastus"
+msgstr "Staging"
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.server_search_view
 msgid "State"
-msgstr "Osavaltio/Maakunta"
+msgstr "Tila"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation__state
@@ -936,7 +1036,6 @@ msgstr "Tila"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__summary
-#: model_terms:ir.ui.view,arch_db:software_knowledge_base.module_form_view
 msgid "Summary"
 msgstr "Yhteenveto"
 
@@ -996,8 +1095,8 @@ msgstr "Todellinen päivämäärä, jolloin toimenpide tehtiin"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_installation__disk_usage_max
-msgid "The minimum amount of disk, this installation is allowed to use"
-msgstr "Vähimmäismäärä levytilaa, jota tämä asennus saa käyttää"
+msgid "The maximum amount of disk, this installation is allowed to use"
+msgstr "Maksimimäärä levytilaa, jota tämä asennus saa käyttää"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_installation__disk_usage_min
@@ -1069,9 +1168,24 @@ msgid "Usage"
 msgstr "Käyttö"
 
 #. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__disk_used
+msgid "Used disk (Gb)"
+msgstr "Käytetty levy (Gb)"
+
+#. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system__version
 msgid "Version"
 msgstr "Versio"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_server__server_type__web
+msgid "Web server"
+msgstr "Web-palvelin"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__website
+msgid "Website"
+msgstr "Verkkosivu"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_external_component__website_message_ids
@@ -1104,7 +1218,8 @@ msgstr "Mikä on asennuksen tila"
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module__module_type
 msgid "Where the module has been developed"
-msgstr "Onko moduuli peräisin coresta tai yhteisöstä, vai onko se itse kehitetty"
+msgstr ""
+"Onko moduuli peräisin coresta tai yhteisöstä, vai onko se itse kehitetty"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module__installation_ids
@@ -1127,6 +1242,7 @@ msgid "e.g. apt-get install git"
 msgstr "esim. apt-get install git"
 
 #. module: software_knowledge_base
-#: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_server_note
-msgid "software_knowledge_base.server_note"
-msgstr ""
+#: code:addons/software_knowledge_base/models/installation.py:0
+#, python-format
+msgid "url is a mandatory field"
+msgstr "url on pakollinen kenttä"
