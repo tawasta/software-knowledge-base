@@ -30,6 +30,7 @@
     "installable": True,
     "depends": ["software_knowledge_base"],
     "data": [
-        "views/installation.xml",
+        "views/installation_form.xml",
+        "views/installation_tree.xml",
     ],
 }
