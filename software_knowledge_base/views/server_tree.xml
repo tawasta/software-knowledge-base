@@ -5,7 +5,7 @@
         <field name="name">server.tree.view</field>
         <field name="model">software_knowledge_base.server</field>
         <field name="arch" type="xml">
-            <tree string="Servers">
+            <tree string="Servers" multi_edit="1">
                 <field name="name" />
                 <field name="ip_address" optional="show" />
                 <field name="operating_system_id" optional="show" />
