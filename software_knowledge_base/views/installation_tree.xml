@@ -9,6 +9,7 @@
                 string="Installations"
                 decoration-muted="state=='terminated'"
                 decoration-info="state=='setup'"
+                multi_edit="1"
             >
                 <field name="name" />
                 <field name="url" widget="url" optional="show" />
