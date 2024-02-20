@@ -1,2 +1,0 @@
-"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-"user_sw_knowledge_base_installation_classification","user_sw_knowledge_base_installation_classification","model_software_knowledge_base_installation_classification","base.group_user",1,1,1,0

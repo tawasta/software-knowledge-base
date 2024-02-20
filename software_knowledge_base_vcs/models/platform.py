@@ -1,9 +1,0 @@
-from odoo import fields, models
-
-
-class Platform(models.Model):
-    _inherit = "software_knowledge_base.platform"
-
-    repository = fields.Many2one(
-        comodel_name="software_knowledge_base.repository", string="Repository"
-    )
