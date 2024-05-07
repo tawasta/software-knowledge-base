@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="edit_project" model="ir.ui.view">
+        <field
+            name="name"
+        >project.project.form.project.task.type.require.module.info</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_settings_container')]" position="inside">
+                <div>
+                    <div
+                        class="col-lg-6 o_setting_box"
+                        id="required_swkb_modules_setting"
+                    >
+                        <div class="o_setting_left_pane">
+
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="module_info_required_stage_ids" />
+                            <div class="text-muted">
+                                Moving tasks to the following Task Stages requires either Software Knowledge Base's Module info to be set
+                                for the task, or the task's "This Task did not Involve Modules" field to be checked.
+                            </div>
+                            <field
+                                name="module_info_required_stage_ids"
+                                widget="many2many_tags"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>
