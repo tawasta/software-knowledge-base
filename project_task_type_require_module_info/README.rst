@@ -6,7 +6,7 @@
 Project: Require Module Info for Tasks
 ======================================
 
-* Enables configuring task stages that require SWKB modules to be set
+* Enables configuring task stages that require Software Knowledge Base modules to be set
 
 Configuration
 =============
@@ -22,6 +22,9 @@ Usage
 
 * Apply the above configuration to a project, and try to move a task to a stage
   without the appropriate module info. An error is shown and stage change is prevented.
+* If you created a new module, you can manually run the "Software knowledge base: 
+  export information" cron in the customer installation to get the module to immediately 
+  show up in Software Knowledge Base's list of modules.
 
 Known issues / Roadmap
 ======================

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20230925\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-07 12:22+0000\n"
-"PO-Revision-Date: 2024-05-07 12:22+0000\n"
+"POT-Creation-Date: 2024-05-15 08:18+0000\n"
+"PO-Revision-Date: 2024-05-15 08:18+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,10 +28,27 @@ msgid "ID"
 msgstr "Tunniste (ID)"
 
 #. module: project_task_type_require_module_info
+#: model_terms:ir.ui.view,arch_db:project_task_type_require_module_info.view_task_form2
+msgid ""
+"If you created a new module, you can manually run the \n"
+"                    \"Software knowledge base: export information\" cron in the customer installation\n"
+"                    to get the module to immediately show up in Software Knowledge Base's list of modules."
+msgstr ""
+"Jos teit uuden moduulin, voit ajaa \n"
+"                    \"Software knowledge base: export information\" -cronin asiakasasennuksessa\n"
+"                    saadaksesi moduulin ilmestymään heti Tietämyskannan moduulilistaan."
+
+#. module: project_task_type_require_module_info
 #: model:ir.model.fields,field_description:project_task_type_require_module_info.field_project_project____last_update
 #: model:ir.model.fields,field_description:project_task_type_require_module_info.field_project_task____last_update
 msgid "Last Modified on"
 msgstr "Viimeksi muokattu"
+
+#. module: project_task_type_require_module_info
+#: model_terms:ir.ui.view,arch_db:project_task_type_require_module_info.view_task_form2
+msgid ""
+"List here the modules that were affected by the work done in this task."
+msgstr "Moduulit, jotka liittyivät tässä tehtävässä tehtyyn työhön."
 
 #. module: project_task_type_require_module_info
 #: model_terms:ir.ui.view,arch_db:project_task_type_require_module_info.edit_project
@@ -39,9 +56,9 @@ msgid ""
 "Moving tasks to the following Task Stages requires either Software Knowledge Base's Module info to be set\n"
 "                                for the task, or the task's \"This Task did not Involve Modules\" field to be checked."
 msgstr ""
-"Tehtävän siirtäminen valittuihin vaiheisiin vaatii joko tietämyskannan moduulitiedon täyttämisen, tai "
-"'Tehtävään ei liittynyt moduuleja' -kentän rastittamisen."
-
+"Tehtävän siirtäminen valittuihin vaiheisiin vaatii joko tietämyskannan "
+"moduulitiedon täyttämisen, tai 'Tehtävään ei liittynyt moduuleja' -kentän "
+"rastittamisen."
 
 #. module: project_task_type_require_module_info
 #: model:ir.model.fields,help:project_task_type_require_module_info.field_project_task__task_did_not_involve_modules
@@ -56,7 +73,8 @@ msgid ""
 "Or if no modules were involved, check the 'This Task did not Involve "
 "Modules' box."
 msgstr ""
-"Ole hyvä ja täytä tehtävän Moduulit-osio, tai rastita 'Tehtävään ei liittynyt moduuleja' -kenttä"
+"Ole hyvä ja täytä tehtävän Moduulit-osio, tai rastita 'Tehtävään ei "
+"liittynyt moduuleja' -kenttä"
 
 #. module: project_task_type_require_module_info
 #: model:ir.model,name:project_task_type_require_module_info.model_project_project
