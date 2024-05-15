@@ -8,8 +8,33 @@
         <field name="inherit_id" ref="project.view_task_form2" />
         <field name="arch" type="xml">
             <field name="partner_id" position="after">
-                <field name="task_did_not_involve_modules" />
+                <field name="task_did_not_involve_modules" widget="boolean_toggle" />
+            </field>
+
+            <field name="module_ids" position="before">
+                <div class="oe_read_only text-muted mb-2">
+                    <p
+                    >List here the modules that were affected by the work done in this task. </p>
+                    <p>If you created a new module, you can manually run the
+                    "Software knowledge base: export information" cron in the customer installation
+                    to get the module to immediately show up in Software Knowledge Base's list of modules.</p>
+                </div>
             </field>
         </field>
     </record>
+
+    <record id="view_task_tree2" model="ir.ui.view">
+        <field
+            name="name"
+        >project.task.tree.project.task.type.require.module.info</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2" />
+        <field name="arch" type="xml">
+            <field name="tag_ids" position="after">
+                <field name="module_ids" optional="hide" />
+                <field name="task_did_not_involve_modules" optional="hide" />
+            </field>
+        </field>
+    </record>
+
 </odoo>
