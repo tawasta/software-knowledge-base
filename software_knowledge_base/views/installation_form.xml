@@ -11,7 +11,18 @@
                 </header>
                 <sheet string="Form">
                     <div class="oe_button_box" name="button_box">
-
+                        <button
+                            class="oe_stat_button"
+                            type="object"
+                            name="action_view_modules"
+                            icon="fa-puzzle-piece"
+                        >
+                            <field
+                                string="Modules"
+                                name="module_count"
+                                widget="statinfo"
+                            />
+                        </button>
                     </div>
                     <field name="platform_image" widget="image" class="oe_avatar" />
                     <div class="oe_title">

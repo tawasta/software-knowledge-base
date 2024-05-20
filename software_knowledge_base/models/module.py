@@ -122,5 +122,11 @@ class Module(models.Model):
     # 6. CRUD methods
 
     # 7. Action methods
+    def action_view_installations(self):
+        action = self.env["ir.actions.act_window"]._for_xml_id(
+            "software_knowledge_base.installations_action"
+        )
+        action["domain"] = [("id", "in", self.installation_ids.ids)]
+        return action
 
     # 8. Business methods
