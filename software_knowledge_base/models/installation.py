@@ -152,6 +152,10 @@ class Installation(models.Model):
         help="Modules used by this installation.",
     )
 
+    module_count = fields.Integer(
+        string="Module count", compute="_compute_module_count"
+    )
+
     external_component_ids = fields.Many2many(
         comodel_name="software_knowledge_base.external_component",
         relation="installation_ext_comp_rel",
@@ -168,6 +172,10 @@ class Installation(models.Model):
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
+    def _compute_module_count(self):
+        for record in self:
+            record.module_count = len(record.module_ids)
+
     @api.depends("disk_usage", "disk_usage_max")
     def _compute_disk_usage_percent(self):
         for record in self:
@@ -203,6 +211,12 @@ class Installation(models.Model):
     # 6. CRUD methods
 
     # 7. Action methods
+    def action_view_modules(self):
+        action = self.env["ir.actions.act_window"]._for_xml_id(
+            "software_knowledge_base.modules_action"
+        )
+        action["domain"] = [("id", "in", self.module_ids.ids)]
+        return action
 
     # 8. Business methods
     def update_info(self, **kwargs):
