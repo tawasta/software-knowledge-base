@@ -4,18 +4,16 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0-20230629\n"
+"Project-Id-Version: Odoo Server 14.0-20230925\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-10 20:01+0000\n"
-"PO-Revision-Date: 2024-01-10 22:05+0200\n"
+"POT-Creation-Date: 2024-05-28 11:42+0000\n"
+"PO-Revision-Date: 2024-05-28 11:42+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
@@ -134,6 +132,11 @@ msgstr "Prosessoriytimet"
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_operating_system__codename
 msgid "Codename"
 msgstr "Koodinimi"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__color
+msgid "Color"
+msgstr "Väri"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_module__module_type__community
@@ -610,8 +613,8 @@ msgstr "Ongelmat"
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module__issues
 msgid "Known bugs, limitations, incompatibilities with other modules etc."
 msgstr ""
-"Tiedossa olevat bugit, rajoitukset, yhteensopimattomuudet muihiin "
-"moduleihin ym."
+"Tiedossa olevat bugit, rajoitukset, yhteensopimattomuudet muihiin moduleihin"
+" ym."
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.module_form_view
@@ -658,6 +661,18 @@ msgstr "Viimeksi päivitetty"
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_installation__external_component_ids
 msgid "Libraries and other third party components used by this installation."
 msgstr "Asennuksen käyttämät kirjastot ja muut ulkoiset komponentit."
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,help:software_knowledge_base.field_project_task__module_ids
+msgid ""
+"List here the modules that were affected by the work done in this task. If "
+"you created a new module, you can manually run the 'Software knowledge "
+"'base: export information' cron in the customer installation to get the "
+"module to immediately show up in Software Knowledge Base's list of modules."
+msgstr "Listaa tähän moduulit, jotka liittyivät tässä tehtävässä tehtyyn työhön. Jos teit "
+"uuden moduulin, voit ajaa \"Software knowledge base: export information\" -cronin " 
+"asiakasasennuksessa saadaksesi moduulin ilmestymään heti Tietämyskannan "
+"moduulilistaan."
 
 #. module: software_knowledge_base
 #: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_server__server_type__mail
@@ -719,6 +734,12 @@ msgstr "Käyttäjien vähimmäismäärä"
 #: model:ir.model,name:software_knowledge_base.model_software_knowledge_base_module
 msgid "Module"
 msgstr "Moduuli"
+
+#. module: software_knowledge_base
+#: model:ir.model.fields,field_description:software_knowledge_base.field_project_task__module_count
+#: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_installation__module_count
+msgid "Module count"
+msgstr "Moduulien määrä"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__module_type
@@ -905,22 +926,17 @@ msgstr "Proxy-palvelin"
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__ram
 msgid "RAM (Gb)"
-msgstr "RAM (Gb)"
+msgstr ""
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__readme
 msgid "Readme"
-msgstr "Readme"
+msgstr ""
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Ready"
 msgstr "Valmis"
-
-#. module: software_knowledge_base
-#: model:ir.model.fields,help:software_knowledge_base.field_project_task__module_ids
-msgid "Related modules"
-msgstr "Liittyvät moduulit"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module__task_ids
@@ -1021,7 +1037,7 @@ msgstr "Tietämyskanta"
 #: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_installation__type__staging
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Staging"
-msgstr "Staging"
+msgstr ""
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_search_view

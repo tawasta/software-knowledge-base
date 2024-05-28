@@ -22,6 +22,9 @@
 
 # 2. Known third party imports:
 
+# 6. Unknown third party imports:
+import logging
+
 # 3. Odoo imports (openerp):
 from odoo import fields, models
 
@@ -29,7 +32,8 @@ from odoo import fields, models
 
 # 5. Local imports in the relative form:
 
-# 6. Unknown third party imports:
+
+_logger = logging.getLogger(__name__)
 
 
 class ProjectTask(models.Model):
@@ -43,17 +47,35 @@ class ProjectTask(models.Model):
         column1="task_id",
         column2="module_id",
         string="Modules",
-        help="Related modules",
+        help="List here the modules that were affected by the work done in this task. "
+        "If you created a new module, you can manually run the 'Software knowledge "
+        "'base: export information' cron in the customer installation to get the "
+        "module to immediately show up in Software Knowledge Base's list of modules.",
+    )
+
+    module_count = fields.Integer(
+        string="Module count", compute="_compute_module_count"
     )
 
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
+    def _compute_module_count(self):
+        for record in self:
+            record.module_count = len(record.module_ids)
 
     # 5. Constraints and onchanges
 
     # 6. CRUD methods
 
     # 7. Action methods
+    def action_view_modules(self):
+        _logger.info("action reached")
+        _logger.info(self.module_ids.ids)
+        action = self.env["ir.actions.act_window"]._for_xml_id(
+            "software_knowledge_base.modules_action"
+        )
+        action["domain"] = [("id", "in", self.module_ids.ids)]
+        return action
 
     # 8. Business methods

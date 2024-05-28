@@ -26,9 +26,20 @@ class ProjectTask(models.Model):
         if vals.get("stage_id") and self.env.user.has_group("base.group_user"):
 
             for task in self:
+
+                # Check also that toggle state and module field do not clash
+                if len(task.module_ids) > 0 and task.task_did_not_involve_modules:
+                    raise ValidationError(
+                        _(
+                            "'This Task did not Involve Modules' cannot be toggled on "
+                            "if modules were selected. Remove the modules first."
+                        )
+                    )
+
                 stage_ids_requiring_modules = [
                     s.id for s in task.project_id.module_info_required_stage_ids
                 ]
+
                 if (
                     task.stage_id.id in stage_ids_requiring_modules
                     and len(task.module_ids) == 0
