@@ -22,7 +22,7 @@
     "name": "Project: Require Module Info for Tasks",
     "summary": "Configure that SWKB module info has to be set before a task can "
     "moved to a certain stage",
-    "version": "14.0.1.0.2",
+    "version": "14.0.1.0.3",
     "category": "Project",
     "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
     "author": "Tawasta",

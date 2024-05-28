@@ -23,7 +23,7 @@
 # 2. Known third party imports:
 
 # 3. Odoo imports (openerp):
-from odoo import fields, models
+from odoo import api, fields, models
 
 # 4. Imports from Odoo modules:
 
@@ -53,6 +53,7 @@ class Module(models.Model):
     author = fields.Char(string="Author")
     website = fields.Char(string="Website")
     summary = fields.Char(size=128, string="Summary")
+    color = fields.Integer(string="Color", compute="_compute_color", store=True)
 
     module_type = fields.Selection(
         selection=_MODULE_TYPE_VALUES,
@@ -113,6 +114,25 @@ class Module(models.Model):
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
+    @api.depends("website")
+    def _compute_color(self):
+        """
+        Give the module an arbitrary color code between 1-11 based on the
+        repository URL, i.e. all modules from the same repo will be the
+        same color.
+        """
+        for record in self:
+            if not record.website:
+                record.color = 1
+            else:
+                # Trim trailing slash
+                website = (
+                    record.website.endswith("/")
+                    and record.website[:-1]
+                    or record.website
+                )
+                record.color = sum(ord(char) for char in website) % 11 + 1
+
     def _compute_installation_count(self):
         for record in self:
             record.installation_count = len(record.installation_ids)
