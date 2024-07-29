@@ -5,4 +5,11 @@ Software knowledge base
 =======================
 
 [//]: # (addons)
+
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[software_knowledge_base_exporter](software_knowledge_base_exporter/) | 17.0.1.0.0 |  | Export installation information to SDKB
+
 [//]: # (end addons)
