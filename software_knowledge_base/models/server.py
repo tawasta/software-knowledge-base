@@ -43,6 +43,7 @@ class SoftwareKnowledgeBaseServer(models.Model):
     operating_system_id = fields.Many2one(
         comodel_name="software_knowledge_base.operating_system",
         string="Operating system",
+        tracking=True,
     )
 
     installation_ids = fields.One2many(
@@ -105,6 +106,7 @@ class SoftwareKnowledgeBaseServer(models.Model):
         string="Responsible",
         help="Appointed responsible person for this server",
         default=lambda self: self.env.user,
+        tracking=True,
     )
 
     @api.depends("disk_size", "disk_used")

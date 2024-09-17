@@ -38,6 +38,7 @@ class Installation(models.Model):
         string="Status",
         help="What is the deployments status of the installation",
         default="setup",
+        tracking=True,
     )
 
     type = fields.Selection(selection=_INSTALLATION_TYPE_VALUES, string="Type")
@@ -45,11 +46,15 @@ class Installation(models.Model):
     additional_info = fields.Text(string="Additional info")
 
     platform_id = fields.Many2one(
-        comodel_name="software_knowledge_base.platform", string="Platform"
+        comodel_name="software_knowledge_base.platform",
+        string="Platform",
+        tracking=True,
     )
 
     server_id = fields.Many2one(
-        comodel_name="software_knowledge_base.server", string="Server"
+        comodel_name="software_knowledge_base.server",
+        string="Server",
+        tracking=True,
     )
 
     server_ip_address = fields.Char(
@@ -59,7 +64,9 @@ class Installation(models.Model):
     port = fields.Integer(string="Port")
 
     db_server_id = fields.Many2one(
-        comodel_name="software_knowledge_base.server", string="Database server"
+        comodel_name="software_knowledge_base.server",
+        string="Database server",
+        tracking=True,
     )
 
     db_server_ip_address = fields.Char(
