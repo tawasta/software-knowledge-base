@@ -42,10 +42,12 @@
                         <page string="Installations">
                             <field
                                 name="installation_ids"
-                                invisible="not installation_ids"/>
+                                invisible="not installation_ids"
+                            />
                             <field
                                 name="db_installation_ids"
-                                invisible="not db_installation_ids"/>
+                                invisible="not db_installation_ids"
+                            />
                         </page>
                         <page string="Technical specifications">
                             <group>
