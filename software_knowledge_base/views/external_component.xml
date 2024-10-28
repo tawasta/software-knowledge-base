@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- External Components Tree View -->
+    <record model="ir.ui.view" id="external_component_tree_view">
+        <field name="name">external.component.tree.view</field>
+        <field name="model">software_knowledge_base.external_component</field>
+        <field name="arch" type="xml">
+            <tree string="External components">
+                <field name="name" />
+                <field name="url" optional="show" />
+                <field name="installation_ids" optional="show" />
+            </tree>
+        </field>
+    </record>
+    <!-- External Components Form View -->
+    <record model="ir.ui.view" id="external_component_form_view">
+        <field name="name">external.component.form.view</field>
+        <field name="model">software_knowledge_base.external_component</field>
+        <field name="arch" type="xml">
+            <form string="Servers">
+                <header>
+                </header>
+                <sheet string="Form">
+                    <div class="oe_title">
+                        <div class="oe_edit_only">
+                            <label for="name" />
+                        </div>
+                        <h1>
+                            <field name="name" required="1" />
+                        </h1>
+                    </div>
+                    <group col="4">
+                        <field name="url" widget="url" />
+                    </group>
+                    <separator string="Features" />
+                    <field name="features" nolabel="1" />
+                    <notebook>
+                        <page string="Installation">
+                            <separator string="Installations" />
+                            <field name="installation_ids" />
+                            <separator string="Installation notes" />
+                            <field name="installation_notes" />
+                        </page>
+                        <page string="Additional info">
+                            <field name="additional_info" />
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" />
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+</odoo>

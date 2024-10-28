@@ -10,6 +10,8 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[software_knowledge_base](software_knowledge_base/) | 17.0.1.0.0 |  | Maintain software installation and module data
+[software_knowledge_base_classification](software_knowledge_base_classification/) | 17.0.1.0.0 |  | Adds classifications to Software Knowledge Base
 [software_knowledge_base_exporter](software_knowledge_base_exporter/) | 17.0.1.0.0 |  | Export installation information to SDKB
 
 [//]: # (end addons)

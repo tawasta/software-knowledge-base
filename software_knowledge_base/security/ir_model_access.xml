@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="user_sw_knowledge_base_ext_comp_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_ext_comp_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_external_component" />
+        <field name="group_id" ref="base.group_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="user_sw_knowledge_base_installation_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_installation_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_installation" />
+        <field name="group_id" ref="base.group_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="user_sw_knowledge_base_module_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_module_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_module" />
+        <field name="group_id" ref="base.group_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="user_sw_knowledge_base_operating_system_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_operating_system_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_operating_system" />
+        <field name="group_id" ref="base.group_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="user_sw_knowledge_base_platform_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_platform_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_platform" />
+        <field name="group_id" ref="base.group_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="user_sw_knowledge_base_server_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_server_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_server" />
+        <field name="group_id" ref="base.group_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="user_sw_knowledge_base_server_note_perm" model="ir.model.access">
+        <field name="name">user_sw_knowledge_base_server_note_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_server_note" />
+        <field name="group_id" ref="base.group_user" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="0" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="dev_sw_knowledge_base_ext_comp_perm" model="ir.model.access">
+        <field name="name">dev_sw_knowledge_base_ext_comp_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_external_component" />
+        <field name="group_id" ref="software_knowledge_base.developer" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+    <record id="dev_sw_knowledge_base_module_perm" model="ir.model.access">
+        <field name="name">dev_sw_knowledge_base_module_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_module" />
+        <field name="group_id" ref="software_knowledge_base.developer" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+    <record id="dev_sw_knowledge_base_installation_perm" model="ir.model.access">
+        <field name="name">dev_sw_knowledge_base_installation_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_installation" />
+        <field name="group_id" ref="software_knowledge_base.developer" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="dev_sw_knowledge_base_operating_system_perm" model="ir.model.access">
+        <field name="name">dev_sw_knowledge_base_operating_system_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_operating_system" />
+        <field name="group_id" ref="software_knowledge_base.developer" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="dev_sw_knowledge_base_platform_perm" model="ir.model.access">
+        <field name="name">dev_sw_knowledge_base_platform_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_platform" />
+        <field name="group_id" ref="software_knowledge_base.developer" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="dev_sw_knowledge_base_server_perm" model="ir.model.access">
+        <field name="name">dev_sw_knowledge_base_server_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_server" />
+        <field name="group_id" ref="software_knowledge_base.developer" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="dev_sw_knowledge_base_server_note_perm" model="ir.model.access">
+        <field name="name">dev_sw_knowledge_base_server_note_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_server_note" />
+        <field name="group_id" ref="software_knowledge_base.developer" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="0" />
+        <field name="perm_unlink" eval="0" />
+    </record>
+    <record id="admin_sw_knowledge_base_ext_comp_perm" model="ir.model.access">
+        <field name="name">admin_sw_knowledge_base_ext_comp_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_external_component" />
+        <field name="group_id" ref="software_knowledge_base.admin" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+    <record id="admin_sw_knowledge_base_module_perm" model="ir.model.access">
+        <field name="name">admin_sw_knowledge_base_module_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_module" />
+        <field name="group_id" ref="software_knowledge_base.admin" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+    <record id="admin_sw_knowledge_base_installation_perm" model="ir.model.access">
+        <field name="name">admin_sw_knowledge_base_installation_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_installation" />
+        <field name="group_id" ref="software_knowledge_base.admin" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+    <record id="admin_sw_knowledge_base_operating_system_perm" model="ir.model.access">
+        <field name="name">admin_sw_knowledge_base_operating_system_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_operating_system" />
+        <field name="group_id" ref="software_knowledge_base.admin" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+    <record id="admin_sw_knowledge_base_platform_perm" model="ir.model.access">
+        <field name="name">admin_sw_knowledge_base_platform_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_platform" />
+        <field name="group_id" ref="software_knowledge_base.admin" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+    <record id="admin_sw_knowledge_base_server_perm" model="ir.model.access">
+        <field name="name">admin_sw_knowledge_base_server_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_server" />
+        <field name="group_id" ref="software_knowledge_base.admin" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+    <record id="admin_sw_knowledge_base_server_note_perm" model="ir.model.access">
+        <field name="name">admin_sw_knowledge_base_server_note_perm</field>
+        <field name="model_id" ref="model_software_knowledge_base_server_note" />
+        <field name="group_id" ref="software_knowledge_base.admin" />
+        <field name="perm_read" eval="1" />
+        <field name="perm_write" eval="1" />
+        <field name="perm_create" eval="1" />
+        <field name="perm_unlink" eval="1" />
+    </record>
+</odoo>

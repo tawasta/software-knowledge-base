@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Actions -->
+    <record id="modules_action" model="ir.actions.act_window">
+        <field name="name">Modules</field>
+        <field name="res_model">software_knowledge_base.module</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="ext_components_action" model="ir.actions.act_window">
+        <field name="name">External components</field>
+        <field name="res_model">software_knowledge_base.external_component</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="installations_action" model="ir.actions.act_window">
+        <field name="name">Installations</field>
+        <field name="res_model">software_knowledge_base.installation</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="context">{"search_default_state_setup": 1,
+                               "search_default_state_ready": 1}</field>
+    </record>
+
+    <record id="servers_action" model="ir.actions.act_window">
+        <field name="name">Servers</field>
+        <field name="res_model">software_knowledge_base.server</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{"search_default_active": 1}</field>
+    </record>
+    <record id="platforms_action" model="ir.actions.act_window">
+        <field name="name">Platforms</field>
+        <field name="res_model">software_knowledge_base.platform</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <record id="os_action" model="ir.actions.act_window">
+        <field name="name">Operating systems</field>
+        <field name="res_model">software_knowledge_base.operating_system</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Menu hierarchy -->
+    <menuitem
+        id="root_menu"
+        name="SW Development"
+        groups="software_knowledge_base.developer"
+        web_icon="software_knowledge_base,static/description/icon.png"
+    />
+    <menuitem
+        id="environment_menu"
+        name="Environments"
+        parent="root_menu"
+        sequence="10"
+    />
+    <menuitem id="code_menu" name="Software" parent="root_menu" sequence="20" />
+    <menuitem
+        id="installations_menu"
+        parent="environment_menu"
+        action="installations_action"
+        sequence="10"
+    />
+    <menuitem
+        id="servers_menu"
+        parent="environment_menu"
+        action="servers_action"
+        sequence="20"
+    />
+    <menuitem
+        id="modules_menu"
+        parent="code_menu"
+        action="modules_action"
+        sequence="10"
+    />
+    <menuitem
+        id="ext_components_menu"
+        parent="code_menu"
+        action="ext_components_action"
+        sequence="20"
+    />
+    <menuitem
+        id="platforms_menu"
+        parent="code_menu"
+        action="platforms_action"
+        sequence="30"
+    />
+    <menuitem id="os_menu" parent="code_menu" action="os_action" sequence="40" />
+</odoo>
