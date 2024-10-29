@@ -1,0 +1,90 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* project_task_type_require_module_info
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20230925\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-28 11:45+0000\n"
+"PO-Revision-Date: 2024-05-28 11:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_task_type_require_module_info
+#: code:addons/project_task_type_require_module_info/models/project_task.py:0
+#, python-format
+msgid ""
+"'This Task did not Involve Modules' cannot be toggled on if modules were "
+"selected. Remove the modules first."
+msgstr "'Tehtävään ei liittynyt moduuleja' -valintaa ei voi kytkeä päälle, "
+"jos moduuleita on jo listattuna. Tyhjennä Moduulit-kenttä ensin."
+
+
+#. module: project_task_type_require_module_info
+#: model:ir.model.fields,field_description:project_task_type_require_module_info.field_project_project__display_name
+#: model:ir.model.fields,field_description:project_task_type_require_module_info.field_project_task__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: project_task_type_require_module_info
+#: model:ir.model.fields,field_description:project_task_type_require_module_info.field_project_project__id
+#: model:ir.model.fields,field_description:project_task_type_require_module_info.field_project_task__id
+msgid "ID"
+msgstr "Tunniste (ID)"
+
+#. module: project_task_type_require_module_info
+#: model:ir.model.fields,field_description:project_task_type_require_module_info.field_project_project____last_update
+#: model:ir.model.fields,field_description:project_task_type_require_module_info.field_project_task____last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: project_task_type_require_module_info
+#: model_terms:ir.ui.view,arch_db:project_task_type_require_module_info.edit_project
+msgid ""
+"Moving tasks to the following Task Stages requires either Software Knowledge Base's Module info to be set\n"
+"                                for the task, or the task's \"This Task did not Involve Modules\" field to be checked."
+msgstr ""
+"Tehtävän siirtäminen valittuihin vaiheisiin vaatii joko tietämyskannan "
+"moduulitiedon täyttämisen, tai 'Tehtävään ei liittynyt moduuleja' -kentän "
+"rastittamisen."
+
+#. module: project_task_type_require_module_info
+#: model:ir.model.fields,help:project_task_type_require_module_info.field_project_task__task_did_not_involve_modules
+msgid "No module-related work was required to complete this task."
+msgstr "Tehtävä ei vaatinut moduuleihin liittyvää työtä."
+
+#. module: project_task_type_require_module_info
+#: code:addons/project_task_type_require_module_info/models/project_task.py:0
+#, python-format
+msgid ""
+"Please fill in the Module information before moving the task to this stage. "
+"Or if no modules were involved, check the 'This Task did not Involve "
+"Modules' box."
+msgstr ""
+"Ole hyvä ja täytä tehtävän Moduulit-osio, tai rastita 'Tehtävään ei "
+"liittynyt moduuleja' -kenttä"
+
+#. module: project_task_type_require_module_info
+#: model:ir.model,name:project_task_type_require_module_info.model_project_project
+msgid "Project"
+msgstr "Projektit"
+
+#. module: project_task_type_require_module_info
+#: model:ir.model,name:project_task_type_require_module_info.model_project_task
+msgid "Task"
+msgstr "Tehtävä"
+
+#. module: project_task_type_require_module_info
+#: model:ir.model.fields,field_description:project_task_type_require_module_info.field_project_project__module_info_required_stage_ids
+msgid "Task Stages Requiring Module Info"
+msgstr "Moduulitiedon vaativat vaiheet"
+
+#. module: project_task_type_require_module_info
+#: model:ir.model.fields,field_description:project_task_type_require_module_info.field_project_task__task_did_not_involve_modules
+msgid "This Task did not Involve Modules"
+msgstr "Tehtävään ei liittynyt moduuleja"
