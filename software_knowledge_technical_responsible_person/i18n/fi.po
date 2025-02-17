@@ -1,0 +1,41 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* software_knowledge_technical_responsible_person
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0-20230613\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-06 06:39+0000\n"
+"PO-Revision-Date: 2023-10-06 06:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: software_knowledge_technical_responsible_person
+#: model:ir.model.fields,field_description:software_knowledge_technical_responsible_person.field_software_knowledge_base_installation__display_name
+msgid "Display Name"
+msgstr "Näyttönimi"
+
+#. module: software_knowledge_technical_responsible_person
+#: model:ir.model.fields,field_description:software_knowledge_technical_responsible_person.field_software_knowledge_base_installation__id
+msgid "ID"
+msgstr "Tunniste (ID)"
+
+#. module: software_knowledge_technical_responsible_person
+#: model:ir.model,name:software_knowledge_technical_responsible_person.model_software_knowledge_base_installation
+msgid "Installation"
+msgstr "Asennus"
+
+#. module: software_knowledge_technical_responsible_person
+#: model:ir.model.fields,field_description:software_knowledge_technical_responsible_person.field_software_knowledge_base_installation____last_update
+msgid "Last Modified on"
+msgstr "Viimeksi muokattu"
+
+#. module: software_knowledge_technical_responsible_person
+#: model:ir.model.fields,field_description:software_knowledge_technical_responsible_person.field_software_knowledge_base_installation__technical_responsible_person_id
+msgid "Technical responsible person"
+msgstr "Tekninen vastuuhenkilö"

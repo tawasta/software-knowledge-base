@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="installation_form_view_classification" model="ir.ui.view">
+        <field name="name">installation.form.view.classification</field>
+        <field name="model">software_knowledge_base.installation</field>
+        <field name="inherit_id" ref="software_knowledge_base.installation_form_view" />
+        <field name="arch" type="xml">
+            <field name="platform_id" position="after">
+                <field name="classification_ids" widget="many2many_tags" />
+            </field>
+        </field>
+    </record>
+</odoo>

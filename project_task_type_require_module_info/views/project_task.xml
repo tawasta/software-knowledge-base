@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_task_form2" model="ir.ui.view">
+        <field
+            name="name"
+        >project.task.form.project.task.type.require.module.info</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="arch" type="xml">
+            <field name="module_ids" position="after">
+                <field name="task_did_not_involve_modules" widget="boolean_toggle" />
+            </field>
+
+            <field name="module_ids" position="attributes">
+                <attribute name="invisible">task_did_not_involve_modules</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_task_tree2" model="ir.ui.view">
+        <field
+            name="name"
+        >project.task.tree.project.task.type.require.module.info</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2" />
+        <field name="arch" type="xml">
+            <field name="tag_ids" position="after">
+                <field
+                    name="module_ids"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color'}"
+                    optional="hide"
+                />
+                <field name="task_did_not_involve_modules" optional="hide" />
+            </field>
+        </field>
+    </record>
+
+</odoo>

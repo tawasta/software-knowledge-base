@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Server Tree View -->
+    <record model="ir.ui.view" id="server_tree_view">
+        <field name="name">server.tree.view</field>
+        <field name="model">software_knowledge_base.server</field>
+        <field name="arch" type="xml">
+            <tree string="Servers" multi_edit="1">
+                <field name="name" />
+                <field name="ip_address" optional="show" />
+                <field name="operating_system_id" optional="show" />
+                <field name="server_type" optional="show" />
+                <field name="cpu_cores" optional="hide" />
+                <field name="ram" optional="hide" />
+                <field name="disk_size" optional="hide" />
+                <field name="disk_used" optional="hide" />
+                <field name="disk_available" optional="hide" />
+                <field name="installation_ids" optional="show" />
+                <field name="company_id" optional="show" />
+                <field name="active" optional="show" />
+            </tree>
+        </field>
+    </record>
+</odoo>

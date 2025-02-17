@@ -10,6 +10,11 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[software_knowledge_base](software_knowledge_base/) | 17.0.1.0.0 |  | Maintain software installation and module data
+[software_knowledge_base_classification](software_knowledge_base_classification/) | 17.0.1.0.0 |  | Adds classifications to Software Knowledge Base
 [software_knowledge_base_exporter](software_knowledge_base_exporter/) | 17.0.1.0.0 |  | Export installation information to SDKB
+[software_knowledge_base_technical_contacts](software_knowledge_base_technical_contacts/) | 17.0.1.0.0 |  | Linking technical contacts to SDKB data
+[software_knowledge_project_manager](software_knowledge_project_manager/) | 17.0.1.0.0 |  | Show project manager on installation
+[software_knowledge_technical_responsible_person](software_knowledge_technical_responsible_person/) | 17.0.1.0.0 |  | Show technical responsible person on installation
 
 [//]: # (end addons)

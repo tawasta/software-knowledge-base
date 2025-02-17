@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="project_task_view_modules" model="ir.ui.view">
+        <field name="name">project.task.view.modules</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="arch" type="xml">
+
+
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button
+                    class="oe_stat_button"
+                    type="object"
+                    name="action_view_modules"
+                    icon="fa-puzzle-piece"
+                >
+                    <field string="Modules" name="module_count" widget="statinfo" />
+                </button>
+            </xpath>
+
+            <field name="tag_ids" position="after">
+                <field
+                    name="module_ids"
+                    widget="many2many_tags"
+                    options="{'color_field': 'color'}"
+                />
+            </field>
+        </field>
+    </record>
+</odoo>
