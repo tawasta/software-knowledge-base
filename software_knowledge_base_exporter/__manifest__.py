@@ -21,7 +21,7 @@
 {
     "name": "Export information to Software Development Knowledge Base",
     "summary": "Export installation information to SDKB",
-    "version": "17.0.1.1.0",
+    "version": "17.0.1.1.1",
     "category": "Knowledge",
     "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
     "author": "Tawasta",
@@ -31,6 +31,7 @@
     "depends": ["base"],
     "data": [
         "data/ir_config_parameter.xml",
+        "data/ir_config_parameter_noupdate.xml",
         "data/ir_cron.xml",
     ],
 }
