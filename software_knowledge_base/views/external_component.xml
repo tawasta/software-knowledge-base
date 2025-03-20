@@ -5,7 +5,7 @@
         <field name="name">external.component.tree.view</field>
         <field name="model">software_knowledge_base.external_component</field>
         <field name="arch" type="xml">
-            <tree string="External components">
+            <tree>
                 <field name="name" />
                 <field name="url" optional="show" />
                 <field name="installation_ids" optional="show" />

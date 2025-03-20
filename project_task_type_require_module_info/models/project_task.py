@@ -3,7 +3,6 @@ from odoo.exceptions import ValidationError
 
 
 class ProjectTask(models.Model):
-
     _inherit = "project.task"
 
     task_did_not_involve_modules = fields.Boolean(
@@ -24,9 +23,7 @@ class ProjectTask(models.Model):
         )
 
         if vals.get("stage_id") and self.env.user.has_group("base.group_user"):
-
             for task in self:
-
                 # Check also that toggle state and module field do not clash
                 if len(task.module_ids) > 0 and task.task_did_not_involve_modules:
                     raise ValidationError(

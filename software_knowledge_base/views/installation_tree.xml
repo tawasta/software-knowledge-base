@@ -6,7 +6,6 @@
         <field name="model">software_knowledge_base.installation</field>
         <field name="arch" type="xml">
             <tree
-                string="Installations"
                 decoration-muted="state=='terminated'"
                 decoration-info="state=='setup'"
                 multi_edit="1"

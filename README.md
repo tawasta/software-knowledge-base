@@ -10,6 +10,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
+[project_task_type_require_module_info](project_task_type_require_module_info/) | 17.0.1.0.0 |  | Configure that SWKB module info has to be set before a task can moved to a certain stage
 [software_knowledge_base](software_knowledge_base/) | 17.0.1.0.0 |  | Maintain software installation and module data
 [software_knowledge_base_classification](software_knowledge_base_classification/) | 17.0.1.0.0 |  | Adds classifications to Software Knowledge Base
 [software_knowledge_base_exporter](software_knowledge_base_exporter/) | 17.0.1.0.0 |  | Export installation information to SDKB
