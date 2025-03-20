@@ -6,7 +6,6 @@
         <field name="model">software_knowledge_base.installation</field>
         <field name="arch" type="xml">
             <tree
-                string="Installations"
                 decoration-muted="state=='terminated'"
                 decoration-info="state=='setup'"
                 multi_edit="1"
@@ -23,6 +22,8 @@
                 <field name="disk_usage_percent" widget="progressbar" optional="show" />
                 <field name="server_id" optional="show" />
                 <field name="server_ip_address" optional="show" />
+                <field name="db_server_id" optional="show" />
+                <field name="db_server_ip_address" optional="show" />
                 <field name="type" optional="show" />
                 <field name="state" optional="show" />
                 <field name="company_id" optional="show" />

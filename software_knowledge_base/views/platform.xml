@@ -5,7 +5,7 @@
         <field name="name">platform.tree.view</field>
         <field name="model">software_knowledge_base.platform</field>
         <field name="arch" type="xml">
-            <tree string="Platforms">
+            <tree>
                 <field name="name" />
                 <field name="description" optional="show" />
                 <field name="installation_ids" optional="show" />

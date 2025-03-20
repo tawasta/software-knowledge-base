@@ -5,7 +5,7 @@
         <field name="name">operating.system.tree.view</field>
         <field name="model">software_knowledge_base.operating_system</field>
         <field name="arch" type="xml">
-            <tree string="Operating systems">
+            <tree>
                 <field name="name" string="Name" />
                 <field name="server_ids" optional="show" />
             </tree>
