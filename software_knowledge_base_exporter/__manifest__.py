@@ -21,7 +21,7 @@
 {
     "name": "Export information to Software Development Knowledge Base",
     "summary": "Export installation information to SDKB",
-    "version": "17.0.1.0.0",
+    "version": "17.0.1.1.0",
     "category": "Knowledge",
     "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
     "author": "Tawasta",
