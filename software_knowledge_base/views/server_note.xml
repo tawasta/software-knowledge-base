@@ -5,7 +5,7 @@
         <field name="name">server.note.tree.view</field>
         <field name="model">software_knowledge_base.server_note</field>
         <field name="arch" type="xml">
-            <tree string="Notes">
+            <tree>
                 <field name="event_date" optional="show" />
                 <field name="name" widget="bootstrap_markdown" />
                 <field name="description" widget="bootstrap_markdown" optional="show" />

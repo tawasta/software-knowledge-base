@@ -236,7 +236,6 @@ class Installation(models.Model):
         if not url:
             raise ValidationError(_("url is a mandatory field"))
 
-        self.ensure_one()
         installation = self.search([("url", "=ilike", url)])
 
         if not installation:

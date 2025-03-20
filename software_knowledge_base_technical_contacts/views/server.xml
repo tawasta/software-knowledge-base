@@ -8,7 +8,7 @@
             <notebook position="inside">
                 <page string="Technical contacts">
                     <field name="technical_contact_ids">
-                        <tree string="Technical contacts">
+                        <tree>
                             <field name="parent_id" />
                             <field name="name" />
                             <field name="email" />

@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <record id="edit_project" model="ir.ui.view">
-        <field name="name">project.project.form.project.task.type.require.module.info</field>
+        <field
+            name="name"
+        >project.project.form.project.task.type.require.module.info</field>
         <field name="model">project.project</field>
-        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="inherit_id" ref="project.edit_project" />
         <field name="arch" type="xml">
             <xpath expr="//page[@name='settings']" position="inside">
                 <group>
-                    <label for="module_info_required_stage_ids"/>
+                    <label for="module_info_required_stage_ids" />
                     <div class="text-muted">
                         Moving tasks to the following Task Stages requires either Software Knowledge Base's Module info to be set
                         for the task, or the task's "This Task did not Involve Modules" field to be checked.
                     </div>
-                    <field name="module_info_required_stage_ids" widget="many2many_tags"/>
+                    <field
+                        name="module_info_required_stage_ids"
+                        widget="many2many_tags"
+                    />
                 </group>
             </xpath>
         </field>
