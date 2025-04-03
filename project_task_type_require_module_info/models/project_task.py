@@ -52,7 +52,7 @@ class ProjectTask(models.Model):
 
         # If no validation errors, trigger the mattermost hooks manually
         for record in self.filtered("use_mattermost_hooks"):
-            if "user_id" in vals:
+            if "user_ids" in vals:
                 record.mattermost_task_author_changed()
             if "stage_id" in vals:
                 record.mattermost_task_stage_changed()
