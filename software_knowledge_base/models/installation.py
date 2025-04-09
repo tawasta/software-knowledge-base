@@ -85,7 +85,7 @@ class Installation(models.Model):
         help="The maximum amount of disk, this installation is allowed to use",
     )
     disk_usage_percent = fields.Float(
-        string="Disk usage %", compute="_compute_disk_usage_percent", store=True
+        string="Disk usage %", compute="_compute_disk_usage_percent"
     )
 
     url = fields.Char(string="URL")
@@ -104,7 +104,6 @@ class Installation(models.Model):
     user_accounts_active_percent = fields.Float(
         string="Active users %",
         compute="_compute_user_accounts_active_percent",
-        store=True,
     )
 
     user_accounts_total_min = fields.Integer(
@@ -119,7 +118,6 @@ class Installation(models.Model):
     user_accounts_total_percent = fields.Float(
         string="Total users %",
         compute="_compute_user_accounts_total_percent",
-        store=True,
     )
 
     user_accounts_active_interval = fields.Integer(
@@ -189,7 +187,6 @@ class Installation(models.Model):
         for record in self:
             record.module_count = len(record.module_ids)
 
-    @api.depends("disk_usage", "disk_usage_max")
     def _compute_disk_usage_percent(self):
         for record in self:
             if record.disk_usage_max == 0:
