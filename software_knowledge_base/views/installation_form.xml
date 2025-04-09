@@ -28,28 +28,67 @@
                             />
                         </button>
                     </div>
-                    <field name="platform_image" widget="image" class="oe_avatar" />
-                    <div class="oe_title">
-                        <div class="oe_edit_only">
-                            <label for="name" />
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="text-bg-danger"
+                        invisible="active"
+                    />
+
+                    <div
+                        name="header_group"
+                        class="row justify-content-between position-relative w-100 m-0 mb-2"
+                    >
+                        <div class="oe_title mw-75 ps-0 pe-2 col-8">
+                            <h1 class="d-flex flex-row align-items-center">
+                                <field name="name" />
+                            </h1>
+                            <h2>
+                                <field name="platform_id" />
+                            </h2>
                         </div>
-                        <h1>
-                            <field name="name" required="1" />
-                        </h1>
+                        <div class="oe_kanban_avatar col-4">
+                            <field
+                                name="platform_image"
+                                widget="image"
+                                class="oe_avatar m-0"
+                            />
+                        </div>
                     </div>
-                    <group>
-                        <group>
-                            <field name="platform_id" />
+
+                    <group name="information_group">
+                        <group
+                            name="information_group_basic"
+                            string="Basic information"
+                        >
+                            <field name="active" invisible="1" />
                             <field name="identifier" />
                             <field name="company_id" />
+                        </group>
+
+                        <group name="information_group_type" string="Installation type">
+                            <field name="type" />
+                            <field name="url" widget="url" />
+                            <field name="server_id" />
+                            <field name="server_ip_address" readonly="1" />
+                            <field name="port" />
+                            <field name="db_server_id" />
+                            <field name="db_server_ip_address" readonly="1" />
+                        </group>
+                    </group>
+
+                    <group name="usage_group">
+                        <group name="usage_group_users" string="Users">
                             <label for="user_accounts_active" string="Active users" />
                             <div col="4">
+                                <!-- Minimum usage is pretty useless
                                 <field
                                     name="user_accounts_active_min"
                                     class="oe_inline oe_edit_only"
                                     decoration-warning="user_accounts_active &lt;= user_accounts_active_min"
                                 />
                                 <span class="oe_edit_only">/</span>
+                                -->
                                 <field
                                     name="user_accounts_active"
                                     class="oe_inline"
@@ -64,8 +103,8 @@
                             </div>
                             <field
                                 name="user_accounts_active_percent"
-                                class="oe_read_only"
                                 widget="progressbar"
+                                options="{'max_value': 100, 'style': 'success'}"
                             />
                             <label for="user_accounts_active_interval" />
                             <div col="4">
@@ -83,12 +122,14 @@
                             </div>
                             <label for="user_accounts_total" string="Total users" />
                             <div col="4">
+                                <!-- Minimum usage is pretty useless
                                 <field
                                     name="user_accounts_total_min"
                                     class="oe_inline oe_edit_only"
                                     decoration-warning="user_accounts_total &lt;= user_accounts_total_min"
                                 />
                                 <span class="oe_edit_only">/</span>
+                                -->
                                 <field
                                     name="user_accounts_total"
                                     class="oe_inline"
@@ -103,46 +144,42 @@
                             </div>
                             <field
                                 name="user_accounts_total_percent"
-                                class="oe_read_only"
                                 widget="progressbar"
+                                options="{'max_value': 100, 'style': 'success'}"
                             />
+                        </group>
+                        <group name="usage_group_usage" string="Usage">
                             <label for="disk_usage" string="Disk usage" />
                             <div col="4">
+                                <!-- Minimum usage is pretty useless
                                 <field
                                     name="disk_usage_min"
                                     class="oe_inline oe_edit_only"
                                     decoration-warning="disk_usage &lt;= disk_usage_min"
                                 />
                                 <span class="oe_edit_only">/</span>
+                                -->
                                 <field
                                     name="disk_usage"
                                     decoration-bf="1"
                                     class="oe_inline"
                                 />
-                                <span class="">/</span>
+                                <span class="oe_inline">/</span>
                                 <field
                                     name="disk_usage_max"
                                     class="oe_inline"
                                     decoration-warning="disk_usage &gt;= disk_usage_max"
                                 />
-                                <span class=""> GB </span>
+                                <span class="oe_inline"> GB </span>
                             </div>
                             <field
                                 name="disk_usage_percent"
-                                class="oe_read_only"
                                 widget="progressbar"
+                                options="{'max_value': 100, 'style': 'success'}"
                             />
                         </group>
-                        <group>
-                            <field name="type" />
-                            <field name="url" widget="url" />
-                            <field name="server_id" />
-                            <field name="server_ip_address" readonly="1" />
-                            <field name="port" />
-                            <field name="db_server_id" />
-                            <field name="db_server_ip_address" readonly="1" />
-                        </group>
                     </group>
+
                     <notebook>
                         <page name="customers" string="Customers">
                             <field name="partner_ids" />
