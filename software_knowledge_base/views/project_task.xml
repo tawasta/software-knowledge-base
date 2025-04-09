@@ -25,6 +25,15 @@
                     options="{'color_field': 'color'}"
                 />
             </field>
+
+            <field name="partner_id" position="after">
+                <field name="installation_id" />
+                <field name="installation_server_id" invisible="not installation_id" />
+                <field
+                    name="installation_db_server_id"
+                    invisible="not installation_id"
+                />
+            </field>
         </field>
     </record>
 </odoo>

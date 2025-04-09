@@ -176,6 +176,12 @@ class Installation(models.Model):
 
     platform_image = fields.Image(string="Platform icon", related="platform_id.image")
 
+    task_ids = fields.One2many(
+        string="Tasks",
+        comodel_name="project.task",
+        inverse_name="installation_id",
+    )
+
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration

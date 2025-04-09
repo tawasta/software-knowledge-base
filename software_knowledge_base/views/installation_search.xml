@@ -69,7 +69,7 @@
                     <filter
                         string="Production"
                         name="type_prodution"
-                        domain="[('type','=','prodution')]"
+                        domain="[('type','=','production')]"
                     />
                 </group>
                 <group expand="0" string="Group By...">
