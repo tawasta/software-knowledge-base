@@ -26,6 +26,7 @@
 import logging
 
 # 3. Odoo imports (openerp):
+from odoo import api
 from odoo import fields, models
 
 # 4. Imports from Odoo modules:
@@ -57,12 +58,38 @@ class ProjectTask(models.Model):
         string="Module count", compute="_compute_module_count"
     )
 
+    installation_id = fields.Many2one(
+        string="Installation",
+        comodel_name="software_knowledge_base.installation",
+        compute="_compute_installation_id",
+        store=True,
+        readonly=False,
+    )
+    installation_server_id = fields.Many2one(
+        related="installation_id.server_id",
+    )
+    installation_db_server_id = fields.Many2one(
+        related="installation_id.db_server_id",
+    )
+
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
     def _compute_module_count(self):
         for record in self:
             record.module_count = len(record.module_ids)
+
+    @api.depends("partner_id")
+    def _compute_installation_id(self):
+        for record in self:
+            installations = record.partner_id.installation_ids
+            if not installations:
+                installations = record.partner_id.commercial_partner_id.installation_ids
+
+            if len(installations) == 1:
+                record.installation_id = installations[0]
+            else:
+                record.installation_id = False
 
     # 5. Constraints and onchanges
 

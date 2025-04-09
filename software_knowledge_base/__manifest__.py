@@ -21,10 +21,10 @@
 {
     "name": "Software Development Knowledge Base",
     "summary": "Maintain software installation and module data",
-    "version": "17.0.1.0.1",
+    "version": "17.0.1.0.2",
     "category": "Knowledge",
     "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
-    "author": "Tawasta",
+    "author": "Futural",
     "license": "AGPL-3",
     "application": True,
     "installable": True,
