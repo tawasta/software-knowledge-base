@@ -87,7 +87,7 @@ class SoftwareKnowledgeBaseServer(models.Model):
         compute="_compute_disk_usage",
     )
     disk_usage_percent = fields.Float(
-        string="Disk usage %", compute="_compute_disk_usage", store=True
+        string="Disk usage %", compute="_compute_disk_usage"
     )
 
     specification = fields.Text(string="Technical specification")
