@@ -86,7 +86,9 @@ class ProjectTask(models.Model):
             if not installations:
                 installations = record.partner_id.commercial_partner_id.installation_ids
 
-            prod_installations = installations.filtered(lambda i: i.type == "production")
+            prod_installations = installations.filtered(
+                lambda i: i.type == "production"
+            )
 
             if len(installations) == 1:
                 record.installation_id = installations[0]
