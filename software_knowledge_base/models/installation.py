@@ -25,7 +25,7 @@ class Installation(models.Model):
     # 2. Fields declaration
     active = fields.Boolean(default=True)
 
-    name = fields.Char(string="Name")
+    name = fields.Char()
 
     company_id = fields.Many2one(
         comodel_name="res.company",
@@ -41,7 +41,7 @@ class Installation(models.Model):
         tracking=True,
     )
 
-    type = fields.Selection(selection=_INSTALLATION_TYPE_VALUES, string="Type")
+    type = fields.Selection(selection=_INSTALLATION_TYPE_VALUES)
 
     additional_info = fields.Text(string="Additional info")
 
@@ -61,7 +61,7 @@ class Installation(models.Model):
         string="Server IP-address", related="server_id.ip_address", store=True
     )
 
-    port = fields.Integer(string="Port")
+    port = fields.Integer()
 
     db_server_id = fields.Many2one(
         comodel_name="software_knowledge_base.server",
@@ -90,7 +90,7 @@ class Installation(models.Model):
 
     url = fields.Char(string="URL")
 
-    identifier = fields.Char(string="Identifier")
+    identifier = fields.Char()
 
     user_accounts_active_min = fields.Integer(
         string="Min active users", help="Min active users"

@@ -7,7 +7,7 @@ class SoftwareKnowledgeBaseServer(models.Model):
     _inherit = ["mail.thread"]
     _order = "name"
 
-    name = fields.Char(string="Name")
+    name = fields.Char()
 
     company_id = fields.Many2one(
         comodel_name="res.company",
@@ -15,7 +15,7 @@ class SoftwareKnowledgeBaseServer(models.Model):
         default=lambda self: self.env.user.company_id.id,
     )
 
-    active = fields.Boolean(string="Active", default=True)
+    active = fields.Boolean(default=True)
 
     ip_address = fields.Char(string="IP Address")
 
@@ -37,7 +37,6 @@ class SoftwareKnowledgeBaseServer(models.Model):
             ("proxy", "Proxy server"),
             ("web", "Web server"),
         ],
-        string="Server type",
     )
 
     operating_system_id = fields.Many2one(

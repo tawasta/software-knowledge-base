@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Futural Oy
+#    Copyright 2021- Futural Oy (https://futural.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -23,7 +23,7 @@
     "summary": "Maintain software installation and module data",
     "version": "17.0.1.0.3",
     "category": "Knowledge",
-    "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
+    "website": "https://github.com/tawasta/software-knowledge-base",
     "author": "Futural",
     "license": "AGPL-3",
     "application": True,

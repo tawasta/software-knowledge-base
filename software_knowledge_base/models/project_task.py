@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Futural Oy
+#    Copyright 2021- Futural Oy (https://futural.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -26,8 +26,7 @@
 import logging
 
 # 3. Odoo imports (openerp):
-from odoo import api
-from odoo import fields, models
+from odoo import api, fields, models
 
 # 4. Imports from Odoo modules:
 
