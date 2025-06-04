@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2018 Oy Tawasta OS Technologies Ltd. (http://www.tawasta.fi)
+#    Author: Futural Oy
+#    Copyright 2018 Futural Oy (https://futural.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -23,8 +23,8 @@
     "summary": "Show project manager on installation",
     "version": "17.0.1.0.0",
     "category": "Project Management",
-    "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
-    "author": "Tawasta",
+    "website": "https://github.com/tawasta/software-knowledge-base",
+    "author": "Futural",
     "license": "AGPL-3",
     "application": False,
     "installable": True,

@@ -1,7 +1,7 @@
 ##############################################################################
 #
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2024 Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
+#    Author: Futural Oy
+#    Copyright 2024 Futural Oy (https://futural.fi)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -24,8 +24,8 @@
     "moved to a certain stage",
     "version": "17.0.1.0.2",
     "category": "Project",
-    "website": "https://gitlab.com/tawasta/odoo/software-knowledge-base",
-    "author": "Tawasta",
+    "website": "https://github.com/tawasta/software-knowledge-base",
+    "author": "Futural",
     "license": "AGPL-3",
     "depends": ["project_task_mattermost", "software_knowledge_base"],
     "data": ["views/project_project.xml", "views/project_task.xml"],

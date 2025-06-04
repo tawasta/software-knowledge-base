@@ -44,9 +44,9 @@ class Module(models.Model):
             "user_accounts_total": len(users),
         }
 
-        common = xmlrpc.client.ServerProxy("{}/xmlrpc/2/common".format(swkb_server))
+        common = xmlrpc.client.ServerProxy(f"{swkb_server}/xmlrpc/2/common")
         uid = common.authenticate(swkb_db, swkb_user, swkb_token, {})
-        models = xmlrpc.client.ServerProxy("{}/xmlrpc/2/object".format(swkb_server))
+        models = xmlrpc.client.ServerProxy(f"{swkb_server}/xmlrpc/2/object")
         models.execute_kw(
             swkb_db,
             uid,

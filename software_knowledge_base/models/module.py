@@ -1,35 +1,4 @@
-##############################################################################
-#
-#    Author: Oy Tawasta OS Technologies Ltd.
-#    Copyright 2021- Oy Tawasta OS Technologies Ltd. (https://tawasta.fi)
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program. If not, see http://www.gnu.org/licenses/agpl.html
-#
-##############################################################################
-
-# 1. Standard library imports:
-
-# 2. Known third party imports:
-
-# 3. Odoo imports (openerp):
 from odoo import api, fields, models
-
-# 4. Imports from Odoo modules:
-
-# 5. Local imports in the relative form:
-
-# 6. Unknown third party imports:
 
 
 class Module(models.Model):
@@ -48,35 +17,31 @@ class Module(models.Model):
     ]
 
     # 2. Fields declaration
-    name = fields.Char(string="Name")
-    description = fields.Char(string="Description")
-    author = fields.Char(string="Author")
-    website = fields.Char(string="Website")
-    summary = fields.Char(size=128, string="Summary")
-    color = fields.Integer(string="Color", compute="_compute_color", store=True)
+    name = fields.Char()
+    description = fields.Char()
+    author = fields.Char()
+    website = fields.Char()
+    summary = fields.Char(size=128)
+    color = fields.Integer(compute="_compute_color", store=True)
 
     module_type = fields.Selection(
         selection=_MODULE_TYPE_VALUES,
-        string="Module type",
         help="Where the module has been developed",
     )
 
     user_id = fields.Many2one(comodel_name="res.users", string="Responsible")
 
-    features = fields.Text(string="Features")
+    features = fields.Text()
 
-    readme = fields.Text(string="Readme")
+    readme = fields.Text()
 
-    installation_notes = fields.Text(string="Installation notes")
+    installation_notes = fields.Text()
 
     issues = fields.Text(
-        string="Issues",
         help=("Known bugs, limitations, incompatibilities with other " "modules etc."),
     )
 
-    additional_info = fields.Text(
-        string="Additional info", help="Additional information"
-    )
+    additional_info = fields.Text(help="Additional information")
 
     active = fields.Boolean(default=True)
 
@@ -89,9 +54,7 @@ class Module(models.Model):
         help="Where this module has been deployed.",
     )
 
-    installation_count = fields.Integer(
-        "Installation count", compute="_compute_installation_count"
-    )
+    installation_count = fields.Integer(compute="_compute_installation_count")
 
     task_ids = fields.Many2many(
         comodel_name="project.task",
