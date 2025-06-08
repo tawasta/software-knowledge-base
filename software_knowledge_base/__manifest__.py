@@ -21,7 +21,7 @@
 {
     "name": "Software Development Knowledge Base",
     "summary": "Maintain software installation and module data",
-    "version": "17.0.1.0.3",
+    "version": "17.0.1.0.5",
     "category": "Knowledge",
     "website": "https://github.com/tawasta/software-knowledge-base",
     "author": "Futural",
@@ -50,5 +50,6 @@
         "views/server_note.xml",
         "views/server_search.xml",
         "views/server_tree.xml",
+        "wizards/module_merge_wizard.xml",
     ],
 }

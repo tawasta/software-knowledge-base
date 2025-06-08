@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_module_merge_wizard_form" model="ir.ui.view">
+        <field name='name'>module.merge.wizard.form</field>
+        <field name='model'>module.merge.wizard</field>
+        <field name='arch' type='xml'>
+            <form string='Merge modules'>
+                <sheet>
+                    <group col="1">
+                        <p class="oe_grey">
+                            Selected modules will be merged together.
+                            All documents linked to one of these modules
+                            will be redirected to the destination module.
+                            You can remove modules from this list to avoid merging them.
+                        </p>
+                        <group col="2">
+                            <field
+                                name="target_module_id"
+                                domain="[('id', 'in', module_ids or False)]"
+                            />
+                        </group>
+                        <field name="module_ids" nolabel="1" />
+                    </group>
+                </sheet>
+                <footer>
+                    <button
+                        name='action_merge_modules'
+                        string='Merge modules'
+                        class='oe_highlight'
+                        type='object'
+                        data-hotkey="q"
+                    />
+                    <button
+                        special="cancel"
+                        data-hotkey="x"
+                        string="Cancel"
+                        type="object"
+                        class="btn btn-secondary oe_inline"
+                    />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_module_merge" model="ir.actions.act_window">
+        <field name="name">Merge Modules</field>
+        <field name="res_model">module.merge.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_module_merge_wizard_form" />
+        <field name="target">new</field>
+        <field
+            name="binding_model_id"
+            ref="software_knowledge_base.model_software_knowledge_base_module"
+        />
+        <field name="binding_view_types">list</field>
+    </record>
+</odoo>
