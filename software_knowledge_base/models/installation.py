@@ -1,3 +1,4 @@
+from distro import name
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
@@ -248,11 +249,17 @@ class Installation(models.Model):
         # Update installation modules
         swkb_module = self.env["software_knowledge_base.module"]
         for module in kwargs.get("module_ids"):
+            module_name = module.get("name")
             domain = [
-                ("name", "=", module.get("name")),
+                ("name", "=", module_name),
                 ("website", "=", module.get("website")),
             ]
             existing_module = swkb_module.search(domain, limit=1)
+
+            if not existing_module:
+                existing_module = swkb_module.search(
+                    [("name", "=", module_name)], limit=1
+                )
 
             if not existing_module:
                 existing_module = swkb_module.create(module)
