@@ -153,7 +153,7 @@ class SoftwareKnowledgeBaseServer(models.Model):
     def action_open_notes(self):
         return {
             "type": "ir.actions.act_window",
-            "res_model": "software_knowledge_base.note",
+            "res_model": "software_knowledge_base.server_note",
             "view_mode": "tree,form",
             "domain": [("server_id", "in", self.ids)],
             "name": "Notes",

@@ -90,6 +90,7 @@ class Installation(models.Model):
     )
 
     url = fields.Char(string="URL")
+    admin_url = fields.Char(string="Admin URL")
 
     identifier = fields.Char()
 

@@ -42,6 +42,7 @@
                         <group name="information_group_type" string="Installation type">
                             <field name="type"/>
                             <field name="url" widget="url"/>
+                            <field name="admin_url" widget="url"/>
                             <field name="server_id" domain="[('server_type', '=', 'application')]"/>
                             <field name="server_ip_address" readonly="1"/>
                             <field name="port"/>
