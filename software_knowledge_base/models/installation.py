@@ -20,6 +20,7 @@ class Installation(models.Model):
         ("test", "Test"),
         ("staging", "Staging"),
         ("production", "Production"),
+        ("legacy", "Legacy"),
     ]
 
     # 2. Fields declaration
@@ -89,6 +90,7 @@ class Installation(models.Model):
     )
 
     url = fields.Char(string="URL")
+    admin_url = fields.Char(string="Admin URL")
 
     identifier = fields.Char()
 
@@ -248,11 +250,17 @@ class Installation(models.Model):
         # Update installation modules
         swkb_module = self.env["software_knowledge_base.module"]
         for module in kwargs.get("module_ids"):
+            module_name = module.get("name")
             domain = [
-                ("name", "=", module.get("name")),
+                ("name", "=", module_name),
                 ("website", "=", module.get("website")),
             ]
             existing_module = swkb_module.search(domain, limit=1)
+
+            if not existing_module:
+                existing_module = swkb_module.search(
+                    [("name", "=", module_name)], limit=1
+                )
 
             if not existing_module:
                 existing_module = swkb_module.create(module)

@@ -41,6 +41,9 @@ class ModuleMergeWizard(models.TransientModel):
     def action_merge_modules(self):
         self.ensure_one()
 
+        if len(self.module_ids) > 3:
+            raise UserError(_("You can only merge up to 3 modules at a time."))
+
         ir_model_fields = self.env["ir.model.fields"].sudo()
         m2m_fields = ir_model_fields.search(
             [

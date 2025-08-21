@@ -28,10 +28,18 @@
 
             <field name="partner_id" position="after">
                 <field name="installation_id" />
-                <field name="installation_server_id" invisible="not installation_id" />
+                <field
+                    name="installation_admin_url"
+                    invisible="not installation_admin_url"
+                    widget="url"
+                />
+                <field
+                    name="installation_server_id"
+                    invisible="not installation_server_id"
+                />
                 <field
                     name="installation_db_server_id"
-                    invisible="not installation_id"
+                    invisible="not installation_db_server_id"
                 />
             </field>
         </field>

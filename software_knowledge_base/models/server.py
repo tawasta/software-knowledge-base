@@ -52,6 +52,10 @@ class SoftwareKnowledgeBaseServer(models.Model):
         domain=[("state", "!=", "terminated")],
     )
 
+    installation_count = fields.Integer(
+        string="Installations", compute="_compute_installation_count", store=False
+    )
+
     db_connections_available = fields.Integer(
         "DB Connections",
         help="Available DB connections",
@@ -71,6 +75,9 @@ class SoftwareKnowledgeBaseServer(models.Model):
         comodel_name="software_knowledge_base.server_note",
         inverse_name="server_id",
         string="Server note",
+    )
+    note_count = fields.Integer(
+        string="Notes", compute="_compute_note_count", store=False
     )
 
     cpu_cores = fields.Integer("CPU Cores")
@@ -108,6 +115,16 @@ class SoftwareKnowledgeBaseServer(models.Model):
         tracking=True,
     )
 
+    @api.depends("installation_ids")
+    def _compute_installation_count(self):
+        for server in self:
+            server.installation_count = len(server.installation_ids)
+
+    @api.depends("note_ids")
+    def _compute_note_count(self):
+        for server in self:
+            server.note_count = len(server.note_ids)
+
     @api.depends("disk_size", "disk_used")
     def _compute_disk_usage(self):
         for record in self:
@@ -119,3 +136,21 @@ class SoftwareKnowledgeBaseServer(models.Model):
                 disk_usage_percent = record.disk_used / record.disk_size * 100
 
             record.disk_usage_percent = disk_usage_percent
+
+    def action_open_installations(self):
+        return {
+            "type": "ir.actions.act_window",
+            "res_model": "software_knowledge_base.installation",
+            "view_mode": "tree,form",
+            "domain": [("server_id", "in", self.ids)],
+            "name": "Installations",
+        }
+
+    def action_open_notes(self):
+        return {
+            "type": "ir.actions.act_window",
+            "res_model": "software_knowledge_base.server_note",
+            "view_mode": "tree,form",
+            "domain": [("server_id", "in", self.ids)],
+            "name": "Notes",
+        }
