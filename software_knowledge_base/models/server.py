@@ -53,10 +53,8 @@ class SoftwareKnowledgeBaseServer(models.Model):
     )
 
     installation_count = fields.Integer(
-        string="Installations",
-        compute="_compute_installation_count",
-        store=False
-    )    
+        string="Installations", compute="_compute_installation_count", store=False
+    )
 
     db_connections_available = fields.Integer(
         "DB Connections",
@@ -79,10 +77,8 @@ class SoftwareKnowledgeBaseServer(models.Model):
         string="Server note",
     )
     note_count = fields.Integer(
-        string="Notes",
-        compute="_compute_note_count",
-        store=False
-    )        
+        string="Notes", compute="_compute_note_count", store=False
+    )
 
     cpu_cores = fields.Integer("CPU Cores")
     ram = fields.Integer("RAM (Gb)")
