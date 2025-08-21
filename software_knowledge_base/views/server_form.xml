@@ -1,84 +1,100 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <!-- Server Form View -->
     <record model="ir.ui.view" id="server_form_view">
         <field name="name">server.form.view</field>
         <field name="model">software_knowledge_base.server</field>
         <field name="arch" type="xml">
-            <form string="Servers">
+            <form string="Server">
                 <header>
+               
                 </header>
-                <sheet string="Form">
-                    <div class="oe_button_box" name="button_box">
 
-                    </div>
+                <sheet>
+                    <!-- Title -->
                     <div class="oe_title">
-                        <div class="oe_edit_only">
-                            <label for="name" />
-                        </div>
+                        <label for="name" class="oe_edit_only" />
                         <h1>
-                            <field name="name" required="1" />
+                            <field name="name" required="1"/>
                         </h1>
                     </div>
+
+                    <!-- Quick access buttons -->
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_installations"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-database"
+                                invisible="not installation_ids">
+                            <field name="installation_count" string="Installations" widget="statinfo"/>
+                        </button>
+                        <button name="action_open_notes"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-sticky-note"
+                                invisible="not note_ids">
+                            <field name="note_count" string="Notes" widget="statinfo"/>
+                        </button>
+                    </div>
+
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="text-bg-danger"
+                        invisible="active"
+                    />                    
+
+                    <!-- Main fields -->
                     <group>
                         <group>
-                            <field
-                                name="company_id"
-                                options="{'no_open': True, 'no_create': True }"
-                            />
-                            <field name="user_id" />
-                            <field
-                                name="supplier_id"
-                                options="{'no_open': True, 'no_create': True }"
-                            />
+                            <field name="active" invisible="1"/>
+                            <field name="company_id"
+                                   options="{'no_open': True, 'no_create': True}"/>
+                            <field name="user_id"/>
+                            <field name="supplier_id"
+                                   options="{'no_open': True, 'no_create': True}"/>
                         </group>
                         <group>
-                            <field name="ip_address" />
-                            <field name="operating_system_id" />
-                            <field name="server_type" />
+                            <field name="ip_address"/>
+                            <field name="operating_system_id"/>
+                            <field name="server_type"/>
                         </group>
                     </group>
+
+                    <!-- Tabs -->
                     <notebook>
                         <page string="Installations">
-                            <field
-                                name="installation_ids"
-                                invisible="not installation_ids"
-                            />
-                            <field
-                                name="db_installation_ids"
-                                invisible="not db_installation_ids"
-                            />
+                            <field name="installation_ids" context="{'default_server_id': active_id}"/>
+                            <field name="db_installation_ids" context="{'default_server_id': active_id}"/>
                         </page>
-                        <page string="Technical specifications">
+
+                        <page string="Technical Specifications">
                             <group>
-                                <field name="cpu_cores" />
-                                <field name="ram" />
-                                <field name="disk_size" />
-                                <field
-                                    name="disk_used"
-                                    decoration-warning="disk_used &gt;= disk_size * 0.8"
-                                />
-                                <field name="disk_available" />
-                                                            <field
-                                    name="disk_usage_percent"
-                                    class="oe_read_only"
-                                    widget="progressbar"
-                                />
+                                <field name="cpu_cores"/>
+                                <field name="ram"/>
+                                <field name="disk_size"/>
+                                <field name="disk_used"
+                                       decoration-warning="disk_used &gt;= disk_size * 0.8"/>
+                                <field name="disk_available"/>
+                                <field name="disk_usage_percent" widget="progressbar" readonly="1"/>
                             </group>
-                            <label for="specification" />
-                            <field name="specification" />
+                            <field name="specification" nolabel="1"/>
                         </page>
-                        <page string="Additional info">
-                            <field name="additional_info" />
+
+                        <page string="Additional Info">
+                            <field name="additional_info"/>
                         </page>
+
                         <page string="Notes">
-                            <field name="note_ids" />
+                            <field name="note_ids"/>
                         </page>
                     </notebook>
                 </sheet>
+
+                <!-- Chatter -->
                 <div class="oe_chatter">
-                    <field name="message_follower_ids" widget="mail_followers" />
-                    <field name="message_ids" widget="mail_thread" />
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
                 </div>
             </form>
         </field>
