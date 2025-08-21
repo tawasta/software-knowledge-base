@@ -21,6 +21,7 @@ class Installation(models.Model):
         ("test", "Test"),
         ("staging", "Staging"),
         ("production", "Production"),
+        ("legacy", "Legacy"),
     ]
 
     # 2. Fields declaration
