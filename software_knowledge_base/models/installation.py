@@ -69,9 +69,11 @@ class Installation(models.Model):
         string="Database server",
         tracking=True,
     )
-
     db_server_ip_address = fields.Char(
         string="DB server IP-address", related="db_server_id.ip_address", store=True
+    )
+    db_connections_used = fields.Integer(
+        "DB Connections used",
     )
 
     disk_usage_min = fields.Float(
@@ -268,10 +270,13 @@ class Installation(models.Model):
             if existing_module not in installation.module_ids:
                 installation.module_ids = [(4, existing_module.id)]
 
-        # Update installation users
+        # Update installation users (DEPRECATED)
         if kwargs.get("user_accounts_active"):
             installation.user_accounts_active = kwargs.get("user_accounts_active")
         if kwargs.get("user_accounts_total"):
             installation.user_accounts_total = kwargs.get("user_accounts_total")
+
+        # Update installation by variable names
+        installation.write(kwargs.get("installation_info", {}))
 
         return installation.id

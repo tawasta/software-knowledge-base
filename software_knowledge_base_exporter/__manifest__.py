@@ -21,7 +21,7 @@
 {
     "name": "Export information to Software Development Knowledge Base",
     "summary": "Export installation information to SDKB",
-    "version": "17.0.1.1.1",
+    "version": "17.0.1.1.2",
     "category": "Knowledge",
     "website": "https://github.com/tawasta/software-knowledge-base",
     "author": "Futural",

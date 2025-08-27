@@ -56,19 +56,22 @@ class SoftwareKnowledgeBaseServer(models.Model):
         string="Installations", compute="_compute_installation_count", store=False
     )
 
-    db_connections_available = fields.Integer(
-        "DB Connections",
-        help="Available DB connections",
+    db_connections_limit = fields.Integer(
+        "DB Connections limit",
     )
     db_connections_used = fields.Integer(
-        "DB Connections",
-        help="Available DB connections",
+        "DB Connections used", compute="_compute_db_connections_used"
     )
     db_installation_ids = fields.One2many(
         comodel_name="software_knowledge_base.installation",
         inverse_name="db_server_id",
         string="DB Installations",
         domain=[("state", "!=", "terminated")],
+    )
+    db_connections_percent = fields.Float(
+        "DB Connections %",
+        help="Percentage of used DB connections",
+        compute="_compute_db_connections_percent",
     )
 
     note_ids = fields.One2many(
@@ -136,6 +139,23 @@ class SoftwareKnowledgeBaseServer(models.Model):
                 disk_usage_percent = record.disk_used / record.disk_size * 100
 
             record.disk_usage_percent = disk_usage_percent
+
+    @api.depends("db_installation_ids")
+    def _compute_db_connections_used(self):
+        for record in self:
+            record.db_connections_used = sum(
+                record.db_installation_ids.mapped("db_connections_used")
+            )
+
+    @api.depends("db_connections_limit", "db_connections_used")
+    def _compute_db_connections_percent(self):
+        for record in self:
+            if record.db_connections_limit:
+                record.db_connections_percent = (
+                    record.db_connections_used / record.db_connections_limit * 100
+                )
+            else:
+                record.db_connections_percent = 0
 
     def action_open_installations(self):
         return {

@@ -87,22 +87,63 @@
                         </page>
 
                         <page string="Technical Specifications">
-                            <group>
-                                <field name="cpu_cores" />
-                                <field name="ram" />
-                                <field name="disk_size" />
-                                <field
-                                    name="disk_used"
-                                    decoration-warning="disk_used &gt;= disk_size * 0.8"
-                                />
-                                <field name="disk_available" />
-                                <field
-                                    name="disk_usage_percent"
-                                    widget="progressbar"
-                                    readonly="1"
-                                />
+
+                            <!-- Hardware Specs Dashboard -->
+                            <group string="Hardware Specifications" col="2">
+
+                                <!-- CPU & RAM -->
+                                <group>
+                                    <field name="cpu_cores" />
+                                    <field name="ram" />
+                                </group>
+
+                                <!-- Disk Stats with Progress Bar -->
+                                <group>
+                                    <field name="disk_size" string="Disk Size (GB)" />
+                                    <field
+                                        name="disk_used"
+                                        string="Used"
+                                        decoration-warning="disk_used &gt;= disk_size * 0.8"
+                                    />
+                                    <field name="disk_available" string="Available" />
+                                    <field
+                                        name="disk_usage_percent"
+                                        widget="progressbar"
+                                        readonly="1"
+                                        string="Usage"
+                                    />
+                                </group>
+
                             </group>
-                            <field name="specification" nolabel="1" />
+
+                            <!-- Database Connections Dashboard (conditional) -->
+                            <group
+                                string="Database Connections"
+                                col="3"
+                                invisible="server_type != 'database'"
+                            >
+                                <group>
+                                    <field name="db_connections_limit" string="Limit" />
+                                </group>
+                                <group>
+                                    <field name="db_connections_used" string="Used" />
+                                </group>
+                                <group>
+                                    <field
+                                        name="db_connections_percent"
+                                        widget="progressbar"
+                                        readonly="1"
+                                        decoration-warning="db_connections_used &gt;= db_connections_limit * 0.8"
+                                        string="Usage"
+                                    />
+                                </group>
+                            </group>
+
+                            <!-- Other Specifications -->
+                            <group string="Other Specifications">
+                                <field name="specification" />
+                            </group>
+
                         </page>
 
                         <page string="Additional Info">

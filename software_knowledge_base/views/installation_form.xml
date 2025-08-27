@@ -82,6 +82,7 @@
                                 domain="[('server_type', '=', 'database')]"
                             />
                             <field name="db_server_ip_address" readonly="1" />
+                            <field name="db_connections_used" />
                         </group>
                     </group>
 
