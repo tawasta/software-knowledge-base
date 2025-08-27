@@ -15,6 +15,14 @@
                 <field name="disk_size" optional="hide" />
                 <field name="disk_used" optional="hide" />
                 <field name="disk_available" optional="hide" />
+                <field name="disk_usage_percent" widget="progressbar" optional="hide" />
+                <field name="db_connections_limit" optional="hide" />
+                <field name="db_connections_used" optional="hide" />
+                <field
+                    name="db_connections_percent"
+                    widget="progressbar"
+                    optional="hide"
+                />
                 <field name="installation_ids" optional="show" />
                 <field name="company_id" optional="show" />
                 <field name="active" optional="show" />
