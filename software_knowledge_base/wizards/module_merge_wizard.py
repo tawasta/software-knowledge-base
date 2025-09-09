@@ -81,7 +81,11 @@ class ModuleMergeWizard(models.TransientModel):
 
                 # Safety check: the field must be a many2one to the module model
                 fld = target_model._fields.get(field_name)
-                if not fld or fld.type != "many2one" or fld.comodel_name != "software_knowledge_base.module":
+                if (
+                    not fld
+                    or fld.type != "many2one"
+                    or fld.comodel_name != "software_knowledge_base.module"
+                ):
                     continue
 
                 # Update all records that currently point to the module being merged
