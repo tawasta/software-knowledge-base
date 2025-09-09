@@ -51,9 +51,10 @@ class ModuleMergeWizard(models.TransientModel):
                 ("relation", "=", "software_knowledge_base.module"),
             ]
         )
-        o2m_fields = ir_model_fields.search(
+
+        m2o_fields = ir_model_fields.search(
             [
-                ("ttype", "=", "one2many"),
+                ("ttype", "=", "many2one"),
                 ("relation", "=", "software_knowledge_base.module"),
             ]
         )
@@ -65,8 +66,28 @@ class ModuleMergeWizard(models.TransientModel):
                 # Do nothing for the target module
                 continue
 
-            # TODO: handle o2m-fields (there weren't any when creating the wizard)
-            _logger.debug(o2m_fields)
+            # Move all many2one references to the target module
+            # (this effectively merges one-to-many data since o2m is the inverse of m2o)
+            for m2o_field in m2o_fields:
+                _logger.info(m2o_field.name)
+                # Ensure the owning model exists and is not transient (wizards, etc.)
+                if not m2o_field.model_id or m2o_field.model_id.transient:
+                    continue
+
+                model_name = m2o_field.model_id.model
+                field_name = m2o_field.name
+
+                target_model = self.env[model_name].sudo()
+
+                # Safety check: the field must be a many2one to the module model
+                fld = target_model._fields.get(field_name)
+                if not fld or fld.type != "many2one" or fld.comodel_name != "software_knowledge_base.module":
+                    continue
+
+                # Update all records that currently point to the module being merged
+                records = target_model.search([(field_name, "=", module.id)])
+                if records:
+                    records.write({field_name: target_module_id.id})
 
             # Handle m2m-fields
             for m2m_field in m2m_fields:
