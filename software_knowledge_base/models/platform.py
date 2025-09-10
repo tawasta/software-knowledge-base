@@ -7,8 +7,8 @@ class Platform(models.Model):
     _inherit = ["mail.thread"]
     _order = "name"
 
-    name = fields.Char(string="Name", help="E.g. Odoo 14 or Drupal 9")
-    description = fields.Text(string="Description")
+    name = fields.Char(help="E.g. Odoo 18 or Drupal 10")
+    description = fields.Text()
     active = fields.Boolean(default=True)
     image = fields.Image(
         string="Platform icon",

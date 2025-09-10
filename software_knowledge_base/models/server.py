@@ -7,7 +7,7 @@ class SoftwareKnowledgeBaseServer(models.Model):
     _inherit = ["mail.thread"]
     _order = "name"
 
-    name = fields.Char(string="Name")
+    name = fields.Char()
 
     company_id = fields.Many2one(
         comodel_name="res.company",
@@ -15,7 +15,7 @@ class SoftwareKnowledgeBaseServer(models.Model):
         default=lambda self: self.env.user.company_id.id,
     )
 
-    active = fields.Boolean(string="Active", default=True)
+    active = fields.Boolean(default=True)
 
     ip_address = fields.Char(string="IP Address")
 
@@ -37,7 +37,6 @@ class SoftwareKnowledgeBaseServer(models.Model):
             ("proxy", "Proxy server"),
             ("web", "Web server"),
         ],
-        string="Server type",
     )
 
     operating_system_id = fields.Many2one(
@@ -53,13 +52,15 @@ class SoftwareKnowledgeBaseServer(models.Model):
         domain=[("state", "!=", "terminated")],
     )
 
-    db_connections_available = fields.Integer(
-        "DB Connections",
-        help="Available DB connections",
+    installation_count = fields.Integer(
+        string="Installations", compute="_compute_installation_count", store=False
+    )
+
+    db_connections_limit = fields.Integer(
+        "DB Connections limit",
     )
     db_connections_used = fields.Integer(
-        "DB Connections",
-        help="Available DB connections",
+        "DB Connections used", compute="_compute_db_connections_used"
     )
     db_installation_ids = fields.One2many(
         comodel_name="software_knowledge_base.installation",
@@ -67,11 +68,19 @@ class SoftwareKnowledgeBaseServer(models.Model):
         string="DB Installations",
         domain=[("state", "!=", "terminated")],
     )
+    db_connections_percent = fields.Float(
+        "DB Connections %",
+        help="Percentage of used DB connections",
+        compute="_compute_db_connections_percent",
+    )
 
     note_ids = fields.One2many(
         comodel_name="software_knowledge_base.server_note",
         inverse_name="server_id",
         string="Server note",
+    )
+    note_count = fields.Integer(
+        string="Notes", compute="_compute_note_count", store=False
     )
 
     cpu_cores = fields.Integer("CPU Cores")
@@ -87,7 +96,7 @@ class SoftwareKnowledgeBaseServer(models.Model):
         compute="_compute_disk_usage",
     )
     disk_usage_percent = fields.Float(
-        string="Disk usage %", compute="_compute_disk_usage", store=True
+        string="Disk usage %", compute="_compute_disk_usage"
     )
 
     specification = fields.Text(string="Technical specification")
@@ -109,6 +118,16 @@ class SoftwareKnowledgeBaseServer(models.Model):
         tracking=True,
     )
 
+    @api.depends("installation_ids")
+    def _compute_installation_count(self):
+        for server in self:
+            server.installation_count = len(server.installation_ids)
+
+    @api.depends("note_ids")
+    def _compute_note_count(self):
+        for server in self:
+            server.note_count = len(server.note_ids)
+
     @api.depends("disk_size", "disk_used")
     def _compute_disk_usage(self):
         for record in self:
@@ -120,3 +139,38 @@ class SoftwareKnowledgeBaseServer(models.Model):
                 disk_usage_percent = record.disk_used / record.disk_size * 100
 
             record.disk_usage_percent = disk_usage_percent
+
+    @api.depends("db_installation_ids")
+    def _compute_db_connections_used(self):
+        for record in self:
+            record.db_connections_used = sum(
+                record.db_installation_ids.mapped("db_connections_used")
+            )
+
+    @api.depends("db_connections_limit", "db_connections_used")
+    def _compute_db_connections_percent(self):
+        for record in self:
+            if record.db_connections_limit:
+                record.db_connections_percent = (
+                    record.db_connections_used / record.db_connections_limit * 100
+                )
+            else:
+                record.db_connections_percent = 0
+
+    def action_open_installations(self):
+        return {
+            "type": "ir.actions.act_window",
+            "res_model": "software_knowledge_base.installation",
+            "view_mode": "tree,form",
+            "domain": [("server_id", "in", self.ids)],
+            "name": "Installations",
+        }
+
+    def action_open_notes(self):
+        return {
+            "type": "ir.actions.act_window",
+            "res_model": "software_knowledge_base.server_note",
+            "view_mode": "tree,form",
+            "domain": [("server_id", "in", self.ids)],
+            "name": "Notes",
+        }

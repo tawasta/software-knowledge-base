@@ -1,7 +1,11 @@
+import logging
 import xmlrpc.client
 from datetime import datetime, timedelta
 
 from odoo import models
+from odoo.tools import config
+
+_logger = logging.getLogger(__name__)
 
 
 class Module(models.Model):
@@ -37,16 +41,23 @@ class Module(models.Model):
         swkb_token = ir_config.get_param("swkb_token")
         swkb_db = ir_config.get_param("swkb_db")
 
-        values = {
-            "url": url,
-            "module_ids": apps_list,
+        odoo_config = config.options
+        installation_info = {
+            "db_connections_used": odoo_config.get("db_maxconn"),
             "user_accounts_active": len(active_users),
             "user_accounts_total": len(users),
         }
 
-        common = xmlrpc.client.ServerProxy("{}/xmlrpc/2/common".format(swkb_server))
+        values = {
+            "url": url,
+            "module_ids": apps_list,
+            "installation_info": installation_info,
+        }
+        _logger.debug(values)
+
+        common = xmlrpc.client.ServerProxy(f"{swkb_server}/xmlrpc/2/common")
         uid = common.authenticate(swkb_db, swkb_user, swkb_token, {})
-        models = xmlrpc.client.ServerProxy("{}/xmlrpc/2/object".format(swkb_server))
+        models = xmlrpc.client.ServerProxy(f"{swkb_server}/xmlrpc/2/object")
         models.execute_kw(
             swkb_db,
             uid,

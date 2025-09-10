@@ -20,12 +20,13 @@ class Installation(models.Model):
         ("test", "Test"),
         ("staging", "Staging"),
         ("production", "Production"),
+        ("legacy", "Legacy"),
     ]
 
     # 2. Fields declaration
     active = fields.Boolean(default=True)
 
-    name = fields.Char(string="Name")
+    name = fields.Char()
 
     company_id = fields.Many2one(
         comodel_name="res.company",
@@ -41,7 +42,7 @@ class Installation(models.Model):
         tracking=True,
     )
 
-    type = fields.Selection(selection=_INSTALLATION_TYPE_VALUES, string="Type")
+    type = fields.Selection(selection=_INSTALLATION_TYPE_VALUES)
 
     additional_info = fields.Text(string="Additional info")
 
@@ -61,16 +62,18 @@ class Installation(models.Model):
         string="Server IP-address", related="server_id.ip_address", store=True
     )
 
-    port = fields.Integer(string="Port")
+    port = fields.Integer()
 
     db_server_id = fields.Many2one(
         comodel_name="software_knowledge_base.server",
         string="Database server",
         tracking=True,
     )
-
     db_server_ip_address = fields.Char(
         string="DB server IP-address", related="db_server_id.ip_address", store=True
+    )
+    db_connections_used = fields.Integer(
+        "DB Connections used",
     )
 
     disk_usage_min = fields.Float(
@@ -85,12 +88,13 @@ class Installation(models.Model):
         help="The maximum amount of disk, this installation is allowed to use",
     )
     disk_usage_percent = fields.Float(
-        string="Disk usage %", compute="_compute_disk_usage_percent", store=True
+        string="Disk usage %", compute="_compute_disk_usage_percent"
     )
 
     url = fields.Char(string="URL")
+    admin_url = fields.Char(string="Admin URL")
 
-    identifier = fields.Char(string="Identifier")
+    identifier = fields.Char()
 
     user_accounts_active_min = fields.Integer(
         string="Min active users", help="Min active users"
@@ -104,7 +108,6 @@ class Installation(models.Model):
     user_accounts_active_percent = fields.Float(
         string="Active users %",
         compute="_compute_user_accounts_active_percent",
-        store=True,
     )
 
     user_accounts_total_min = fields.Integer(
@@ -119,7 +122,6 @@ class Installation(models.Model):
     user_accounts_total_percent = fields.Float(
         string="Total users %",
         compute="_compute_user_accounts_total_percent",
-        store=True,
     )
 
     user_accounts_active_interval = fields.Integer(
@@ -176,6 +178,12 @@ class Installation(models.Model):
 
     platform_image = fields.Image(string="Platform icon", related="platform_id.image")
 
+    task_ids = fields.One2many(
+        string="Tasks",
+        comodel_name="project.task",
+        inverse_name="installation_id",
+    )
+
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
@@ -183,7 +191,6 @@ class Installation(models.Model):
         for record in self:
             record.module_count = len(record.module_ids)
 
-    @api.depends("disk_usage", "disk_usage_max")
     def _compute_disk_usage_percent(self):
         for record in self:
             if record.disk_usage_max == 0:
@@ -245,11 +252,17 @@ class Installation(models.Model):
         # Update installation modules
         swkb_module = self.env["software_knowledge_base.module"]
         for module in kwargs.get("module_ids"):
+            module_name = module.get("name")
             domain = [
-                ("name", "=", module.get("name")),
+                ("name", "=", module_name),
                 ("website", "=", module.get("website")),
             ]
             existing_module = swkb_module.search(domain, limit=1)
+
+            if not existing_module:
+                existing_module = swkb_module.search(
+                    [("name", "=", module_name)], limit=1
+                )
 
             if not existing_module:
                 existing_module = swkb_module.create(module)
@@ -257,10 +270,13 @@ class Installation(models.Model):
             if existing_module not in installation.module_ids:
                 installation.module_ids = [(4, existing_module.id)]
 
-        # Update installation users
+        # Update installation users (DEPRECATED)
         if kwargs.get("user_accounts_active"):
             installation.user_accounts_active = kwargs.get("user_accounts_active")
         if kwargs.get("user_accounts_total"):
             installation.user_accounts_total = kwargs.get("user_accounts_total")
+
+        # Update installation by variable names
+        installation.write(kwargs.get("installation_info", {}))
 
         return installation.id

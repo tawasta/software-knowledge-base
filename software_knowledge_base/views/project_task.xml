@@ -25,6 +25,45 @@
                     options="{'color_field': 'color'}"
                 />
             </field>
+
+            <field name="partner_id" position="after">
+                <field name="installation_id" />
+                <field
+                    name="installation_admin_url"
+                    invisible="not installation_admin_url"
+                    widget="url"
+                />
+                <field
+                    name="installation_server_id"
+                    invisible="not installation_server_id"
+                />
+                <field
+                    name="installation_db_server_id"
+                    invisible="not installation_db_server_id"
+                />
+            </field>
         </field>
     </record>
+
+    <record id="view_task_search_form" model="ir.ui.view">
+        <field name="name">project.task.search.form.modules</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form" />
+        <field name="arch" type="xml">
+            <field name="task_properties" position="after">
+                <field name="module_ids" />
+                <field name="installation_id" />
+            </field>
+
+            <filter name="group_by_properties" position="after">
+                <separator />
+                <filter
+                    name="installation_id"
+                    context="{'group_by': 'installation_id'}"
+                />
+                <separator />
+            </filter>
+        </field>
+    </record>
+
 </odoo>

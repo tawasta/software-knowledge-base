@@ -21,15 +21,28 @@
 
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <div class="ribbon ribbon-top-right" invisible="active">
+                                <span class="text-bg-danger">Archived</span>
+                            </div>
 
                             <div class="o_kanban_content container">
                                 <div class="row">
                                     <div class="col-8">
                                         <h4><strong><field name="name" /></strong></h4>
+                                        <h5><field name="platform_id" /></h5>
                                         <p>
-                                            <field name="server_id" /><br />
+                                            <field name="active" invisible="1" /><br />
+                                            <strong><i class="fa fa-server" /> <field
+                                                    name="server_id"
+                                                /></strong><br />
                                             <field name="server_ip_address" />
+                                        </p>
+                                        <p>
+                                            <strong><i class="fa fa-database" /> <field
+                                                    name="db_server_id"
+                                                /></strong><br />
+                                            <field name="db_server_ip_address" />
                                         </p>
                                     </div>
                                     <div class="col-4">
@@ -42,6 +55,7 @@
                                         <span><field
                                                 name="state"
                                                 widget="badge"
+                                                class="mt-3"
                                                 decoration-success="state == 'ready'"
                                                 decoration-info="state == 'setup'"
                                                 decoration-danger="state == 'terminated'"
@@ -50,20 +64,18 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-6">
+                                    <field
+                                        name="disk_usage"
+                                        class="col-6"
+                                        widget="gauge"
+                                        options="{'max_field': 'disk_usage_max'}"
+                                    />
                                         <field
-                                            name="disk_usage"
-                                            widget="gauge"
-                                            options="{'max_field': 'disk_usage_max', 'style': 'width:120px; height: 120px;'}"
-                                        />
-                                    </div>
-                                    <div class="col-6">
-                                        <field
-                                            name="user_accounts_active"
-                                            widget="gauge"
-                                            options="{'max_field': 'user_accounts_active_max', 'style': 'width:120px; height: 120px;'}"
-                                        />
-                                    </div>
+                                        name="user_accounts_active"
+                                        class="col-6"
+                                        widget="gauge"
+                                        options="{'max_field': 'user_accounts_active_max'}"
+                                    />
                                 </div>
                             </div>
                         </div>
