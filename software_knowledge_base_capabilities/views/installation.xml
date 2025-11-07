@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record id="installation_form_inherit_capabilities" model="ir.ui.view">
+    <field name="name">software_knowledge_base.installation.form.capabilities</field>
+    <field name="model">software_knowledge_base.installation</field>
+    <field name="inherit_id" ref="software_knowledge_base.installation_form_view"/>
+    <field name="arch" type="xml">
+      <xpath expr="//div[@name='button_box']" position="inside">
+        <button class="oe_stat_button"
+                type="object"
+                name="action_open_capability_apply_wizard"
+                icon="fa-cubes"
+                string="Capabilities"/>
+      </xpath>
+      <xpath expr="//notebook" position="inside">
+        <page string="Capabilities">
+          <group>
+            <field name="capability_ids" context="{'default_active': True}">
+              <tree editable="bottom">
+                <field name="name"/>
+                <field name="active"/>
+              </tree>
+            </field>
+          </group>
+        </page>
+      </xpath>
+    </field>
+  </record>
+</odoo>
