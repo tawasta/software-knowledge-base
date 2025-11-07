@@ -21,7 +21,7 @@ class Capability(models.Model):
     # Capability composition (include other capabilities)
     child_capability_ids = fields.Many2many(
         "swkb.capability",
-        "skb_capability_component_rel",  # keep original relation table
+        "skb_capability_component_rel",
         "parent_capability_id",
         "child_capability_id",
         string="Included Capabilities",
