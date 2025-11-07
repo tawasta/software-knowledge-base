@@ -6,7 +6,7 @@ class Installation(models.Model):
 
     capability_ids = fields.Many2many(
         "swkb.capability",
-        "skb_capability_installation_rel",   # keep original relation table
+        "skb_capability_installation_rel",
         "installation_id",
         "capability_id",
         string="Capabilities",
@@ -16,7 +16,6 @@ class Installation(models.Model):
 
     capability_count = fields.Integer(
         compute="_compute_capability_count",
-        string="Capability Count",
     )
 
     @api.depends("capability_ids")

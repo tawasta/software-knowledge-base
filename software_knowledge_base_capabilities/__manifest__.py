@@ -20,7 +20,10 @@
 
 {
     "name": "Software Knowledge Base - Capabilities",
-    "summary": "Define installation capabilities and automatically suggest required modules.",
+    "summary": (
+        "Define installation capabilities and automatically suggest "
+        "required modules."
+    ),
     "version": "17.0.1.0.0",
     "category": "Project Management",
     "website": "https://github.com/tawasta/software-knowledge-base",

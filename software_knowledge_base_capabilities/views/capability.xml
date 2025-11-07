@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
   <!-- Tree -->
   <record id="swkb_capability_view_tree" model="ir.ui.view">
@@ -6,8 +6,8 @@
     <field name="model">swkb.capability</field>
     <field name="arch" type="xml">
       <tree>
-        <field name="name"/>
-        <field name="active"/>
+        <field name="name" />
+        <field name="active" />
       </tree>
     </field>
   </record>
@@ -20,42 +20,42 @@
       <form string="Capability">
         <sheet>
           <group>
-            <field name="name"/>
-            <field name="active"/>
+            <field name="name" />
+            <field name="active" />
           </group>
           <group>
-            <field name="description"/>
+            <field name="description" />
           </group>
           <notebook>
             <page string="Module Requirements">
               <field name="requirement_ids">
                 <tree editable="bottom">
-                  <field name="sequence" widget="handle"/>
-                  <field name="module_id"/>
-                  <field name="required"/>
-                  <field name="note"/>
+                  <field name="sequence" widget="handle" />
+                  <field name="module_id" />
+                  <field name="required" />
+                  <field name="note" />
                 </tree>
                 <form>
                   <group>
-                    <field name="module_id"/>
-                    <field name="required"/>
-                    <field name="sequence"/>
-                    <field name="note"/>
+                    <field name="module_id" />
+                    <field name="required" />
+                    <field name="sequence" />
+                    <field name="note" />
                   </group>
                 </form>
               </field>
             </page>
 
             <page string="Included Capabilities">
-              <field name="child_capability_ids"
-                     widget="many2many_tags"
-                     domain="[('id','!=', active_id)]"/>
+              <field
+                                name="child_capability_ids"
+                                widget="many2many_tags"
+                                domain="[('id','!=', active_id)]"
+                            />
             </page>
 
             <page string="Resolved Modules (incl. included)">
-              <field name="resolved_module_ids"
-                     widget="many2many_tags"
-                     readonly="1"/>
+              <field name="resolved_module_ids" widget="many2many_tags" readonly="1" />
             </page>
           </notebook>
         </sheet>
@@ -68,17 +68,21 @@
     <field name="name">Capabilities</field>
     <field name="res_model">swkb.capability</field>
     <field name="view_mode">tree,form</field>
-    <field name="view_id" ref="swkb_capability_view_tree"/>
+    <field name="view_id" ref="swkb_capability_view_tree" />
   </record>
 
   <!-- Menu -->
-  <menuitem id="menu_swkb_capabilities_root"
-            name="Capabilities"
-            parent="software_knowledge_base.root_menu"
-            sequence="40"/>
-  <menuitem id="menu_swkb_capabilities_manage"
-            name="Manage"
-            parent="menu_swkb_capabilities_root"
-            action="swkb_capability_action"
-            sequence="10"/>
+  <menuitem
+        id="menu_swkb_capabilities_root"
+        name="Capabilities"
+        parent="software_knowledge_base.root_menu"
+        sequence="40"
+    />
+  <menuitem
+        id="menu_swkb_capabilities_manage"
+        name="Manage"
+        parent="menu_swkb_capabilities_root"
+        action="swkb_capability_action"
+        sequence="10"
+    />
 </odoo>

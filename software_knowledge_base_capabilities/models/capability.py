@@ -21,7 +21,7 @@ class Capability(models.Model):
     # Capability composition (include other capabilities)
     child_capability_ids = fields.Many2many(
         "swkb.capability",
-        "skb_capability_component_rel",      # keep original relation table
+        "skb_capability_component_rel",  # keep original relation table
         "parent_capability_id",
         "child_capability_id",
         string="Included Capabilities",
@@ -48,6 +48,7 @@ class Capability(models.Model):
     @api.constrains("child_capability_ids")
     def _check_no_cycles(self):
         """Prevent cyclic capability composition."""
+
         def visit(node, seen):
             if node.id in seen:
                 return True
@@ -59,7 +60,9 @@ class Capability(models.Model):
 
         for rec in self:
             if visit(rec, set()):
-                raise ValidationError(_("Cyclic capability composition is not allowed."))
+                raise ValidationError(
+                    _("Cyclic capability composition is not allowed.")
+                )
 
     # -------------------------------------------------------------------------
     # Helpers
