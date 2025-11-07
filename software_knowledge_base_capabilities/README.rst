@@ -2,68 +2,93 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=================
-SWKB Capabilities
-=================
+=====================================
+Software Knowledge Base: Capabilities
+=====================================
 
-This module extends the **Software Knowledge Base** by introducing the concept of
-**Capabilities** – logical business or functional areas that describe what an
-installation or customer setup is capable of.
+This module extends **software_knowledge_base** by introducing **Capabilities**:
+business/functional profiles that describe what an installation is meant to do,
+and which Odoo modules it requires. Capabilities can include other capabilities,
+and their required modules are automatically **resolved** (direct + included).
 
-A capability groups together the Odoo modules required to provide a certain
-functionality (for example, Sales, CRM, or Project Management).  
-Capabilities can also include other capabilities, forming a hierarchy of related
-features.  
+An **Apply Capabilities** wizard is added to the Installation form. It can
+authenticate to a **remote client database** (via XML-RPC) and install the
+modules required by the selected capabilities. The wizard shows step-by-step
+notifications (auth OK → wait → start → results) and reports *missing*,
+*already installed*, and *installed* modules.
 
-By linking capabilities to an installation, both technical and non-technical users
-can clearly understand **what kind of system configuration** a customer has,
-and which modules are needed to support those capabilities.
+Key Features
+============
+
+- **Capability model (`swkb.capability`)**
+  - Name, description, active
+  - One2many **Module Requirements** (`swkb.capability.requirement`)
+  - Many2many **Included Capabilities** (composition)
+  - Computed **Resolved Modules** (union of direct + included requirements)
+
+- **Installation integration**
+  - Many2many **Capabilities** on `software_knowledge_base.installation`
+  - **Stat button** “Capabilities” to open the **Apply Capabilities** wizard
+
+- **Apply Capabilities wizard**
+  - Lists capabilities linked to the installation (shows resolved modules)
+  - Authenticates to a **remote Odoo** via XML-RPC
+  - Sends webclient toasts (auth OK, starting, already installed, missing, success)
+  - Installs only modules not yet installed (Odoo handles dependencies)
 
 Installation
 ============
 
-1. Ensure the base module ``software_knowledge_base`` is installed.
-2. Install this module from the Apps menu or by updating your custom add-ons.
+1. Make sure **software_knowledge_base** is installed.
+2. Place this add-on in your add-ons path and update the Apps list.
+3. Install **Software Knowledge Base: Capabilities**.
 
 Configuration
 =============
 
-No special configuration is required.
+**System Parameters (set in the SWKB instance):**
 
-You can immediately start defining capabilities under:
-**Knowledge Base → Capabilities → Manage**.
+- ``skb_capabilities.client_user`` → remote client username (e.g. ``admin``)
+- ``skb_capabilities.client_key`` → remote client password or API key
 
-Each capability record allows you to:
-- Name and describe the capability
-- Define required modules
-- Optionally include other capabilities
-- View all resolved modules (direct + included)
+**Installation record (in the SWKB instance):**
+
+- ``admin_url`` (or ``url``): remote base URL (e.g. ``http://localhost:8069``)
+- ``identifier``: remote database name (e.g. ``client``)
 
 Usage
 =====
 
-1. Create one or more **Capabilities**, e.g. “Sales Operations” or “Customer Portal”.
-2. For each capability, add its required modules in the *Modules* tab.
-3. Link capabilities to **Installations** to describe what that installation includes.
-4. Open an installation form and use the **Capabilities** stat button to review
-   or apply capability sets through the *Apply Capabilities* wizard.
+Define Capabilities
+-------------------
 
-This makes it easier to:
-- Communicate to non-technical users what the installation provides.
-- Automatically determine which modules should be installed.
-- Standardize and speed up new system setups.
+1. Go to **Software KB → Capabilities → Manage** and create a capability.
+2. Add **Module Requirements** by selecting modules (technical names, e.g. ``crm``, ``sale_management``).
+3. Optionally add **Included Capabilities** to build a composition.
+4. The **Resolved Modules** tab shows the combined result.
 
-Example
--------
+Link to Installation
+--------------------
 
-**Capability:** *Sales Operations*  
-Includes:
-- CRM  
-- Sales  
-- Contact Management  
+1. Open an **Installation** and add capabilities on the **Capabilities** tab.
+2. Click the **Capabilities** stat button to open the **Apply Capabilities** wizard.
 
-→ The resolved module list automatically combines all related modules
-from this and any included capabilities.
+Apply Capabilities (Remote Install)
+-----------------------------------
+
+1. In the wizard, tick the capabilities you want to apply (**Apply** = True).
+2. Click **Apply**. You will see toasts for:
+   - **Connection OK** (authentication succeeded)
+   - (about 4 seconds later) **Starting installation…**
+   - **Already installed** / **Missing modules in client**
+   - **Success** (install completed)
+
+Security
+========
+
+- RPC credentials are read from **ir.config_parameter** on the SWKB instance.
+- Protect ``skb_capabilities.client_key``; installing modules requires admin privileges.
+- Ensure the installation’s ``admin_url``/``identifier`` match the client.
 
 Credits
 =======
