@@ -2,7 +2,7 @@ import logging
 import time
 import xmlrpc.client
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
@@ -85,15 +85,17 @@ class CapabilityApplyWizard(models.TransientModel):
         base_url = self._pick_first(inst, "admin_url", "url")
         db = self._pick_first(inst, "identifier")
         if not base_url or not db:
-            raise UserError("Installation is missing admin URL/URL or identifier.")
+            raise UserError(_("Installation is missing admin URL/URL or identifier."))
 
         icp = self.env["ir.config_parameter"].sudo()
         user = icp.get_param("skb_capabilities.client_user") or "admin"
         key = icp.get_param("skb_capabilities.client_key")
         if not key:
             raise UserError(
-                "System parameter 'skb_capabilities.client_key' is not set. "
-                "Set it to the client password or API key."
+                _(
+                    "System parameter 'skb_capabilities.client_key' is not set. "
+                    "Set it to the client password or API key."
+                )
             )
         return str(base_url).rstrip("/"), db, user, key
 
@@ -103,16 +105,20 @@ class CapabilityApplyWizard(models.TransientModel):
         self.ensure_one()
 
         # 1) Collect module technical names from selected lines
-        chosen = self.line_ids.filtered(lambda l: l.apply)
+        chosen = self.line_ids.filtered(lambda line: line.apply)
         capability_ids = self.env["swkb.capability"].browse(
-            [l.capability_id.id for l in chosen]
+            [li.capability_id.id for li in chosen]
         )
         module_names = capability_ids.resolved_module_ids.mapped("name")
-        module_list_msg = ", ".join(module_names) if module_names else "(no modules selected)"
+        module_list_msg = (
+            ", ".join(module_names) if module_names else "(no modules selected)"
+        )
 
         # 2) Resolve creds & authenticate
         base_url, db, user, key = self._get_rpc_credentials()
-        common = xmlrpc.client.ServerProxy(f"{base_url}/xmlrpc/2/common", allow_none=True)
+        common = xmlrpc.client.ServerProxy(
+            f"{base_url}/xmlrpc/2/common", allow_none=True
+        )
         uid = common.authenticate(db, user, key, {})
         if not uid:
             raise UserError(
@@ -126,19 +132,21 @@ class CapabilityApplyWizard(models.TransientModel):
             f"Authenticated to {base_url} (db={db}) as {user}.",
             level="success",
         )
-        self.env.cr.commit()
+        self.env.cr.commit()  # pylint: disable=invalid-commit
 
         # 4) Quick ping
         obj = xmlrpc.client.ServerProxy(f"{base_url}/xmlrpc/2/object", allow_none=True)
         try:
             _ = obj.execute_kw(
-                db, uid, key,
-                "ir.module.module", "search_count",
+                db,
+                uid,
+                key,
+                "ir.module.module",
+                "search_count",
                 [[["name", "!=", False]]],
             )
-        except Exception as e:
-            _logger.exception("RPC ping failed")
-            raise UserError(f"RPC ping failed: {e}")
+        except Exception as err:
+            raise UserError(f"RPC ping failed: {err}") from err
 
         # 5) Wait ~4s so user sees the step-by-step
         time.sleep(4)
@@ -149,24 +157,30 @@ class CapabilityApplyWizard(models.TransientModel):
             f"Starting installation… Modules: {module_list_msg}",
             level="info",
         )
-        self.env.cr.commit()
+        self.env.cr.commit()  # pylint: disable=invalid-commit
 
         if not module_names:
             self._notify("Nothing to install", "No modules selected.", level="warning")
-            self.env.cr.commit()
+            self.env.cr.commit()  # pylint: disable=invalid-commit
             return {"type": "ir.actions.act_window_close"}
 
         # 7) Resolve found/missing and states
         found_ids = obj.execute_kw(
-            db, uid, key,
-            "ir.module.module", "search",
+            db,
+            uid,
+            key,
+            "ir.module.module",
+            "search",
             [[["name", "in", module_names]]],
         )
         found_modules = []
         if found_ids:
             found_modules = obj.execute_kw(
-                db, uid, key,
-                "ir.module.module", "read",
+                db,
+                uid,
+                key,
+                "ir.module.module",
+                "read",
                 [found_ids, ["name", "state"]],
             )
         found_names = {m["name"] for m in found_modules}
@@ -178,11 +192,15 @@ class CapabilityApplyWizard(models.TransientModel):
                 f"Not found by technical name: {', '.join(missing_names)}",
                 level="warning",
             )
-            self.env.cr.commit()
+            self.env.cr.commit()  # pylint: disable=invalid-commit
 
         # Filter to_install: those found AND state != installed
-        to_install_ids = [m["id"] for m in found_modules if m.get("state") != "installed"]
-        already_installed = [m["name"] for m in found_modules if m.get("state") == "installed"]
+        to_install_ids = [
+            m["id"] for m in found_modules if m.get("state") != "installed"
+        ]
+        already_installed = [
+            m["name"] for m in found_modules if m.get("state") == "installed"
+        ]
 
         if already_installed:
             self._notify(
@@ -190,7 +208,7 @@ class CapabilityApplyWizard(models.TransientModel):
                 ", ".join(already_installed),
                 level="info",
             )
-            self.env.cr.commit()
+            self.env.cr.commit()  # pylint: disable=invalid-commit
 
         if not to_install_ids:
             self._notify(
@@ -198,23 +216,28 @@ class CapabilityApplyWizard(models.TransientModel):
                 "All selected modules are already installed or not found.",
                 level="warning",
             )
-            self.env.cr.commit()
+            self.env.cr.commit()  # pylint: disable=invalid-commit
             return {"type": "ir.actions.act_window_close"}
 
         # 8) Install (handles dependencies)
         obj.execute_kw(
-            db, uid, key,
-            "ir.module.module", "button_immediate_install",
+            db,
+            uid,
+            key,
+            "ir.module.module",
+            "button_immediate_install",
             [to_install_ids],
         )
 
         self._notify(
             "Success",
-            "Installation complete. Installed: " +
-            ", ".join([m["name"] for m in found_modules if m["id"] in to_install_ids]),
+            "Installation complete. Installed: "
+            + ", ".join(
+                [m["name"] for m in found_modules if m["id"] in to_install_ids]
+            ),
             level="success",
         )
-        self.env.cr.commit()
+        self.env.cr.commit()  # pylint: disable=invalid-commit
 
         return {"type": "ir.actions.act_window_close"}
 
