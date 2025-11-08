@@ -15,7 +15,8 @@ An **Apply Capabilities** wizard is added to the Installation form. It can
 authenticate to a **remote client database** (via XML-RPC) and install the
 modules required by the selected capabilities. The wizard shows step-by-step
 notifications (auth OK → wait → start → results) and reports *missing*,
-*already installed*, and *installed* modules.
+*already installed*, and *installed* modules. After a successful run, the
+linked capability line on the installation is marked **asennettu** (installed).
 
 Key Features
 ============
@@ -27,14 +28,19 @@ Key Features
   - Computed **Resolved Modules** (union of direct + included requirements)
 
 - **Installation integration**
-  - Many2many **Capabilities** on `software_knowledge_base.installation`
+  - **One2many Capability lines** (`swkb.capability.installation.line`) on
+    `software_knowledge_base.installation`, each linking a capability and a
+    **status** field with values:
+    - ``ei asennettu`` / ``asennettu`` (not_installed / installed)
   - **Stat button** “Capabilities” to open the **Apply Capabilities** wizard
 
 - **Apply Capabilities wizard**
-  - Lists capabilities linked to the installation (shows resolved modules)
+  - Lists capabilities from the installation’s **capability lines**
+    (O2M; shows resolved modules per capability)
   - Authenticates to a **remote Odoo** via XML-RPC
   - Sends webclient toasts (auth OK, starting, already installed, missing, success)
   - Installs only modules not yet installed (Odoo handles dependencies)
+  - After success, sets the selected capability lines’ **status = asennettu**
 
 Installation
 ============
@@ -70,18 +76,22 @@ Define Capabilities
 Link to Installation
 --------------------
 
-1. Open an **Installation** and add capabilities on the **Capabilities** tab.
-2. Click the **Capabilities** stat button to open the **Apply Capabilities** wizard.
+1. Open an **Installation** and add **capability lines** on the **Capabilities** tab
+   (each line links one capability).
+2. The line’s **Status** shows ``ei asennettu`` or ``asennettu``.
 
 Apply Capabilities (Remote Install)
 -----------------------------------
 
-1. In the wizard, tick the capabilities you want to apply (**Apply** = True).
-2. Click **Apply**. You will see toasts for:
+1. Click the **Capabilities** stat button to open the wizard.
+2. In the wizard, tick the capabilities you want to apply (**Apply** = True).
+3. Click **Apply**. You will see toasts for:
    - **Connection OK** (authentication succeeded)
    - (about 4 seconds later) **Starting installation…**
    - **Already installed** / **Missing modules in client**
    - **Success** (install completed)
+4. After a successful run, the selected capability lines on the installation are
+   marked **asennettu**.
 
 Security
 ========

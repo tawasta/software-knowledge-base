@@ -17,10 +17,13 @@
       <xpath expr="//notebook" position="inside">
         <page string="Capabilities">
           <group>
-            <field name="capability_ids" context="{'default_active': True}">
+            <field
+                            name="capability_line_ids"
+                            context="{'default_installation_id': active_id}"
+                        >
               <tree editable="bottom">
-                <field name="name" />
-                <field name="active" />
+                <field name="capability_id" />
+                <field name="status" readonly="1" />
               </tree>
             </field>
           </group>

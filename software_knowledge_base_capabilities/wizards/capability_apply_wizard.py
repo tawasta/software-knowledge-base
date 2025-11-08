@@ -25,7 +25,7 @@ class CapabilityApplyWizard(models.TransientModel):
 
     @api.model
     def default_get(self, fields_list):
-        """Populate wizard with capabilities and resolved modules."""
+        """Populate wizard with capabilities and resolved modules (from O2M lines)."""
         vals = super().default_get(fields_list)
         installation = None
         if self.env.context.get("default_installation_id"):
@@ -36,7 +36,10 @@ class CapabilityApplyWizard(models.TransientModel):
 
         lines = []
         if installation:
-            for cap in installation.capability_ids:
+            for link in installation.capability_line_ids:
+                cap = link.capability_id
+                if not cap:
+                    continue
                 module_ids = list(cap._resolve_modules())
                 lines.append(
                     (
@@ -238,6 +241,15 @@ class CapabilityApplyWizard(models.TransientModel):
             level="success",
         )
         self.env.cr.commit()  # pylint: disable=invalid-commit
+
+        inst_lines = self.installation_id.capability_line_ids
+        for cap in capability_ids:
+            cap_id = cap.id
+            line = inst_lines.filtered(
+                lambda line, cap_id=cap_id: line.capability_id.id == cap_id
+            )[:1]
+            if line:
+                line.status = "installed"
 
         return {"type": "ir.actions.act_window_close"}
 
