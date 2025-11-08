@@ -18,10 +18,9 @@ class CapabilityInstallationLine(models.Model):
     )
     status = fields.Selection(
         [
-            ("not_installed", "ei asennettu"),
-            ("installed", "asennettu"),
+            ("not_installed", "Not Installed"),
+            ("installed", "Installed"),
         ],
         default="not_installed",
         string="Status",
-        help="Onko tämän capabilityn moduulit asennettu tähän asennukseen.",
     )

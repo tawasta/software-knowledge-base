@@ -16,7 +16,7 @@ authenticate to a **remote client database** (via XML-RPC) and install the
 modules required by the selected capabilities. The wizard shows step-by-step
 notifications (auth OK → wait → start → results) and reports *missing*,
 *already installed*, and *installed* modules. After a successful run, the
-linked capability line on the installation is marked **asennettu** (installed).
+linked capability line on the installation is marked **installed**.
 
 Key Features
 ============
@@ -31,7 +31,7 @@ Key Features
   - **One2many Capability lines** (`swkb.capability.installation.line`) on
     `software_knowledge_base.installation`, each linking a capability and a
     **status** field with values:
-    - ``ei asennettu`` / ``asennettu`` (not_installed / installed)
+    - ``not installed`` / ``installed``
   - **Stat button** “Capabilities” to open the **Apply Capabilities** wizard
 
 - **Apply Capabilities wizard**
@@ -40,7 +40,7 @@ Key Features
   - Authenticates to a **remote Odoo** via XML-RPC
   - Sends webclient toasts (auth OK, starting, already installed, missing, success)
   - Installs only modules not yet installed (Odoo handles dependencies)
-  - After success, sets the selected capability lines’ **status = asennettu**
+  - After success, sets the selected capability lines’ **status = installed**
 
 Installation
 ============
@@ -78,7 +78,7 @@ Link to Installation
 
 1. Open an **Installation** and add **capability lines** on the **Capabilities** tab
    (each line links one capability).
-2. The line’s **Status** shows ``ei asennettu`` or ``asennettu``.
+2. The line’s **Status** shows ``not installed`` or ``installed``.
 
 Apply Capabilities (Remote Install)
 -----------------------------------
@@ -91,7 +91,7 @@ Apply Capabilities (Remote Install)
    - **Already installed** / **Missing modules in client**
    - **Success** (install completed)
 4. After a successful run, the selected capability lines on the installation are
-   marked **asennettu**.
+   marked **installed**.
 
 Security
 ========
