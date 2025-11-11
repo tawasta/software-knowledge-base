@@ -11,13 +11,6 @@ business/functional profiles that describe what an installation is meant to do,
 and which Odoo modules it requires. Capabilities can include other capabilities,
 and their required modules are automatically **resolved** (direct + included).
 
-An **Apply Capabilities** wizard is added to the Installation form. It can
-authenticate to a **remote client database** (via XML-RPC) and install the
-modules required by the selected capabilities. The wizard shows step-by-step
-notifications (auth OK → wait → start → results) and reports *missing*,
-*already installed*, and *installed* modules. After a successful run, the
-linked capability line on the installation is marked **installed**.
-
 Key Features
 ============
 
@@ -32,15 +25,14 @@ Key Features
     `software_knowledge_base.installation`, each linking a capability and a
     **status** field with values:
     - ``not installed`` / ``installed``
-  - **Stat button** “Capabilities” to open the **Apply Capabilities** wizard
+  - **Stat button** “Capabilities” on the Installation form
+    (opens capability-related information for that installation)
 
-- **Apply Capabilities wizard**
-  - Lists capabilities from the installation’s **capability lines**
-    (O2M; shows resolved modules per capability)
-  - Authenticates to a **remote Odoo** via XML-RPC
-  - Sends webclient toasts (auth OK, starting, already installed, missing, success)
-  - Installs only modules not yet installed (Odoo handles dependencies)
-  - After success, sets the selected capability lines’ **status = installed**
+- **TODO: Capability Application Automation**
+  - Future development will include the ability to automatically apply
+    and synchronize capabilities across installations.
+  - This will include secure, token-based communication and controlled
+    automation for module installation and verification.
 
 Installation
 ============
@@ -52,15 +44,7 @@ Installation
 Configuration
 =============
 
-**System Parameters (set in the SWKB instance):**
-
-- ``skb_capabilities.client_user`` → remote client username (e.g. ``admin``)
-- ``skb_capabilities.client_key`` → remote client password or API key
-
-**Installation record (in the SWKB instance):**
-
-- ``admin_url`` (or ``url``): remote base URL (e.g. ``http://localhost:8069``)
-- ``identifier``: remote database name (e.g. ``client``)
+No special configuration is required for the base functionality.
 
 Usage
 =====
@@ -80,25 +64,14 @@ Link to Installation
    (each line links one capability).
 2. The line’s **Status** shows ``not installed`` or ``installed``.
 
-Apply Capabilities (Remote Install)
------------------------------------
+Future Development
+==================
 
-1. Click the **Capabilities** stat button to open the wizard.
-2. In the wizard, tick the capabilities you want to apply (**Apply** = True).
-3. Click **Apply**. You will see toasts for:
-   - **Connection OK** (authentication succeeded)
-   - (about 4 seconds later) **Starting installation…**
-   - **Already installed** / **Missing modules in client**
-   - **Success** (install completed)
-4. After a successful run, the selected capability lines on the installation are
-   marked **installed**.
+In upcoming versions, the module will include:
+- Automated capability synchronization between installations
+- Secure, token-authenticated communication for controlled remote actions
+- Enhanced visibility and reporting for applied capabilities
 
-Security
-========
-
-- RPC credentials are read from **ir.config_parameter** on the SWKB instance.
-- Protect ``skb_capabilities.client_key``; installing modules requires admin privileges.
-- Ensure the installation’s ``admin_url``/``identifier`` match the client.
 
 Credits
 =======

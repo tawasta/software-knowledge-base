@@ -32,12 +32,3 @@ class Installation(models.Model):
                     all_ids |= line.capability_id._resolve_modules()
         return list(all_ids)
 
-    def action_open_capability_apply_wizard(self):
-        self.ensure_one()
-        return {
-            "type": "ir.actions.act_window",
-            "res_model": "swkb.capability.apply.wizard",
-            "view_mode": "form",
-            "target": "new",
-            "context": {"default_installation_id": self.id},
-        }

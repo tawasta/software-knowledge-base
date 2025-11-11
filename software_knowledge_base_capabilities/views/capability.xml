@@ -26,6 +26,9 @@
           <group>
             <field name="description" />
           </group>
+          <group string="Technical Notes">
+            <field name="technical_notes" />
+          </group>
           <notebook>
             <page string="Module Requirements">
               <field name="requirement_ids">

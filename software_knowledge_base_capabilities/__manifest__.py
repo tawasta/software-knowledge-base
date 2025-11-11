@@ -21,8 +21,7 @@
 {
     "name": "Software Knowledge Base - Capabilities",
     "summary": (
-        "Define installation capabilities and automatically suggest "
-        "required modules."
+        "Define installation capabilities"
     ),
     "version": "17.0.1.0.0",
     "category": "Project Management",
@@ -36,6 +35,5 @@
         "security/ir.model.access.csv",
         "views/capability.xml",
         "views/installation.xml",
-        "wizards/capability_apply_wizard.xml",
     ],
 }
