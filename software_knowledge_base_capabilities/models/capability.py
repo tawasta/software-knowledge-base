@@ -9,7 +9,9 @@ class Capability(models.Model):
 
     name = fields.Char(required=True, tracking=True)
     description = fields.Text()
-    technical_notes = fields.Text(help="Technical settings, configurations or implementation details.")
+    technical_notes = fields.Text(
+        help="Technical settings, configurations or implementation details."
+    )
     active = fields.Boolean(default=True)
 
     # Requirements (each links one module that this capability needs)

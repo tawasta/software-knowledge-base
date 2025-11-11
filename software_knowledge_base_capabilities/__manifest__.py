@@ -20,9 +20,7 @@
 
 {
     "name": "Software Knowledge Base - Capabilities",
-    "summary": (
-        "Define installation capabilities"
-    ),
+    "summary": ("Define installation capabilities"),
     "version": "17.0.1.0.0",
     "category": "Project Management",
     "website": "https://github.com/tawasta/software-knowledge-base",

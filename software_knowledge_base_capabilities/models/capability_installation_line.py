@@ -1,5 +1,6 @@
 from odoo import fields, models
 
+
 class CapabilityInstallationLine(models.Model):
     _name = "swkb.capability.installation.line"
     _description = "Capability linked to an Installation"
@@ -22,5 +23,4 @@ class CapabilityInstallationLine(models.Model):
             ("installed", "Installed"),
         ],
         default="not_installed",
-        string="Status",
     )

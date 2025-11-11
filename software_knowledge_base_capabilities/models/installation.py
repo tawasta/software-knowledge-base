@@ -31,4 +31,3 @@ class Installation(models.Model):
                 if line.capability_id:
                     all_ids |= line.capability_id._resolve_modules()
         return list(all_ids)
-
