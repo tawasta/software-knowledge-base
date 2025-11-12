@@ -10,8 +10,12 @@
                 <field name="summary" optional="show" />
                 <field name="website" optional="show" />
                 <field name="module_type" optional="show" />
-                <field name="platform_ids" optional="hide" />
-                <field name="installation_ids" optional="hide" />
+                <field name="platform_ids" optional="hide" widget="many2many_tags" />
+                <field
+                    name="installation_ids"
+                    optional="hide"
+                    widget="many2many_tags"
+                />
                 <field
                     name="installation_count"
                     string="Installations"
