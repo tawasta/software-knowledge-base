@@ -267,7 +267,13 @@ class Installation(models.Model):
             if not existing_module:
                 existing_module = swkb_module.create(module)
 
+            platform = installation.platform_id
+            if platform and platform not in existing_module.platform_ids:
+                # Add platform to supported module platforms
+                existing_module.platform_ids = [(4, platform.id)]
+
             if existing_module not in installation.module_ids:
+                # Add module to installation modules
                 installation.module_ids = [(4, existing_module.id)]
 
         # Update installation users (DEPRECATED)

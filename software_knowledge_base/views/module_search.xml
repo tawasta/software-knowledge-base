@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Modules search view -->
+    <record model="ir.ui.view" id="module_search_view">
+        <field name="name">module.search.view</field>
+        <field name="model">software_knowledge_base.module</field>
+        <field name="arch" type="xml">
+            <search string="Search Modules">
+                <field name="name" />
+                <field name="platform_ids" />
+                <field name="module_type" />
+                <field name="author" />
+                <field name="website" />
+                <separator />
+                <group expand="0" string="Group By...">
+                    <filter
+                        string="Module type"
+                        name="module_type"
+                        context="{'group_by':'module_type'}"
+                    />
+                    <filter
+                        string="Author"
+                        name="author"
+                        context="{'group_by':'author'}"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+</odoo>

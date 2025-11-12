@@ -14,6 +14,7 @@ class Module(models.Model):
         ("community_commercial", "Community (commercial)"),
         ("inhouse", "In-house"),
         ("inhouse_commercial", "In-house (commercial)"),
+        ("third_party", "Third party"),
     ]
 
     # 2. Fields declaration
