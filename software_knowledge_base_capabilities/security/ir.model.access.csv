@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_swkb_capability,access_swkb_capability,model_swkb_capability,base.group_user,1,1,1,1
+access_swkb_capability_requirement,access_swkb_capability_requirement,model_swkb_capability_requirement,base.group_user,1,1,1,1
+access_swkb_capability_installation_line,access_swkb_capability_installation_line,model_swkb_capability_installation_line,base.group_user,1,1,1,1
