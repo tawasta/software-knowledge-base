@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Modules Tree View -->
+    <record model="ir.ui.view" id="module_tree_view">
+        <field name="name">module.tree.view</field>
+        <field name="model">software_knowledge_base.module</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="summary" optional="show" />
+                <field name="website" optional="show" />
+                <field name="module_type" optional="show" />
+                <field name="platform_ids" optional="hide" widget="many2many_tags" />
+                <field
+                    name="installation_ids"
+                    optional="hide"
+                    widget="many2many_tags"
+                />
+                <field
+                    name="installation_count"
+                    string="Installations"
+                    optional="hide"
+                />
+            </tree>
+        </field>
+    </record>
+</odoo>
