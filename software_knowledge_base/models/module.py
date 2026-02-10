@@ -106,7 +106,7 @@ class Module(models.Model):
     # 6. CRUD methods
 
     # 7. Action methods
-    def action_view_installations(self):
+    def action_open_installations(self):
         action = self.env["ir.actions.act_window"]._for_xml_id(
             "software_knowledge_base.installations_action"
         )

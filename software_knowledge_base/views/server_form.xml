@@ -35,6 +35,21 @@
                         >
                             <field name="note_count" string="Notes" widget="statinfo" />
                         </button>
+
+                        <div class="oe_button_box" name="button_box">
+                            <button
+                                class="oe_stat_button"
+                                type="object"
+                                name="action_open_modules"
+                                icon="fa-puzzle-piece"
+                            >
+                                <field
+                                    name="module_count"
+                                    widget="statinfo"
+                                    string="Modules"
+                                />
+                            </button>
+                        </div>
                     </div>
 
                     <widget

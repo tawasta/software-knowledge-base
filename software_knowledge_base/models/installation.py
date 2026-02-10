@@ -225,7 +225,7 @@ class Installation(models.Model):
     # 6. CRUD methods
 
     # 7. Action methods
-    def action_view_modules(self):
+    def action_open_modules(self):
         action = self.env["ir.actions.act_window"]._for_xml_id(
             "software_knowledge_base.modules_action"
         )
