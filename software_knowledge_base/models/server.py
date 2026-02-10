@@ -118,6 +118,10 @@ class SoftwareKnowledgeBaseServer(models.Model):
         tracking=True,
     )
 
+    module_count = fields.Integer(
+        string="Module count", compute="_compute_module_count"
+    )
+
     @api.depends("installation_ids")
     def _compute_installation_count(self):
         for server in self:
@@ -157,6 +161,10 @@ class SoftwareKnowledgeBaseServer(models.Model):
             else:
                 record.db_connections_percent = 0
 
+    def _compute_module_count(self):
+        for record in self:
+            record.module_count = len(record.mapped("installation_ids.module_ids"))
+
     def action_open_installations(self):
         return {
             "type": "ir.actions.act_window",
@@ -165,6 +173,15 @@ class SoftwareKnowledgeBaseServer(models.Model):
             "domain": [("server_id", "in", self.ids)],
             "name": "Installations",
         }
+
+    def action_open_modules(self):
+        action = self.env["ir.actions.act_window"]._for_xml_id(
+            "software_knowledge_base.modules_action"
+        )
+        module_ids = self.mapped("installation_ids.module_ids").ids
+
+        action["domain"] = [("id", "in", module_ids)]
+        return action
 
     def action_open_notes(self):
         return {

@@ -11,7 +11,7 @@
                 <button
                     class="oe_stat_button"
                     type="object"
-                    name="action_view_modules"
+                    name="action_open_modules"
                     icon="fa-puzzle-piece"
                 >
                     <field string="Modules" name="module_count" widget="statinfo" />
