@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <record id="ir_cron_swkb_export" model="ir.cron" forcecreate="True">
-        <field name="name">Software knowledge base: export information</field>
-        <field name="model_id" ref="base.model_ir_module_module" />
-        <field name="state">code</field>
-        <field name="code">model.export_information_to_swkb()</field>
-        <field name="active" eval="True" />
-        <field name="user_id" ref="base.user_root" />
-        <field name="interval_number">1</field>
-        <field name="interval_type">days</field>
-    </record>
+  <record id="ir_cron_swkb_export" model="ir.cron" forcecreate="True">
+    <field name="name">Software knowledge base: export information</field>
+    <field name="model_id" ref="base.model_ir_module_module" />
+    <field name="state">code</field>
+    <field name="code">model.export_information_to_swkb()</field>
+    <field name="active" eval="True" />
+    <field name="user_id" ref="base.user_root" />
+    <field name="interval_number">1</field>
+    <field name="interval_type">days</field>
+  </record>
 </odoo>

@@ -16,9 +16,9 @@ Export information to Software Development Knowledge Base
 .. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
     :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
     :alt: License: AGPL-3
-.. |badge3| image:: https://img.shields.io/badge/github-Futural%2Fsoftware--knowledge--base-lightgray.png?logo=github
-    :target: https://github.com/Futural/software-knowledge-base/tree/17.0/software_knowledge_base_exporter
-    :alt: Futural/software-knowledge-base
+.. |badge3| image:: https://img.shields.io/badge/github-tawasta%2Fsoftware--knowledge--base-lightgray.png?logo=github
+    :target: https://github.com/tawasta/software-knowledge-base/tree/19.0/software_knowledge_base_exporter
+    :alt: tawasta/software-knowledge-base
 
 |badge1| |badge2| |badge3|
 
@@ -52,10 +52,10 @@ Usage
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/Futural/software-knowledge-base/issues>`_.
+Bugs are tracked on `GitHub Issues <https://github.com/tawasta/software-knowledge-base/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/Futural/software-knowledge-base/issues/new?body=module:%20software_knowledge_base_exporter%0Aversion:%2017.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/tawasta/software-knowledge-base/issues/new?body=module:%20software_knowledge_base_exporter%0Aversion:%2019.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -75,6 +75,6 @@ Contributors
 Maintainers
 -----------
 
-This module is part of the `Futural/software-knowledge-base <https://github.com/Futural/software-knowledge-base/tree/17.0/software_knowledge_base_exporter>`_ project on GitHub.
+This module is part of the `tawasta/software-knowledge-base <https://github.com/tawasta/software-knowledge-base/tree/19.0/software_knowledge_base_exporter>`_ project on GitHub.
 
 You are welcome to contribute.
