@@ -16,9 +16,6 @@ class Module(models.Model):
         apps = self.search([("state", "=", "installed")])
         apps_list = []
 
-        _logger.error("HERE: ")
-        _logger.error(apps_list)
-
         for app in apps:
             apps_list.append(
                 {
@@ -31,6 +28,7 @@ class Module(models.Model):
             )
 
         # Get total users and active users
+        # pylint: disable=no-search-all
         users = self.env["res.users"].search([])
         active_users = users.filtered(
             lambda user: user.login_date
