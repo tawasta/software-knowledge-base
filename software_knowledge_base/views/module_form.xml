@@ -13,7 +13,7 @@
                         <button
                             class="oe_stat_button"
                             type="object"
-                            name="action_view_installations"
+                            name="action_open_installations"
                             icon="fa-server"
                         >
                             <field
