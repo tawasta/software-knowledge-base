@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
 
             <field name="website" position="after">
-                <field name="module_guide" />
+                <field name="module_guide" widget="url"/>
             </field>
 
         </field>
