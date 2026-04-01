@@ -1,5 +1,9 @@
+import logging
+
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+
+_logger = logging.getLogger(__name__)
 
 
 class Installation(models.Model):
@@ -76,12 +80,35 @@ class Installation(models.Model):
         "DB Connections used",
     )
 
+    database_total_size_bytes = fields.Integer(string="Total size of database (B)")
+    database_total_size_gigabytes = fields.Float(
+        string="Total size of database (GB)",
+        compute="_compute_usage_gigabytes",
+        digits=(1, 3),
+    )
+    attachments_total_size_bytes = fields.Integer(
+        string="Total size of attachments (B)"
+    )
+    attachments_total_size_gigabytes = fields.Float(
+        string="Total size of attachments (GB)",
+        compute="_compute_usage_gigabytes",
+        digits=(1, 3),
+    )
+    backup_total_size_bytes = fields.Integer(string="Total size of backup files (B)")
+    backup_total_size_gigabytes = fields.Float(
+        string="Total size of backups (GB)",
+        compute="_compute_usage_gigabytes",
+        digits=(1, 3),
+    )
     disk_usage_min = fields.Float(
         string="Disk Usage Min (Gb)",
         help="The minimum amount of disk, this installation is expected to use",
     )
     disk_usage = fields.Float(
-        string="Disk Usage (Gb)", help="Current disk usage in Gigabytes"
+        string="Disk Usage (Gb)",
+        compute="_compute_usage_gigabytes",
+        help="Current disk usage in Gigabytes",
+        digits=(1, 3),
     )
     disk_usage_max = fields.Float(
         string="Disk Usage Max (Gb)",
@@ -191,6 +218,44 @@ class Installation(models.Model):
         for record in self:
             record.module_count = len(record.module_ids)
 
+    def _bytes_to_gigabytes(self, b):
+        return float(b / 1073741824)
+
+    @api.onchange(
+        "database_total_size_bytes",
+        "attachments_total_size_bytes",
+        "backup_total_size_bytes",
+    )
+    def _compute_usage_gigabytes(self):
+        for record in self:
+            total_bytes = 0
+
+            if record.database_total_size_bytes:
+                record.database_total_size_gigabytes = record._bytes_to_gigabytes(
+                    record.database_total_size_bytes
+                )
+                total_bytes += record.database_total_size_bytes
+            else:
+                record.database_total_size_bytes = 0
+
+            if record.attachments_total_size_bytes:
+                record.attachments_total_size_gigabytes = record._bytes_to_gigabytes(
+                    record.attachments_total_size_bytes
+                )
+                total_bytes += record.attachments_total_size_bytes
+            else:
+                record.attachments_total_size_gigabytes = 0
+
+            if record.backup_total_size_bytes:
+                record.backup_total_size_gigabytes = record._bytes_to_gigabytes(
+                    record.backup_total_size_bytes
+                )
+                total_bytes += record.backup_total_size_bytes
+            else:
+                record.backup_total_size_gigabytes = 0
+
+            record.disk_usage = record._bytes_to_gigabytes(total_bytes)
+
     def _compute_disk_usage_percent(self):
         for record in self:
             if record.disk_usage_max == 0:
@@ -200,7 +265,7 @@ class Installation(models.Model):
                     record.disk_usage / record.disk_usage_max * 100
                 )
 
-    @api.depends("user_accounts_active", "user_accounts_active_max")
+    # @api.depends("user_accounts_active", "user_accounts_active_max")
     def _compute_user_accounts_active_percent(self):
         for record in self:
             if record.user_accounts_active_max == 0:
@@ -243,46 +308,62 @@ class Installation(models.Model):
         if not url:
             raise ValidationError(_("url is a mandatory field"))
 
-        installation = self.search([("url", "=ilike", url)])
+        installations = self.search([("url", "=ilike", url)])
 
-        if not installation:
-            # Existing installation is not found - create a new one
-            installation = self.create({"name": url, "url": url})
+        # Loop In case there is two installations with same url, so we dont get errors
+        for installation in installations:
+            if not installation:
+                # Existing installation is not found - create a new one
+                installation = self.create({"name": url, "url": url})
 
-        # Update installation modules
-        swkb_module = self.env["software_knowledge_base.module"]
-        for module in kwargs.get("module_ids"):
-            module_name = module.get("name")
-            domain = [
-                ("name", "=", module_name),
-                ("website", "=", module.get("website")),
-            ]
-            existing_module = swkb_module.search(domain, limit=1)
+            # Update installation modules
+            swkb_module = self.env["software_knowledge_base.module"]
+            for module in kwargs.get("module_ids"):
+                module_name = module.get("name")
+                domain = [
+                    ("name", "=", module_name),
+                    ("website", "=", module.get("website")),
+                ]
+                existing_module = swkb_module.search(domain, limit=1)
 
-            if not existing_module:
-                existing_module = swkb_module.search(
-                    [("name", "=", module_name)], limit=1
+                if not existing_module:
+                    existing_module = swkb_module.search(
+                        [("name", "=", module_name)], limit=1
+                    )
+
+                if not existing_module:
+                    existing_module = swkb_module.create(module)
+
+                platform = installation.platform_id
+                if platform and platform not in existing_module.platform_ids:
+                    # Add platform to supported module platforms
+                    existing_module.platform_ids = [(4, platform.id)]
+
+                if existing_module not in installation.module_ids:
+                    # Add module to installation modules
+                    installation.module_ids = [(4, existing_module.id)]
+
+            # Update installation disk usage
+            if kwargs.get("database_total_size_bytes"):
+                installation.database_total_size_bytes = int(
+                    kwargs.get("database_total_size_bytes")
+                )
+            if kwargs.get("attachments_total_size_bytes"):
+                installation.attachments_total_size_bytes = int(
+                    kwargs.get("attachments_total_size_bytes")
+                )
+            if kwargs.get("backup_total_size_bytes"):
+                installation.backup_total_size_bytes = int(
+                    kwargs.get("backup_total_size_bytes")
                 )
 
-            if not existing_module:
-                existing_module = swkb_module.create(module)
+            # Update installation users (DEPRECATED)
+            if kwargs.get("user_accounts_active"):
+                installation.user_accounts_active = kwargs.get("user_accounts_active")
+            if kwargs.get("user_accounts_total"):
+                installation.user_accounts_total = kwargs.get("user_accounts_total")
 
-            platform = installation.platform_id
-            if platform and platform not in existing_module.platform_ids:
-                # Add platform to supported module platforms
-                existing_module.platform_ids = [(4, platform.id)]
+            # Update installation by variable names
+            installation.write(kwargs.get("installation_info", {}))
 
-            if existing_module not in installation.module_ids:
-                # Add module to installation modules
-                installation.module_ids = [(4, existing_module.id)]
-
-        # Update installation users (DEPRECATED)
-        if kwargs.get("user_accounts_active"):
-            installation.user_accounts_active = kwargs.get("user_accounts_active")
-        if kwargs.get("user_accounts_total"):
-            installation.user_accounts_total = kwargs.get("user_accounts_total")
-
-        # Update installation by variable names
-        installation.write(kwargs.get("installation_info", {}))
-
-        return installation.id
+        return installations[0].id
