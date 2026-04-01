@@ -69,8 +69,6 @@ class Module(models.Model):
                 "backup_total_size_bytes"
             )
 
-        _logger.error("HERE: values: ")
-        _logger.error(values)
         _logger.debug(values)
 
         common = xmlrpc.client.ServerProxy(f"{swkb_server}/xmlrpc/2/common")
