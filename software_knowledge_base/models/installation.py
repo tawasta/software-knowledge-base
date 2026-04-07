@@ -366,4 +366,3 @@ class Installation(models.Model):
 
         # Return the first one, no need to loop all trough
         return installation.id
-
