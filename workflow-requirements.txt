@@ -1,1 +1,2 @@
 https://github.com/tawasta/helpdesk/archive/refs/heads/17.0.zip#subdirectory=project_task_mattermost
+https://github.com/tawasta/server-tools/archive/refs/heads/17.0.zip#subdirectory=mattermost_hook
