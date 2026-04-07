@@ -366,4 +366,6 @@ class Installation(models.Model):
             # Update installation by variable names
             installation.write(kwargs.get("installation_info", {}))
 
-        return installations[0].id
+            # Return the first one, no need to loop all trough
+            return installation
+
