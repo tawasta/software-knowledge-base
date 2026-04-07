@@ -80,13 +80,13 @@ class Installation(models.Model):
         "DB Connections used",
     )
 
-    database_total_size_bytes = fields.Integer(string="Total size of database (B)")
+    database_total_size_bytes = fields.Char(string="Total size of database (B)")
     database_total_size_gigabytes = fields.Float(
         string="Total size of database (GB)",
         compute="_compute_usage_gigabytes",
         digits=(1, 3),
     )
-    attachments_total_size_bytes = fields.Integer(
+    attachments_total_size_bytes = fields.Char(
         string="Total size of attachments (B)"
     )
     attachments_total_size_gigabytes = fields.Float(
@@ -94,7 +94,7 @@ class Installation(models.Model):
         compute="_compute_usage_gigabytes",
         digits=(1, 3),
     )
-    backup_total_size_bytes = fields.Integer(string="Total size of backup files (B)")
+    backup_total_size_bytes = fields.Char(string="Total size of backup files (B)")
     backup_total_size_gigabytes = fields.Float(
         string="Total size of backups (GB)",
         compute="_compute_usage_gigabytes",
@@ -218,8 +218,14 @@ class Installation(models.Model):
         for record in self:
             record.module_count = len(record.module_ids)
 
+    def _safe_int(i):
+        try:
+            return int(i)
+        except:
+            return 0
+
     def _bytes_to_gigabytes(self, b):
-        return float(b / 1073741824)
+        return float(self._safe_int(b) / 1073741824)
 
     @api.onchange(
         "database_total_size_bytes",
@@ -343,15 +349,15 @@ class Installation(models.Model):
 
         # Update installation disk usage
         if kwargs.get("database_total_size_bytes"):
-            installation.database_total_size_bytes = int(
+            installation.database_total_size_bytes = str(
                 kwargs.get("database_total_size_bytes")
             )
         if kwargs.get("attachments_total_size_bytes"):
-            installation.attachments_total_size_bytes = int(
+            installation.attachments_total_size_bytes = str(
                 kwargs.get("attachments_total_size_bytes")
             )
         if kwargs.get("backup_total_size_bytes"):
-            installation.backup_total_size_bytes = int(
+            installation.backup_total_size_bytes = str(
                 kwargs.get("backup_total_size_bytes")
             )
 
