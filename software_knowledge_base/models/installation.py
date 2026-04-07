@@ -308,64 +308,62 @@ class Installation(models.Model):
         if not url:
             raise ValidationError(_("url is a mandatory field"))
 
-        installations = self.search([("url", "=ilike", url)])
+        installation = self.search([("url", "=ilike", url)], limit=1)
 
-        # Loop In case there is two installations with same url, so we dont get errors
-        for installation in installations:
-            if not installation:
-                # Existing installation is not found - create a new one
-                installation = self.create({"name": url, "url": url})
+        if not installation:
+            # Existing installation is not found - create a new one
+            installation = self.create({"name": url, "url": url})
 
-            # Update installation modules
-            swkb_module = self.env["software_knowledge_base.module"]
-            for module in kwargs.get("module_ids"):
-                module_name = module.get("name")
-                domain = [
-                    ("name", "=", module_name),
-                    ("website", "=", module.get("website")),
-                ]
-                existing_module = swkb_module.search(domain, limit=1)
+        # Update installation modules
+        swkb_module = self.env["software_knowledge_base.module"]
+        for module in kwargs.get("module_ids"):
+            module_name = module.get("name")
+            domain = [
+                ("name", "=", module_name),
+                ("website", "=", module.get("website")),
+            ]
+            existing_module = swkb_module.search(domain, limit=1)
 
-                if not existing_module:
-                    existing_module = swkb_module.search(
-                        [("name", "=", module_name)], limit=1
-                    )
-
-                if not existing_module:
-                    existing_module = swkb_module.create(module)
-
-                platform = installation.platform_id
-                if platform and platform not in existing_module.platform_ids:
-                    # Add platform to supported module platforms
-                    existing_module.platform_ids = [(4, platform.id)]
-
-                if existing_module not in installation.module_ids:
-                    # Add module to installation modules
-                    installation.module_ids = [(4, existing_module.id)]
-
-            # Update installation disk usage
-            if kwargs.get("database_total_size_bytes"):
-                installation.database_total_size_bytes = int(
-                    kwargs.get("database_total_size_bytes")
-                )
-            if kwargs.get("attachments_total_size_bytes"):
-                installation.attachments_total_size_bytes = int(
-                    kwargs.get("attachments_total_size_bytes")
-                )
-            if kwargs.get("backup_total_size_bytes"):
-                installation.backup_total_size_bytes = int(
-                    kwargs.get("backup_total_size_bytes")
+            if not existing_module:
+                existing_module = swkb_module.search(
+                    [("name", "=", module_name)], limit=1
                 )
 
-            # Update installation users (DEPRECATED)
-            if kwargs.get("user_accounts_active"):
-                installation.user_accounts_active = kwargs.get("user_accounts_active")
-            if kwargs.get("user_accounts_total"):
-                installation.user_accounts_total = kwargs.get("user_accounts_total")
+            if not existing_module:
+                existing_module = swkb_module.create(module)
 
-            # Update installation by variable names
-            installation.write(kwargs.get("installation_info", {}))
+            platform = installation.platform_id
+            if platform and platform not in existing_module.platform_ids:
+                # Add platform to supported module platforms
+                existing_module.platform_ids = [(4, platform.id)]
 
-            # Return the first one, no need to loop all trough
-            return installation
+            if existing_module not in installation.module_ids:
+                # Add module to installation modules
+                installation.module_ids = [(4, existing_module.id)]
+
+        # Update installation disk usage
+        if kwargs.get("database_total_size_bytes"):
+            installation.database_total_size_bytes = int(
+                kwargs.get("database_total_size_bytes")
+            )
+        if kwargs.get("attachments_total_size_bytes"):
+            installation.attachments_total_size_bytes = int(
+                kwargs.get("attachments_total_size_bytes")
+            )
+        if kwargs.get("backup_total_size_bytes"):
+            installation.backup_total_size_bytes = int(
+                kwargs.get("backup_total_size_bytes")
+            )
+
+        # Update installation users (DEPRECATED)
+        if kwargs.get("user_accounts_active"):
+            installation.user_accounts_active = kwargs.get("user_accounts_active")
+        if kwargs.get("user_accounts_total"):
+            installation.user_accounts_total = kwargs.get("user_accounts_total")
+
+        # Update installation by variable names
+        installation.write(kwargs.get("installation_info", {}))
+
+        # Return the first one, no need to loop all trough
+        return installation.id
 
