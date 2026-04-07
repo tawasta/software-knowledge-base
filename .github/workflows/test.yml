@@ -50,6 +50,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Add workflow-requirements.txt into test-requirements.txt
+        run: if [ -f workflow-requirements.txt ]; then cat workflow-requirements.txt >> test-requirements.txt; fi
       - name: Install addons and dependencies
         run: oca_install_addons
       - name: Check licenses

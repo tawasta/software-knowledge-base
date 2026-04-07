@@ -53,6 +53,22 @@ class Module(models.Model):
             "module_ids": apps_list,
             "installation_info": installation_info,
         }
+
+        # Database size
+        self.env.cr.execute("SELECT pg_database_size(current_database());")
+        values["database_total_size_bytes"] = int(self.env.cr.fetchall()[0][0])
+
+        # Attachment size
+        values["attachments_total_size_bytes"] = sum(
+            self.env["ir.attachment"].search([]).mapped("file_size")
+        )
+
+        # Backup size
+        if ir_config.get_param("backup_total_size_bytes"):
+            values["backup_total_size_bytes"] = ir_config.get_param(
+                "backup_total_size_bytes"
+            )
+
         _logger.debug(values)
 
         common = xmlrpc.client.ServerProxy(f"{swkb_server}/xmlrpc/2/common")

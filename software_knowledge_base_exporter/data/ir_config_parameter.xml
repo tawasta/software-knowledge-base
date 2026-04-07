@@ -2,14 +2,14 @@
 <odoo>
     <record id="swkb_server" model="ir.config_parameter">
         <field name="key">swkb_server</field>
-        <field name="value">False</field>
+        <field name="value">http://localhost:8070</field>
     </record>
     <record id="swkb_user" model="ir.config_parameter">
         <field name="key">swkb_user</field>
-        <field name="value">False</field>
+        <field name="value">admin</field>
     </record>
     <record id="swkb_db" model="ir.config_parameter">
         <field name="key">swkb_db</field>
-        <field name="value">False</field>
+        <field name="value">odoo-17-swkb-server</field>
     </record>
 </odoo>
