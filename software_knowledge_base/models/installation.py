@@ -236,7 +236,7 @@ class Installation(models.Model):
                 )
                 total_bytes += record.database_total_size_bytes
             else:
-                record.database_total_size_bytes = 0
+                record.database_total_size_gigabytes = 0
 
             if record.attachments_total_size_bytes:
                 record.attachments_total_size_gigabytes = record._bytes_to_gigabytes(
