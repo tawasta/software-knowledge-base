@@ -56,18 +56,18 @@ class Module(models.Model):
 
         # Database size
         self.env.cr.execute("SELECT pg_database_size(current_database());")
-        values["database_total_size_bytes"] = int(self.env.cr.fetchall()[0][0])
+        values["database_total_size_bytes"] = str(int(self.env.cr.fetchall()[0][0]))
 
         # Attachment size
-        values["attachments_total_size_bytes"] = sum(
+        values["attachments_total_size_bytes"] = str(sum(
             self.env["ir.attachment"].search([]).mapped("file_size")
-        )
+        ))
 
         # Backup size
         if ir_config.get_param("backup_total_size_bytes"):
-            values["backup_total_size_bytes"] = ir_config.get_param(
+            values["backup_total_size_bytes"] = str(ir_config.get_param(
                 "backup_total_size_bytes"
-            )
+            ))
 
         _logger.debug(values)
 
