@@ -155,6 +155,42 @@
                             </group>
 
                             <group name="usage_group_usage" string="Usage">
+                                <label
+                                    for="database_total_size_gigabytes"
+                                    string="Database"
+                                />
+                                <div col="4">
+                                <field
+                                        name="database_total_size_gigabytes"
+                                        class="oe_inline"
+                                        decoration-bf="1"
+                                    />
+                                    <span class="oe_inline"> GB</span>
+                            </div>
+                                <label
+                                    for="attachments_total_size_gigabytes"
+                                    string="Attachments"
+                                />
+                                <div col="4">
+                                <field
+                                        name="attachments_total_size_gigabytes"
+                                        class="oe_inline"
+                                        decoration-bf="1"
+                                    />
+                                    <span class="oe_inline"> GB</span>
+                            </div>
+                                <label
+                                    for="backup_total_size_gigabytes"
+                                    string="Backups"
+                                />
+                                <div col="4">
+                                <field
+                                        name="backup_total_size_gigabytes"
+                                        class="oe_inline"
+                                        decoration-bf="1"
+                                    />
+                                    <span class="oe_inline"> GB</span>
+                            </div>
                                 <label for="disk_usage" string="Disk usage" />
                                 <div col="4">
                                     <field
