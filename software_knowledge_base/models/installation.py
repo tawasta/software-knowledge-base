@@ -218,7 +218,7 @@ class Installation(models.Model):
         for record in self:
             record.module_count = len(record.module_ids)
 
-    def _safe_int(i):
+    def _safe_int(self, i):
         try:
             return int(i)
         except:
@@ -236,29 +236,20 @@ class Installation(models.Model):
         for record in self:
             total_bytes = 0
 
-            if record.database_total_size_bytes:
-                record.database_total_size_gigabytes = record._bytes_to_gigabytes(
-                    record.database_total_size_bytes
-                )
-                total_bytes += record.database_total_size_bytes
-            else:
-                record.database_total_size_gigabytes = 0
+            record.database_total_size_gigabytes = record._bytes_to_gigabytes(
+                record.database_total_size_bytes
+            )
+            total_bytes += self._safe_int(record.database_total_size_bytes)
 
-            if record.attachments_total_size_bytes:
-                record.attachments_total_size_gigabytes = record._bytes_to_gigabytes(
-                    record.attachments_total_size_bytes
-                )
-                total_bytes += record.attachments_total_size_bytes
-            else:
-                record.attachments_total_size_gigabytes = 0
+            record.attachments_total_size_gigabytes = record._bytes_to_gigabytes(
+                record.attachments_total_size_bytes
+            )
+            total_bytes += self._safe_int(record.attachments_total_size_bytes)
 
-            if record.backup_total_size_bytes:
-                record.backup_total_size_gigabytes = record._bytes_to_gigabytes(
-                    record.backup_total_size_bytes
-                )
-                total_bytes += record.backup_total_size_bytes
-            else:
-                record.backup_total_size_gigabytes = 0
+            record.backup_total_size_gigabytes = record._bytes_to_gigabytes(
+                record.backup_total_size_bytes
+            )
+            total_bytes += self._safe_int(record.backup_total_size_bytes)
 
             record.disk_usage = record._bytes_to_gigabytes(total_bytes)
 
