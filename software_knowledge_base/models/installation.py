@@ -86,9 +86,7 @@ class Installation(models.Model):
         compute="_compute_usage_gigabytes",
         digits=(1, 3),
     )
-    attachments_total_size_bytes = fields.Char(
-        string="Total size of attachments (B)"
-    )
+    attachments_total_size_bytes = fields.Char(string="Total size of attachments (B)")
     attachments_total_size_gigabytes = fields.Float(
         string="Total size of attachments (GB)",
         compute="_compute_usage_gigabytes",
