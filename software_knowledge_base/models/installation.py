@@ -219,7 +219,9 @@ class Installation(models.Model):
     def _safe_int(self, i):
         try:
             return int(i)
-        except:
+        except:  # noqa: E722
+            # We do really want to catch ALL errors, as the qoal is to always
+            # return integer no matter what happens
             return 0
 
     def _bytes_to_gigabytes(self, b):
