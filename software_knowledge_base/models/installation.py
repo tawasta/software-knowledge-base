@@ -80,21 +80,27 @@ class Installation(models.Model):
         "DB Connections used",
     )
 
-    database_total_size_bytes = fields.Char(string="Total size of database (B)", default="0")
+    database_total_size_bytes = fields.Char(
+        string="Total size of database (B)", default="0"
+    )
     database_total_size_gigabytes = fields.Float(
         string="Total size of database (GB)",
         compute="_compute_usage_gigabytes",
         digits=(1, 3),
         default=0,
     )
-    attachments_total_size_bytes = fields.Char(string="Total size of attachments (B)", default="0")
+    attachments_total_size_bytes = fields.Char(
+        string="Total size of attachments (B)", default="0"
+    )
     attachments_total_size_gigabytes = fields.Float(
         string="Total size of attachments (GB)",
         compute="_compute_usage_gigabytes",
         digits=(1, 3),
         default=0,
     )
-    backup_total_size_bytes = fields.Char(string="Total size of backup files (B)", default="0")
+    backup_total_size_bytes = fields.Char(
+        string="Total size of backup files (B)", default="0"
+    )
     backup_total_size_gigabytes = fields.Float(
         string="Total size of backups (GB)",
         compute="_compute_usage_gigabytes",
