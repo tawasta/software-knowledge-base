@@ -66,7 +66,7 @@ class Module(models.Model):
         # Backup size
         if ir_config.get_param("backup_total_size_bytes"):
             values["backup_total_size_bytes"] = str(
-                ir_config.get_param("backup_total_size_bytes")
+                ir_config.get_param("swkb.backup_total_size_bytes")
             )
 
         _logger.debug(values)
