@@ -53,7 +53,7 @@ class SoftwareKnowledgeBaseServer(models.Model):
     )
 
     installation_count = fields.Integer(
-        string="Installations", compute="_compute_installation_count", store=False
+        string="Installation count", compute="_compute_installation_count", store=False
     )
 
     db_connections_limit = fields.Integer(

@@ -69,6 +69,10 @@ class ProjectTask(models.Model):
                 record.installation_id = False
 
     # 5. Constraints and onchanges
+    @api.onchange("module_ids")
+    def _onchange_module_ids(self):
+        for record in self:
+            record.tag_ids += record.module_ids.mapped("project_tag_ids")
 
     # 6. CRUD methods
 
