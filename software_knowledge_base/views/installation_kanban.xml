@@ -33,13 +33,19 @@
                                         <h5><field name="platform_id" /></h5>
                                         <p>
                                             <field name="active" invisible="1" /><br />
-                                            <strong><i class="fa fa-server" /> <field
+                                            <strong><i
+                                                    class="fa fa-server"
+                                                    title="Server"
+                                                /> <field
                                                     name="server_id"
                                                 /></strong><br />
                                             <field name="server_ip_address" />
                                         </p>
                                         <p>
-                                            <strong><i class="fa fa-database" /> <field
+                                            <strong><i
+                                                    class="fa fa-database"
+                                                    title="Database"
+                                                /> <field
                                                     name="db_server_id"
                                                 /></strong><br />
                                             <field name="db_server_ip_address" />
