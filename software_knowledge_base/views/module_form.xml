@@ -31,37 +31,42 @@
                             <field name="name" required="1" />
                         </h1>
                     </div>
-                    <group col="4">
-                        <field
-                            name="platform_ids"
-                            widget="many2many_tags"
-                            string="Tested platforms"
-                        />
-                        <field name="user_id" />
-                        <field name="module_type" />
-                        <field name="author" />
-                        <field name="website" widget="url" />
-                    </group>
                     <group>
-                        <field name="description" />
-                        <field name="summary" />
-                        <field name="readme" />
-                        <field name="features" />
+                        <group>
+                            <field
+                                name="platform_ids"
+                                widget="many2many_tags"
+                                string="Tested platforms"
+                            />
+                            <field name="user_id" />
+                            <field name="module_type" />
+                            <field name="author" />
+                        </group>
+                        <group>
+                            <field name="website" widget="url" />
+                            <field name="project_tag_ids" widget="many2many_tags" />
+                            <field name="description" />
+                            <field name="summary" />
+                            <field name="features" />
+                        </group>
                     </group>
                     <notebook>
-                        <page string="Installation">
+                        <page name="installation" string="Installation">
                             <separator string="Installations" />
                             <field name="installation_ids" />
                             <separator string="Installation notes" />
                             <field name="installation_notes" />
                         </page>
-                        <page string="Known issues">
+                        <page name="known_issues" string="Known issues">
                             <field name="issues" />
                         </page>
-                        <page string="Additional info">
+                        <page name="additional_info" string="Additional info">
                             <field name="additional_info" />
                         </page>
-                        <page string="Tasks">
+                        <page name="readme" string="Readme">
+                            <field name="readme" />
+                        </page>
+                        <page name="tasks" string="Tasks">
                             <field name="task_ids" />
                         </page>
                     </notebook>

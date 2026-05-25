@@ -75,6 +75,17 @@ class Module(models.Model):
         help="Supported platforms",
     )
 
+    project_tag_ids = fields.Many2many(
+        comodel_name="project.tags",
+        relation="module_project_tag_rel",
+        column1="module_id",
+        column2="tag_id",
+        string="Project tags",
+        help="Project tags related to this module. \n"
+        "The tags will be automatically added to task, \n"
+        "when linking them to the module.",
+    )
+
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration
