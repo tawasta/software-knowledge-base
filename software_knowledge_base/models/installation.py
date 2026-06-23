@@ -2,6 +2,7 @@ import logging
 
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+from odoo.fields import Command
 
 _logger = logging.getLogger(__name__)
 
@@ -322,6 +323,7 @@ class Installation(models.Model):
 
         # Update installation modules
         swkb_module = self.env["software_knowledge_base.module"]
+        module_ids = []
         for module in kwargs.get("module_ids"):
             module_name = module.get("name")
             domain = [
@@ -337,15 +339,21 @@ class Installation(models.Model):
 
             if not existing_module:
                 existing_module = swkb_module.create(module)
+            module_ids.append(existing_module.id)
 
             platform = installation.platform_id
             if platform and platform not in existing_module.platform_ids:
                 # Add platform to supported module platforms
-                existing_module.platform_ids = [(4, platform.id)]
+                existing_module.platform_ids = [Command.link(platform.id)]
 
             if existing_module not in installation.module_ids:
                 # Add module to installation modules
-                installation.module_ids = [(4, existing_module.id)]
+                installation.module_ids = [Command.link(existing_module.id)]
+
+        # Remove modules that are no longer in the installation
+        for module in installation.module_ids:
+            if module.id not in module_ids:
+                installation.module_ids = [Command.unlink(module.id)]
 
         # Update installation disk usage
         if kwargs.get("database_total_size_bytes"):
