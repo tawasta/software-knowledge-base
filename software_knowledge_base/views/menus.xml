@@ -5,6 +5,11 @@
         <field name="name">Modules</field>
         <field name="res_model">software_knowledge_base.module</field>
         <field name="view_mode">tree,form</field>
+        <field name="context">
+            {
+                "search_default_not_deprecated": 1,
+                "search_default_all_in_house": 1,
+            }</field>
     </record>
     <record id="ext_components_action" model="ir.actions.act_window">
         <field name="name">External components</field>
