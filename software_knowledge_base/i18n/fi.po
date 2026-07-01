@@ -7,13 +7,15 @@ msgstr ""
 "Project-Id-Version: Odoo Server 14.0-20230925\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-28 11:42+0000\n"
-"PO-Revision-Date: 2024-05-28 11:42+0000\n"
+"PO-Revision-Date: 2026-06-30 16:08+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_form_view
@@ -586,8 +588,7 @@ msgstr "Asennukset, jotka käyttävät tätä komponenttia."
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_res_partner__installation_technical_contact_ids
 #: model:ir.model.fields,help:software_knowledge_base.field_res_users__installation_technical_contact_ids
-msgid ""
-"Installations where the partner has been marked as a technical contact."
+msgid "Installations where the partner has been marked as a technical contact."
 msgstr "Asennukset, joissa partneri on merkattu tekniseksi yhteyshenkilöksi."
 
 #. module: software_knowledge_base
@@ -612,9 +613,7 @@ msgstr "Ongelmat"
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module__issues
 msgid "Known bugs, limitations, incompatibilities with other modules etc."
-msgstr ""
-"Tiedossa olevat bugit, rajoitukset, yhteensopimattomuudet muihiin moduleihin"
-" ym."
+msgstr "Tiedossa olevat bugit, rajoitukset, yhteensopimattomuudet muihiin moduleihin ym."
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.module_form_view
@@ -665,14 +664,14 @@ msgstr "Asennuksen käyttämät kirjastot ja muut ulkoiset komponentit."
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_project_task__module_ids
 msgid ""
-"List here the modules that were affected by the work done in this task. If "
-"you created a new module, you can manually run the 'Software knowledge "
-"'base: export information' cron in the customer installation to get the "
-"module to immediately show up in Software Knowledge Base's list of modules."
-msgstr "Listaa tähän moduulit, jotka liittyivät tässä tehtävässä tehtyyn työhön. Jos teit "
-"uuden moduulin, voit ajaa \"Software knowledge base: export information\" -cronin " 
-"asiakasasennuksessa saadaksesi moduulin ilmestymään heti Tietämyskannan "
-"moduulilistaan."
+"List here the modules that were affected by the work done in this task. If you created a "
+"new module, you can manually run the 'Software knowledge 'base: export information' cron "
+"in the customer installation to get the module to immediately show up in Software "
+"Knowledge Base's list of modules."
+msgstr ""
+"Listaa tähän moduulit, jotka liittyivät tässä tehtävässä tehtyyn työhön. Jos teit uuden "
+"moduulin, voit ajaa \"Software knowledge base: export information\" -cronin "
+"asiakasasennuksessa saadaksesi moduulin ilmestymään heti Tietämyskannan moduulilistaan."
 
 #. module: software_knowledge_base
 #: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_server__server_type__mail
@@ -926,12 +925,12 @@ msgstr "Proxy-palvelin"
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_server__ram
 msgid "RAM (Gb)"
-msgstr ""
+msgstr "RAM (Gb)"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,field_description:software_knowledge_base.field_software_knowledge_base_module__readme
 msgid "Readme"
-msgstr ""
+msgstr "Readme"
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
@@ -1037,7 +1036,7 @@ msgstr "Tietämyskanta"
 #: model:ir.model.fields.selection,name:software_knowledge_base.selection__software_knowledge_base_installation__type__staging
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
 msgid "Staging"
-msgstr ""
+msgstr "Staging"
 
 #. module: software_knowledge_base
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base.installation_search_view
@@ -1234,8 +1233,7 @@ msgstr "Mikä on asennuksen tila"
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module__module_type
 msgid "Where the module has been developed"
-msgstr ""
-"Onko moduuli peräisin coresta tai yhteisöstä, vai onko se itse kehitetty"
+msgstr "Onko moduuli peräisin coresta tai yhteisöstä, vai onko se itse kehitetty"
 
 #. module: software_knowledge_base
 #: model:ir.model.fields,help:software_knowledge_base.field_software_knowledge_base_module__installation_ids
