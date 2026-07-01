@@ -48,7 +48,7 @@
                                 required="deprecation_type in ['other']"
                             />
                             <field
-                                name="replacement_modules"
+                                name="replacement_module_ids"
                                 widget="many2many_tags"
                                 required="deprecation_type in ['replaced_by_core_module', 'replaced_by_community_module', 'replaced_by_our_module', 'replaced_by_other_module', 'split_to_multiple_modules']"
                             />

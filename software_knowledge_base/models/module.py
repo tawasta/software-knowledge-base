@@ -109,11 +109,11 @@ class Module(models.Model):
         help="Additional info of why the module has been deprecated",
     )
 
-    replacement_modules = fields.Many2many(
+    replacement_module_ids = fields.Many2many(
         string="Replacement modules",
         model_name="software_knowledge_base.module",
         comodel_name="software_knowledge_base.module",
-        relation="module_replacement_modules",
+        relation="module_replacement_module_ids",
         column1="software_knowledge_base_replacement_module_id",
         column2="software_knowledge_base_module_id",
         help="List here the modules that have replaced this module",
