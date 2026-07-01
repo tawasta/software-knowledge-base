@@ -86,6 +86,39 @@ class Module(models.Model):
         "when linking them to the module.",
     )
 
+    deprecated = fields.Boolean()
+
+    _DEPRECATION_TYPE_VALUES = [
+        ("replaced_by_core_module", "Replaced by core module"),
+        ("replaced_by_community_module", "Replaced by community module"),
+        ("replaced_by_our_module", "Replaced by our module"),
+        ("replaced_by_other_module", "Replaced by other module"),
+        ("not_needed_anymore", "Not needed anymore"),
+        ("split_to_multiple_modules", "Split to multiple modules"),
+        ("other", "Other"),
+    ]
+
+    deprecation_type = fields.Selection(
+        string="Deprecation type",
+        selection=_DEPRECATION_TYPE_VALUES,
+        help="Why the module has been deprecated",
+    )
+
+    deprecation_reason = fields.Text(
+        string="Deprecation reason",
+        help="Additional info of why the module has been deprecated",
+    )
+
+    replacement_modules = fields.Many2many(
+        string="Replacement modules",
+        model_name="software_knowledge_base.module",
+        comodel_name="software_knowledge_base.module",
+        relation="module_replacement_modules",
+        column1="software_knowledge_base_replacement_module_id",
+        column2="software_knowledge_base_module_id",
+        help="List here the modules that have replaced this module",
+    )
+
     # 3. Default methods
 
     # 4. Compute and search fields, in the same order that fields declaration

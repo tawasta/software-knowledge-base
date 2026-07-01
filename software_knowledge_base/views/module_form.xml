@@ -36,11 +36,22 @@
                             <field
                                 name="platform_ids"
                                 widget="many2many_tags"
-                                string="Tested platforms"
+                                string="Supported platforms"
                             />
                             <field name="user_id" />
                             <field name="module_type" />
                             <field name="author" />
+                            <field name="deprecated" />
+                            <field name="deprecation_type" required="deprecated" />
+                            <field
+                                name="deprecation_reason"
+                                required="deprecation_type in ['other']"
+                            />
+                            <field
+                                name="replacement_modules"
+                                widget="many2many_tags"
+                                required="deprecation_type in ['replaced_by_core_module', 'replaced_by_community_module', 'replaced_by_our_module', 'replaced_by_other_module', 'split_to_multiple_modules']"
+                            />
                         </group>
                         <group>
                             <field name="website" widget="url" />

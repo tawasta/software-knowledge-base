@@ -11,6 +11,40 @@
                 <field name="module_type" />
                 <field name="author" />
                 <field name="website" />
+                <field name="deprecated" />
+                <field name="deprecation_type" />
+                <separator />
+                <filter
+                    string="Not deprecated"
+                    name="not_deprecated"
+                    domain="[('deprecated', '=', False)]"
+                />
+                <separator />
+                <filter
+                    string="All core"
+                    name="all_core"
+                    domain="[('module_type', '=', 'core')]"
+                />
+                <filter
+                    string="All community"
+                    name="all_community"
+                    domain="[('module_type', '=', 'core'), ('module_type', '=', 'core_commercial')]"
+                />
+                <filter
+                    string="All In-house"
+                    name="all_in_house"
+                    domain="[('module_type', '=', 'inhouse'), ('module_type', '=', 'inhouse_commercial')]"
+                />
+                <filter
+                    string="All Third party"
+                    name="all_third_party"
+                    domain="[('module_type', '=', 'third_party')]"
+                />
+                <filter
+                    string="All untyped"
+                    name="all_third_party"
+                    domain="[('module_type', '=', False)]"
+                />
                 <separator />
                 <group expand="0" string="Group By...">
                     <filter
@@ -22,6 +56,23 @@
                         string="Author"
                         name="author"
                         context="{'group_by':'author'}"
+                    />
+                    <separator />
+                    <filter
+                        string="Deprecation type"
+                        name="deprecation_type"
+                        context="{'group_by':'deprecation_type'}"
+                    />
+                    <separator />
+                    <filter
+                        string="Supported platforms"
+                        name="supported_platforms"
+                        context="{'group_by':'platform_ids'}"
+                    />
+                    <filter
+                        string="Installations"
+                        name="installation_ids"
+                        context="{'group_by':'installation_ids'}"
                     />
                 </group>
             </search>
