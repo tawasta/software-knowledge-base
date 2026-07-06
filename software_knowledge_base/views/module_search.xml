@@ -28,12 +28,12 @@
                 <filter
                     string="All community"
                     name="all_community"
-                    domain="[('module_type', '=', 'core'), ('module_type', '=', 'core_commercial')]"
+                    domain="['|', ('module_type', '=', 'core'), ('module_type', '=', 'core_commercial')]"
                 />
                 <filter
                     string="All In-house"
                     name="all_in_house"
-                    domain="[('module_type', '=', 'inhouse'), ('module_type', '=', 'inhouse_commercial')]"
+                    domain="['|', ('module_type', '=', 'inhouse'), ('module_type', '=', 'inhouse_commercial')]"
                 />
                 <filter
                     string="All Third party"
