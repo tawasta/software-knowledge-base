@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_task_form2_critical_notice" model="ir.ui.view">
+        <field name="name">project.task.form.critical.installation.notice</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="before">
+                <field name="show_installation_critical_notice" invisible="1" />
+                <div
+                    class="alert alert-danger rounded-3 shadow-sm mb-0"
+                    role="alert"
+                    invisible="not show_installation_critical_notice"
+                >
+                    <div class="d-flex align-items-start gap-2">
+                        <i class="fa fa-exclamation-triangle mt-1" aria-hidden="true" />
+                        <div class="flex-grow-1">
+                            <strong>This installation has critical notes</strong>
+                            <field
+                                name="installation_critical_note_count"
+                                nolabel="1"
+                                readonly="1"
+                                class="badge text-bg-danger rounded-pill ms-1"
+                            />
+                            <field
+                                name="installation_critical_notice_html"
+                                nolabel="1"
+                                readonly="1"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_tree2_critical_notice" model="ir.ui.view">
+        <field name="name">project.task.tree.critical.installation.notice</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2" />
+        <field name="arch" type="xml">
+            <field name="priority" position="after">
+                <field
+                    name="installation_critical_note_count"
+                    string="Critical Notes"
+                    widget="badge"
+                    decoration-danger="installation_critical_note_count &gt; 0"
+                    invisible="not installation_critical_note_count"
+                    optional="show"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record id="view_task_kanban_critical_notice" model="ir.ui.view">
+        <field name="name">project.task.kanban.critical.installation.notice</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban" />
+        <field name="arch" type="xml">
+            <field name="allow_milestones" position="after">
+                <field name="show_installation_critical_notice" />
+            </field>
+            <xpath expr="//span[@t-if='record.partner_id.value']" position="after">
+                <div
+                    t-if="record.show_installation_critical_notice.raw_value"
+                    class="mt-1"
+                >
+                    <span
+                        class="badge text-bg-danger rounded-pill"
+                        title="This installation has critical notes"
+                    >
+                        <i
+                            class="fa fa-exclamation-triangle me-1"
+                            aria-hidden="true"
+                        />Critical notes
+                    </span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
