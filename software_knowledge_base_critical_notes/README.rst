@@ -41,9 +41,7 @@ Usage
 
 Known issues / Roadmap
 ======================
-* There is no acknowledgement/read-tracking for critical notes - the
-  banner is always shown, on every open, to everyone. This is
-  intentional: the alert must not be dismissible and then forgotten.
+\-
 
 Credits
 =======
