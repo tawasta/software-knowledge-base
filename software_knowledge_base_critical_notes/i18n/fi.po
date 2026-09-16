@@ -1,0 +1,97 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* software_knowledge_base_critical_notes
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0-20260916\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-16 00:00+0000\n"
+"PO-Revision-Date: 2026-09-16 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: software_knowledge_base_critical_notes
+#: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_software_knowledge_base_installation_note__is_critical
+msgid "Critical"
+msgstr "Kriittinen"
+
+#. module: software_knowledge_base_critical_notes
+#: model:ir.model.fields,help:software_knowledge_base_critical_notes.field_software_knowledge_base_installation_note__is_critical
+msgid ""
+"Critical notes are shown as a warning on every task or ticket linked to "
+"this installation. Non-critical notes are only visible on the "
+"installation record itself."
+msgstr ""
+"Kriittiset muistiinpanot näytetään varoituksena jokaisella tähän "
+"installaatioon liitetyllä tehtävällä tai tiketillä. Ei-kriittiset "
+"muistiinpanot näkyvät vain installaatiotietueella itsellään."
+
+#. module: software_knowledge_base_critical_notes
+#: model_terms:ir.ui.view,arch_db:software_knowledge_base_critical_notes.view_task_tree2_critical_notice
+msgid "Critical Notes"
+msgstr "Kriittiset muistiinpanot"
+
+#. module: software_knowledge_base_critical_notes
+#: model_terms:ir.ui.view,arch_db:software_knowledge_base_critical_notes.view_task_kanban_critical_notice
+msgid "Critical notes"
+msgstr "Kriittiset muistiinpanot"
+
+#. module: software_knowledge_base_critical_notes
+#: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_project_task__installation_critical_note_count
+msgid "Installation Critical Note Count"
+msgstr "Installaation kriittisten muistiinpanojen määrä"
+
+#. module: software_knowledge_base_critical_notes
+#: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_project_task__installation_critical_notice_html
+msgid "Installation Critical Notice Html"
+msgstr "Installaation kriittinen ilmoitus (HTML)"
+
+#. module: software_knowledge_base_critical_notes
+#: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_software_knowledge_base_installation__note_count
+msgid "Note Count"
+msgstr "Muistiinpanojen määrä"
+
+#. module: software_knowledge_base_critical_notes
+#: model:ir.actions.act_window,name:software_knowledge_base_critical_notes.installation_note_action
+#: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_software_knowledge_base_installation__note_ids
+#: model_terms:ir.ui.view,arch_db:software_knowledge_base_critical_notes.installation_form_view_critical_notes
+msgid "Notes"
+msgstr "Muistiinpanot"
+
+#. module: software_knowledge_base_critical_notes
+#: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_software_knowledge_base_installation__critical_alert_enabled
+msgid "Show critical note alerts on tasks"
+msgstr "Näytä kriittisten muistiinpanojen hälytykset tehtävillä"
+
+#. module: software_knowledge_base_critical_notes
+#: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_project_task__show_installation_critical_notice
+msgid "Show Installation Critical Notice"
+msgstr "Näytä installaation kriittinen ilmoitus"
+
+#. module: software_knowledge_base_critical_notes
+#: model_terms:ir.ui.view,arch_db:software_knowledge_base_critical_notes.view_task_form2_critical_notice
+#: model_terms:ir.ui.view,arch_db:software_knowledge_base_critical_notes.view_task_kanban_critical_notice
+msgid "This installation has critical notes"
+msgstr "Tällä installaatiolla on kriittisiä muistiinpanoja"
+
+#. module: software_knowledge_base_critical_notes
+#: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_software_knowledge_base_installation_note__name
+msgid "Title"
+msgstr "Otsikko"
+
+#. module: software_knowledge_base_critical_notes
+#: model:ir.model.fields,help:software_knowledge_base_critical_notes.field_software_knowledge_base_installation__critical_alert_enabled
+msgid ""
+"When enabled, this installation's critical notes are shown as a warning "
+"on every linked task or ticket. Turn off to silence the alert for this "
+"installation without deleting the notes."
+msgstr ""
+"Kun käytössä, tämän installaation kriittiset muistiinpanot näytetään "
+"varoituksena jokaisella liitetyllä tehtävällä tai tiketillä. Poista "
+"käytöstä hiljentääksesi hälytyksen tälle installaatiolle poistamatta "
+"muistiinpanoja."
