@@ -28,8 +28,8 @@ msgid ""
 "installation record itself."
 msgstr ""
 "Kriittiset muistiinpanot näytetään varoituksena jokaisella tähän "
-"installaatioon liitetyllä tehtävällä tai tiketillä. Ei-kriittiset "
-"muistiinpanot näkyvät vain installaatiotietueella itsellään."
+"asennukseen liitetyllä tehtävällä tai tiketillä. Ei-kriittiset "
+"muistiinpanot näkyvät vain asennuksen omalla tietueella."
 
 #. module: software_knowledge_base_critical_notes
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base_critical_notes.view_task_tree2_critical_notice
@@ -44,12 +44,12 @@ msgstr "Kriittiset muistiinpanot"
 #. module: software_knowledge_base_critical_notes
 #: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_project_task__installation_critical_note_count
 msgid "Installation Critical Note Count"
-msgstr "Installaation kriittisten muistiinpanojen määrä"
+msgstr "Asennuksen kriittisten muistiinpanojen määrä"
 
 #. module: software_knowledge_base_critical_notes
 #: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_project_task__installation_critical_notice_html
 msgid "Installation Critical Notice Html"
-msgstr "Installaation kriittinen ilmoitus (HTML)"
+msgstr "Asennuksen kriittinen varoitus (HTML)"
 
 #. module: software_knowledge_base_critical_notes
 #: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_software_knowledge_base_installation__note_count
@@ -66,18 +66,18 @@ msgstr "Muistiinpanot"
 #. module: software_knowledge_base_critical_notes
 #: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_software_knowledge_base_installation__critical_alert_enabled
 msgid "Show critical note alerts on tasks"
-msgstr "Näytä kriittisten muistiinpanojen hälytykset tehtävillä"
+msgstr "Näytä kriittisten muistiinpanojen varoitukset tehtävillä"
 
 #. module: software_knowledge_base_critical_notes
 #: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_project_task__show_installation_critical_notice
 msgid "Show Installation Critical Notice"
-msgstr "Näytä installaation kriittinen ilmoitus"
+msgstr "Näytä asennuksen kriittinen varoitus"
 
 #. module: software_knowledge_base_critical_notes
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base_critical_notes.view_task_form2_critical_notice
 #: model_terms:ir.ui.view,arch_db:software_knowledge_base_critical_notes.view_task_kanban_critical_notice
 msgid "This installation has critical notes"
-msgstr "Tällä installaatiolla on kriittisiä muistiinpanoja"
+msgstr "Tällä asennuksella on kriittisiä muistiinpanoja"
 
 #. module: software_knowledge_base_critical_notes
 #: model:ir.model.fields,field_description:software_knowledge_base_critical_notes.field_software_knowledge_base_installation_note__name
@@ -91,7 +91,7 @@ msgid ""
 "on every linked task or ticket. Turn off to silence the alert for this "
 "installation without deleting the notes."
 msgstr ""
-"Kun käytössä, tämän installaation kriittiset muistiinpanot näytetään "
+"Kun käytössä, tämän asennuksen kriittiset muistiinpanot näytetään "
 "varoituksena jokaisella liitetyllä tehtävällä tai tiketillä. Poista "
-"käytöstä hiljentääksesi hälytyksen tälle installaatiolle poistamatta "
+"käytöstä hiljentääksesi varoituksen tälle asennukselle poistamatta "
 "muistiinpanoja."
