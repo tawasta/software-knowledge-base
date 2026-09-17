@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Renders the critical installation notes shown in the task/ticket
+         warning banner. A plain div (not list-group-item) is used on
+         purpose: border-start/border-danger/border-3 only add a left
+         accent bar on an element with no border of its own, giving a
+         clean accented row instead of a full rectangle. -->
+    <template id="critical_notes_list">
+        <div
+            t-foreach="notes"
+            t-as="note"
+            class="border-start border-danger border-3 ps-3 py-1 mb-2"
+        >
+            <div class="fw-semibold">
+                <t t-esc="note.name" />
+            </div>
+            <div t-if="note.description" class="text-muted" t-out="note.description" />
+        </div>
+    </template>
+</odoo>

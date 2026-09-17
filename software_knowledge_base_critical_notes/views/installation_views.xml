@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="installation_note_action" model="ir.actions.act_window">
+        <field name="name">Notes</field>
+        <field name="res_model">software_knowledge_base.installation.note</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="installation_form_view_critical_notes" model="ir.ui.view">
+        <field name="name">installation.form.view.critical.notes</field>
+        <field name="model">software_knowledge_base.installation</field>
+        <field name="inherit_id" ref="software_knowledge_base.installation_form_view" />
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button
+                    class="oe_stat_button"
+                    type="object"
+                    name="action_open_notes"
+                    icon="fa-sticky-note"
+                >
+                    <field name="note_count" widget="statinfo" string="Notes" />
+                </button>
+            </div>
+
+            <group name="information_group_type" position="inside">
+                <field name="critical_alert_enabled" />
+            </group>
+
+            <page name="info" position="before">
+                <page name="notes" string="Notes">
+                    <field name="note_ids">
+                        <tree editable="bottom" decoration-danger="is_critical">
+                            <field name="is_critical" />
+                            <field name="name" />
+                            <field name="description" />
+                            <field name="active" column_invisible="1" />
+                        </tree>
+                    </field>
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>

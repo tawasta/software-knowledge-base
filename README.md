@@ -15,6 +15,7 @@ addon | version | maintainers | summary
 [software_knowledge_base](software_knowledge_base/) | 17.0.1.2.1 |  | Maintain software installation and module data
 [software_knowledge_base_capabilities](software_knowledge_base_capabilities/) | 17.0.1.0.0 |  | Define installation capabilities
 [software_knowledge_base_classification](software_knowledge_base_classification/) | 17.0.1.0.0 |  | Adds classifications to Software Knowledge Base
+[software_knowledge_base_critical_notes](software_knowledge_base_critical_notes/) | 17.0.1.0.0 |  | Warn about critical installation notes on linked tasks and tickets
 [software_knowledge_base_exporter](software_knowledge_base_exporter/) | 17.0.1.2.0 |  | Export installation information to SDKB
 [software_knowledge_base_module_guide](software_knowledge_base_module_guide/) | 17.0.1.0.0 |  | Software Knowledge Base Module guide
 [software_knowledge_base_technical_contacts](software_knowledge_base_technical_contacts/) | 17.0.1.0.0 |  | Linking technical contacts to SDKB data
